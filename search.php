@@ -4,7 +4,7 @@
   ?>>
     <div class="page-header-inner in-grid flex-row flex-direction-column flex-position-center flex-align-center">          
       <div class="header-block">   
-        <h1 style="text-align:center"><?php printf( __( 'Search Results for: %s', 'cli_theme' ), get_search_query() ); ?></h1>
+        <h1 style="text-align:center"><?php printf( __( 'Search Results for: %s', 'cdm_theme' ), get_search_query() ); ?></h1>
       </div>  
     </div>
   </header>
@@ -20,7 +20,7 @@
               <?php endwhile; ?>
               <?php get_template_part( 'nav', 'below' ); ?>
             <?php else : ?>
-              <p style="text-align:center"><?php _e( 'Sorry, nothing matched your search. Please try again.', 'cli_theme' ); ?></p>
+              <p style="text-align:center"><?php _e( 'Sorry, nothing matched your search. Please try again.', 'cdm_theme' ); ?></p>
               <?php get_search_form(); ?>  
             <?php endif; ?> 
             </div>

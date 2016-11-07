@@ -23,7 +23,6 @@ if ($sticky_header == "1") {?>
       <button class="menu-button">
         <span>toggle menu</span>
       </button>
-      <span class="menu-button-txt">Menu</span>
     </div>
     <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container_class' => $hide_menu, 'link_before' => '<span class="link-text">', 'link_after' => '</span>') ); ?>
   </nav>
@@ -44,7 +43,6 @@ if ($sticky_header == "1") {?>
     <button class="menu-button">
       <span>toggle menu</span>
     </button>
-    <span class="menu-button-txt">Menu</span>
   </div>
   <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container_class' => $hide_menu, 'link_before' => '<span class="link-text">', 'link_after' => '</span>') ); ?>
 </nav>

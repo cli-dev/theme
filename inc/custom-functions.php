@@ -449,7 +449,7 @@ function pagination($pages = '', $range = 1){
 function my_search_form( $form ) {
   $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
   <input type="text" value="' . get_search_query() . '" name="s" id="s" />
-  <input type="submit" id="searchsubmit" value="'. esc_attr__( 'Search' ) .'" class="btn black outline" /></form>';
+  <input type="submit" id="searchsubmit" value="'. esc_attr__( 'Search' ) .'" class="btn" /></form>';
 
 return $form;
 }
