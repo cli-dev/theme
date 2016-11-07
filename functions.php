@@ -1,4 +1,7 @@
 <?php
+
+define('CDM_ROOT', get_template_directory_uri());
+
 // Theme setup
 function cdm_theme_setup(){
 	load_theme_textdomain( 'cdm_theme', get_template_directory() . '/languages' );
@@ -15,7 +18,7 @@ add_action( 'after_setup_theme', 'cdm_theme_setup' );
 
 // Add main stylesheet
 function main_stylesheet() {
-  wp_register_style( 'main', CLI_ROOT . '/css/production/style.css', false, false, 'all' );
+  wp_register_style( 'main', CDM_ROOT . '/css/production/style.css', false, false, 'all' );
   wp_enqueue_style( 'main' );
 }
 add_action( 'wp_enqueue_scripts', 'main_stylesheet' );
@@ -48,7 +51,7 @@ add_action( 'acf/save_post', 'generate_dynamic_css' );
 
 // Add dynamic stylesheet to head of wordpress
 function add_dynamic_css(){
-  wp_enqueue_style("style_dynamic", CLI_ROOT . "/css/dynamic-styles.css", array(), filemtime(dirname(__FILE__) ."/css/dynamic-styles.css"));
+  wp_enqueue_style("style_dynamic", CDM_ROOT . "/css/dynamic-styles.css", array(), filemtime(dirname(__FILE__) ."/css/dynamic-styles.css"));
 }
 add_action( 'wp_enqueue_scripts', 'add_dynamic_css', 50 );
 

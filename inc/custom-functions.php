@@ -1,9 +1,6 @@
 <?php
 
-define('CDM_ROOT', get_template_directory_uri());
-
-// Add Main Stylesheet
-
+// Add Favicon
 function add_favicon() {
   $myoptions = get_option( 'themesettings_');
   $favicon = $myoptions['favicon'];
@@ -11,7 +8,6 @@ function add_favicon() {
     echo '<link rel="shortcut icon" href="' . $favicon . '" type="image/x-icon" />';
   }
 }
-
 add_action('login_head', 'add_favicon');
 add_action('admin_head', 'add_favicon');
 
@@ -278,8 +274,6 @@ add_image_size( 'sidebar-thumb', 50, 50, true );
 
 add_image_size( 'theme_image_preview', 100, 100);
 
-
-
 function filter_ptags_on_images($content){
  return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
@@ -304,9 +298,7 @@ function push_google_font_families($field){
 
   $fonts = array();
 
-  //$field = '';
-
-  if($google_fonts){
+  if(!array_key_exists('error', $google_fonts)){
     foreach($google_fonts['items'] as $val){
       $fontName = $val['family'];
       $fonts[$fontName] = $fontName;
@@ -327,7 +319,7 @@ add_filter('acf/load_field/name=theme_font', 'push_google_font_families');
 function theme_font_choices( $field ) {
   $myoptions = get_option( 'themesettings_');
   $theme_fonts = $myoptions['theme_fonts'];
-  $typekit_fonts = get_field('typekit_fonts', 'option');
+  $typekit_fonts = $myoptions['typekit_fonts'];
 
   $typekitFonts = array();
   $googleFonts = array();

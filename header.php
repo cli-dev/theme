@@ -21,18 +21,14 @@
 
 <?php
   
-  $theme_fonts = get_field('theme_fonts', 'option');
+  $theme_fonts = $myoptions['theme_fonts'];
   
-  if($theme_fonts)
-  {
+  if($theme_fonts){
     echo '<script>WebFont.load({ google: { families: [';  
-    foreach($theme_fonts as $theme_font)
-    {
+    foreach($theme_fonts as $theme_font){
       $font = $theme_font['theme_font'];
       $variants = $theme_font['variants'];
-
       $googleVariants = implode(",",$variants);
-      
       echo "'" . $font . ':' . $googleVariants . "', ";
     }
     echo ']}});</script>';
