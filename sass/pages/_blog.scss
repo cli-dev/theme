@@ -1,0 +1,296 @@
+body.single-post{
+  .entry-content{
+    @include breakpoint($mdl){
+      @include display-flex;
+      @include flex-direction(column);
+      @include align-items(center);
+      @include justify-content(center);
+    }
+  }
+  .post-wrapper{
+    padding: 20px;
+    @include breakpoint($md){
+      padding: 40px;
+    }
+    @include breakpoint($mdl){
+      @include flex(0 1 auto); 
+      width: 80%;
+      max-width: $grid-width;
+    }
+  }
+  .entry-meta{
+    @include display-flex;
+    padding-bottom: 20px;
+    @include breakpoint($md){
+      padding-bottom: 40px;
+    }
+    >div{
+      padding: 0 10px;
+      border-right-style: solid;
+      border-right-width: 1px;
+      &:first-child{
+        padding-left: 0;
+      }
+      &:last-child{
+        padding-right: 0;
+        border-right-style: none;
+      }
+    }
+  }
+}
+
+body.blog .entry-content.news-feed,
+body.archive .entry-content.news-feed{
+  padding: 20px;
+  @include breakpoint($md){
+    padding:40px;  
+  }
+  @include breakpoint($mdl){
+    padding: 40px 0;
+    @include display-flex;
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+  }
+  @include breakpoint($lrg){
+    padding: 80px 0;
+  }
+}
+
+.news-feed-inner{
+  @include breakpoint($md){
+    @include display-flex;
+    @include flex-wrap(wrap);
+    @include align-items(stretch);  
+  }
+  @include breakpoint($mdl){
+    @include flex(0 1 auto); 
+    width: 80%;
+    max-width: $grid-width;
+  }
+  .post-block, .post-block-small{
+    @include flex(1 1 auto); 
+    @include breakpoint($md){
+      width: 50%;  
+      min-height: 300px;
+      &:first-child{
+        width: 100%;   
+      }
+    }
+  }
+}
+
+.post-footer{
+  padding-top: 20px;
+  @include breakpoint($md){
+    padding-top: 40px;
+  }
+}
+
+@include keyframes(animatedBackground){
+  0%{
+    @include transform(scale(1)); 
+  }
+  100%{
+    @include transform(scale(1.2)); 
+  }
+}
+
+.post-block, .post-block-small{
+  @include display-flex;
+  a{
+    @include flex(1 1 auto);
+    @include display-flex;
+    @include align-items(stretch);
+    position: relative;
+    overflow: hidden;
+  }
+  .post-img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    overflow: hidden;
+    img{
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .post-block-inner{
+    @include flex(1 1 auto);
+    @include display-flex;
+    @include align-items(stretch);
+    @include flex-direction(column);
+    padding: 20px;
+    position: relative;
+    z-index: 5;
+  }
+}
+
+.post-block-title{
+  @include flex(0 1 auto);
+}
+
+.post-block-date{
+  @include flex(0 1 auto);  
+}
+
+.post-block-excerpt{
+  padding: 20px 0;
+  opacity: 0;  
+  @include flex(1 1 auto); 
+  @include transition(all 0.3s ease-in-out);
+  @include transition-delay(0.1s);
+}
+
+.post-block-read-more{
+  @include flex(0 1 auto); 
+}
+
+.small-news-feed{
+  .post-block{
+    .post-block-inner{
+      padding: 20px;  
+    }
+  }
+}
+
+.post-image-window{
+  min-height: 100px;
+  font-size: 0;
+  line-height: 0;
+  @include breakpoint($md){
+    min-height: 200px;
+  }
+  @include breakpoint($lrg){
+    min-height: 300px;  
+  }
+  img{
+    max-width: 100%;
+    height: auto;  
+    opacity: 0;
+  }
+}
+
+.entry-footer-inner{
+  @include display-flex;
+  @include flex-wrap(wrap);
+  @include justify-content(center); 
+  @include align-items(center);
+}
+.social-share-wrap{
+  @include flex(1 1 auto);
+}
+.navigation{
+  @include flex(0 1 auto);
+  width: 100%;
+  @include breakpoint($md){
+    width: auto;
+  }
+}
+
+#nav-below{
+  @include flex(0 1 auto);
+  @include display-flex;
+  @include flex-wrap(wrap);
+  @include justify-content(center); 
+  @include align-items(center);
+  width: 100%;
+  margin: 10px -5px 0 -5px;
+  @include breakpoint($mds){
+    @include flex-wrap(nowrap);
+    width: auto;  
+    margin: 0 -5px 0 0px;
+  }
+  @include breakpoint($md){
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+  @include breakpoint($mdl){
+    @include justify-content(flex-start);
+    width: auto;  
+    margin: 0 -5px 0 0px;
+  }
+  a{  
+    margin-top: 10px;
+    width: 100%;
+    @include flex(0 1 auto); 
+    @include display-flex;
+    @include flex-wrap(nowrap);
+    @include justify-content(center); 
+    @include align-items(center);
+    @include breakpoint($mds){
+      width: auto;
+      margin: 0 5px;
+    }
+    .nav-txt, .fa{
+      @include flex(0 1 auto); 
+    }
+    .fa{
+      font-size: 25px;
+      padding: 0 3px;
+    }
+  }
+}
+
+
+.post-block-small .post-block-inner{
+  padding: 10px;
+  @include display-flex;
+  @include flex-direction(column);
+  @include justify-content(space-between);
+  @include breakpoint($xlrg){
+    padding: 20px;
+  }
+  div{
+    @include flex(0 1 auto);
+    &:first-child{
+      margin-bottom: 20px;  
+    }
+  }
+  .entry-meta{
+    @include display-flex;
+    @include justify-content(space-between);
+    @include align-items(center);
+    .news-icon{
+      @include flex(0 1 auto);
+      width: 50px;
+      height: auto;
+    }
+    .post-block-date{
+      @include flex(0 1 auto);
+    }
+  }
+}
+
+.blog-feed-wrapper.news-inner-block{
+ @include flex(1 1 auto);
+ @include display-flex;
+ .post-block:only-child{
+   @include flex(1 1 auto);  
+ }
+}
+
+.pagination{
+  padding-top: 20px;
+  @include display-flex;
+  @include justify-content(center);
+  @include align-items(center);
+  > *{
+    @include flex(0 1 auto);
+    line-height: 30px;
+    padding: 0 10px;
+    margin: 0 5px;  
+  }
+  @include breakpoint($mdl){
+    padding-top: 40px;
+  }
+}

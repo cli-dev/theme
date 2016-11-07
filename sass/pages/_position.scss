@@ -1,0 +1,148 @@
+body.single-position{
+  .position-content{
+    max-width: 700px;
+    margin: 0 auto;  
+    padding: 20px;
+    @include breakpoint($md){
+      padding: 40px;
+    }
+  }
+  .page-header-inner{
+    min-height: 200px;
+    @include breakpoint($lrg){
+      min-height: 400px;  
+    }
+  }
+}
+
+.position-row{
+  padding: 20px 0;
+  @include breakpoint($md){
+    padding: 40px 0;
+    @include display-flex;
+    @include align-items(stretch);
+    @include flex-wrap(nowrap);  
+    .position-col{
+      @include flex(0 1 auto);
+      &:first-child{
+        width: 2/3*100%;
+      }
+      &:last-child{
+        width: 1/3*100%;
+        @include display-flex;
+        @include align-items(stretch);
+        @include flex-direction(column);  
+      }
+    }
+    .position-btn{
+      @include flex(1 1 auto);
+      height: 50%;  
+      cursor: pointer;
+    }
+  }
+}
+
+.position-header-inner, .position-description{
+  text-align: center;  
+}
+
+.position-meta-box{
+  padding: 20px;
+  .benefit{
+    display: block;  
+    padding-bottom: 10px;
+  }
+}
+
+.position-meta-box-inner{
+  @include display-flex;
+  @include flex-wrap(nowrap);
+  div{
+    @include flex(1 1 auto);
+    &:first-child{
+      max-width: 105px;
+      @include breakpoint($md){
+        max-width: 130px;
+      }
+    }  
+    h4{
+      padding-bottom: 0;
+      line-height: 0.8;  
+    }
+  }
+}
+
+.position-btn{
+  text-align: center;
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(center);
+  @include flex-direction(column);
+  span{
+    @include flex(0 1 auto);
+    line-height: 50px;
+  }
+}
+
+.position-form{
+  display: none;
+  padding: 20px;
+  max-width: $grid-width;
+  margin: 0 auto;
+  @include breakpoint($md){
+    padding: 40px; 
+    width: 80%; 
+  }
+}
+
+.position-block{
+  @include flex(1 1 auto);
+  @include display-flex;
+  @include align-items(stretch);
+  @include flex-wrap(wrap);
+}
+.position-block-inner{
+  width: 100%;
+  @include flex(1 1 auto);
+  @include display-flex;
+  @include align-items(stretch);
+  @include flex-wrap(wrap);
+  @include flex-direction(column);
+  padding: 20px;
+  a{
+    @include flex(0 1 auto);
+    @include align-self(center);
+  }
+  h3{
+    @include flex(0 1 auto); 
+  }
+}
+.job-description{
+  @include flex(1 1 auto);
+}
+
+
+.positions{
+  @include breakpoint($md){
+    @include display-flex;
+    @include align-items(stretch);
+    @include flex-wrap(wrap);
+    margin: -5px;  
+  }
+  .position-block{
+    @include flex(0 1 auto);
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: $mds) {
+  .position-block{
+    width: 100% !important; 
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: $mdl) {
+  .position-block{
+    width: 50% !important; 
+  } 
+}

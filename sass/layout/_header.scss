@@ -1,0 +1,320 @@
+.site-header{
+  &.header-in-grid{
+    max-width: $grid-width;
+    @include breakpoint($md){
+      width: 80%;
+    }
+  }
+  &.header-overlap{
+    width: 100%;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 50%;
+    @include transform(translateX(-50%));
+  }
+}
+
+.header-inner > nav,
+.sticky-nav-inner{
+  padding: 10px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: $grid-width;
+  position: relative;  
+  @include breakpoint($mdl){
+    width: 80%;
+    padding: 0;
+    @include display-flex;
+    @include align-items(stretch);
+    @include justify-content(space-between);
+    @include flex-wrap(nowrap);
+  }
+  &.menu-center{
+    @include breakpoint($mdl){
+      padding: 0;
+      @include display-flex;
+      @include justify-content(center);
+      @include align-items(stretch);
+    }
+  }
+  img.site-main-logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.header-widgets-inner{
+  padding: 10px 20px;
+  position: relative;
+  @include breakpoint($md){
+    padding: 10px 40px;
+  }
+  @include breakpoint($mdl){
+    padding: 10px 0;
+    width: 80%;
+    max-width: $grid-width;
+    margin: 0 auto;
+  }
+}
+
+.divided-menu{
+  @include flex(0 1 auto);
+  @include display-flex;
+  @include align-items(stretch);
+  > ul{
+    @include flex(0 1 auto);
+  }
+}
+
+nav.mobile-nav{
+  width: 100%;
+  @include display-flex;
+  @include justify-content(center);
+  position: relative; 
+  @include breakpoint($mdl){
+    display: none !important;
+  }
+}
+
+.menu-mobile-container{
+  display: none;
+  position: absolute; 
+  top: 100%;
+  width: 100%;
+  z-index: 999;
+  left: 50%;
+  @include transform(translateX(-50%));
+  @include breakpoint($md){
+    width: 80%;
+    padding: 20px;
+  }
+}
+
+
+.desktop-menu{
+  display: none;
+  @include breakpoint($mdl){
+    @include display-flex;
+  }
+}
+
+.site-logo{
+  width: 100%;
+  padding: 5px;
+  overflow: hidden;
+  @include flex(1 1 auto);
+  @include display-flex;
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include breakpoint($mdl){
+    @include flex(0 1 auto);
+    padding: 10px 0;
+  }
+  a{
+    @include flex(1 1 auto);
+    display: block; 
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+  }
+  &.center-logo{
+    display: none;
+    @include breakpoint($mdl){
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+img.site-main-logo{
+  display: block;
+  opacity: 0;  
+  width: 100%;
+  height: auto;
+}
+
+.site-header .menu-container,
+.sticky-header.headhesive .menu-container{
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  @include breakpoint($mdl){
+    @include flex(0 1 auto);
+    @include display-flex;
+    @include align-items(stretch);
+    @include flex-direction(column); 
+    width: auto; 
+    position: relative;
+    top: auto;
+    left: auto;
+    &.hidden-menu{
+      margin-right: 100px;
+      overflow-x: hidden;
+      ul.menu{
+        @include transform(translateX(100%));
+      }
+      &.active ul.menu{
+        @include transform(translateX(0));
+      }
+    }
+  }
+}
+
+.site-header .sticky-header{
+  display: none;
+}
+
+.menu-button-area{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  z-index: 1000;
+  cursor: pointer;
+  @include transform(translateY(-50%)); 
+  @include breakpoint($mdl){
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(center);  
+    @include flex-wrap(nowrap);
+    .menu-button, .menu-button-txt{
+      @include flex(0 1 auto); 
+    }
+    .menu-button-txt{
+      padding-left: 10px; 
+    }
+    &.hide_button{
+      display: none;
+    }
+  }
+  @include breakpoint($mdl){
+    right: 0;
+  } 
+}
+
+.page-header{
+  width: 100%;
+  position: relative;
+  overflow: hidden; 
+  @include display-flex;
+}
+
+.page-header-inner-wrapper{
+  width: 100%;
+  @include flex(1 1 auto);
+  @include display-flex;
+  @include justify-content(center);
+  @include align-items(stretch);
+}
+
+.page-header-inner{
+  padding: 60px 30px;
+  min-height: 100px;
+  width: 100%;
+  margin: 0;
+  @include flex(0 1 auto);
+  @include breakpoint($md){
+    padding: 80px 40px;
+  }
+  @include breakpoint($mdl){
+    width: 80%;
+    padding: 80px 0;
+  }
+}
+
+.header-block{
+  @include flex(0 1 auto); 
+  max-width: 100%;
+}
+
+#side-menu{
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(stretch);
+  @include justify-content(space-around);
+  @include transition (all ease-in-out 0.3s);
+  &.left-menu{
+    left: 0;
+    @include transform(translateX(-100%));
+    &.active{
+      @include transform(translateX(0));
+    }
+  }
+  &.right-menu{
+    right: 0;
+    @include transform(translateX(100%));
+    &.active{
+      @include transform(translateX(0));
+    }
+  }
+  @include breakpoint($md){
+    width: 300px;
+  }
+  @include breakpoint($mdl){
+    &.left-menu, &.left-menu.hidden-menu.active, &.right-menu, &.right-menu.hidden-menu.active{
+      @include transform(translateX(0));
+    }
+    &.left-menu.hidden-menu{
+      @include transform(translateX(-100%));
+    }
+    &.right-menu.hidden-menu{
+      @include transform(translateX(100%));
+    }
+  }
+  > div{
+    @include flex(0 1 auto);
+  }
+  .menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .site-logo a{
+    min-height:  100px;
+  }
+}
+
+.site-header-widgets{
+  max-width: $grid-width;
+  margin: 0 auto;
+  @include display-flex;
+  @include flex-wrap(wrap);
+  @include justify-content(center);
+  @include align-items(center);
+  @include breakpoint($md){
+    @include justify-content(space-between);
+  }
+  > div{
+    @include flex(0 1 auto);
+  }
+}
+
+/*----------------------------------------------------------------------------*\
+  Headhesive Specific Styles
+/*----------------------------------------------------------------------------*/
+
+.sticky-header.headhesive {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  @include transform(translateY(-100%));
+  @include transition(ease-in-out all 0.3s);
+  display: none;
+  @include breakpoint($mdl){
+    display: block;
+  }
+  &.headhesive--stick{
+    @include transform(translateY(0)); 
+  }
+}

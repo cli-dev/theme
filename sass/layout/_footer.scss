@@ -1,0 +1,94 @@
+.footer-inner{
+  width: 100%;
+  padding: 10px;
+  @include breakpoint($md){
+    padding: 20px;
+    margin: 0 auto;
+    max-width: $grid-width;
+    @include display-flex;
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    @include align-items(stretch);  
+  }
+  @include breakpoint($mdl){
+    @include flex-wrap(nowrap);
+    width: 80%;
+  }
+}
+
+#bottom-footer{
+  padding: 0 20px;
+  @include breakpoint($mdl){
+    padding: 0;
+  }
+}
+
+#bottom-footer .footer-inner{
+  padding: 20px;
+}
+
+.footer-column{
+  padding: 10px;
+  @include breakpoint($md){
+    padding: 20px;
+    @include flex(0 1 auto);
+    @include display-flex;
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+    > *{
+      @include flex(0 1 auto);
+    }
+  }
+  .widget_sp_image a{
+    display: block;
+    max-width: 350px;
+    margin: 0 auto;
+    img{
+      display: block;
+      margin: 0 auto;
+      max-width: none !important;  
+    }
+  }
+}
+
+.footer-widget {
+  .social{
+    @include display-flex;
+  }
+  .menu{
+    padding:0;
+    margin: 0 -10px;
+    list-style: none;
+    @include display-flex;
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    @include align-items(center); 
+    @include breakpoint($lrg){
+      margin: 0 -5px;
+    } 
+    li{
+      width: auto;
+      padding: 0 10px;
+      @include breakpoint($lrg){
+        padding: 0 5px;
+      }
+      a{
+        display: block;  
+      }
+    }
+  }
+}
+
+.footer-logo{
+  a{
+    display: block;
+    width: 100%;
+    font-size: 0;
+    line-height: 0;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+}

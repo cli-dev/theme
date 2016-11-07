@@ -1,0 +1,137 @@
+.white-txt{
+  color: #FFF;
+  *{
+    color: #FFF;  
+  }
+}
+
+.border{
+  border-style: solid;  
+}
+
+.top-border{
+  border-top-style: solid;  
+}
+
+.bottom-border{
+  border-bottom-style: solid;  
+}
+
+.mobile-bottom-border{
+  border-bottom-style: solid;  
+  @include breakpoint($mdl){
+    border-bottom-style: none;  
+  }
+}
+
+.left-border{
+  @include breakpoint($md){
+    border-left-style: solid; 
+  }
+}
+
+.right-border{
+  @include breakpoint($md){
+    border-right-style: solid; 
+  }
+}
+
+.thin-border{
+  border-width: 1px;  
+}
+
+.medium-border{
+  border-width: 5px;  
+}
+
+.thick-border{
+  border-width: 10px;  
+}
+
+.white-border{
+  border-color: #FFF;  
+}
+
+.no-padding{
+  padding: 0;  
+  &.row-wrapper .flex-row{
+    padding: 0;  
+  }
+  &.col-inner{
+    padding: 0;  
+  }
+}
+
+.in-grid{
+  @include breakpoint($mdl){
+    margin: 0 auto;
+    max-width: $grid-width;
+    width: 80%;
+  }
+}
+
+.img-col .col-inner{
+  min-height: 150px;
+  @include breakpoint($md){
+    min-height: 250px;  
+  }
+  @include breakpoint($lrg){
+    min-height: 350px;  
+  }
+}
+
+.single-image{
+  max-width: 100%;
+  height: auto;  
+}
+
+.aligncenter{
+  margin: 10px auto;  
+  display: block;
+}
+
+.alignright{
+  float: right;
+  margin: 0 0 10px 10px;; 
+}
+
+.alignleft{
+  float: left;
+  margin: 0 10px 10px 0;  
+}
+
+.wow{
+  visibility: hidden;
+}
+
+.left-col{
+  &.tablet .col-inner{
+    @include breakpoint($md){
+      padding-left: 0;
+    }
+    @include breakpoint($mdl){
+      padding-left: 40px;
+    }
+  }
+  &.desktop .col-inner{
+    @include breakpoint($mdl){
+      padding-left: 0;
+    }
+  }
+}
+
+.right-col{
+  &.tablet .col-inner{
+    @include breakpoint($md){
+      padding-right: 0;
+    }
+    @include breakpoint($mdl){
+      padding-right: 40px;
+    }
+  }
+  &.desktop .col-inner{
+    @include breakpoint($mdl){
+      padding-right: 0;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@mixin bg-opacity($color, $opacity) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+@mixin ie($ver) {
+  html[data-useragent*='MSIE $ver']  {
+    @content;
+  }
+}

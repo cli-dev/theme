@@ -1,0 +1,248 @@
+$facebook: #3C5A99;
+$twitter: #55acee;
+$google: #DC4e41;
+$linkedin: #007bb5;
+$tumblr: #35465d;
+$pinterest: #bd081c;
+$flickr: #ff0084;
+$inewswire: #1357A8;
+$instagram: #7C5641;
+$vimeo: #1ab7ea;
+$youtube: #cd201f;
+
+$social-colors: (facebook, $facebook),
+                (twitter, $twitter),
+                (google, $google),
+                (linkedin, $linkedin),
+                (tumblr, $tumblr),
+                (pinterest, $pinterest),
+                (flickr, $flickr),
+                (newswire, $inewswire),
+                (instagram, $instagram),
+                (vimeo, $vimeo),
+                (youtube, $youtube);
+
+.social{
+  @include display-flex(inline-flex);
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-wrap(wrap);
+  margin: -5px;
+  div{
+    @include flex(0 1 auto);
+    padding: 5px;
+    @each $socialnetwork, $color in $social-colors {
+      a[href*="#{$socialnetwork}"]:hover i{
+        color: $color;  
+      }
+    }
+    a{
+      display: block;
+      font-size: 30px;
+    }
+    i{
+      line-height: 1;
+      @include transition(ease-in-out 0.2s all);  
+    }
+  }
+}
+
+.social-share{
+  margin: 0 -5px;
+}
+
+.social-share-wrap{
+  @include display-flex;
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-wrap(wrap);
+  @include breakpoint($md){
+    @include flex-wrap(nowrap);
+  }
+  @include breakpoint(626px 699px){
+    @include justify-content(flex-start);
+  }
+  @include breakpoint($md){
+    @include justify-content(center);
+  }
+  @include breakpoint($mdl){
+    @include justify-content(flex-start);
+  }
+  h4{
+    @include flex(0 1 auto);
+    width: 100%;
+    text-align: center;
+    @include breakpoint($mds){
+      width: auto;
+      padding-bottom: 0;
+      padding-right: 10px;
+    }
+  }
+  .social-share{
+    @include flex(0 1 auto);
+  }
+}
+
+.twitter-feed{
+  overflow: hidden;
+  position: relative;
+  display: block;
+  .timeline-twitter-feed{
+    .ttf-tweet{
+      @include display-flex;
+      @include flex-wrap(wrap);
+      @include justify-content(center);
+      @include align-items(center);
+      @include breakpoint($md){
+        padding: 20px; 
+      }
+      .ttf-tweet-row{  
+        @include flex(0 1 auto);
+        &:first-child{
+          @include order(2);
+        }
+        &:nth-child(2){
+          @include order(1);
+          width: 100%;
+        }
+        &:last-child{
+          @include order(3);
+          
+        }
+      }
+    }
+    .ttf-tweet-text{
+      text-align: center;
+    }
+    .ttf-tweet-full-name{
+      padding: 10px;
+      @include display-flex;
+      @include justify-content(center);
+      @include align-items(center);
+      @include breakpoint($md){
+        padding-bottom: 0;
+      }
+      &:before{
+        content: "\f007"; 
+        font-family: 'FontAwesome';
+        display: block;
+        padding-right: 5px; 
+      } 
+      
+    }
+    .ttf-tweet-text{
+      padding: 10px 0;
+    }
+    .ttf-timestamp{
+      padding: 10px;
+      @include display-flex;
+      @include justify-content(center);
+      @include align-items(center);
+      @include breakpoint($md){
+        padding-bottom: 0;
+      }
+      &:before{
+        content: "\f017"; 
+        font-family: 'FontAwesome';
+        display: block;
+        padding-right: 5px; 
+      }  
+    }
+    .ttf-tweet-user-name{
+      display: none;  
+    }
+  }
+}
+
+.instagram-block{
+  position: relative;
+  overflow: hidden;
+}
+
+.ttf-tweet{
+  @extend p;
+}
+
+.flickr-img{
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  &:after{
+    content: '';
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+  span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    @include transition(ease-in-out all 0.3s);
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
+  }
+  .flickr-zoom{
+    @include flex(0 1 auto);
+    display: block;
+    text-align: center;
+    font-size: 40px;
+  }
+  &:hover{
+    span{
+      opacity: 1;
+    }
+  }
+}
+
+.flickr-wrapper{
+  @include display-flex;
+  @include flex-wrap(wrap);
+  @include justify-content(flex-start);
+}
+
+.flickr-img-wrapper{
+  @include flex(0 1 auto);
+  width: 50%;
+  @include breakpoint($md){
+    width: 33.333%;
+  }
+  @include breakpoint($lrg){
+    width: 25%;
+  }
+}
+
+.flickr-wrapper.owl-carousel{
+  .flickr-img-wrapper{
+    width: 100%;
+  }
+}
+
+#startbadges{
+  display: block;
+}
+
+.fbr-badge{
+  display: block;
+  max-width: 130px;
+  padding: 5px;
+  width: 100%;
+  a{
+    display: block;
+    line-height: 0;
+    font-size: 0;
+  }
+  &.fbr-top-place a,
+  &.fbr-customer-service a{
+    width: 85%;
+    margin: 0 auto;
+  }
+  img{
+    width: 100% !important;
+    height: auto;
+  }
+}

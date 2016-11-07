@@ -1,0 +1,36 @@
+
+$base-font-size: 16px;
+
+//breakpoints
+$sml: 360px;
+$mds: 480px;
+$md: 600px;
+$mdl: 800px;
+$lrg: 1100px;
+$xlrg: 1300px;
+$xxlrg: 1600px;
+
+$landscape-phone: (max-width 700px) (max-height 400px) (orientation landscape);
+
+$color1: #ef3c32;
+$color2: #0684b0;
+$color3: #faa63a;
+$color4: #028c4b;
+$color5: #028c4b;
+
+$gray: #7b7979;
+$off-white: #f1f1f2;
+$black: #231F20;
+
+$colors: $color1 $color2 $color3 $color4 $color5;
+
+$main-colors: (color1, $color1),
+              (color2, $color2),
+              (color3, $color3),
+              (color4, $color4),
+              (color5, $color5);
+              
+$grid-width: 1200px;
+
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Roboto', sans-serif;

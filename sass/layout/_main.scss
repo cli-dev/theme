@@ -1,0 +1,28 @@
+html{
+  overflow-x: hidden !important;
+}
+
+#wrapper{
+  position: relative;  
+  width: 100vw;
+  overflow-x: hidden !important;
+}
+
+#content-wrapper{
+  position: relative; 
+  &.has-left-menu{
+    @include breakpoint($mdl){
+      margin-left: 300px;
+    }
+  }
+  &.has-right-menu{
+    @include breakpoint($mdl){
+      margin-right: 300px;
+    }
+  }
+}
+
+#content-bottom{
+  width: 100%;
+  padding:20px;
+}
