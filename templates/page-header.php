@@ -1,39 +1,30 @@
 <?php 
-
   $myoptions = get_option( 'themesettings_');
-
   $page_for_posts = get_option( 'page_for_posts' );  
   $postid = get_the_ID();
-  
-  if(is_blog()){
-    
+  if(is_blog()){ 
     $item_id = $page_for_posts;
   }
-  else{
-    
+  else{ 
     $item_id = $postid;
-
   } 
   $logo_position = $myoptions['logo_position'];
   $site_header_type = $myoptions['header_type'];
   $top_header_type = $myoptions['top_header_position'];
   $center_logo_menu_type = '';
+  $header_class = (get_field('header_class', $item_id)) ? ' ' . get_field('header_class', $item_id) : '';
+  $site_header_color = (get_field('site_header_type', $item_id)) ? ' data-midnight="' . get_field('site_header_type', $item_id) . '"' : '';
   if($logo_position === 'center'){$center_logo_menu_type = $myoptions['center_logo_menu_type'];}
-
   $overlapping_header = '';
-
   if($top_header_type === "header-overlap") {
     $overlapping_header = ' overlapping-header';
   }
-
   $header_type = get_field('header_type', $item_id);
-
   $header_item_direction = get_field('header_item_direction', $item_id);
   $header_item_horizontal_distribution = (get_field('header_item_horizontal_distribution', $item_id)) ? ' flex-position-' . get_field('header_item_horizontal_distribution', $item_id) : '';
   $header_item_horizontal_alignment = (get_field('header_item_horizontal_alignment', $item_id)) ? ' flex-align-' . get_field('header_item_horizontal_alignment', $item_id) : '';
   $header_item_vertical_distribution = (get_field('header_item_vertical_distribution', $item_id)) ? ' flex-position-' . get_field('header_item_vertical_distribution', $item_id) : '';
   $header_item_vertical_alignment = (get_field('header_item_vertical_alignment', $item_id)) ? ' flex-align-' . get_field('header_item_vertical_alignment', $item_id) : '';
-
   if($header_item_direction === 'row'){
     $col_position = $header_item_horizontal_distribution;
     $col_alignment = $header_item_horizontal_alignment;
@@ -44,10 +35,7 @@
     $col_alignment = $header_item_vertical_alignment;
     $row_direction = ' flex-direction-column';
   }
-  
   $header_items = $row_direction . $col_position . $col_alignment;
-
-
   $add_background_video = get_field('add_background_video', $item_id);
   $video_mp4 = get_field('video_mp4', $item_id);
   $video_ogg = get_field('video_ogg', $item_id);
@@ -56,11 +44,9 @@
   $background_image = get_field('background_image', $item_id);
   $slider_shortcode = get_field('slider_shortcode', $item_id);
   $header_color = get_field('header_color', $item_id);
-
   $background_image_color_overlay = get_field('background_image_color_overlay', $item_id);
   $background_image_color_overlay_opacity = get_field('background_image_color_overlay_opacity', $item_id);
   $header_rgb = hex2rgb($background_image_color_overlay);
-
   $add_animation = get_field('add_animation', $item_id);
   $animation_class = ($add_animation == 1) ? ' wow' : '';
   $animation_effect = (get_field('animation_effect', $item_id)) ? ' ' . get_field('animation_effect', $item_id)  : '';
@@ -71,10 +57,8 @@
   $overlay = ($background_image_color_overlay) ? ' box-shadow: inset 0 0 0 1000px rgba(' . $header_rgb . ', ' . $background_image_color_overlay_opacity . ');"' : '';
   
   $detect = new Mobile_Detect;
-
   $pageHeaderWrapperStyles = '';
   $pageHeaderStyles = '';
-
   if ($site_header_type === 'Top Menu') { 
     $top_bar_type = $myoptions['top_header_position']; 
     $pageHeaderWrapperStyles = '';
@@ -113,9 +97,9 @@
 
   
 
-  $header_classes = 'class="page-header ' . $top_bar_type . ' ' . $header_type . $overlapping_header . $animation_class . $animation_effect . '"';
+  $header_classes = 'class="page-header ' . $top_bar_type . ' ' . $header_type .  $header_class . $overlapping_header . $animation_class . $animation_effect . '"';
 ?>
-<header <?php echo $header_classes . ' ' . $pageHeaderWrapperStyles;?><?php echo $animation;?>>
+<header <?php echo $header_classes . ' ' . $pageHeaderWrapperStyles . $site_header_color;?><?php echo $animation;?>>
   <?php if($header_type === 'slider'){ echo do_shortcode($slider_shortcode); } else {
     if(!$detect->isMobile() && $header_type === 'bg-vid') { ?>
       <div class="header-bg-video bg-video">

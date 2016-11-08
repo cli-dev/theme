@@ -5,6 +5,51 @@ acf_add_local_field_group(array (
 	'title' => 'Page Header',
 	'fields' => array (
 		array (
+			'key' => 'field_5818d07386753',
+			'label' => 'Header Class',
+			'name' => 'header_class',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '50',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array (
+			'key' => 'field_5818d5104434b',
+			'label' => 'Site Header Type',
+			'name' => 'site_header_type',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '50',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array (
+				'light' => 'Light',
+				'dark' => 'Dark',
+			),
+			'default_value' => array (
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'ajax' => 0,
+			'return_format' => 'value',
+			'placeholder' => '',
+		),
+		array (
 			'key' => 'field_560eb8b550a4b',
 			'label' => 'Header Type',
 			'name' => 'header_type',
@@ -32,6 +77,7 @@ acf_add_local_field_group(array (
 			'placeholder' => '',
 			'disabled' => 0,
 			'readonly' => 0,
+			'return_format' => 'value',
 		),
 		array (
 			'key' => 'field_55f6f9499138a',
@@ -319,6 +365,7 @@ acf_add_local_field_group(array (
 			'placeholder' => '',
 			'disabled' => 0,
 			'readonly' => 0,
+			'return_format' => 'value',
 		),
 		array (
 			'key' => 'field_55f70875ecf3c',
@@ -363,6 +410,7 @@ acf_add_local_field_group(array (
 			'placeholder' => '',
 			'disabled' => 0,
 			'readonly' => 0,
+			'return_format' => 'value',
 		),
 		array (
 			'key' => 'field_5665e845f651b',
@@ -407,6 +455,7 @@ acf_add_local_field_group(array (
 			'placeholder' => '',
 			'disabled' => 0,
 			'readonly' => 0,
+			'return_format' => 'value',
 		),
 		array (
 			'key' => 'field_55f708d7ecf3d',
@@ -449,6 +498,7 @@ acf_add_local_field_group(array (
 			'placeholder' => '',
 			'disabled' => 0,
 			'readonly' => 0,
+			'return_format' => 'value',
 		),
 		array (
 			'key' => 'field_5665e8adf651d',
@@ -491,6 +541,7 @@ acf_add_local_field_group(array (
 			'placeholder' => '',
 			'disabled' => 0,
 			'readonly' => 0,
+			'return_format' => 'value',
 		),
 		array (
 			'key' => 'field_572247d07453f',
@@ -614,6 +665,7 @@ acf_add_local_field_group(array (
 			'placeholder' => '',
 			'disabled' => 0,
 			'readonly' => 0,
+			'return_format' => 'value',
 		),
 		array (
 			'key' => 'field_5722481e74541',
@@ -837,4 +889,4 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-endif;
+endif; ?>
