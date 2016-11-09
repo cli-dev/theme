@@ -27,18 +27,6 @@ function displaySocialProfiles($icon_type, $extra_class) {
   $instagramCode = '';
   $youtubeCode = '';
   $vimeoCode = '';
-
-  $facebookSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/facebook-circle-outline.svg');
-  $twitterSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/twitter-circle-outline.svg');
-  $googleSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/google-circle-outline.svg');
-  $linkedinSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/linkedin-circle-outline.svg');
-  $tumblrSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/tumblr-circle-outline.svg');
-  $pinterestSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/pinterest-circle-outline.svg');
-  $flickrSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/flickr-circle-outline.svg');
-  $newswireSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/newswire-circle-outline.svg');
-  $instagramSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/instagram-circle-outline.svg');
-  $youtubeSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/youtube-circle-outline.svg');
-  $vimeoSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/vimeo-circle-outline.svg');
   
   if($facebook){
     if($type_of_icon === 'icon5'){
@@ -674,7 +662,7 @@ function display_verified_fbr_badge(){
 
   $fbr_profile = 'http://www.fairbusinessreport.org/company/' . $fbr_profile_slug . '/profile';
 
-  $fbr_verified = '<div class="fbr-badge fbr-verified"><a href="' . $fbr_profile . '" target="_blank" title="' . get_bloginfo( 'name' ) . '"><img src="' . CLI_ROOT . '/imgs/FBR_Verified_Badge_' . $fbr_badge_color . '.png" alt="' . get_bloginfo( 'name' ) . ' Fair Business Report Profile" /></a></div>';
+  $fbr_verified = '<div class="fbr-badge fbr-verified"><a href="' . $fbr_profile . '" target="_blank" title="' . get_bloginfo( 'name' ) . '"><img src="' . CDM_ROOT . '/imgs/FBR_Verified_Badge_' . $fbr_badge_color . '.png" alt="' . get_bloginfo( 'name' ) . ' Fair Business Report Profile" /></a></div>';
 
   return $fbr_verified;
 }
@@ -698,7 +686,7 @@ function display_top_place_badge(){
 
   $fbr_profile = 'http://www.fairbusinessreport.org/company/' . $fbr_profile_slug . '/profile';
 
-  $fbr_top_place = '<div class="fbr-badge fbr-top-place"><a href="' . $fbr_profile . '" target="_blank" title="' . get_bloginfo( 'name' ) . '"><img src="' . CLI_ROOT . '/imgs/FBR_TopPlacesToWork_Badge_' . $fbr_badge_color . '.png" alt="' . get_bloginfo( 'name' ) . ' Fair Business Report Top Place to Work Award" /></a></div>';
+  $fbr_top_place = '<div class="fbr-badge fbr-top-place"><a href="' . $fbr_profile . '" target="_blank" title="' . get_bloginfo( 'name' ) . '"><img src="' . CDM_ROOT . '/imgs/FBR_TopPlacesToWork_Badge_' . $fbr_badge_color . '.png" alt="' . get_bloginfo( 'name' ) . ' Fair Business Report Top Place to Work Award" /></a></div>';
 
   return $fbr_top_place;
 }
@@ -711,7 +699,7 @@ function display_customer_service_badge(){
 
   $fbr_profile = 'http://www.fairbusinessreport.org/company/' . $fbr_profile_slug . '/profile';
 
-  $fbr_customer_service = '<div class="fbr-badge fbr-customer-service"><a href="' . $fbr_profile . '" target="_blank" title="' . get_bloginfo( 'name' ) . '"><img src="' . CLI_ROOT . '/imgs/FBR_TopCustomerService_Badge_' . $fbr_badge_color . '.png" alt="' . get_bloginfo( 'name' ) . ' Fair Business Report Top Customer Service Award" /></a></div>';
+  $fbr_customer_service = '<div class="fbr-badge fbr-customer-service"><a href="' . $fbr_profile . '" target="_blank" title="' . get_bloginfo( 'name' ) . '"><img src="' . CDM_ROOT . '/imgs/FBR_TopCustomerService_Badge_' . $fbr_badge_color . '.png" alt="' . get_bloginfo( 'name' ) . ' Fair Business Report Top Customer Service Award" /></a></div>';
 
   return $fbr_customer_service;
 }
