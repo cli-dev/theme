@@ -7,6 +7,7 @@ $logosvg = $myoptions['svg_desktop_logo'];
 $logo = ($logosvg) ? $logosvg : $logoimg;
 $sticky_logo = ($myoptions['sticky_header_logo']) ? $myoptions['sticky_header_logo'] : $logo;
 $logo_max = ($myoptions['desktop_logo_maximum_width']) ? ' style="max-width: ' . $myoptions['desktop_logo_maximum_width'] . 'px;"' : '';
+$is_header_in_grid = $myoptions['is_header_in_grid'];
 $header_in_grid = ($is_header_in_grid == 1) ? ' header-in-grid' : '';
 $sticky_header_height = $myoptions['sticky_header_height'];
 $sticky_height = ($sticky_header_height) ? ' style="height: ' . $sticky_header_height . 'px;"' : '';
