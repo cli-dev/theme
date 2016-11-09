@@ -275,12 +275,23 @@ function copyright() {
   $currentYear = date("Y");
 
   if($copyright){
-    return $copyright . ' &copy; ' . $currentYear;
+    return '<div class="copyright">' . $copyright . ' &copy; ' . $currentYear . '</div>';
   } else{
-    return $siteTitle . ' &copy; ' . $currentYear;
+    return '<div class="copyright">' . $siteTitle . ' &copy; ' . $currentYear . '</div>';
   }
 }
 add_shortcode( 'copyright', 'copyright' );
+
+function tagline() {
+  $tagline = get_bloginfo( 'description' ); 
+
+  if($tagline){
+    return '<div class="tagline">' . $tagline . '</div>';
+  } else{
+    return '<div class="tagline">This is your site tagline</div>';
+  }
+}
+add_shortcode( 'tagline', 'tagline' );
 
 function flex_row( $atts , $content = null ) {
 
