@@ -40,9 +40,7 @@ if ($sticky_header == "1") {?>
   </script>
 <?php } ?>
 <nav class="desktop-menu">
-  <div class="site-logo" itemtype="http://schema.org/LocalBusiness"<?php echo $logo_max; ?>> 
-   <?php echo home_logo_link(); ?>
-  </div>
+  <?php echo home_logo_link(); ?>
   <div class="menu-button-area<?php echo $hide_button; ?>">
     <button class="menu-button">
       <span>toggle menu</span>

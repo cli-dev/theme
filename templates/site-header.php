@@ -70,9 +70,7 @@
     $header_classes = 'class="site-header has-side-menu ' . $header_in_grid . $top_header_type . '"';
   ?>
   <nav id="side-menu" class="<?php echo $hide_menu; if ($header_type === 'Right Side Menu') { echo ' right-menu';} else {echo ' left-menu';} ?>">
-    <div class="site-logo" itemtype="http://schema.org/LocalBusiness"<?php if ($desktop_logo_maximum_width) { echo ' style="max-width: ' . $desktop_logo_maximum_width . 'px;"'; } ?>> 
-      <a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'cli-theme' ); ?>" rel="home" <?php if ($logo) { echo 'style="background: url(' . $logo . ') center no-repeat; background-size: contain;"';}; ?>><img src="<?php if ($logoimg) { echo $logoimg; }; ?>" alt="<?php esc_attr_e( get_bloginfo( 'name' ), 'cli-theme' ); ?> Logo" itemprop="logo" class="site-main-logo"/></a>
-    </div>
+    <?php echo home_logo_link(); ?>
     <?php get_template_part('templates/menu' , 'side'); ?>
   </nav>
   <div id="content-wrapper" class="<?php if($hide_menu_on_desktop == 0) { if ($header_type === 'Right Side Menu') { echo 'has-right-menu';} else {echo 'has-left-menu';} } ?>">
@@ -85,7 +83,6 @@
               <button class="menu-button">
                 <span>toggle menu</span>
               </button>
-              <span class="menu-button-txt">Menu</span>
             </div>
           </div>
         </div>

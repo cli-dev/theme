@@ -33,11 +33,7 @@ if ($sticky_header == "1") {?>
   });
 </script>
 <?php } ?>
-<div class="site-logo center-logo" itemtype="http://schema.org/LocalBusiness"<?php if ($desktop_logo_maximum_width) { echo ' style="max-width: ' . $desktop_logo_maximum_width . 'px;"'; } ?>> 
-  <a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'cli-theme' ); ?>" rel="home" <?php if ($logo) { echo 'style="background: url(' . $logo . ') center no-repeat; background-size: contain;' . $logo_height . '"';}; ?>>
-    <img src="<?php if ($logoimg) { echo $logoimg; }; ?>" alt="<?php esc_attr_e( get_bloginfo( 'name' ), 'cli-theme' ); ?> Logo" itemprop="logo" class="site-main-logo"/>
-  </a>
-</div>
+<?php echo home_logo_link(); ?>
 <nav class="desktop-menu menu-center">
   <div class="menu-button-area<?php echo $hide_button; ?>">
     <button class="menu-button">
