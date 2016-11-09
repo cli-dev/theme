@@ -1,6 +1,6 @@
 <?php
 
-define('CDM_ROOT', get_template_directory_uri());
+define('CDM_ROOT', CDM_ROOT);
 
 // Theme setup
 function cdm_theme_setup(){

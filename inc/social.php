@@ -278,11 +278,8 @@ function displayFacebookProfile($icon_type, $extra_class) {
   $myoptions = get_option( 'themesettings_');
   $custom_class = $extra_class;
   $type_of_icon = $icon_type;
-  $facebook= $myoptions['facebook'];
-
+  $facebook = $myoptions['facebook'];
   $facebookCode = '';
-
-  $facebookSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/facebook-circle-outline.svg');
   
   if($facebook){
     if($type_of_icon === 'icon5'){
@@ -316,7 +313,6 @@ function displayTwitterProfile($icon_type, $extra_class) {
   $type_of_icon = $icon_type;
   $twitter = $myoptions['twitter'];
   $twitterCode = '';
-  $twitterSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/twitter-circle-outline.svg');
   
   if($twitter){
     if($type_of_icon === 'icon5'){
@@ -350,7 +346,6 @@ function displayGoogleProfile($icon_type, $extra_class) {
   $type_of_icon = $icon_type;
   $google = $myoptions['google'];
   $googleCode = '';
-  $googleSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/google-circle-outline.svg');
   
   if($google){
     if($type_of_icon === 'icon5'){
@@ -384,7 +379,6 @@ function displayLinkedInProfile($icon_type, $extra_class) {
   $type_of_icon = $icon_type;
   $linkedin = $myoptions['linkedin'];
   $linkedinCode = '';
-  $linkedinSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/linkedin-circle-outline.svg');
   
   if($linkedin){
     if($type_of_icon === 'icon5'){
@@ -418,7 +412,6 @@ function displayTumblrProfile($icon_type, $extra_class) {
   $type_of_icon = $icon_type;
   $tumblr = $myoptions['tumblr'];
   $tumblrCode = '';
-  $tumblrSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/tumblr-circle-outline.svg');
   
   if($tumblr){
     if($type_of_icon === 'icon5'){
@@ -452,7 +445,6 @@ function displayPinterestProfile($icon_type, $extra_class) {
   $type_of_icon = $icon_type;
   $pinterest = $myoptions['pinterest'];
   $pinterestCode = '';
-  $pinterestSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/pinterest-circle-outline.svg');
   
   if($pinterest){
     if($type_of_icon === 'icon5'){
@@ -486,8 +478,6 @@ function displayFlickrProfile($icon_type, $extra_class) {
   $type_of_icon = $icon_type;
   $flickr = $myoptions['flickr'];
   $flickrCode = '';
-  $flickrSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/flickr-circle-outline.svg');
-
   
   if($flickr){
     if($type_of_icon === 'icon5'){
@@ -521,7 +511,6 @@ function displayNewswireProfile($icon_type, $extra_class) {
   $type_of_icon = $icon_type;
   $newswire = $myoptions['newswire'];
   $newswireCode = '';
-  $newswireSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/newswire-circle-outline.svg');
 
   if($newswire){
     if($type_of_icon === 'icon5'){
@@ -555,7 +544,6 @@ function displayInstagramProfile($icon_type, $extra_class) {
   $type_of_icon = $icon_type;
   $instagram = $myoptions['instagram'];
   $instagramCode = '';
-  $instagramSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/instagram-circle-outline.svg');
   
   if($instagram){
     if($type_of_icon === 'icon5'){
@@ -589,7 +577,6 @@ function displayYoutubeProfile($icon_type, $extra_class) {
   $type_of_icon = $icon_type;
   $youtube = $myoptions['youtube'];
   $youtubeCode = '';
-  $youtubeSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/youtube-circle-outline.svg');
 
   if($youtube){
     if($type_of_icon === 'icon5'){
@@ -625,8 +612,6 @@ function displayVimeoProfile($icon_type, $extra_class) {
   $vimeo = $myoptions['vimeo'];
 
   $vimeoCode = '';
-
-  $vimeoSVG = file_get_contents(get_template_directory_uri() . '/imgs/social/vimeo-circle-outline.svg');
 
   if($vimeo){
     if($type_of_icon === 'icon5'){

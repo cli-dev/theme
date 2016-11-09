@@ -482,10 +482,10 @@ add_image_size( 'team-headshot', 300, 300, array( 'center', 'top' ) );
 
 // Load Theme scripts
 function add_theme_scripts() {
-  wp_register_script( 'headerJS', get_template_directory_uri() . '/js/header-scripts.js', array('jquery'),'2.0', false);
+  wp_register_script( 'headerJS', CDM_ROOT . '/js/header-scripts.js', array('jquery'),'2.0', false);
   wp_enqueue_script( 'headerJS' );
   
-  wp_register_script( 'footerJS', get_template_directory_uri() . '/js/footer-scripts.js', array('jquery'),'', true);
+  wp_register_script( 'footerJS', CDM_ROOT . '/js/footer-scripts.js', array('jquery'),'', true);
   wp_enqueue_script( 'footerJS' );
 }
  
