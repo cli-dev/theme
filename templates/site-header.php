@@ -44,35 +44,12 @@
          ?>
       </div>
     </header>
-
-    <?php if($top_header_type === "header-overlap") { ?>
-      <script type="text/javascript">
-        jQuery(document).ready(function($) {
-          var siteHeaderHeight = $('.site-header').outerHeight();
-
-          $('.overlapping-header').css('padding-top', siteHeaderHeight);
-
-          $(window).resize(function(event) {
-
-            var siteHeaderHeight2 = $('.site-header').outerHeight();
-
-            $('.overlapping-header').css('padding-top', siteHeaderHeight2);
-
-          });
-        });
-      </script>
-
-    <?php } ?>
-
 <?php } else { ?>
   <?php
     $desktop_logo_maximum_width = $myoptions['desktop_logo_maximum_width'];
     $header_classes = 'class="site-header has-side-menu ' . $header_in_grid . $top_header_type . '"';
   ?>
-  <nav id="side-menu" class="<?php echo $hide_menu; if ($header_type === 'Right Side Menu') { echo ' right-menu';} else {echo ' left-menu';} ?>">
-    <?php echo home_logo_link(); ?>
-    <?php get_template_part('templates/menu' , 'side'); ?>
-  </nav>
+  <?php get_template_part('templates/menu' , 'side'); ?>
   <div id="content-wrapper" class="<?php if($hide_menu_on_desktop == 0) { if ($header_type === 'Right Side Menu') { echo 'has-right-menu';} else {echo 'has-left-menu';} } ?>">
     <header <?php echo $header_classes; ?>>
       <div class="header-inner">

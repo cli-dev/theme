@@ -59,31 +59,21 @@
   $detect = new Mobile_Detect;
   $pageHeaderWrapperStyles = '';
   $pageHeaderStyles = '';
-  if ($site_header_type === 'Top Menu') { 
-    $top_bar_type = $myoptions['top_header_position']; 
+  if ($top_header_type === 'header-overlap') { 
+    $top_header_type = $myoptions['top_header_position']; 
     $pageHeaderWrapperStyles = '';
     $pageHeaderStyles = '';
 
-    if($top_bar_type === 'header-overlap' && $header_type === 'bg-img') {
+    if($header_type === 'bg-img') {
       $pageHeaderWrapperStyles = ' style="' . $bg_img . $overlay . '"'; 
     }
-    elseif ($top_bar_type === 'header-overlap' && $header_type === 'color') {
+    elseif ($header_type === 'color') {
       $pageHeaderWrapperStyles = ' style="background-color: ' . $header_color . '"'; 
     } 
     else {
       $pageHeaderWrapperStyles = '';
     }
-    
-    if($top_bar_type === 'header-no-overlap' && $header_type === 'bg-img') {
-      $pageHeaderStyles = ' style="' . $bg_img . $overlay . '"'; 
-    } 
-    elseif ($top_bar_type === 'header-no-overlap' && $header_type === 'color') {
-      $pageHeaderStyles = ' style="background-color: ' . $header_color . '"'; 
-    } 
-    else{
-      $pageHeaderStyles = '';
-    }
-  } else{
+  } elseif($top_header_type === 'header-no-overlap'){
     if($header_type === 'bg-img') {
       $pageHeaderWrapperStyles = ' style="' . $bg_img . $overlay . '"'; 
     }
@@ -95,9 +85,7 @@
     }
   }
 
-  
-
-  $header_classes = 'class="page-header ' . $top_bar_type . ' ' . $header_type .  $header_class . $overlapping_header . $animation_class . $animation_effect . '"';
+  $header_classes = 'class="page-header ' . $top_header_type . ' ' . $header_type .  $header_class . $overlapping_header . $animation_class . $animation_effect . '"';
 ?>
 <header <?php echo $header_classes . ' ' . $pageHeaderWrapperStyles . $site_header_color;?><?php echo $animation;?>>
   <?php if($header_type === 'slider'){ echo do_shortcode($slider_shortcode); } else {

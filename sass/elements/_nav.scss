@@ -9,17 +9,17 @@
 
 // Menu Button
 
-  $button-width: 40px;                    
-  $button-height: 40px;                  
-  $bar-thickness: 4px;                    
+  $button-width: 35px;                    
+  $button-height: 35px;                  
+  $bar-thickness: 3px;                    
   $button-pad: 0px;                      
-  $button-bar-space: 14px;                
+  $button-bar-space: 7px;                
   $button-transistion-duration: 0.3s;     
   $button-color: #FFF;
 
   .menu-button-area{
     position: absolute;
-    right: 20px;
+    right: 30px;
     top: 50%;
     z-index: 1000;
     cursor: pointer;
@@ -149,21 +149,16 @@
 // Desktop Menus
 
   // Side Slide Out Menu
-    #side-menu{
+    .side-menu{
       position: fixed;
       z-index: 50;
       top: 0;
-      width: 100%;
-      height: 100%;
-      padding: 30px;
+      width: 100vw;
+      height: 100vh;
       @include display-flex;
-      @include flex-direction(column);
-      @include align-items(stretch);
-      @include justify-content(space-around);
       @include transition (all ease-in-out 0.3s);
       @include breakpoint($md){
         width: 300px;
-        padding: 40px;
       }
       @include breakpoint($mdl){
         &.left-menu, &.left-menu.hidden-menu.active, &.right-menu, &.right-menu.hidden-menu.active{
@@ -190,16 +185,34 @@
           @include transform(translateX(0));
         }
       }
-      > div{
-        @include flex(0 1 auto);
-      }
       .menu{
         list-style-type: none;
         margin: 0;
         padding: 0;
       }
-      .site-logo a{
-        min-height:  100px;
+      .site-logo {
+        @include flex(0 1 auto);
+        a{
+          min-height:  100px;
+        }
+      }
+    }
+
+    .side-menu-inner{
+      @include flex(1 1 auto);
+      @include display-flex;
+      @include flex-direction(column);
+      @include align-items(stretch);
+      padding: 30px;
+      @include breakpoint($md){
+        padding: 40px;
+      }
+      .menu-container{
+        @include flex(1 1 auto);
+        @include display-flex;
+        @include flex-direction(column);
+        @include justify-content(center);
+        @include align-items(stretch);
       }
     }
 
