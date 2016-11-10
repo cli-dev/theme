@@ -158,31 +158,41 @@
       @include display-flex;
       @include transition (all ease-in-out 0.3s);
       @include breakpoint($md){
-        width: 300px;
+        width: 30vw;
       }
-      @include breakpoint($mdl){
-        &.left-menu, &.left-menu.hidden-menu.active, &.right-menu, &.right-menu.hidden-menu.active{
-          @include transform(translateX(0));
-        }
-        &.left-menu.hidden-menu{
-          @include transform(translateX(-100%));
-        }
-        &.right-menu.hidden-menu{
-          @include transform(translateX(100%));
-        }
+      @include breakpoint($xxlrg){
+        width: 400px;
       }
       &.left-menu{
         left: 0;
         @include transform(translateX(-100%));
+        @include breakpoint($mdl){
+          @include transform(translateX(0));
+        }
         &.active{
           @include transform(translateX(0));
+        }
+        &.hidden-menu{
+          @include transform(translateX(-100%));
+          &.active{
+            @include transform(translateX(0));
+          }
         }
       }
       &.right-menu{
         right: 0;
         @include transform(translateX(100%));
+        @include breakpoint($mdl){
+          @include transform(translateX(0));
+        }
         &.active{
           @include transform(translateX(0));
+        }
+        &.hidden-menu{
+          @include transform(translateX(100%));
+          &.active{
+            @include transform(translateX(0));
+          }
         }
       }
       .menu{
