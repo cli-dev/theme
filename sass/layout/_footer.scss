@@ -38,13 +38,20 @@
       @include flex(0 1 auto);
     }
   }
+  &:first-child{
+    @include breakpoint($mdl){
+      padding-left: 0;
+    }
+  }
+  &:last-child{
+    @include breakpoint($mdl){
+      padding-right: 0;
+    }
+  }
   .widget_sp_image a{
     display: block;
-    max-width: 350px;
-    margin: 0 auto;
     img{
       display: block;
-      margin: 0 auto;
       max-width: none !important;  
     }
   }
