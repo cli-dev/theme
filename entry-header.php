@@ -42,7 +42,7 @@ else{
 
 ?>
 
-<header class="post-image-window post-header<?php echo $overlapping_header; ?>" <?php echo $headerStyles;?>><?php 
+<header class="post-header<?php echo $overlapping_header; ?>" <?php echo $headerStyles;?>><?php 
   $title = get_the_title();
   $attr = array('class' => "post-img-inner", 'alt' => $title,);
   the_post_thumbnail( 'thumbnail', $attr );

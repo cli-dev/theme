@@ -1,7 +1,7 @@
 <?php get_header(); 
 $page_for_posts = get_option( 'page_for_posts' ); 
 ?>
-<section id="content" role="main">
+<section id="content" role="main" class="blog-page">
   <?php get_template_part('templates/page', 'header') ; ?>
   <section class="entry-content">
     <?php if( have_rows('row', $page_for_posts) ): while( have_rows('row', $page_for_posts) ): the_row(); ?>

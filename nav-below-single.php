@@ -1,4 +1,4 @@
-<nav id="nav-below" class="navigation" role="navigation">
+<nav class="single-post-nav" role="navigation">
 <?php
 $prev_post = get_previous_post();
 $prevsection = get_field( 'post_section', $prev_post->ID );

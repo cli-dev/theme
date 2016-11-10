@@ -1,5 +1,5 @@
 <footer class="post-footer">
-  <div class="entry-footer-inner">
+  <div class="post-footer-inner">
     <div class="social-share-wrap">
       <h4>Share:</h4>
       <?php echo displaySocialShare(); ?>

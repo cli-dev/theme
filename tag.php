@@ -1,12 +1,20 @@
-<?php get_header(); ?>
-<section id="content" role="main">
-<header class="header">
-<h1 class="entry-title"><?php _e( 'Tag Archives: ', 'cdm_theme' ); ?><?php single_tag_title(); ?></h1>
-</header>
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<?php get_template_part( 'entry' ); ?>
-<?php endwhile; endif; ?>
-<?php get_template_part( 'nav', 'below' ); ?>
+<?php get_header(); 
+$page_for_posts = get_option( 'page_for_posts' ); 
+?>
+<section id="content" role="main" class="blog-page">
+  <?php get_template_part('templates/page', 'header') ; ?>
+  <section class="entry-content">
+    <?php if( have_rows('row', $page_for_posts) ): while( have_rows('row', $page_for_posts) ): the_row(); ?>
+      <?php get_template_part('templates/pagebuilder', 'row') ; ?>
+    <?php endwhile; endif; ?>
+  </section>
+  <section class="entry-content news-feed">
+    <div class="news-feed-inner">
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <?php get_template_part( 'templates/post-layouts/post-layout', '1' ); ?>
+      <?php endwhile; endif; ?>
+    </div>
+    <?php get_template_part( 'nav', 'below' ); ?>
+  </section>
 </section>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

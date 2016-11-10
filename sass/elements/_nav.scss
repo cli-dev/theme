@@ -11,9 +11,9 @@
 
   $button-width: 40px;                    
   $button-height: 40px;                  
-  $bar-thickness: 2px;                    
+  $bar-thickness: 4px;                    
   $button-pad: 0px;                      
-  $button-bar-space: 8px;                
+  $button-bar-space: 14px;                
   $button-transistion-duration: 0.3s;     
   $button-color: #FFF;
 
@@ -24,6 +24,9 @@
     z-index: 1000;
     cursor: pointer;
     @include transform(translateY(-50%)); 
+    @include breakpoint($md){
+      right: 40px;
+    }
     @include breakpoint($mdl){
       @include display-flex;
       @include align-items(center);
