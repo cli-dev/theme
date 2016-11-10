@@ -15,10 +15,12 @@ $thumb_url = $thumb_url_array[0];
       </div>
     <?php endif; ?>
     <div class="post-block-inner">
-      <div class="post-meta"><?php the_time( get_option( 'date_format' ) ); ?></div>
+      <?php get_template_part( 'entry-meta' ); ?>
       <div class="post-block-content">
         <h3 class="post-block-title"><?php the_title(); ?></h3>
-        <?php the_excerpt(); ?>
+        <div class="post-excerpt">
+          <?php the_excerpt(); ?>
+        </div>
       </div>
     </div>
   </a>

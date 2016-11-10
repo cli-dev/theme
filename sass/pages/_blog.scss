@@ -54,18 +54,20 @@
   }
 
   .post-meta{
-    padding-bottom: 20px;
-    @include display-flex;
-    @include breakpoint($md){
-      padding-bottom: 40px;
-    }
-    .post-categories{
-      border-right-style: solid;
-      border-right-width: 1px;
-      padding-right: 10px;
-    }
-    .post-date{
-      padding-left: 10px;
+    .single-post &{
+      padding-bottom: 30px;
+      @include display-flex;
+      @include breakpoint($md){
+        padding-bottom: 40px;
+      }
+      .post-categories{
+        border-right-style: solid;
+        border-right-width: 1px;
+        padding-right: 10px;
+      }
+      .post-date{
+        padding-left: 10px;
+      }
     }
   }
 
