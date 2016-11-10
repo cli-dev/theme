@@ -15,13 +15,15 @@ $sticky_height = ($sticky_header_height) ? ' style="height: ' . $sticky_header_h
 if ($sticky_header == "1") {?>
 <div class="<?php echo $sticky; ?>">
   <nav class="sticky-nav-inner"<?php echo $sticky_height; ?>>
-    <?php wp_nav_menu( array( 'theme_location' => 'divided-left-menu', 'container_class' => 'left-side-menu divided-menu', 'link_before' => '<span class="link-text">', 'link_after' => '</span>') ); ?>
-    <div class="site-logo"<?php echo $logo_max; ?>> 
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'theme' ); ?>" rel="home" style="background: url('<?php $sticky_logo ?>') center no-repeat; background-size: contain;">
-        <img src="<?php if ($logoimg) { echo $logoimg; }; ?>" alt="<?php esc_attr_e( get_bloginfo( 'name' ), 'theme' ); ?> Logo" class="site-main-logo"/>
-      </a>
-    </div>
-    <?php wp_nav_menu( array( 'theme_location' => 'divided-right-menu', 'container_class' => 'right-side-menu divided-menu', 'link_before' => '<span class="link-text">', 'link_after' => '</span>') ); ?>
+    <div class="desktop-menu-inner divided-menu-wrapper">
+      <?php wp_nav_menu( array( 'theme_location' => 'divided-left-menu', 'container_class' => 'left-side-menu divided-menu', 'link_before' => '<span class="link-text">', 'link_after' => '</span>') ); ?>
+      <div class="site-logo"<?php echo $logo_max; ?>> 
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'theme' ); ?>" rel="home" style="background: url('<?php echo $sticky_logo; ?>') center no-repeat; background-size: contain;">
+          <img src="<?php if ($logoimg) { echo $logoimg; }; ?>" alt="<?php esc_attr_e( get_bloginfo( 'name' ), 'theme' ); ?> Logo" class="site-main-logo"/>
+        </a>
+      </div>
+      <?php wp_nav_menu( array( 'theme_location' => 'divided-right-menu', 'container_class' => 'right-side-menu divided-menu', 'link_before' => '<span class="link-text">', 'link_after' => '</span>') ); ?>
+      </div>
   </nav>
 </div>
 <script type="text/javascript">
@@ -31,9 +33,11 @@ if ($sticky_header == "1") {?>
 </script>
 <?php } ?>
 <nav class="desktop-menu">
-  <?php wp_nav_menu( array( 'theme_location' => 'divided-left-menu', 'container_class' => 'left-side-menu divided-menu', 'link_before' => '<span class="link-text">', 'link_after' => '</span>') ); ?>
-  <?php echo home_logo_link(); ?>
-  <?php wp_nav_menu( array( 'theme_location' => 'divided-right-menu', 'container_class' => 'right-side-menu divided-menu', 'link_before' => '<span class="link-text">', 'link_after' => '</span>') ); ?>
+  <div class="desktop-menu-inner divided-menu-wrapper">
+    <?php wp_nav_menu( array( 'theme_location' => 'divided-left-menu', 'container_class' => 'left-side-menu divided-menu', 'link_before' => '<span class="link-text">', 'link_after' => '</span>') ); ?>
+    <?php echo home_logo_link(); ?>
+    <?php wp_nav_menu( array( 'theme_location' => 'divided-right-menu', 'container_class' => 'right-side-menu divided-menu', 'link_before' => '<span class="link-text">', 'link_after' => '</span>') ); ?>
+  </div>
 </nav>
 <script type="text/javascript">
   jQuery(document).ready(function($) {

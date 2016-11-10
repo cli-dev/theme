@@ -1,197 +1,386 @@
-$button-width: 35px;                    // The width of the button area
-$button-height: 35px;                   // The height of the button area
-$bar-thickness: 3px;                    // The thickness of the button bars
-$button-pad: 0px;                      // The left/right padding between button area and bars.
-$button-bar-space: 7px;                // The spacing between button bars
-$button-transistion-duration: 0.3s;     // The transition duration
-$button-color: #FFF;
-
-.menu-button {
-  display: block;
-  position: relative;
-  overflow: hidden;
+.site-header,
+.sticky-header {
+  ul.menu{
   margin: 0;
   padding: 0;
-  width: $button-width;
-  height: $button-height;
-  font-size: 0;
-  text-indent: -9999px;
-  appearance: none;
-  box-shadow: none;
-  border-radius: none;
-  border: none;
-  cursor: pointer;
-  background-color: transparent;
-  @include transition(background $button-transistion-duration);
-}
-
-.menu-button:focus {
-  outline: none;
-}
-
-.menu-button span {
-  display: block;
-  position: absolute;
-  top: ($button-height / 2) - ($bar-thickness / 2);
-  left: $button-pad;
-  right: $button-pad;
-  height: $bar-thickness;
-  background: $button-color;
-  @include box-shadow(rgba(0, 0, 0, 0) 0px 0px 5px);
-}
-
-.menu-button span::before,
-.menu-button span::after {
-  position: absolute;
-  display: block;
-  left: 0;
-  width: 100%;
-  height: $bar-thickness;
-  background-color: $button-color;
-  content: "";
-  @include box-shadow(rgba(0, 0, 0, 0) 0px 0px 5px);
-}
-
-.menu-button span::before {
-  top: -$bar-thickness - $button-bar-space;
-}
-
-.menu-button span::after {
-  bottom: -$bar-thickness - $button-bar-space;
-}
-
-.menu-button span {
-  @include transition(background 0s $button-transistion-duration);
-}
-
-.menu-button.active span {
-  background: none;
-  @include box-shadow(rgba(0, 0, 0, 0) 0px 0px 5px);
-}
-
-.menu-button span::before,
-.menu-button span::after {
-  @include transition-duration($button-transistion-duration, $button-transistion-duration);
-  @include transition-delay($button-transistion-duration, 0s);
-}
-
-.menu-button span::before {
-  @include transition-property(top, transform);
-}
-
-.menu-button span::after {
-  @include transition-property(bottom, transform);
-}
-
-.menu-button.active span::before {
-  top: 0;
-  @include transform(rotate(45deg));
-}
-
-.menu-button.active span::after {
-  bottom: 0;
-  @include transform(rotate(-45deg));
-}
-
-.menu-button.active span::before,
-.menu-button.active span::after {
-  @include transition-delay(0s, $button-transistion-duration);
-  @include box-shadow(rgba(0, 0, 0, 0) 0px 0px 5px);
-}
-
-.menu-button-txt{
-  color: $button-color;
-  text-transform: uppercase;
-  font-size: 12px;
-  text-align: center;
-  @include breakpoint($mdl){
-    font-size: 16px;  
-  }
-}
-
-.header-inner ul.menu,
-.sticky-header.headhesive ul.menu{
-  padding: 20px;
-  margin: 0;
   list-style: none;
-  @include flex(1 1 auto); 
-  @include breakpoint($mdl){
+  }
+}
+
+// Menu Button
+
+  $button-width: 40px;                    
+  $button-height: 40px;                  
+  $bar-thickness: 2px;                    
+  $button-pad: 0px;                      
+  $button-bar-space: 8px;                
+  $button-transistion-duration: 0.3s;     
+  $button-color: #FFF;
+
+  .menu-button-area{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    z-index: 1000;
+    cursor: pointer;
+    @include transform(translateY(-50%)); 
+    @include breakpoint($mdl){
+      @include display-flex;
+      @include align-items(center);
+      @include justify-content(center);  
+      @include flex-wrap(nowrap);
+      .menu-button, .menu-button-txt{
+        @include flex(0 1 auto); 
+      }
+      .menu-button-txt{
+        padding-left: 10px; 
+      }
+      &.hide_button{
+        display: none;
+      }
+    }
+    @include breakpoint($mdl){
+      right: 0;
+    } 
+  }
+
+  .menu-button {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
     padding: 0;
-    @include transition(all ease-in-out 0.5s);
+    width: $button-width;
+    height: $button-height;
+    font-size: 0;
+    text-indent: -9999px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    @include transition(background $button-transistion-duration);
+    &:focus {
+      outline: none;
+    }
+    &.active{
+      span{
+        background: none;
+        @include box-shadow(rgba(0, 0, 0, 0) 0px 0px 5px);
+        &:before {
+          top: 0;
+          @include transform(rotate(45deg));
+          @include transition-delay(0s, $button-transistion-duration);
+          @include box-shadow(rgba(0, 0, 0, 0) 0px 0px 5px);
+        }
+        &:after {
+          bottom: 0;
+          @include transform(rotate(-45deg));
+          @include transition-delay(0s, $button-transistion-duration);
+          @include box-shadow(rgba(0, 0, 0, 0) 0px 0px 5px);
+        }
+      }
+    }
+    span {
+      display: block;
+      position: absolute;
+      top: ($button-height / 2) - ($bar-thickness / 2);
+      left: $button-pad;
+      right: $button-pad;
+      height: $bar-thickness;
+      background: $button-color;
+      @include box-shadow(rgba(0, 0, 0, 0) 0px 0px 5px);
+      @include transition(background 0s $button-transistion-duration);
+      &:before,
+      &:after{
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: $bar-thickness;
+        background-color: $button-color;
+        content: "";
+        @include box-shadow(rgba(0, 0, 0, 0) 0px 0px 5px);
+        @include transition-duration($button-transistion-duration, $button-transistion-duration);
+        @include transition-delay($button-transistion-duration, 0s);
+      }
+      &:before{
+        top: -$bar-thickness - $button-bar-space;
+        @include transition-property(top, transform);
+      }
+      &:after {
+        bottom: -$bar-thickness - $button-bar-space;
+        @include transition-property(bottom, transform);
+      }
+    }
+  }
+
+// Mobile Menu
+
+  .menu-mobile-container{
+    display: none;
+    position: absolute; 
+    top: 100%;
+    width: 100%;
+    z-index: 999;
+    left: 50%;
+    @include transform(translateX(-50%));
+    padding: 30px;
+    @include breakpoint($md){
+      width: 80%;
+      padding: 40px;
+    }
+  }
+
+  nav.mobile-nav{
+    width: 100%;
     @include display-flex;
-    @include justify-content(flex-end);
-    @include flex-wrap(nowrap);
-    @include align-items(stretch);
-    .menu-center &{
-      @include justify-content(center);
+    @include justify-content(center);
+    position: relative; 
+    @include breakpoint($mdl){
+      display: none;
     }
   }
-  li{
-    padding: 0;
-    @include breakpoint($mdl){
-      @include flex(0 1 auto); 
-      padding: 0 15px;
+
+// Desktop Menus
+
+  // Side Slide Out Menu
+    #side-menu{
+      position: fixed;
+      z-index: 50;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      padding: 30px;
       @include display-flex;
-      @include align-items(stretch);
       @include flex-direction(column);
-    }
-  }
-  > li:last-child{
-    padding-right: 0;
-  }
-  a{
-    display: inline-block;
-    @include breakpoint($mdl){
-      @include flex(1 1 auto); 
-      @include display-flex;
-      @include justify-content(center);
       @include align-items(stretch);
-      @include flex-direction(column);
-      .link-text{
+      @include justify-content(space-around);
+      @include transition (all ease-in-out 0.3s);
+      @include breakpoint($md){
+        width: 300px;
+        padding: 40px;
+      }
+      @include breakpoint($mdl){
+        &.left-menu, &.left-menu.hidden-menu.active, &.right-menu, &.right-menu.hidden-menu.active{
+          @include transform(translateX(0));
+        }
+        &.left-menu.hidden-menu{
+          @include transform(translateX(-100%));
+        }
+        &.right-menu.hidden-menu{
+          @include transform(translateX(100%));
+        }
+      }
+      &.left-menu{
+        left: 0;
+        @include transform(translateX(-100%));
+        &.active{
+          @include transform(translateX(0));
+        }
+      }
+      &.right-menu{
+        right: 0;
+        @include transform(translateX(100%));
+        &.active{
+          @include transform(translateX(0));
+        }
+      }
+      > div{
         @include flex(0 1 auto);
       }
+      .menu{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      .site-logo a{
+        min-height:  100px;
+      }
     }
-  }
-  ul{
-    margin: 0;
-    list-style: none;
-  }
-}
 
-.header-inner .menu-container > .menu > li.menu-item-has-children,
-.sticky-header.headhesive .menu-container > .menu > li.menu-item-has-children{
-  @include breakpoint($mdl){
-    >.sub-menu{
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: 100;
-      width: auto;
-      margin: 0 !important;
-      a{
-        white-space: nowrap;
+  // Top Menu
+
+    // Right/Default Menu
+
+      .desktop-menu,
+      .sticky-nav-inner{
+        display: none;
+        @include breakpoint($mdl){
+          @include transition(all ease-in-out 0.5s);
+          @include display-flex;
+          @include justify-content(center);
+        }
+        .desktop-menu-inner{
+          width: 80%;
+          max-width: $grid-width;
+          position: relative;
+          @include display-flex;
+          @include justify-content(space-between);
+          @include flex-wrap(nowrap);
+          @include align-items(stretch);
+        }
+        .menu-container{
+          @include breakpoint($mdl){
+            @include flex(0 1 auto);
+            @include display-flex;
+            @include flex-direction(column);
+            @include align-items(stretch);
+            &.hidden-menu{
+              margin-right: $button-width;
+              overflow-x: hidden;
+              .menu{
+                @include transform(translateX(100%));
+              }
+              &.active .menu{
+                @include transform(translateX(0));
+              }
+            }
+          }
+          .menu{
+            @include flex(1 1 auto);
+            @include display-flex;
+            @include align-items(stretch);
+          }
+          li{
+            padding: 0;
+            @include breakpoint($mdl){
+              padding: 0 15px;
+              @include flex(0 1 auto); 
+              @include display-flex;
+              @include align-items(stretch);
+              @include flex-direction(column);
+            }
+            > &:last-child{
+              padding-right: 0;
+            }
+          }
+          a{
+            display: inline-block;
+            @include breakpoint($mdl){
+              @include flex(1 1 auto); 
+              @include display-flex;
+              @include justify-content(center);
+              @include align-items(stretch);
+              @include flex-direction(column);
+              .link-text{
+                @include flex(0 1 auto);
+              }
+            }
+          }
+        }
+      }
+
+      // Sticky Nav Styles
+
+        .sticky-header.headhesive {
+          position: fixed;
+          z-index: 99;
+          top: 0;
+          left: 0;
+          width: 100%;
+          @include transition(all ease-in-out 0.5s);
+          @include transform(translateY(-100%));
+          &.headhesive--stick{
+            @include transform(translateY(0)); 
+          }
+        }
+
+    // Center Menus
+
+      .desktop-menu-inner.divided-menu-wrapper{
+        @include justify-content(center);
+      }
+
+      .divided-menu{
+        min-width: 33.333%;
+        @include flex(0 1 auto);
+        @include display-flex;
+        &.left-side-menu{
+          > .menu{
+            @include justify-content(flex-end);
+            > li:last-child{
+              padding-right: 0;
+            }
+          }
+        }
+        &.right-side-menu{
+          > .menu{
+            @include justify-content(flex-start);
+            > li:first-child{
+              padding-left: 0;
+            }
+          }
+        }
+        > .menu{
+          @include flex(1 1 auto);
+          @include display-flex;
+          @include align-items(stretch);
+          > li{
+            padding: 0 15px;
+            @include flex(0 1 auto); 
+            @include display-flex;
+            @include align-items(stretch);
+            @include flex-direction(column);
+            > a{
+              @include flex(1 1 auto); 
+              @include display-flex;
+              @include justify-content(center);
+              @include align-items(stretch);
+              @include flex-direction(column);
+              .link-text{
+                @include flex(0 1 auto);
+              }
+            }
+          }
+        }
+      }
+      .desktop-menu.menu-center {
+        height: auto;
+        .desktop-menu-inner{
+          @include breakpoint($mdl){
+            @include flex-direction(column);
+            @include align-items(center);
+          }
+        }
+      }
+
+// Submenu styles
+
+  .sub-menu{
+    display: none;
+    padding-bottom: 0;
+    margin-left: 20px;
+  }
+
+  .site-header .menu-container > .menu > li.menu-item-has-children,
+  .sticky-header.headhesive .menu-container > .menu > li.menu-item-has-children{
+    @include breakpoint($mdl){
+      >.sub-menu{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 100;
+        width: auto;
+        margin: 0 !important;
+        a{
+          white-space: nowrap;
+        }
       }
     }
   }
-}
 
-.sub-menu{
-  list-style: none;
-  display: none;
-  padding-bottom: 0;
-  margin-left: 20px !important;
-}
-
-li.menu-item-has-children{
-  position: relative;
-  > a{
-    padding-right: 10px;
+  li.menu-item-has-children{
+    position: relative;
+    > a{
+      padding-right: 10px;
+    }
+    .sub-menu-icon{
+      @include transition(ease-in-out all 0.3s);
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+    }
   }
-  .sub-menu-icon{
-    @include transition(ease-in-out all 0.3s);
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: block;
-  }
-}

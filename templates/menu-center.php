@@ -33,12 +33,14 @@ if ($sticky_header == "1") {?>
   });
 </script>
 <?php } ?>
-<?php echo home_logo_link(); ?>
 <nav class="desktop-menu menu-center">
-  <div class="menu-button-area<?php echo $hide_button; ?>">
-    <button class="menu-button">
-      <span>toggle menu</span>
-    </button>
+  <div class="desktop-menu-inner">
+    <?php echo home_logo_link(); ?>
+    <div class="menu-button-area<?php echo $hide_button; ?>">
+      <button class="menu-button">
+        <span>toggle menu</span>
+      </button>
+    </div>
+    <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container_class' => $hide_menu, 'link_before' => '<span class="link-text">', 'link_after' => '</span>') ); ?>
   </div>
-  <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container_class' => $hide_menu, 'link_before' => '<span class="link-text">', 'link_after' => '</span>') ); ?>
 </nav>

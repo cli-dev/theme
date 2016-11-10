@@ -66,32 +66,71 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: ['js/**'],
-        tasks: ['jshint', 'concat:jsheader', 'concat:jsfooter', 'sync:js']
+        tasks: ['concat:jsheader', 'concat:jsfooter', 'ftp_push:js']
       },
       css: {
         files: ['sass/**'],
-        tasks: ['compass:prod', 'compass:admin', 'concat:css', 'sync:css'],
+        tasks: ['compass:prod', 'compass:admin', 'concat:css', 'ftp_push:css'],
       },
       admin: {
         files: ['admin/**'],
-        tasks: ['compass:admin', 'sync:admin'],
+        tasks: ['compass:admin', 'ftp_push:admincss'],
       }
     },
-    sync: {
+    ftp_push: {
       css: {
+        options: {
+          host: "70.167.194.234",
+          dest: "Web/clithemewp/wp-content/themes/theme",
+          port: 21,
+          username: "CLi_server_FTP",
+          password: "1s3JB^L*zNSl0$y$4soYHEJdm",
+        },
         files: [
-          {expand: true, src: ['css/**'], dest: 'W:/clithemewp/wp-content/themes/theme/'},
-        ],
+          {
+            expand: true,
+            cwd: '.',
+            src: [
+              'css/production/**',
+            ]
+          }
+        ]
       },
       js: {
+        options: {
+          host: "70.167.194.234",
+          dest: "Web/clithemewp/wp-content/themes/theme",
+          port: 21,
+          username: "CLi_server_FTP",
+          password: "1s3JB^L*zNSl0$y$4soYHEJdm",
+        },
         files: [
-          {expand: true, src: ['js/**'], dest: 'W:/clithemewp/wp-content/themes/theme/'},
-        ],
+          {
+            expand: true,
+            cwd: '.',
+            src: [
+              'js/*',
+            ]
+          }
+        ]
       },
-      admin: {
+      admincss: {
+        options: {
+          host: "70.167.194.234",
+          dest: "Web/clithemewp/wp-content/themes/theme",
+          port: 21,
+          username: "CLi_server_FTP",
+          password: "1s3JB^L*zNSl0$y$4soYHEJdm",
+        },
         files: [
-          {expand: true, src: ['admin/**'], dest: 'W:/clithemewp/wp-content/themes/theme/'},
-        ],
+          {
+            expand: true,
+            cwd: '.',
+            src: [
+              'admin/css/**',
+            ]
+          }
+        ]
       }
     },
   });
@@ -105,6 +144,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-ftp-push');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-sync');
 };

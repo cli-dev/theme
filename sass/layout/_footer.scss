@@ -1,8 +1,7 @@
 .footer-inner{
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   @include breakpoint($md){
-    padding: 20px;
     margin: 0 auto;
     max-width: $grid-width;
     @include display-flex;
@@ -13,24 +12,23 @@
   @include breakpoint($mdl){
     @include flex-wrap(nowrap);
     width: 80%;
+    padding: 20px 0;
   }
 }
 
 #bottom-footer{
-  padding: 0 20px;
+  padding: 0 10px;
+  @include breakpoint($md){
+    padding: 0 40px;
+  }
   @include breakpoint($mdl){
     padding: 0;
   }
 }
 
-#bottom-footer .footer-inner{
-  padding: 20px;
-}
-
 .footer-column{
-  padding: 10px;
+  padding: 20px;
   @include breakpoint($md){
-    padding: 20px;
     @include flex(0 1 auto);
     @include display-flex;
     @include flex-direction(column);
