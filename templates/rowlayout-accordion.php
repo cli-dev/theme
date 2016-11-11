@@ -74,6 +74,7 @@ $active_tab_bg_color = get_sub_field('active_tab_background_color', $item_id);
       $('.accordion-content').hide();
       $('.accordion-tab.default-open-tab').addClass('active-tab');
       $('.accordion-tab.default-open-tab .accordion-content').show();
+      $('.accordion-tab.default-open-tab .fa').removeClass('<?php echo $open_icon; ?>').addClass('<?php echo $close_icon; ?>');
 
       $(element).click(function() {
         if($(this).children('.accordion-content').css('display') === 'none'){
