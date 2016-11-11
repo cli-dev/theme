@@ -1,6 +1,6 @@
 // Single Posts
 
-  .entry-content{
+  .single-post .entry-content{
     @include breakpoint($mdl){
       @include display-flex;
       @include flex-direction(column);
