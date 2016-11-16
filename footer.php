@@ -45,6 +45,7 @@
 <?php endif; ?>
 </div>
 </div>
+<?php echo schemaInfo(); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

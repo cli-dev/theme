@@ -304,6 +304,8 @@
           a{
             @include breakpoint($mdl){
               @include flex(1 1 auto); 
+              @include display-flex;
+              @include align-items(center);
             }
           }
         }

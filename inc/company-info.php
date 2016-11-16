@@ -1,741 +1,197 @@
-<?php if( function_exists('acf_add_local_field_group') ):
+<?php 
 
-acf_add_local_field_group(array (
-	'key' => 'group_55d5fec1360ee',
-	'title' => 'Company Info',
-	'fields' => array (
-		array (
-			'key' => 'field_56fb0575bd9a7',
-			'label' => 'Country',
-			'name' => 'country',
-			'type' => 'select',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'choices' => array (
-				'US' => 'United States of America',
-				'CA' => 'Canada',
-				'AU' => 'Australia',
-				'UK' => 'United Kingdom',
-			),
-			'default_value' => array (
-			),
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
-			'ajax' => 0,
-			'placeholder' => '',
-			'disabled' => 0,
-			'readonly' => 0,
-			'return_format' => 'value',
-		),
-		array (
-			'key' => 'field_55d5fec08f163',
-			'label' => 'Address Line 1',
-			'name' => 'address_line_1',
-			'type' => 'text',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => 'field_type-text field_key-field_55d5fec08f163',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-			'readonly' => 0,
-			'disabled' => 0,
-		),
-		array (
-			'key' => 'field_55d5fef88f165',
-			'label' => 'City',
-			'name' => 'city',
-			'type' => 'text',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => 20,
-				'class' => 'field_type-text field_key-field_55d5fef88f165',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-			'readonly' => 0,
-			'disabled' => 0,
-		),
-		array (
-			'key' => 'field_55d5ff188f166',
-			'label' => 'State',
-			'name' => 'us_state',
-			'type' => 'select',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => array (
-				array (
-					array (
-						'field' => 'field_56fb0575bd9a7',
-						'operator' => '==',
-						'value' => 'US',
-					),
-				),
-			),
-			'wrapper' => array (
-				'width' => '25',
-				'class' => 'field_type-select field_key-field_55d5ff188f166',
-				'id' => '',
-			),
-			'choices' => array (
-				'AL' => 'Alabama',
-				'AK' => 'Alaska',
-				'AS' => 'American Samoa',
-				'AZ' => 'Arizona',
-				'AR' => 'Arkansas',
-				'CA' => 'California',
-				'CO' => 'Colorado',
-				'CT' => 'Connecticut',
-				'DE' => 'Delaware',
-				'DC' => 'District of Columbia',
-				'FL' => 'Florida',
-				'GA' => 'Georgia',
-				'HI' => 'Hawaii',
-				'ID' => 'Idaho',
-				'IL' => 'Illinois',
-				'IN' => 'Indiana',
-				'IA' => 'Iowa',
-				'KS' => 'Kansas',
-				'KY' => 'Kentucky',
-				'LA' => 'Louisiana',
-				'ME' => 'Maine',
-				'MD' => 'Maryland',
-				'MA' => 'Massachusetts',
-				'MI' => 'Michigan',
-				'MN' => 'Minnesota',
-				'MS' => 'Mississippi',
-				'MO' => 'Missouri',
-				'MT' => 'Montana',
-				'NE' => 'Nebraska',
-				'NV' => 'Nevada',
-				'NH' => 'New Hampshire',
-				'NJ' => 'New Jersey',
-				'NM' => 'New Mexico',
-				'NY' => 'New York',
-				'NC' => 'North Carolina',
-				'ND' => 'North Dakota',
-				'OH' => 'Ohio',
-				'OK' => 'Oklahoma',
-				'OR' => 'Oregon',
-				'PA' => 'Pennsylvania',
-				'RI' => 'Rhode Island',
-				'SC' => 'South Carolina',
-				'SD' => 'South Dakota',
-				'TN' => 'Tennessee',
-				'TX' => 'Texas',
-				'UT' => 'Utah',
-				'VT' => 'Vermont',
-				'VA' => 'Virginia',
-				'WA' => 'Washington',
-				'WV' => 'West Virginia',
-				'WI' => 'Wisconsin',
-				'WY' => 'Wyoming',
-			),
-			'default_value' => array (
-			),
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
-			'ajax' => 0,
-			'return_format' => 'value',
-			'placeholder' => '',
-		),
-		array (
-			'key' => 'field_56fb05d6bd9a8',
-			'label' => 'Province',
-			'name' => 'ca_state',
-			'type' => 'select',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => array (
-				array (
-					array (
-						'field' => 'field_56fb0575bd9a7',
-						'operator' => '==',
-						'value' => 'CA',
-					),
-				),
-			),
-			'wrapper' => array (
-				'width' => 25,
-				'class' => 'field_type-select field_key-field_55d5ff188f166',
-				'id' => '',
-			),
-			'choices' => array (
-				'AB' => 'Alberta',
-				'BC' => 'British Columbia',
-				'MB' => 'Manitoba',
-				'NB' => 'New Brunswick',
-				'NF' => 'Newfoundland',
-				'NT' => 'Northern Territory',
-				'NS' => 'Nova Scotia',
-				'ON' => 'Ontario',
-				'PE' => 'Prince Edward Island',
-				'QC' => 'Quebec',
-				'SK' => 'Saskatchewan',
-				'YT' => 'Yukon',
-			),
-			'default_value' => array (
-			),
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
-			'ajax' => 0,
-			'placeholder' => '',
-			'disabled' => 0,
-			'readonly' => 0,
-			'return_format' => 'value',
-		),
-		array (
-			'key' => 'field_56fb05d8bd9a9',
-			'label' => 'State',
-			'name' => 'au_state',
-			'type' => 'select',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => array (
-				array (
-					array (
-						'field' => 'field_56fb0575bd9a7',
-						'operator' => '==',
-						'value' => 'AU',
-					),
-				),
-			),
-			'wrapper' => array (
-				'width' => 25,
-				'class' => 'field_type-select field_key-field_55d5ff188f166',
-				'id' => '',
-			),
-			'choices' => array (
-				'NSW' => 'New South Wales',
-				'QLD' => 'Queensland',
-				'SA' => 'South Australia',
-				'TAS' => 'Tasmania',
-				'VIC' => 'Victoria',
-				'ACT' => 'Australian Capital Territory',
-				'JBT' => 'Jervis Bay Territory',
-			),
-			'default_value' => array (
-			),
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
-			'ajax' => 0,
-			'placeholder' => '',
-			'disabled' => 0,
-			'readonly' => 0,
-			'return_format' => 'value',
-		),
-		array (
-			'key' => 'field_57aa0e2fafc17',
-			'label' => 'Postcode Area',
-			'name' => 'postcode_area',
-			'type' => 'select',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => array (
-				array (
-					array (
-						'field' => 'field_56fb0575bd9a7',
-						'operator' => '==',
-						'value' => 'UK',
-					),
-				),
-			),
-			'wrapper' => array (
-				'width' => 25,
-				'class' => 'field_type-select field_key-field_55d5ff188f166',
-				'id' => '',
-			),
-			'choices' => array (
-				'Aberdeen' => 'Aberdeen',
-				'St Albans' => 'St Albans',
-				'Birmingham' => 'Birmingham',
-				'Bath' => 'Bath',
-				'Blackburn' => 'Blackburn',
-				'Bradford' => 'Bradford',
-				'Bournemouth' => 'Bournemouth',
-				'Bolton' => 'Bolton',
-				'Brighton' => 'Brighton',
-				'Bromley' => 'Bromley',
-				'Bristol' => 'Bristol',
-				'Belfast' => 'Belfast',
-				'Carlisle' => 'Carlisle',
-				'Cambridge' => 'Cambridge',
-				'Cardiff' => 'Cardiff',
-				'Chester' => 'Chester',
-				'Chelmsford' => 'Chelmsford',
-				'Colchester' => 'Colchester',
-				'Croydon' => 'Croydon',
-				'Canterbury' => 'Canterbury',
-				'Coventry' => 'Coventry',
-				'Crewe' => 'Crewe',
-				'Dartford' => 'Dartford',
-				'Dundee' => 'Dundee',
-				'Derby' => 'Derby',
-				'Dumfries' => 'Dumfries',
-				'Durham' => 'Durham',
-				'Darlington' => 'Darlington',
-				'Doncaster' => 'Doncaster',
-				'Dorchester' => 'Dorchester',
-				'Dudley' => 'Dudley',
-				'East London' => 'East London',
-				'East Central London' => 'East Central London',
-				'Edinburgh' => 'Edinburgh',
-				'Enfield' => 'Enfield',
-				'Exeter' => 'Exeter',
-				'Falkirk' => 'Falkirk',
-				'Blackpool' => 'Blackpool',
-				'Glasgow' => 'Glasgow',
-				'Gloucester' => 'Gloucester',
-				'Guildford' => 'Guildford',
-				'Harrow' => 'Harrow',
-				'Huddersfield' => 'Huddersfield',
-				'Harrogate' => 'Harrogate',
-				'Hemel Hempstead' => 'Hemel Hempstead',
-				'Hereford' => 'Hereford',
-				'Outer Hebrides' => 'Outer Hebrides',
-				'Hull' => 'Hull',
-				'Halifax' => 'Halifax',
-				'Ilford' => 'Ilford',
-				'Ipswich' => 'Ipswich',
-				'Inverness' => 'Inverness',
-				'Kilmarnock' => 'Kilmarnock',
-				'Kingston upon Thames' => 'Kingston upon Thames',
-				'Kirkwall' => 'Kirkwall',
-				'Kirkcaldy' => 'Kirkcaldy',
-				'Liverpool' => 'Liverpool',
-				'Lancaster' => 'Lancaster',
-				'Llandrindod Wells' => 'Llandrindod Wells',
-				'Leicester' => 'Leicester',
-				'Llandudno' => 'Llandudno',
-				'Lincoln' => 'Lincoln',
-				'Leeds' => 'Leeds',
-				'Luton' => 'Luton',
-				'Manchester' => 'Manchester',
-				'Rochester' => 'Rochester',
-				'Milton Keynes' => 'Milton Keynes',
-				'Motherwell' => 'Motherwell',
-				'North London' => 'North London',
-				'Newcastle upon Tyne' => 'Newcastle upon Tyne',
-				'Nottingham' => 'Nottingham',
-				'Northampton' => 'Northampton',
-				'Newport' => 'Newport',
-				'Norwich' => 'Norwich',
-				'North West London' => 'North West London',
-				'Oldham' => 'Oldham',
-				'Oxford' => 'Oxford',
-				'Paisley' => 'Paisley',
-				'Peterborough' => 'Peterborough',
-				'Perth' => 'Perth',
-				'Plymouth' => 'Plymouth',
-				'Portsmouth' => 'Portsmouth',
-				'Preston' => 'Preston',
-				'Reading' => 'Reading',
-				'Redhill' => 'Redhill',
-				'Romford' => 'Romford',
-				'Sheffield' => 'Sheffield',
-				'Swansea' => 'Swansea',
-				'South East London' => 'South East London',
-				'Stevenage' => 'Stevenage',
-				'Stockport' => 'Stockport',
-				'Slough' => 'Slough',
-				'Sutton' => 'Sutton',
-				'Swindon' => 'Swindon',
-				'Southampton' => 'Southampton',
-				'Salisbury' => 'Salisbury',
-				'Sunderland' => 'Sunderland',
-				'Southend-on-Sea' => 'Southend-on-Sea',
-				'Stoke-on-Trent' => 'Stoke-on-Trent',
-				'South West London' => 'South West London',
-				'Shrewsbury' => 'Shrewsbury',
-				'Taunton' => 'Taunton',
-				'Galashiels' => 'Galashiels',
-				'Telford' => 'Telford',
-				'Tunbridge Wells' => 'Tunbridge Wells',
-				'Torquay' => 'Torquay',
-				'Truro' => 'Truro',
-				'Cleveland' => 'Cleveland',
-				'Twickenham' => 'Twickenham',
-				'Southall' => 'Southall',
-				'West London' => 'West London',
-				'Warrington' => 'Warrington',
-				'Western Central London' => 'Western Central London',
-				'Watford' => 'Watford',
-				'Wakefield' => 'Wakefield',
-				'Wigan' => 'Wigan',
-				'Worcester' => 'Worcester',
-				'Walsall' => 'Walsall',
-				'Wolverhampton' => 'Wolverhampton',
-				'York' => 'York',
-				'Lerwick' => 'Lerwick',
-			),
-			'default_value' => array (
-			),
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
-			'ajax' => 0,
-			'placeholder' => '',
-			'disabled' => 0,
-			'readonly' => 0,
-			'return_format' => 'value',
-		),
-		array (
-			'key' => 'field_55d5ffcd8f167',
-			'label' => 'Zip',
-			'name' => 'zip',
-			'type' => 'text',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => 20,
-				'class' => 'field_type-text field_key-field_55d5ffcd8f167',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-			'readonly' => 0,
-			'disabled' => 0,
-		),
-		array (
-			'key' => 'field_55d5ffec8f168',
-			'label' => 'Phone',
-			'name' => 'phone',
-			'type' => 'text',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => 'field_type-text field_key-field_55d5ffec8f168',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-			'readonly' => 0,
-			'disabled' => 0,
-		),
-		array (
-			'key' => 'field_55d600088f169',
-			'label' => 'Email',
-			'name' => 'email',
-			'type' => 'email',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => 'field_type-email field_key-field_55d600088f169',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-		),
-		array (
-			'key' => 'field_572ce07997d2b',
-			'label' => 'FBR Profile Slug',
-			'name' => 'fbr_profile',
-			'type' => 'text',
-			'instructions' => 'Paste only	the company name. Ex: d3solutions out of http://www.fairbusinessreport.org/company/d3solutions/profile',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => 70,
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-			'readonly' => 0,
-			'disabled' => 0,
-		),
-		array (
-			'key' => 'field_572ce23897d2c',
-			'label' => 'Badge Color',
-			'name' => 'badge_color',
-			'type' => 'select',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => 30,
-				'class' => '',
-				'id' => '',
-			),
-			'choices' => array (
-				'gold' => 'Gold',
-				'silver' => 'Silver',
-			),
-			'default_value' => array (
-			),
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
-			'ajax' => 0,
-			'placeholder' => '',
-			'disabled' => 0,
-			'readonly' => 0,
-			'return_format' => 'value',
-		),
-		array (
-			'key' => 'field_55d6007a8f16c',
-			'label' => 'Facebook',
-			'name' => 'facebook',
-			'type' => 'url',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => 'field_type-url field_key-field_55d6007a8f16c',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-		),
-		array (
-			'key' => 'field_55d600958f16d',
-			'label' => 'Twitter',
-			'name' => 'twitter',
-			'type' => 'url',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => 'field_type-url field_key-field_55d600958f16d',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-		),
-		array (
-			'key' => 'field_55d6009d8f16e',
-			'label' => 'Google+',
-			'name' => 'google',
-			'type' => 'url',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => 'field_type-url field_key-field_55d6009d8f16e',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-		),
-		array (
-			'key' => 'field_55d600a98f16f',
-			'label' => 'LinkedIn',
-			'name' => 'linkedin',
-			'type' => 'url',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => 'field_type-url field_key-field_55d600a98f16f',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-		),
-		array (
-			'key' => 'field_55d600b28f170',
-			'label' => 'Tumblr',
-			'name' => 'tumblr',
-			'type' => 'url',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => 'field_type-url field_key-field_55d600b28f170',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-		),
-		array (
-			'key' => 'field_55d600c08f171',
-			'label' => 'Pinterest',
-			'name' => 'pinterest',
-			'type' => 'url',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => 'field_type-url field_key-field_55d600c08f171',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-		),
-		array (
-			'key' => 'field_55d600cc8f172',
-			'label' => 'Flickr',
-			'name' => 'flickr',
-			'type' => 'url',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => 'field_type-url field_key-field_55d600cc8f172',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-		),
-		array (
-			'key' => 'field_55f713cfa857d',
-			'label' => 'Instagram',
-			'name' => 'instagram',
-			'type' => 'url',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-		),
-		array (
-			'key' => 'field_55d600d78f173',
-			'label' => 'Newswire',
-			'name' => 'newswire',
-			'type' => 'url',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => 'field_type-url field_key-field_55d600d78f173',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-		),
-		array (
-			'key' => 'field_564cb1ce59e50',
-			'label' => 'Youtube',
-			'name' => 'youtube',
-			'type' => 'url',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-		),
-		array (
-			'key' => 'field_564cb1e059e51',
-			'label' => 'Vimeo',
-			'name' => 'vimeo',
-			'type' => 'url',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-		),
-		array (
-			'key' => 'field_55e48f3591fa9',
-			'label' => 'Type of icon',
-			'name' => 'type_of_icon',
-			'type' => 'select',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => 'field_type-select field_key-field_55e48f3591fa9',
-				'id' => '',
-			),
-			'choices' => array (
-				'icon1' => 'Icon with no shape',
-				'icon2' => 'Icon in square',
-				'icon3' => 'Icon in circle',
-				'icon4' => 'Icon in rounded square',
-				'icon5' => 'Icon in circle outline',
-			),
-			'default_value' => array (
-			),
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
-			'ajax' => 0,
-			'placeholder' => '',
-			'disabled' => 0,
-			'readonly' => 0,
-			'return_format' => 'value',
-		),
-	),
-	'location' => array (
-		array (
-			array (
-				'param' => 'options_page',
-				'operator' => '==',
-				'value' => 'company-info',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'field',
-	'hide_on_screen' => '',
-	'active' => 1,
-	'description' => '',
-));
+function companyAddress(){
+  $address_rows = get_field('company_address', 'options');
+  if($address_rows){
+    $address = '';
+    foreach($address_rows as $address_row){
+      $address_line_1 = $address_row['address_line_1'];
+      $city = $address_row['city'];
+      $state = $address_row['state'];
+      $post_zip = $address_row['zip'];
+      $full_address = $address_line_1 . ' ' . $city . ' ' . $state . ' ' . $post_zip;
 
-endif; ?>
+      if($address_line_1){
+        $addressCode = '<span class="schema-info address1" itemprop="streetAddress">' . $address_line_1 . '</span>';  
+      }
+      if($city){
+        $cityCode = '<span class="schema-info city" itemprop="addressLocality">' . $city . ', </span>';  
+      }
+      if($state){
+        $stateCode = '<span class="schema-info state" itemprop="addressRegion">' . $state . '</span>';  
+      }
+      if($post_zip){
+        $zipCode = '<span class="schema-info zip" itemprop="postalCode">' . $post_zip . '</span>';  
+      }
+
+      $address .= '<a href="http://maps.google.com/?q=' . urlencode($full_address) . '" target="_blank" class="schema-info address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div class="address-inner"><div class="schema-info address-line-1">' . $addressCode . '</div><div class="schema-info address-line-2">' . $cityCode . $stateCode . ' ' . $zipCode . '</div></div></a>';
+    }
+    return $address;
+  }
+}
+
+function companyPhone(){
+  $phone_rows = get_field('company_phone', 'options');
+  if($phone_rows){
+    $phone = '';
+    foreach($phone_rows as $phone_row){    
+      $phone_txt = $phone_row['phone'];
+      if($phone_txt){
+        $phone .= '<div class="schema-info phone"><a href="tel:' . $phone_txt . '"  itemprop="telephone">' . $phone_txt . '</a></div>';  
+      }
+    }
+    return $phone;
+  }
+}
+
+function companyEmail(){
+  $email = '';
+  $email_rows = get_field('company_email', 'options');
+  if($email_rows){
+    foreach($email_rows as $email_row){
+      $email_txt = $email_row['email'];
+      if($email_txt){
+        $email .= '<div class="schema-info email"><a href="mailto:' . $email_txt  . '" itemprop="email">' . $email_txt . '</a></div>';  
+      }
+    }
+    return $email;
+  }
+}
+
+function displayfullAddress() {
+  return '<div class="company-address" itemscope itemtype="http://schema.org/LocalBusiness">' . companyAddress() . companyPhone() . companyEmail() . '</div>';
+}
+
+function displayAddress() {
+  return '<div class="company-address" itemscope itemtype="http://schema.org/LocalBusiness">' . companyAddress() . '</div>';
+}
+
+function displayContactInfo() {
+  return '<div class="company-address" itemscope itemtype="http://schema.org/LocalBusiness">' . companyPhone() . companyEmail() . '</div>';
+}
+
+function displayPhone() {
+  return '<div class="company-address" itemscope itemtype="http://schema.org/LocalBusiness">' . companyPhone() .'</div>';
+}
+
+function displayEmail() {
+  return '<div class="company-address" itemscope itemtype="http://schema.org/LocalBusiness">' . companyEmail() . '</div>';
+}
+
+function schemaInfo(){
+  $myoptions = get_option( 'themesettings_');
+  $logo = '"logo": "' . $myoptions['logo'] . '", ';
+  if($logo){
+    $company_logo = '"logo": "' . $logo . '", ';
+  }
+  $company_name = '"name": "' . get_bloginfo('name') . '", ';
+  $tagline = get_bloginfo( 'description' );
+  if($tagline){
+    $company_description = '"description": "' . $tagline . '", ';
+  } 
+  $company_url = '"url": "' . esc_url(home_url('/')) . '", ';
+
+  // Address JSON
+    $address_rows = get_field('company_address', 'options');
+    if($address_rows){
+      $address = '';
+      foreach($address_rows as $address_row){
+        $address_line_1 = $address_row['address_line_1'];
+        $city = $address_row['city'];
+        $state = $address_row['state'];
+        $post_zip = $address_row['zip'];
+        $full_address = $address_line_1 . ' ' . $city . ' ' . $state . ' ' . $post_zip;
+        if($address_line_1){
+          $addressCode = '"streetAddress": "' . $address_line_1 . '", ';  
+        }
+        if($city){
+          $cityCode = '"addressLocality": "' . $city . '", ';  
+        }
+        if($state){
+          $stateCode = '"addressRegion": "' . $state . '", ';  
+        }
+        if($post_zip){
+          $zipCode = '"postalCode": "' . $post_zip . '", ';  
+        }
+        $full_address = $addressCode . $cityCode . $stateCode . $zipCode;
+        $jsonAddress = rtrim($full_address, ', ');
+        $address .= '{"@type": "PostalAddress",' . $jsonAddress . '}, ';
+      }
+      $jsonAddresses = rtrim($address, ', ');
+      $company_addresses = '"address": [' . $jsonAddresses . '], ';
+    }
+  
+  // Phone JSON
+    $phone_rows = get_field('company_phone', 'options');
+    if($phone_rows){
+      $phone = '';
+      foreach($phone_rows as $phone_row){    
+        $phone_txt = $phone_row['phone'];
+        if($phone_txt){
+          $phoneCode .= '"' . $phone_txt . '", ';  
+        }
+      }
+      $jsonPhone = rtrim($phoneCode, ', ');
+      $company_phones = '"telephone": [' . $jsonPhone . '], ';
+    }
+
+  // Email JSON
+    $email_rows = get_field('company_email', 'options');
+    if($email_rows){
+      foreach($email_rows as $email_row){
+        $email_txt = $email_row['email'];
+        if($email_txt){
+          $emailCode .= '"mailto:' . $email_txt . '", ';
+        }
+      }
+    }
+    $jsonEmail = rtrim($emailCode, ', ');
+    $company_emails = '"email": [' . $jsonEmail . '], ';
+
+  // Social JSON
+
+    $social_links = '';
+    $facebook = $myoptions['facebook'];
+    $twitter = $myoptions['twitter'];
+    $google = $myoptions['google'];
+    $linkedin = $myoptions['linkedin'];
+    $tumblr = $myoptions['tumblr'];
+    $pinterest = $myoptions['pinterest'];
+    $instagram = $myoptions['instagram'];
+    $youtube = $myoptions['youtube'];
+
+    if($facebook){
+      $social_links .= '"' . $facebook . '", ';
+    }
+    if($twitter){
+      $social_links .= '"' . $twitter . '", ';
+    }
+    if($linkedin){
+      $social_links .= '"' . $linkedin . '", ';
+    }
+    if($tumblr){
+      $social_links .= '"' . $tumblr . '", ';
+    }
+    if($pinterest){
+      $social_links .= '"' . $pinterest . '", ';
+    }
+    if($instagram){
+      $social_links .= '"' . $instagram . '", ';
+    }
+    if($google){
+      $social_links .= '"' . $google . '", ';
+    }
+    if($youtube){
+      $social_links .= '"' . $youtube . '", ';
+    }
+
+    $jsonLinks = rtrim($social_links, ', ');
+    $company_social = '"sameAs" : [' . $jsonLinks . '], ';
+
+  $combineJson = $company_name . $company_logo . $company_description . $company_url . $company_addresses . $company_phones . $company_emails . $company_social;
+  $cleanJson = rtrim($combineJson, ', ');
+
+  return '<script type="application/ld+json">{"@context": "http://schema.org","@type": "LocalBusiness", ' . $cleanJson . '} </script>';
+}
+
+?>

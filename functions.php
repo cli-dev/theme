@@ -109,6 +109,7 @@ require_once('inc/custom-post-types.php');
 require_once('inc/social.php');
 require_once('inc/shortcodes.php');
 require_once('inc/widget-areas.php');
+require_once('inc/company-info-fields-acf.php');
 require_once('inc/company-info.php');
 require_once('inc/job-position-acf.php');
 require_once('inc/page-builder-acf.php');
