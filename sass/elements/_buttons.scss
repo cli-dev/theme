@@ -1,8 +1,9 @@
-.btn, .caldera-grid input[type="submit"].btn{
-  font-weight: 700;
+.btn, 
+.caldera-grid input[type="submit"].btn,
+#searchsubmit{
   display: block;
   text-align: center;
-  padding: 10px 20px;
+  padding: 15px 30px;
   line-height: 1.2;
   border-radius: 0;
   cursor: pointer;
@@ -15,16 +16,6 @@
     display: block;
     width: 100%;
   }
-}
-
-#searchsubmit{
-  background-color: transparent;
-  border: solid 2px $black;
-  color: $black;
-  &:hover{
-    color: #FFF;
-    background-color: $black;
-  } 
 }
 
 .special-btn{

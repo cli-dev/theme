@@ -90,26 +90,26 @@ jQuery(document).ready(function($) {
     $('.sticky-header.headhesive--stick').midnight();
 
     $('.sub-menu').hide();
-    $('li.menu-item-has-children').append('<span class="sub-menu-icon genericon genericon-expand"></span>');
+    $('li.menu-item-has-children > a').append('<span class="sub-menu-icon genericon genericon-expand"></span>');
     $('.menu-mobile-container li.menu-item-has-children').click(function(){
       if($(this).children('.sub-menu').css('display') === 'none'){
         $('.sub-menu').slideUp(200);
         $('.sub-menu-icon').removeClass('genericon-collapse').addClass('genericon-expand');
         $(this).children('.sub-menu').slideDown(200);
-        $(this).children('.sub-menu-icon').removeClass('genericon-expand').addClass('genericon-collapse');
+        $(this).find('.sub-menu-icon').removeClass('genericon-expand').addClass('genericon-collapse');
       } else{
         $(this).children('.sub-menu').slideUp(200);
-        $(this).children('.sub-menu-icon').removeClass('genericon-collapse').addClass('genericon-expand');
+        $(this).find('.sub-menu-icon').removeClass('genericon-collapse').addClass('genericon-expand');
       }
     });
     $('.menu-container > .menu > li.menu-item-has-children').hoverIntent(
       function(){
         $(this).children('.sub-menu').slideDown(200);
-        $(this).children('.sub-menu-icon').removeClass('genericon-expand').addClass('genericon-collapse');
+        $(this).find('.sub-menu-icon').removeClass('genericon-expand').addClass('genericon-collapse');
       },
       function(){
         $(this).children('.sub-menu').slideUp(200);
-        $(this).children('.sub-menu-icon').removeClass('genericon-collapse').addClass('genericon-expand');
+        $(this).find('.sub-menu-icon').removeClass('genericon-collapse').addClass('genericon-expand');
       }
     );
     $('.menu-mobile-container').hide();
