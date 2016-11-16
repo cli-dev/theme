@@ -80,7 +80,7 @@ function displayEmail() {
 
 function schemaInfo(){
   $myoptions = get_option( 'themesettings_');
-  $logo = '"logo": "' . $myoptions['logo'] . '", ';
+  $logo = $myoptions['logo'];
   if($logo){
     $company_logo = '"logo": "' . $logo . '", ';
   }
