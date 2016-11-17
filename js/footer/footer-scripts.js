@@ -6657,10 +6657,10 @@ jQuery(document).ready(function($) {
     });
 
   // Custom Scrollbar Functionality
-    $("html").niceScroll({
-      mousescrollstep: 60,
-      horizrailenabled: false,
-    });
+    // $("html").niceScroll({
+    //   mousescrollstep: 60,
+    //   horizrailenabled: false,
+    // });
 
   // Code for pushing footer to bottom of page if content is not at least the height of the window
     var wH = $(window).height(); 
