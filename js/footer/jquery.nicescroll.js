@@ -1,11 +1,5 @@
-/* jquery.nicescroll
--- version 3.6.8
--- copyright 2016-02-29 InuYaksa*2016
--- licensed under the MIT
---
--- http://nicescroll.areaaperta.com/
--- https://github.com/inuyaksa/jquery.nicescroll
---
+/*! 
+* jquery.nicescroll v3.6.8
 */
 
 (function(factory) {

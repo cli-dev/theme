@@ -1,3 +1,7 @@
+/*!
+* Wow.js v1.1.2
+*/
+
 (function() {
   var MutationObserver, Util, WeakMap, getComputedStyle, getComputedStyleRX,
     bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },

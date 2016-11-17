@@ -1,3 +1,7 @@
+/*!
+* Theme custom scripts v1.0
+*/
+
 jQuery(document).ready(function($) {
 
   // Code for overlapping header

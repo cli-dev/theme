@@ -1,13 +1,6 @@
 /*!
- * jQuery Transit - CSS3 transitions and transformations
- * (c) 2011-2014 Rico Sta. Cruz
- * MIT Licensed.
- *
- * http://ricostacruz.com/jquery.transit
- * http://github.com/rstacruz/jquery.transit
+ * jQuery Transit v0.9.12
  */
-
-/* jshint expr: true */
 
 ;(function (root, factory) {
 
