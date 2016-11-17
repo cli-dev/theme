@@ -169,35 +169,28 @@
 
   function theme_font_choices( $field ) {
     $myoptions = get_option( 'themesettings_');
-    $theme_fonts = $myoptions['theme_fonts'];
+    $theme_fonts = (isset($myoptions['theme_fonts'])) ? $myoptions['theme_fonts'] : '';
     $typekit_fonts = $myoptions['typekit_fonts'];
 
     $typekitFonts = array();
     $googleFonts = array();
     
-    if($theme_fonts)
-    {  
-      foreach($theme_fonts as $theme_font)
-      {
+    if($theme_fonts !== ''){  
+      foreach($theme_fonts as $theme_font){
         $font = $theme_font['theme_font'];
-
         $googleFonts[$font] = $font;
       }
     }
 
-    if($typekit_fonts)
-    {  
-      foreach($typekit_fonts as $typekit_font)
-      {
+    if($typekit_fonts){  
+      foreach($typekit_fonts as $typekit_font){
         $fontName = $typekit_font['typekit_font'];
         $cssName = $typekit_font['css_name'];
-
         $typekitFonts[$cssName] = $fontName;
       }
     }
     
     $field['choices'] = array_merge($googleFonts, $typekitFonts);
-    
     return $field;
 
   }
