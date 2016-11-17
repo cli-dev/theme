@@ -318,10 +318,10 @@
 
 // Load Theme scripts
   function add_theme_scripts() {
-    wp_register_script( 'headerJS', CDM_ROOT . '/js/header-scripts.js', array('jquery'),'2.0', false);
+    wp_register_script( 'headerJS', CDM_ROOT . '/js/header/header-scripts.min.js', array('jquery'),'', false);
     wp_enqueue_script( 'headerJS' );
     
-    wp_register_script( 'footerJS', CDM_ROOT . '/js/footer-scripts.js', array('jquery'),'', true);
+    wp_register_script( 'footerJS', CDM_ROOT . '/js/footer/footer-scripts.min.js', array('jquery'),'', true);
     wp_enqueue_script( 'footerJS' );
   }
    
