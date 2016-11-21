@@ -252,7 +252,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_565caf407a1ef",
@@ -474,7 +475,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_55e8c5e11d3ba",
@@ -617,7 +619,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_565cb8726eccf",
@@ -915,7 +918,7 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -1000,9 +1003,8 @@
                                             "multiple": 0,
                                             "ui": 0,
                                             "ajax": 0,
-                                            "placeholder": "",
-                                            "disabled": 0,
-                                            "readonly": 0
+                                            "return_format": "value",
+                                            "placeholder": ""
                                         },
                                         {
                                             "key": "field_5786c8908bdc7",
@@ -1152,7 +1154,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_55fc59b6d4476",
@@ -1257,7 +1260,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_564e4bc3d0994",
@@ -1296,7 +1300,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_564e4bfad0995",
@@ -1335,7 +1340,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_564e4c24d0996",
@@ -1374,7 +1380,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_565cb9db6ecd7",
@@ -1496,7 +1503,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_565cba376ecd9",
@@ -1620,7 +1628,8 @@
                                             ],
                                             "taxonomy": [],
                                             "allow_null": 0,
-                                            "multiple": 0
+                                            "multiple": 0,
+                                            "allow_archives": 1
                                         },
                                         {
                                             "key": "field_55e8c0ea0b4ca",
@@ -1895,7 +1904,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_565cb9676ecd4",
@@ -2024,7 +2034,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_55f7310ab5757",
@@ -2391,7 +2402,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_565cc0cd6ecfc",
@@ -2788,7 +2800,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_5715055f7082d",
@@ -2948,7 +2961,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_56982d81b264f",
@@ -2985,7 +2999,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_57892207be766",
@@ -3211,15 +3226,15 @@
                                                 "id": ""
                                             },
                                             "choices": {
-                                                "1": 1,
-                                                "2": 2,
-                                                "3": 3,
-                                                "4": 4,
-                                                "5": 5,
-                                                "6": 6,
-                                                "7": 7,
-                                                "8": 8,
-                                                "9": 9
+                                                "1": "1",
+                                                "2": "2",
+                                                "3": "3",
+                                                "4": "4",
+                                                "5": "5",
+                                                "6": "6",
+                                                "7": "7",
+                                                "8": "8",
+                                                "9": "9"
                                             },
                                             "default_value": [],
                                             "allow_null": 0,
@@ -3228,7 +3243,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_561fe5418d242",
@@ -3393,7 +3409,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_565cbd6d6eced",
@@ -3669,11 +3686,11 @@
                                                 "id": ""
                                             },
                                             "choices": {
-                                                "100%": 1,
-                                                "50%": 2,
-                                                "33.333%": 3,
-                                                "25%": 4,
-                                                "20%": 5
+                                                "100%": "1",
+                                                "50%": "2",
+                                                "33.333%": "3",
+                                                "25%": "4",
+                                                "20%": "5"
                                             },
                                             "default_value": [],
                                             "allow_null": 0,
@@ -3682,7 +3699,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_562fa8eb9c631",
@@ -3878,7 +3896,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_565cbe0b6ecf2",
@@ -4176,7 +4195,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_565cbeeb6ecf7",
@@ -4333,7 +4353,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_564a0f450f064",
@@ -4484,7 +4505,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_564a0e390f061",
@@ -4658,7 +4680,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_565cc3506ed10",
@@ -5057,7 +5080,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         }
                                     ],
                                     "min": "",
@@ -5220,7 +5244,15 @@
                                             "type": "true_false",
                                             "instructions": "",
                                             "required": 0,
-                                            "conditional_logic": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_55d4b9ff86575",
+                                                        "operator": "==",
+                                                        "value": "1"
+                                                    }
+                                                ]
+                                            ],
                                             "wrapper": {
                                                 "width": "",
                                                 "class": "",
@@ -5246,7 +5278,7 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -5327,13 +5359,12 @@
                                                 "slideOutUp": "Slide Out Up"
                                             },
                                             "default_value": [],
-                                            "multiple": 0,
                                             "allow_null": 0,
+                                            "multiple": 0,
                                             "ui": 0,
                                             "ajax": 0,
-                                            "placeholder": "",
-                                            "disabled": 0,
-                                            "readonly": 0
+                                            "return_format": "value",
+                                            "placeholder": ""
                                         },
                                         {
                                             "key": "field_565f7f8fbac7f",
@@ -5465,7 +5496,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_565f8085bac84",
@@ -5608,7 +5640,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_565f80dabac87",
@@ -5627,7 +5660,7 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -5637,9 +5670,7 @@
                                             "append": "seconds",
                                             "min": "",
                                             "max": "",
-                                            "step": "0.01",
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            "step": "0.01"
                                         },
                                         {
                                             "key": "field_565f80f8bac88",
@@ -5658,7 +5689,7 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -5668,9 +5699,7 @@
                                             "append": "seconds",
                                             "min": "",
                                             "max": "",
-                                            "step": "0.01",
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            "step": "0.01"
                                         },
                                         {
                                             "key": "field_565f8113bac89",
@@ -5689,7 +5718,7 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -5699,9 +5728,7 @@
                                             "append": "pixels",
                                             "min": "",
                                             "max": "",
-                                            "step": "",
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            "step": ""
                                         }
                                     ],
                                     "min": "",
@@ -5877,7 +5904,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_565f812fbac8f",
@@ -5983,6 +6011,138 @@
                                     "display": "block",
                                     "sub_fields": [
                                         {
+                                            "key": "field_58333d3ac59d6",
+                                            "label": "Username",
+                                            "name": "username",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 1,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "@",
+                                            "append": "",
+                                            "maxlength": ""
+                                        },
+                                        {
+                                            "key": "field_58333d5cc59d7",
+                                            "label": "Number of Tweets",
+                                            "name": "number_of_tweets",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": 1,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "min": 1,
+                                            "max": "",
+                                            "step": 1
+                                        },
+                                        {
+                                            "key": "field_58333d77c59d8",
+                                            "label": "Add links to tweet text?",
+                                            "name": "add_links_to_tweet_text",
+                                            "type": "true_false",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "",
+                                            "default_value": 1
+                                        },
+                                        {
+                                            "key": "field_58333d89c59d9",
+                                            "label": "Display username?",
+                                            "name": "display_username",
+                                            "type": "true_false",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "",
+                                            "default_value": 1
+                                        },
+                                        {
+                                            "key": "field_58333da7c59da",
+                                            "label": "Link username?",
+                                            "name": "link_username",
+                                            "type": "true_false",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "",
+                                            "default_value": 1
+                                        },
+                                        {
+                                            "key": "field_58333e22c59db",
+                                            "label": "Display Twitter Icon?",
+                                            "name": "display_twitter_icon",
+                                            "type": "true_false",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "",
+                                            "default_value": 1
+                                        },
+                                        {
+                                            "key": "field_58333e35c59dc",
+                                            "label": "Twitter Icon Type",
+                                            "name": "twitter_icon_type",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "1": "Icon with no shape",
+                                                "2": "Icon in square",
+                                                "3": "Icon in circle",
+                                                "4": "Icon in rounded square",
+                                                "5": "Icon in outlined circle"
+                                            },
+                                            "default_value": [],
+                                            "allow_null": 0,
+                                            "multiple": 0,
+                                            "ui": 0,
+                                            "ajax": 0,
+                                            "return_format": "value",
+                                            "placeholder": ""
+                                        },
+                                        {
                                             "key": "field_565f819bbac93",
                                             "label": "Make Widget A Slider",
                                             "name": "is_slider",
@@ -5991,7 +6151,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 50,
+                                                "width": "50",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6139,7 +6299,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_565f819bbac97",
@@ -6542,7 +6703,8 @@
                                             "ajax": 0,
                                             "placeholder": "",
                                             "disabled": 0,
-                                            "readonly": 0
+                                            "readonly": 0,
+                                            "return_format": "value"
                                         },
                                         {
                                             "key": "field_56ce0eb88cafd",
@@ -6693,7 +6855,8 @@
                             "ajax": 0,
                             "placeholder": "",
                             "disabled": 0,
-                            "readonly": 0
+                            "readonly": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_55d5ee5a52368",
@@ -6758,7 +6921,8 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "Light",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "return_format": "value"
                         },
                         {
                             "key": "field_55d4be85ec9d2",
@@ -6785,7 +6949,8 @@
                             "ajax": 0,
                             "placeholder": "",
                             "disabled": 0,
-                            "readonly": 0
+                            "readonly": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_55d50f8dc94ca",
@@ -6813,7 +6978,8 @@
                             "ajax": 0,
                             "placeholder": "",
                             "disabled": 0,
-                            "readonly": 0
+                            "readonly": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_55d50f31c94c9",
@@ -6850,7 +7016,8 @@
                             "ajax": 0,
                             "placeholder": "",
                             "disabled": 0,
-                            "readonly": 0
+                            "readonly": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_56041ba18bea3",
@@ -6887,7 +7054,8 @@
                             "ajax": 0,
                             "placeholder": "",
                             "disabled": 0,
-                            "readonly": 0
+                            "readonly": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_56041c1e8bea4",
@@ -6922,7 +7090,8 @@
                             "ajax": 0,
                             "placeholder": "",
                             "disabled": 0,
-                            "readonly": 0
+                            "readonly": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_55d4bedfec9d3",
@@ -6957,7 +7126,8 @@
                             "ajax": 0,
                             "placeholder": "",
                             "disabled": 0,
-                            "readonly": 0
+                            "readonly": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_55d50d8d0632a",
@@ -7061,7 +7231,8 @@
                             "ajax": 0,
                             "placeholder": "",
                             "disabled": 0,
-                            "readonly": 0
+                            "readonly": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_566aff032db16",
@@ -7241,7 +7412,8 @@
                             "ajax": 0,
                             "placeholder": "",
                             "disabled": 0,
-                            "readonly": 0
+                            "readonly": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_55d4bf77ec9d6",
@@ -7427,7 +7599,8 @@
                     "ajax": 0,
                     "placeholder": "",
                     "disabled": 0,
-                    "readonly": 0
+                    "readonly": 0,
+                    "return_format": "value"
                 },
                 {
                     "key": "field_55d4b80a86571",
@@ -7464,7 +7637,8 @@
                     "ajax": 0,
                     "placeholder": "",
                     "disabled": 0,
-                    "readonly": 0
+                    "readonly": 0,
+                    "return_format": "value"
                 },
                 {
                     "key": "field_560419bea2c48",
@@ -7501,7 +7675,8 @@
                     "ajax": 0,
                     "placeholder": "",
                     "disabled": 0,
-                    "readonly": 0
+                    "readonly": 0,
+                    "return_format": "value"
                 },
                 {
                     "key": "field_55d4b90186572",
@@ -7537,7 +7712,8 @@
                     "ajax": 0,
                     "placeholder": "",
                     "disabled": 0,
-                    "readonly": 0
+                    "readonly": 0,
+                    "return_format": "value"
                 },
                 {
                     "key": "field_56041a26a2c49",
@@ -7573,7 +7749,8 @@
                     "ajax": 0,
                     "placeholder": "",
                     "disabled": 0,
-                    "readonly": 0
+                    "readonly": 0,
+                    "return_format": "value"
                 },
                 {
                     "key": "field_55d4b99186573",
@@ -7617,7 +7794,8 @@
                     "ajax": 0,
                     "placeholder": "",
                     "disabled": 0,
-                    "readonly": 0
+                    "readonly": 0,
+                    "return_format": "value"
                 },
                 {
                     "key": "field_55d50b7d10d49",
@@ -7847,7 +8025,8 @@
                     "ajax": 0,
                     "placeholder": "",
                     "disabled": 0,
-                    "readonly": 0
+                    "readonly": 0,
+                    "return_format": "value"
                 },
                 {
                     "key": "field_55f73e32adc07",
@@ -7891,7 +8070,8 @@
                     "ajax": 0,
                     "placeholder": "",
                     "disabled": 0,
-                    "readonly": 0
+                    "readonly": 0,
+                    "return_format": "value"
                 },
                 {
                     "key": "field_55f8a493ec319",
@@ -8126,7 +8306,8 @@
                     "ajax": 0,
                     "placeholder": "",
                     "disabled": 0,
-                    "readonly": 0
+                    "readonly": 0,
+                    "return_format": "value"
                 },
                 {
                     "key": "field_55d4bc83ec9cd",
@@ -8247,5 +8428,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1469473240
+    "modified": 1479753447
 }
