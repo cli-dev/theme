@@ -10,15 +10,7 @@
   .menu-item-has-children {
     position: relative;
     > a{
-      @include display-flex;
-      @include align-items(stretch);
-      span{
-        @include display-flex;
-        @include align-items(center);
-        &.link-text{
-          padding-right: 10px;
-        }
-      }
+      display: inline-block;
     }
   }
 }
@@ -159,6 +151,9 @@
     position: relative; 
     @include breakpoint($mdl){
       display: none;
+    }
+    li{
+      padding: 0;
     }
   }
 
@@ -389,6 +384,13 @@
 
   .sub-menu{
     display: none;
+    margin-left: 15px;
+  }
+
+  .sub-menu-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
   .site-header .menu-container > .menu > li.menu-item-has-children,

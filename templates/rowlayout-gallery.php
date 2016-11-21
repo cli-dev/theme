@@ -27,7 +27,7 @@ $gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'c
     <?php if( $images ): ?>
     <div <?php echo $gallery_classes ?>>
       <?php foreach( $images as $image ): ?>
-      <div class="gallery-img-wrap"<?php echo $gallery_spacing; ?>>
+      <div class="gallery-img-wrap"<?php if($is_slider != 1){echo $gallery_spacing;} ?>>
         <a href="<?php echo $image['url']; ?>" rel="gallery1" title="<?php echo $image['title']; ?>" class="gallery-img" style="background-image: url(<?php echo $image['sizes']['medium']; ?>)"><span class="hover-panel"<?php echo $hover_bg; ?>><i class="img-zoom fa fa-search-plus"<?php echo $hover_icon_color; ?>></i></span></a>
       </div>
     <?php endforeach; ?>
@@ -103,7 +103,7 @@ $gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'c
           $('.gallery-img-wrap').css('width','50%');
         }
         else{
-          $('.gallery-img-wrap').css('width', 'auto');
+          $('.gallery-img-wrap').css('width', '100%');
         }
       });
     <?php } ?>

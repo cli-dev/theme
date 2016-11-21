@@ -50,7 +50,7 @@ $item_classes = $animation_class . $item_animation_effect . $custom_class;
 
     $(".flickr-img").fancybox({
       padding: 0,
-      margin: [50, 40, 20, 40],
+      margin: [50, 20, 20, 20],
       beforeLoad: function() {
         this.title = $(this.element).attr('title');
       }

@@ -3049,17 +3049,13 @@ jQuery(document).ready(function($) {
       wow.init();
     });
 
-  // Scroll Button Functionality
-    $(window).scroll(function() {
-      if ($(window).scrollTop() >= 400) {
-        $('#scrollTop').addClass('show');
-      }
-      else if ($(window).scrollTop() <= 300) {
-        $('#scrollTop').removeClass('show');
-      }
-    });
-    $('#scrollTop').click(function(){
-      $(window).scrollTo($('#top'), 500, {onAfter:function() { $('#scrollTop').removeClass('show'); } });  
+    var animationWaypoint = $('.has-animation').waypoint({
+      handler: function(direction) {
+        if(direction === 'down'){
+          $(this).addClass('wow');
+        }
+      },
+      offset: 'bottom-in-view'
     });
 
   // Menu Functionality
@@ -3067,26 +3063,26 @@ jQuery(document).ready(function($) {
     $('.sticky-header.headhesive--stick').midnight();
 
     $('.sub-menu').hide();
-    $('li.menu-item-has-children > a').append('<span class="sub-menu-icon genericon genericon-expand"></span>');
+    $('li.menu-item-has-children').append('<span class="sub-menu-icon genericon genericon-expand"></span>');
     $('.menu-mobile-container li.menu-item-has-children').click(function(){
       if($(this).children('.sub-menu').css('display') === 'none'){
         $('.sub-menu').slideUp(200);
         $('.sub-menu-icon').removeClass('genericon-collapse').addClass('genericon-expand');
         $(this).children('.sub-menu').slideDown(200);
-        $(this).find('.sub-menu-icon').removeClass('genericon-expand').addClass('genericon-collapse');
+        $(this).children('.sub-menu-icon').removeClass('genericon-expand').addClass('genericon-collapse');
       } else{
         $(this).children('.sub-menu').slideUp(200);
-        $(this).find('.sub-menu-icon').removeClass('genericon-collapse').addClass('genericon-expand');
+        $(this).children('.sub-menu-icon').removeClass('genericon-collapse').addClass('genericon-expand');
       }
     });
     $('.menu-container > .menu > li.menu-item-has-children').hoverIntent(
       function(){
         $(this).children('.sub-menu').slideDown(200);
-        $(this).find('.sub-menu-icon').removeClass('genericon-expand').addClass('genericon-collapse');
+        $(this).children('.sub-menu-icon').removeClass('genericon-expand').addClass('genericon-collapse');
       },
       function(){
         $(this).children('.sub-menu').slideUp(200);
-        $(this).find('.sub-menu-icon').removeClass('genericon-collapse').addClass('genericon-expand');
+        $(this).children('.sub-menu-icon').removeClass('genericon-collapse').addClass('genericon-expand');
       }
     );
     $('.menu-mobile-container').hide();

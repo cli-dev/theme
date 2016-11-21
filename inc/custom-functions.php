@@ -329,3 +329,47 @@
     wp_enqueue_script( 'acfScripts' );
   }
   add_action( 'admin_enqueue_scripts', 'load_admin_style', 999 );
+
+// Time Elapsed Function
+
+    function time_elapsed_string($datetime, $full = false) {
+      $now = new DateTime;
+      $ago = new DateTime($datetime);
+      $diff = $now->diff($ago);
+
+      $diff->w = floor($diff->d / 7);
+      $diff->d -= $diff->w * 7;
+
+      $string = array(
+          'y' => 'year',
+          'm' => 'month',
+          'w' => 'week',
+          'd' => 'day',
+          'h' => 'hour',
+          'i' => 'minute',
+          's' => 'second',
+      );
+      foreach ($string as $k => &$v) {
+          if ($diff->$k) {
+              $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+          } else {
+              unset($string[$k]);
+          }
+      }
+
+      if (!$full) $string = array_slice($string, 0, 1);
+      return $string ? implode(', ', $string) . ' ago' : 'just now';
+    }
+
+
+
+// UTF-8 String Replace
+
+    function utf8_substr_replace($original, $replacement, $position, $length){
+      $startString = mb_substr($original, 0, $position, "UTF-8");
+      $endString = mb_substr($original, $position + $length, mb_strlen($original), "UTF-8");
+
+      $out = $startString . $replacement . $endString;
+
+      return $out;
+    }
