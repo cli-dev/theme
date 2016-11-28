@@ -79,11 +79,17 @@ function show_Address() {
 }
 add_shortcode( 'address', 'show_Address' );
 
+function show_Address_txt() {
+  
+  return companyAddressTxt();
+}
+add_shortcode( 'address_txt', 'show_Address_txt' );
+
 function show_Contact() {
   
   return displayContactInfo();
 }
-add_shortcode( 'contact_info', 'displayContactInfo' );
+add_shortcode( 'contact_info', 'show_Contact' );
 
 function show_Phone() {
   
@@ -91,11 +97,23 @@ function show_Phone() {
 }
 add_shortcode( 'phone', 'show_Phone' );
 
+function show_phone_txt() {
+  
+  return companyPhoneTxt();
+}
+add_shortcode( 'phone_txt', 'show_phone_txt' );
+
 function show_Email() {
   
   return displayEmail();
 }
 add_shortcode( 'email', 'show_Email' );
+
+function show_Email_txt() {
+  
+  return companyEmailTxt();
+}
+add_shortcode( 'email_txt', 'show_Email_txt' );
 
 function show_verified_badge() {
   

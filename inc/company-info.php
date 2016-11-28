@@ -4,12 +4,14 @@ function companyAddress(){
   $address_rows = get_field('company_address', 'options');
   if($address_rows){
     $address = '';
+    $i = 0;
     foreach($address_rows as $address_row){
       $address_line_1 = $address_row['address_line_1'];
       $city = $address_row['city'];
       $state = $address_row['state'];
       $post_zip = $address_row['zip'];
       $full_address = $address_line_1 . ' ' . $city . ' ' . $state . ' ' . $post_zip;
+      $i++;
 
       if($address_line_1){
         $addressCode = '<span class="schema-info address1" itemprop="streetAddress">' . $address_line_1 . '</span>';  
@@ -24,7 +26,25 @@ function companyAddress(){
         $zipCode = '<span class="schema-info zip" itemprop="postalCode">' . $post_zip . '</span>';  
       }
 
-      $address .= '<a href="http://maps.google.com/?q=' . urlencode($full_address) . '" target="_blank" class="schema-info address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div class="address-inner"><div class="schema-info address-line-1">' . $addressCode . '</div><div class="schema-info address-line-2">' . $cityCode . $stateCode . ' ' . $zipCode . '</div></div></a>';
+      $address .= '<a href="http://maps.google.com/?q=' . urlencode($full_address) . '" target="_blank" class="schema-info address address-' . $i . '" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div class="address-inner"><div class="schema-info address-line-1">' . $addressCode . '</div><div class="schema-info address-line-2">' . $cityCode . $stateCode . ' ' . $zipCode . '</div></div></a>';
+    }
+    return $address;
+  }
+}
+
+function companyAddressTxt(){
+  $address_rows = get_field('company_address', 'options');
+  if($address_rows){
+    $address = '';
+    $i = 0;
+    foreach($address_rows as $address_row){
+      $address_line_1 = $address_row['address_line_1'] . ' ';
+      $city = $address_row['city'] . ', ';
+      $state = $address_row['state'] . ' ';
+      $post_zip = $address_row['zip'];
+      $full_address = $address_line_1 . $city . $post_zip;
+      $i++;
+      $address .= '<span class="company-address-txt address-' . $i . '">' . $full_address . '</span>';
     }
     return $address;
   }
@@ -34,10 +54,28 @@ function companyPhone(){
   $phone_rows = get_field('company_phone', 'options');
   if($phone_rows){
     $phone = '';
+    $i = 0;
     foreach($phone_rows as $phone_row){    
       $phone_txt = $phone_row['phone'];
+      $i++;
       if($phone_txt){
-        $phone .= '<div class="schema-info phone"><a href="tel:' . $phone_txt . '"  itemprop="telephone">' . $phone_txt . '</a></div>';  
+        $phone .= '<div class="schema-info phone phone-' . $i . '"><a href="tel:' . $phone_txt . '"  itemprop="telephone">' . $phone_txt . '</a></div>';  
+      }
+    }
+    return $phone;
+  }
+}
+
+function companyPhoneTxt(){
+  $phone_rows = get_field('company_phone', 'options');
+  if($phone_rows){
+    $phone = '';
+    $i = 0;
+    foreach($phone_rows as $phone_row){    
+      $phone_txt = $phone_row['phone'];
+      $i++;
+      if($phone_txt){
+        $phone .= '<span class="company-phone phone-' . $i . '">' . $phone_txt . '</span>';  
       }
     }
     return $phone;
@@ -45,13 +83,31 @@ function companyPhone(){
 }
 
 function companyEmail(){
-  $email = '';
   $email_rows = get_field('company_email', 'options');
   if($email_rows){
+    $email = '';
+    $i = 0;
     foreach($email_rows as $email_row){
       $email_txt = $email_row['email'];
+      $i++;
       if($email_txt){
-        $email .= '<div class="schema-info email"><a href="mailto:' . $email_txt  . '" itemprop="email">' . $email_txt . '</a></div>';  
+        $email .= '<div class="schema-info email email-' . $i . '"><a href="mailto:' . $email_txt  . '" itemprop="email">' . $email_txt . '</a></div>';  
+      }
+    }
+    return $email;
+  }
+}
+
+function companyEmailTxt(){
+  $email_rows = get_field('company_email', 'options');
+  if($email_rows){
+    $email = '';
+    $i = 0;
+    foreach($email_rows as $email_row){
+      $email_txt = $email_row['email'];
+      $i++;
+      if($email_txt){
+        $email .= '<a href="mailto:' . $email_txt  . '" class="company-email email-' . $i . '">' . $email_txt . '</a>';  
       }
     }
     return $email;
