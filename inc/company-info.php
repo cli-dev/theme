@@ -59,7 +59,7 @@ function companyPhone(){
       $phone_txt = $phone_row['phone'];
       $i++;
       if($phone_txt){
-        $phone .= '<div class="schema-info phone phone-' . $i . '"><a href="tel:' . $phone_txt . '"  itemprop="telephone">' . $phone_txt . '</a></div>';  
+        $phone .= '<div class="schema-info phone phone-' . $i . '"><a href="tel:' . $phone_txt . '" itemprop="telephone">' . $phone_txt . '</a></div>';  
       }
     }
     return $phone;
@@ -138,7 +138,7 @@ function schemaInfo(){
   $myoptions = get_option( 'themesettings_');
   $logo = $myoptions['logo'];
   if($logo){
-    $company_logo = '"logo": "' . $logo . '", ';
+    $company_logo = '"logo": "' . $logo . '", "image": "' . $logo . '", ';
   }
   $company_name = '"name": "' . get_bloginfo('name') . '", ';
   $tagline = get_bloginfo( 'description' );
