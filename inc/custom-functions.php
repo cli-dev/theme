@@ -295,13 +295,6 @@
   add_filter( 'style_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
   add_filter( 'script_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
 
-// Function to easily add the current post slug to anything
-  function the_slug() {
-    global $post;
-    $slug = $post->post_name;
-    return $slug;
-  }
-
 // Allow svg uploads to wordpress media library
   function custom_upload_mimes ( $existing_mimes=array() ) {
     $existing_mimes['svg'] = 'mime/type';
@@ -361,8 +354,6 @@
       return $string ? implode(', ', $string) . ' ago' : 'just now';
     }
 
-
-
 // UTF-8 String Replace
 
     function utf8_substr_replace($original, $replacement, $position, $length){
@@ -373,3 +364,10 @@
 
       return $out;
     }
+
+// Function to easily add the current post slug to anything
+  function the_slug() {
+    global $post;
+    $slug = $post->post_name;
+    return $slug;
+  }
