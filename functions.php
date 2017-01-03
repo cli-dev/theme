@@ -116,3 +116,4 @@ require_once('inc/page-builder-acf.php');
 require_once('inc/page-header-acf.php');
 require_once('inc/team-member-acf.php');
 require_once('inc/theme-fields-acf.php');
+require_once('inc/blog-acf.php');
