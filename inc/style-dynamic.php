@@ -105,6 +105,10 @@ if( function_exists('get_field') ) {
 
       echo '.mobile-nav a span{' . $mobile_menu_link_color . $mobile_menu_line_height . $mobile_menu_font_size . $mobile_menu_font_family . '}';
 
+      if ($mobile_menu_line_height) {
+        echo '.mobile-nav .sub-menu-icon{' . $mobile_menu_line_height . '}';
+      }
+
       if($mobile_menu_link_active_color){
         echo '.mobile-nav a:hover span, .mobile-nav li.current-menu-item a span{' . $mobile_menu_link_active_color . '}';
       }
