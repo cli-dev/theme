@@ -76,7 +76,7 @@ $query1 = new WP_Query( $args1 );
           <div class="team-info">
             <h3 class="team-title"<?php echo $team_title_color; ?>><?php the_title(); ?></h3>
             <?php if($position){ ?>
-              <div class="team-position"<?php echo $position_title_color; ?>><?php echo $position; ?></div>
+              <p class="team-position"<?php echo $position_title_color; ?>><?php echo $position; ?></p>
             <?php } ?>
           </div>
         <?php } ?> 
@@ -97,7 +97,21 @@ $query1 = new WP_Query( $args1 );
       if($(window).width() >= 1000){
         $('.team-member-wrapper').css('width', maxWidth + '%');
       }
+      var teamInfoHeights = $('.team .team-info').map(function() {
+        return $(this).height();
+      }).get();
+
+      var minTeamInfoHeight = Math.max.apply(null, teamInfoHeights);
+
+      $('.team .team-info').css('min-height', minTeamInfoHeight);
       $(window).resize(function(event) {
+        var teamInfoHeights2 = $('.team .team-info').map(function() {
+          return $(this).height();
+        }).get();
+
+        var minTeamInfoHeight2 = Math.max.apply(null, teamInfoHeights2);
+
+        $('.team .team-info').css('min-height', minTeamInfoHeight2);
         if($(window).width() >= 1000){
           $('.team-member-wrapper').css('width', maxWidth + '%');
         } else if($(window).width() >= 600){
@@ -141,8 +155,10 @@ $query2 = new WP_Query( $args2 );
               ?>
             </div>
           <?php endif; ?>
-          <h3 class="team-title"><?php the_title(); ?></h3>
-          <div class="team-position"><?php echo $position; ?></div>
+          <div class="team-title-area">
+            <h3 class="team-title"><?php the_title(); ?></h3>
+            <p class="team-position"><?php echo $position; ?></p>
+          </div>
           <div class="bio"><?php echo $bio; ?></div>
         </div>
       <?php } ?> 

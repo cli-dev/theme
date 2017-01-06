@@ -1,6 +1,7 @@
 .site-header,
 .sticky-header,
-.side-menu {
+.side-menu,
+.menu-mobile-container {
   .menu{
     margin: 0;
     padding: 0;
@@ -11,9 +12,6 @@
     padding: 0;
     list-style-type: none;
     margin-left: 15px;
-    @include breakpoint($mdl){
-      padding-bottom: 15px;
-    }
   }
   .menu-item-has-children {
     position: relative;
@@ -163,6 +161,13 @@
     }
     li{
       padding: 0;
+    }
+  }
+
+  .mobile.sticky{
+    display: none;
+    &.headhesive{
+      display: block;
     }
   }
 
@@ -317,7 +322,7 @@
 
       // Sticky Nav Styles
 
-        .sticky-header.headhesive {
+        .headhesive {
           position: fixed;
           z-index: 99;
           top: 0;

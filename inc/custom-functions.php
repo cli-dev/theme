@@ -133,71 +133,53 @@
   add_image_size( 'theme_image_preview', 100, 100);
   add_image_size( 'team-headshot', 300, 300, array( 'center', 'top' ) );
 
-// Get the google font library and display it on the theme settings page
-  function push_google_font_families($field){
+// Display list of availble fonts
 
-    $url = "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCCi4NfyfjQhCvAdi1VHYKbQhLgl-0linc";
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-    curl_setopt($ch, CURLOPT_HEADER, false);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_REFERER, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-    $result = curl_exec($ch);
-    curl_close($ch);
-
-    $google_fonts = json_decode($result, true);
+  function theme_font_choice_labels( $field ) {
+    $myoptions = get_option( 'themesettings_');
+    $theme_fonts = $myoptions['theme_fonts'];
 
     $fonts = array();
-
-    if(!array_key_exists('error', $google_fonts)){
-      foreach($google_fonts['items'] as $val){
-        $fontName = $val['family'];
-        $fonts[$fontName] = $fontName;
-      }
-
-      $field['choices'] = $fonts;
-
-      return $field;
-      
-    } else {
-      return null;
-    } 
-  }
-  add_filter('acf/load_field/name=theme_font', 'push_google_font_families');
-
-  function theme_font_choices( $field ) {
-    $myoptions = get_option( 'themesettings_');
-    $theme_fonts = (isset($myoptions['theme_fonts'])) ? $myoptions['theme_fonts'] : '';
-    $typekit_fonts = $myoptions['typekit_fonts'];
-
-    $typekitFonts = array();
-    $googleFonts = array();
     
-    if($theme_fonts !== ''){  
+    if($theme_fonts){  
       foreach($theme_fonts as $theme_font){
-        $font = $theme_font['theme_font'];
-        $googleFonts[$font] = $font;
-      }
-    }
+        $display_name = $theme_font['display_name'];
+        $css_name = $theme_font['css_name'];
+        $font_type = $theme_font['font_type'];
+        $font_value = "'" . $css_name . "', " . $font_type;
 
-    if($typekit_fonts){  
-      foreach($typekit_fonts as $typekit_font){
-        $fontName = $typekit_font['typekit_font'];
-        $cssName = $typekit_font['css_name'];
-        $typekitFonts[$cssName] = $fontName;
+        $fonts += [ $font_value => $display_name ];
       }
     }
     
-    $field['choices'] = array_merge($googleFonts, $typekitFonts);
+    $field['choices'] = $fonts;
     return $field;
 
   }
-  add_filter('acf/load_field/name=default_font_family', 'theme_font_choices');
-  add_filter('acf/load_field/name=menu_font_family', 'theme_font_choices');
-  add_filter('acf/load_field/name=headings_font_family', 'theme_font_choices');
-  add_filter('acf/load_field/name=paragraph_font_family', 'theme_font_choices');
+  add_filter('acf/load_field/name=default_font_family', 'theme_font_choice_labels');
+  add_filter('acf/load_field/name=menu_font_family', 'theme_font_choice_labels');
+  add_filter('acf/load_field/name=headings_font_family', 'theme_font_choice_labels');
+  add_filter('acf/load_field/name=paragraph_font_family', 'theme_font_choice_labels');
+
+// Add Google Font url
+
+  $myoptions = get_option( 'themesettings_');
+  $add_google_fonts = $myoptions['add_google_fonts'];
+
+  if ($add_google_fonts == 1) {
+    function add_google_fonts_css() {
+
+      $myoptions = get_option( 'themesettings_');
+      $google_fonts_url = $myoptions['google_fonts_url'];
+
+      wp_register_style( 'googleFonts', $google_fonts_url, false, false );
+      wp_enqueue_style( 'googleFonts' );
+      
+    }
+    add_action( 'wp_enqueue_scripts', 'add_google_fonts_css' );
+  }
+
+  
 
 // Get the colors repeater and use it as choices for button colors
   function theme_button_choices( $field ) {

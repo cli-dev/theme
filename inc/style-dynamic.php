@@ -1,328 +1,290 @@
 <?php
 
-if( function_exists('get_field') ) :
-
-$myoptions = get_option( 'themesettings_');
-
-$header_type = $myoptions['header_type'];
-$content_background_color = $myoptions['content_background_color'];
-$main_font_color = $myoptions['main_font_color'];
-$text_highlight_color = $myoptions['text_highlight_color'];
-$header_color = $myoptions['header_color'];
-$header_background_opacity = $myoptions['header_background_opacity'];
-$desktop_header_height = $myoptions['desktop_header_height'];
-$mobile_header_height = $myoptions['mobile_header_height'];
-$sticky_header_height = $myoptions['sticky_header_height'];
-$header_bg_rgb = hex2rgb($header_color);
-$menu_link_color = $myoptions['menu_link_color'];
-$menu_line_height = $myoptions['menu_line_height'];
-$mobile_menu_item_divider_color = $myoptions['mobile_menu_item_divider_color'];
-$menu_icon_top_bar_background_color = $myoptions['menu_icon_top_bar_background_color'];
-$menu_icon_middle_bar_background_color = $myoptions['menu_icon_middle_bar_background_color'];
-$menu_icon_bottom_bar_background_color = $myoptions['menu_icon_bottom_bar_background_color'];
-$menu_icon_text_color_color = $myoptions['menu_icon_text_color_color'];
-$menu_font_size = $myoptions['menu_font_size'];
-$menu_background_color = $myoptions['menu_background_color']; 
-
-$menu_font_family = get_field_object('menu_font_family', 'option'); 
-$menu_font_family_value = get_field('menu_font_family', 'option');
-$menu_font_family_label = $menu_font_family['choices'][ $menu_font_family_value ];
-
-$menu_link_active_color = $myoptions['menu_link_active_color'];
-
-$default_font_family = get_field_object('default_font_family', 'option'); 
-$default_font_family_value = get_field('default_font_family', 'option');
-$default_font_family_label = $default_font_family['choices'][ $default_font_family_value ];
-
-$headings_font_family = get_field_object('headings_font_family', 'option'); 
-$headings_font_family_value = get_field('headings_font_family', 'option');
-$headings_font_family_label = $headings_font_family['choices'][ $headings_font_family_value ];
-$headings_font_color = $myoptions['headings_font_color'];
-$headings_text_transform = $myoptions['headings_text_transform'];
-$headings_line_height = $myoptions['headings_line_height'];
-$headings_font_weight = $myoptions['headings_font_weight'];
-
-$paragraph_font_family = get_field_object('paragraph_font_family', 'option'); 
-$paragraph_font_family_value = get_field('paragraph_font_family', 'option');
-$paragraph_font_family_label = $paragraph_font_family['choices'][ $paragraph_font_family_value ];
-$paragraph_font_color = $myoptions['paragraph_font_color'];
-$paragraph_text_transform = $myoptions['paragraph_text_transform'];
-$paragraph_line_height = $myoptions['paragraph_line_height'];
-$paragraph_font_weight = $myoptions['paragraph_font_weight'];
-
-$link_text_color = $myoptions['link_text_color'];
-$link_text_hover_color = $myoptions['link_text_hover_color'];
-
-$footer_top_background_color = $myoptions['footer_top_background_color'];
-$footer_top_text_color = $myoptions['footer_top_text_color'];
-$footer_top_link_color = $myoptions['footer_top_link_color'];
-$footer_top_link_hover_color = $myoptions['footer_top_link_hover_color'];
-$footer_bottom_background_color = $myoptions['footer_bottom_background_color'];
-$footer_bottom_text_color = $myoptions['footer_bottom_text_color'];
-$footer_bottom_link_color = $myoptions['footer_bottom_link_color'];
-$footer_bottom_link_hover_color = $myoptions['footer_bottom_link_hover_color'];
-
-$pagination_item_background_color = $myoptions['pagination_item_background_color'];
-$pagination_item_text_color = $myoptions['pagination_item_text_color'];
-$pagination_current_background_color = $myoptions['pagination_current_background_color'];
-$pagination_current_text_color = $myoptions['pagination_current_text_color'];
-
-$global_css = $myoptions['global_css'];
-$tablet_portrait_css = $myoptions['tablet_portrait_css'];
-$tablet_landscape_css = $myoptions['tablet_landscape_css'];
-$desktop_css = $myoptions['desktop_css'];
-
-$scroll_button_width = $myoptions['scroll_button_width'];
-$scroll_button_border_width = $myoptions['scroll_button_border_width'];
-$scroll_button_icon_font_size = $myoptions['scroll_button_icon_font_size'];
-$scroll_button_bottom = $myoptions['scroll_button_bottom'];
-$scroll_button_right = $myoptions['scroll_button_right'];
-$scroll_button_border_color = $myoptions['scroll_button_border_color'];
-$scroll_button_background_color = $myoptions['scroll_button_background_color'];
-$scroll_button_icon_color = $myoptions['scroll_button_icon_color'];
-$scroll_button_hover_border_color = $myoptions['scroll_button_hover_border_color'];
-$scroll_button_hover_background_color = $myoptions['scroll_button_hover_background_color'];
-$scroll_button_hover_icon_color = $myoptions['scroll_button_hover_icon_color'];
-
-$sadie_effect_gradient_top_color = $myoptions['sadie_effect_gradient_top_color'];
-$sadie_effect_gradient_top_color_opacity = $myoptions['sadie_effect_gradient_top_color_opacity'];
-$sadie_effect_gradient_top = 'rgba(' . hex2rgb($sadie_effect_gradient_top_color) . ', ' . $sadie_effect_gradient_top_color_opacity . ')';
-$sadie_effect_gradient_bottom_color = $myoptions['sadie_effect_gradient_bottom_color'];
-$sadie_effect_gradient_bottom_color_opacity = $myoptions['sadie_effect_gradient_bottom_color_opacity'];
-$sadie_effect_gradient_bottom = 'rgba(' . hex2rgb($sadie_effect_gradient_bottom_color) . ', ' . $sadie_effect_gradient_bottom_color_opacity . ')';
-
-?>
-
-<?php if ($text_highlight_color) : ?>
-
-::-moz-selection { background: <?php echo $text_highlight_color; ?>; color: #FFF; }
-::selection { background: <?php echo $text_highlight_color; ?>; color: #FFF;}
-
-<?php endif; ?>
-
-<?php if($content_background_color) { echo '#wrapper{background-color: ' . $content_background_color . ';} '; }?>
+if( function_exists('get_field') ) {
 
-<?php if($main_font_color) { echo 'body{color: ' . $main_font_color . ';} '; }?>
+  $myoptions = get_option( 'themesettings_');
+  $content_background_color = $myoptions['content_background_color'];
 
-<?php if($link_text_color) { echo 'a{color: ' . $link_text_color . ';} '; }?>
+  if ($content_background_color) {
+    echo '#wrapper{background-color: ' . $content_background_color . ';}';
+  }
 
-<?php if($link_text_hover_color) { echo 'a:hover{color: ' . $link_text_hover_color . ';} '; }?>
+  // Header Styles
+    $header_type = $myoptions['header_type'];
+    $header_bg_color = $myoptions['header_color'];
+    $header_background_opacity = $myoptions['header_background_opacity'];
+    $desktop_header_height = $myoptions['desktop_header_height'];
+    $menu_dropdown_bg_color = $myoptions['menu_dropdown_bg_color'];
+    $mobile_header_height = $myoptions['mobile_header_height'];
+    $header_bg_rgb = hex2rgb($header_bg_color);
 
-<?php if($header_color) { echo '.sticky-header.headhesive, .site-header, .mobile-nav{background-color: ' . $header_color . ';} '; }?>
+    if($header_bg_color) { echo '.mobile-nav{background-color: ' . $header_bg_color . ';} .desktop-menu { background-color: rgba(' . $header_bg_rgb . ', ' . $header_background_opacity . ');}'; }
 
-<?php if($mobile_header_height) { echo '.mobile-nav { height: ' . $mobile_header_height . 'px;}'; }?>
+    if($mobile_header_height) { echo '.mobile-nav { height: ' . $mobile_header_height . 'px;}'; }
 
-<?php if($menu_background_color) { echo '#side-menu.menu-container, .menu-mobile-container, .sub-nav{ background-color: ' . $menu_background_color . ';}'; }?>
+    if($menu_dropdown_bg_color) { echo '.desktop-menu-inner .sub-menu{ background-color: ' . $menu_dropdown_bg_color . ';}'; }
 
-<?php if ($header_type === 'Top Menu') : ?>
-@media screen and (min-width: 1000px){
-  <?php if($header_color) { echo '.menu-container{ background-color: transparent; } .site-header { background-color: rgba(' . $header_bg_rgb . ', ' . $header_background_opacity . ');} .sub-menu { background-color: rgba(' . $header_bg_rgb . ', ' . $header_background_opacity . ');} '; }?>
-  <?php if($desktop_header_height) { echo '.desktop-menu{ height: ' . $desktop_header_height . 'px;} .menu-container .sub-menu-icon{ line-height: ' . $desktop_header_height . 'px;}'; }?>
-  <?php if($sticky_header_height) { echo '.sticky-header.headhesive .menu-container .sub-menu-icon{ line-height: ' . $sticky_header_height . 'px;}'; }?>
-}
-<?php endif ?>
+    if($desktop_header_height) { echo '.desktop-menu{ height: ' . $desktop_header_height . 'px;} .desktop-menu .sub-menu-icon{ line-height: ' . $desktop_header_height . 'px;}'; }
 
-.menu-mobile-container .menu a,
-.menu-container .menu a{
-  <?php if ($menu_link_color) { echo 'color: ' . $menu_link_color . '; '; }?>
-  <?php if ($menu_font_family) { echo 'font-family: "' . $menu_font_family_value  . '"; '; }?>
-}
+    // Header Top Bar
 
-.sub-menu-icon{
-  <?php if ($menu_link_color) { echo 'color: ' . $menu_link_color . '; '; }?>
-}
+      $header_widget_bg_color = ($myoptions['header_widget_bg_color']) ? 'background-color: ' . $myoptions['header_widget_bg_color'] . ';' : '';
+      $header_widget_txt_color = ($myoptions['header_widget_txt_color']) ? 'color: ' . $myoptions['header_widget_txt_color'] . ';' : '';
+      $header_widget_link_color = ($myoptions['header_widget_link_color']) ? 'color: ' . $myoptions['header_widget_link_color'] . ';' : '';
+      $header_widget_link_hover_color = ($myoptions['header_widget_link_hover_color']) ? 'color: ' . $myoptions['header_widget_link_hover_color'] . ';' : '';
 
-.menu-mobile-container .menu .current-menu-item > a, .menu-mobile-container .menu a:hover, .menu-mobile-container .menu .current_page_parent > a,
-.menu-container .menu .current-menu-item > a, .menu-container .menu a:hover, .menu-container .menu .current_page_parent > a, li.menu-item-has-children:hover .sub-menu-icon{
-  <?php if ($menu_link_active_color) { echo 'color: ' . $menu_link_active_color . '; '; }?>
-}
+    echo '.header-widgets{' . $header_widget_bg_color . '} .header-widgets p, .header-widgets li, .header-widgets span, .header-widgets div, .header-widgets input, .header-widgets textarea, .header-widgets label{' . $header_widget_txt_color . '}.header-widgets a, .header-widgets a span{' . $header_widget_link_color . '}.header-widgets a:hover, .header-widgets a:hover span{' . $header_widget_link_hover_color . ';}';
 
-<?php if($menu_icon_top_bar_background_color) :?>
 
-.menu-button span::before{
-  background-color: <?php echo $menu_icon_top_bar_background_color; ?>;
-}
 
-<?php endif ?>
+  // Logos
 
-<?php if($menu_icon_middle_bar_background_color) :?>
+    // Desktop Logo Styles
 
-.menu-button span{
-  background-color: <?php echo $menu_icon_middle_bar_background_color; ?>;
-}
+      $desktop_logo_img = $myoptions['logo'];
+      $desktop_logo_svg = $myoptions['svg_desktop_logo'];
+      $desktop_logo = ($myoptions['svg_desktop_logo']) ? $myoptions['svg_desktop_logo'] : $myoptions['logo'];
 
-<?php endif ?>
+    // Mobile Logo Styles
 
-<?php if($menu_icon_bottom_bar_background_color) :?>
+      $mobile_logo_img = $myoptions['mobile_logo'];
+      $mobile_logo_svg = $myoptions['svg_mobile_logo'];
+      $mobile_logo = ($myoptions['svg_mobile_logo']) ? $myoptions['svg_mobile_logo'] : $myoptions['mobile_logo'];
+      $mobile_logo_bg = 'background-image: url(' . $mobile_logo . ');';
+      $mobile_logo_max_width = ($myoptions['mobile_logo_maximum_width']) ? 'max-width: ' . $mobile_logo_max_width . 'px;' : '';
+      
+      echo '.mobile-logo a{' . $mobile_logo_bg . $mobile_logo_max_width . '}';
 
-.menu-button span::after{
-  background-color: <?php echo $menu_icon_bottom_bar_background_color; ?>;
-}
+  // Menus
 
-<?php endif ?>
+    // Global
 
-<?php if($menu_icon_top_bar_background_color): ?>
+      $menu_dropdown_bg_color = $myoptions['menu_dropdown_bg_color'];
+      $menu_link_color = ($myoptions['menu_link_color']) ? 'color: ' . $myoptions['menu_link_color'] . ';' : '';
+      $menu_line_height = ($myoptions['menu_line_height']) ? 'line-height: ' . $myoptions['menu_line_height'] . 'px;' : '';
+      $menu_font_size = ($myoptions['menu_font_size']) ? 'font-size: ' . $myoptions['menu_font_size'] . 'px;' : '';
+      $menu_font_family = ($myoptions['menu_font_family']) ? 'font-family: ' . $myoptions['menu_font_family'] . ';' : '';
+      $menu_link_active_color = ($myoptions['menu_link_active_color']) ? 'color: ' . $myoptions['menu_link_active_color'] . ';' : '';
 
-.menu-button-txt{
-  color: <?php echo $menu_icon_text_color_color; ?>;
-}
+      if ($menu_dropdown_bg_color) {
+        echo '.desktop-nav .sub-menu{ background-color: ' . $menu_dropdown_bg_color. ';}';
+      }
 
-<?php endif ?>
+      echo '.desktop-menu .link-text, .headhesive .link-text{' . $menu_link_color . $menu_line_height . $menu_font_size . $menu_font_family . '}';
 
-.site-header .menu a .link-text, 
-.sub-menu-icon,
-#side-menu .menu a{
-  <?php 
-    if($menu_line_height) { echo 'line-height: ' . $menu_line_height . 'px;'; }
-    if($menu_font_size) { echo 'font-size: ' . $menu_font_size . 'px;';}
-  ?>
-}
+      if ($menu_link_color) {
+        echo '.desktop-menu .sub-menu-icon, .headhesive  .sub-menu-icon{' . $menu_link_color . '}';
+      }
 
-<?php if($mobile_menu_item_divider_color): ?>
+      if($menu_link_active_color){
+        echo '.desktop-menu a:hover .link-text, .desktop-menu a:hover .sub-menu-icon, .desktop-menu li.current-menu-item a .link-text, .headhesive a:hover .link-text, .headhesive a:hover .sub-menu-icon, .headhesive li.current-menu-item a .link-text{' . $menu_link_active_color . '}';
+      }
 
-.mobile-nav .menu li{
-  border-bottom: solid 1px <?php echo $menu_icon_text_color_color; ?>;
-}
 
-.mobile-nav .menu li:last-child{
-  border-bottom: none;
-}
+    // Mobile Menu
+      $mobile_menu_bg_color = $myoptions['mobile_menu_bg_color']; 
+      $mobile_menu_item_divider_color = $myoptions['mobile_menu_item_divider_color'];
+      $mobile_menu_link_color = ($myoptions['mobile_menu_link_color']) ? 'color: ' . $myoptions['mobile_menu_link_color'] . ';' : '';
+      $mobile_menu_line_height = ($myoptions['mobile_menu_line_height']) ? 'line-height: ' . $myoptions['mobile_menu_line_height'] . 'px;' : '';
+      $mobile_menu_font_size = ($myoptions['mobile_menu_font_size']) ? 'font-size: ' . $myoptions['mobile_menu_font_size'] . 'px;' : '';
+      $mobile_menu_font_family = ($myoptions['mobile_menu_font_family']) ? 'font-family: ' . $myoptions['mobile_menu_font_family'] . ';' : '';
+      $mobile_menu_link_active_color = ($myoptions['mobile_menu_link_active_color']) ? 'color: ' . $myoptions['mobile_menu_link_active_color'] . ';' : '';
 
-<?php endif ?>
+      if ($mobile_menu_bg_color) {
+        echo '.menu-mobile-container{ background-color: ' . $mobile_menu_bg_color . ';}';
+      }
 
-<?php if ($footer_top_background_color) : ?>
+      if($mobile_menu_item_divider_color){
+        echo '.mobile-nav li{ border-bottom: solid 1px' . $mobile_menu_item_divider_color . ';}';
+      }
 
-#top-footer{ 
-  background-color: <?php echo $footer_top_background_color; ?>;
-  <?php if ($footer_top_text_color) : ?>
-  color: <?php echo $footer_top_text_color; ?>;
-  <?php endif; ?>
-}
+      echo '.mobile-nav a span{' . $mobile_menu_link_color . $mobile_menu_line_height . $mobile_menu_font_size . $mobile_menu_font_family . '}';
 
-<?php endif; ?>
+      if($mobile_menu_link_active_color){
+        echo '.mobile-nav a:hover span, .mobile-nav li.current-menu-item a span{' . $mobile_menu_link_active_color . '}';
+      }
 
+      // if($light_menu_icon_color){
+      //   echo '.menu-button span::before, .menu-button span, .menu-button span::after{ background-color: ' . $light_menu_icon_color . ';}';
+      // }
 
-<?php if ($footer_top_link_color) : ?>
+  // Sticky Header Styles
 
-#top-footer a{ 
-  color: <?php echo $footer_top_link_color; ?>;
-}
+      $sticky_header_height = $myoptions['sticky_header_height'];
 
-#top-footer .social-icon svg path,
-#top-footer .social-icon svg polygon{
-  stroke: <?php echo $footer_top_link_color; ?>;
-}
+      if($sticky_header_height) { echo '.headhesive .sub-menu-icon{ line-height: ' . $sticky_header_height . 'px;} .headhesive .sticky-nav-inner{ height: ' . $sticky_header_height . 'px;}'; }
 
-<?php endif; ?>
+    // Light Style
+      // $light_menu_icon_color = $myoptions['light_menu_icon_color'];
+      // $light_sticky_logo = $myoptions['light_sticky_logo'];
+      // $light_sticky_link = $myoptions['light_sticky_link'];
+      // $light_sticky_bg = $myoptions['light_sticky_bg'];
+      // $light_sticky_link_hover = $myoptions['light_sticky_link_hover'];
 
-<?php if ($footer_top_link_hover_color) : ?>
+      // if ($light_sticky_logo) {
+      //   $light_sticky_logo_bg = 'background-image: url(' . $light_sticky_logo . ');';
+      //   echo '.headhesive .light .sticky-logo a{' . $light_sticky_logo_bg . '}';
+      // }
 
-#top-footer a:hover{ 
-  color: <?php echo $footer_top_link_hover_color; ?>;
-}
+      // if ($light_sticky_link) {
+      //   $light_sticky_link_color = 'color: ' . $light_sticky_link . ';';
+      //   echo '.headhesive .light a .link-text, .headhesive .light a .sub-menu-icon{' . $light_sticky_link_color . '}';
+      // }
 
-<?php endif; ?>
+      // if ($light_sticky_link_hover) {
+      //   $light_sticky_link_hover_color = 'color: ' . $light_sticky_link_hover . ';';
+      //   echo '.headhesive .light a:hover .link-text, .headhesive .light a:hover .sub-menu-icon{' . $light_sticky_link_hover_color . '}';
+      // }
 
-<?php if ($footer_bottom_background_color) : ?>
+      // if ($light_sticky_bg) {
+      //   $light_sticky_bg_color = 'background-color: ' . $light_sticky_bg . ';';
+      //   echo '.headhesive .light .sticky-nav-inner{' . $light_sticky_bg_color . '}';
+      // }
 
-#bottom-footer{ 
-  background-color: <?php echo $footer_bottom_background_color; ?>;
-  <?php if ($footer_bottom_text_color) : ?>
-  color: <?php echo $footer_bottom_text_color; ?>;
-  <?php endif; ?>
-}
+    // Dark Style
 
-<?php endif; ?>
+      $dark_sticky_logo = $myoptions['dark_sticky_logo'];
+      $dark_sticky_link = $myoptions['dark_sticky_link'];
+      $dark_sticky_bg = $myoptions['dark_sticky_bg'];
+      $dark_sticky_link_hover = $myoptions['dark_sticky_link_hover'];
 
+      if ($dark_sticky_logo) {
+        $dark_sticky_logo_bg = 'background-image: url(' . $dark_sticky_logo . ');';
+        echo '.headhesive .sticky-logo a{' . $dark_sticky_logo_bg . '}';
+      }
 
-<?php if ($footer_bottom_link_color) : ?>
+      if ($dark_sticky_link) {
+        $dark_sticky_link_color = 'color: ' . $dark_sticky_link . ';';
+        echo '.headhesive a .link-text, .headhesive a .sub-menu-icon{' . $dark_sticky_link_color . '}';
+      }
 
-#bottom-footer a{ 
-  color: <?php echo $footer_bottom_link_color; ?>;
-}
+      if ($dark_sticky_link_hover) {
+        $dark_sticky_link_hover_color = 'color: ' . $dark_sticky_link_hover . ';';
+        echo '.headhesive a:hover .link-text, .headhesive .dark a:hover .sub-menu-icon{' . $dark_sticky_link_hover_color . '}';
+      }
 
-#bottom-footer .social-icon svg path{
-  stroke: <?php echo $footer_bottom_link_color; ?>;
-}
+      if ($dark_sticky_bg) {
+        $dark_sticky_bg_color = 'background-color: ' . $dark_sticky_bg . ';';
+        echo '.headhesive .sticky-nav-inner{' . $dark_sticky_bg_color . '}';
+      }
 
-<?php endif; ?>
+  // Text Styles
 
-<?php if ($footer_bottom_link_hover_color) : ?>
+    $default_font_family = ($myoptions['default_font_family']) ? 'font-family: ' . $myoptions['default_font_family'] . ';' : '';
+    $main_font_color = ($myoptions['main_font_color']) ? 'color: ' . $myoptions['main_font_color'] . ';' : '';
+    $text_highlight_color = $myoptions['text_highlight_color'];
+    $link_text_color = ($myoptions['link_text_color']) ? 'color: ' . $myoptions['link_text_color'] . ';' : '';
+    $link_text_hover_color = ($myoptions['link_text_hover_color']) ? 'color: ' . $myoptions['link_text_hover_color'] . ';' : '';
 
-#bottom-footer a:hover{ 
-  color: <?php echo $footer_bottom_link_hover_color; ?>;
-}
+    $headings_font_family = ($myoptions['headings_font_family']) ? 'font-family: ' . $myoptions['headings_font_family'] . ';' : '';
+    $headings_font_color = ($myoptions['headings_font_color']) ? 'color: ' . $myoptions['headings_font_color'] . ';' : '';
+    $headings_text_transform = ($myoptions['headings_text_transform']) ? 'text-transform: ' . $myoptions['headings_text_transform'] . ';' : '';
+    $headings_line_height = ($myoptions['headings_line_height']) ? 'line-height: ' . $myoptions['headings_line_height'] . ';' : '';
+    $headings_font_weight = ($myoptions['headings_font_weight']) ? 'font-weight: ' . $myoptions['headings_font_weight'] . ';' : '';
 
-<?php endif; ?>
+    $paragraph_font_family = ($myoptions['paragraph_font_family']) ? 'font-family: ' . $myoptions['paragraph_font_family'] . ';' : '';
+    $paragraph_font_color = ($myoptions['paragraph_font_color']) ? 'color: ' . $myoptions['paragraph_font_color'] . ';' : '';
+    $paragraph_text_transform = ($myoptions['paragraph_text_transform']) ? 'text-transform: ' . $myoptions['paragraph_text_transform'] . ';' : '';
+    $paragraph_line_height = ($myoptions['paragraph_line_height']) ? 'line-height: ' . $myoptions['paragraph_line_height'] . ';' : '';
+    $paragraph_font_weight = ($myoptions['paragraph_font_weight']) ? 'font-weight: ' . $myoptions['paragraph_font_weight'] . ';' : '';
 
-<?php if($default_font_family) { echo 'body{ font-family: "' . $default_font_family_value . '"; }'; } ?>
+    // Global Text
 
-h1,h2,h3,h4,h5,h6{<?php if($headings_font_family) { echo 'font-family: "' . $headings_font_family_value . '";'; } if($headings_line_height) { echo 'line-height: ' . $headings_line_height . ';'; } if($headings_font_color) { echo 'color: ' . $headings_font_color . ';'; } if($headings_font_weight) { echo 'font-weight: ' . $headings_font_weight . ';'; } if($headings_text_transform) { echo 'text-transform: ' . $headings_text_transform . ';'; }?>}
+      echo 'body{' . $default_font_family . $main_font_color . '}';
 
-p, ul li, ol li, .ttf-tweet-text{<?php if($paragraph_font_family) { echo 'font-family: "' . $paragraph_font_family_value . '";'; } if($paragraph_line_height) { echo 'line-height: ' . $paragraph_line_height . ';'; } if($paragraph_font_color) { echo 'color: ' . $paragraph_font_color . ';'; } if($paragraph_font_weight) { echo 'font-weight: ' . $paragraph_font_weight . ';'; } if($paragraph_text_transform) { echo 'text-transform: ' . $paragraph_text_transform . ';'; }?>}
+      if ($text_highlight_color) {
+        echo '::-moz-selection{background:' . $text_highlight_color . '; color: #FFF;}::selection{background:' . $text_highlight_color . '; color: #FFF;}';
+      }
 
-.pagination .current,.pagination a:hover{
-  background-color: <?php echo $pagination_current_background_color; ?>;
-  color: <?php echo $pagination_current_text_color; ?>;
-}
+    // Links
 
-.pagination a{
-  background-color: <?php echo $pagination_item_background_color; ?>;
-  color: <?php echo $pagination_item_text_color; ?>;
-}
+      echo 'a{' . $link_text_color . '} ';
 
-.effect-sadie .box-content:before{
-  background: -webkit-linear-gradient(top, <?php echo $sadie_effect_gradient_top; ?> 0%, <?php echo $sadie_effect_gradient_bottom; ?> 75%);
-  background: linear-gradient(to bottom, <?php echo $sadie_effect_gradient_top; ?> 0%, <?php echo $sadie_effect_gradient_bottom; ?> 75%);
-}
+      echo 'a:hover{' . $link_text_hover_color . ';} ';
 
-#scrollTop{
-  background: <?php if($scroll_button_background_color){echo $scroll_button_background_color;} else {echo "transparent";} ?>; 
-  bottom: <?php echo $scroll_button_bottom; ?>px;
-  right: <?php echo $scroll_button_right; ?>px;
-  border: solid <?php echo $scroll_button_border_width; ?>px <?php echo $scroll_button_border_color; ?>;
-  width: <?php echo $scroll_button_width; ?>px;
-  height: <?php echo $scroll_button_width; ?>px;
-}
+    // Headings
 
-#scrollTop i{
-  color: <?php echo $scroll_button_icon_color; ?>;
-  font-size: <?php echo $scroll_button_icon_font_size; ?>px;
-}
+      echo 'h1,h2,h3,h4,h5,h6{' . $headings_font_family . $headings_font_color . $headings_text_transform . $headings_line_height . $headings_font_weight . '}';
 
-#scrollTop:hover{
-  background: <?php if($scroll_button_hover_background_color){echo $scroll_button_hover_background_color;} else {echo "transparent";} ?>; 
-  border: solid <?php echo $scroll_button_border_width; ?>px <?php echo $scroll_button_hover_border_color; ?>;
-}
+    // Body Text
 
-#scrollTop:hover i{
-  color: <?php echo $scroll_button_hover_icon_color; ?>;
-}
+      echo 'p, li, span, div, a, input, textarea, label{' . $paragraph_font_family . $paragraph_font_color . $paragraph_text_transform . $paragraph_line_height . $paragraph_font_weight . '}';
 
-<?php if( have_rows('theme_colors', 'option') ): while( have_rows('theme_colors', 'option') ): the_row(); 
+  // Footer Styles
 
-  $color = get_sub_field('color', 'option');
-  $color_class_name = get_sub_field('color_class_name', 'option');
+    // Footer Top
 
-  echo '.'. $color_class_name .'-border{ border-color:' . $color . ';  }';
-  echo '.'. $color_class_name .'-bg{ background-color:' . $color . ';  }';
-  echo '.'. $color_class_name .'-txt{ color:' . $color . ';  }';
-  echo '.btn.'. $color_class_name .'.outline{ background: none; color:' . $color . ';  border: solid 2px ' . $color . ';}';
-  echo '.btn.'. $color_class_name .'.outline:hover{ color: #FFF; background: ' . $color . ';}';
-  echo '.btn.'. $color_class_name .'.solid{ color: #FFF; background: ' . $color . ';}';
-  echo '.btn.'. $color_class_name .'-hover:hover{ color: #FFF; background: ' . $color . ' !important;}';
-  echo '*[class*="hvr"].'. $color_class_name .':before{ background:' . $color . '; border-color:' . $color . ';}';
-  
-endwhile; endif; 
-?>
+    $footer_top_background_color = ($myoptions['footer_top_background_color']) ? 'background-color: ' . $myoptions['footer_top_background_color'] . ';' : '';
+    $footer_top_text_color = ($myoptions['footer_top_text_color']) ? 'color: ' . $myoptions['footer_top_text_color'] . ';' : '';
+    $footer_top_link_color = ($myoptions['footer_top_link_color']) ? 'color: ' . $myoptions['footer_top_link_color'] . ';' : '';
+    $footer_top_link_hover_color = ($myoptions['footer_top_link_hover_color']) ? 'color: ' . $myoptions['footer_top_link_hover_color'] . ';' : '';
 
-<?php if ($global_css) { echo $global_css; }?>
+    echo '.top-footer{' . $footer_top_background_color . '} top-footer p, .top-footer li, .top-footer span, .top-footer div, .top-footer input, .top-footer textarea, .top-footer label{' . $footer_top_text_color . '}.top-footer a, .top-footer a span{' . $footer_top_link_color . '}.top-footer a:hover, .top-footer a:hover span{' . $footer_top_link_hover_color . ';}';
 
-<?php if ($tablet_portrait_css) { echo '@media screen and (min-width: 700px) and (orientation: portrait){' . $tablet_portrait_css . '}'; }?>
+    $footer_bottom_background_color = ($myoptions['footer_bottom_background_color']) ? 'background-color: ' . $myoptions['footer_bottom_background_color'] . ';' : '';
+    $footer_bottom_text_color = ($myoptions['footer_bottom_text_color']) ? 'color: ' . $myoptions['footer_bottom_text_color'] . ';' : '';
+    $footer_bottom_link_color = ($myoptions['footer_bottom_link_color']) ? 'color: ' . $myoptions['footer_bottom_link_color'] . ';' : '';
+    $footer_bottom_link_hover_color = ($myoptions['footer_bottom_link_hover_color']) ? 'color: ' . $myoptions['footer_bottom_link_hover_color'] . ';' : '';
 
-<?php if ($tablet_landscape_css) { echo '@media screen and (min-width: 700px) and (orientation: landscape){' . $tablet_landscape_css . '}'; }?>
+    echo '.bottom-footer{' . $footer_bottom_background_color . '} .bottom-footer p, .bottom-footer li, .bottom-footer span, .bottom-footer div, .bottom-footer input, .bottom-footer textarea, .bottom-footer label{' . $footer_bottom_text_color . '}.bottom-footer a, .bottom-footer a span{' . $footer_bottom_link_color . '}.bottom-footer a:hover, .bottom-footer a:hover span{' . $footer_bottom_link_hover_color . ';}';
 
-<?php if ($desktop_css) { echo '@media screen and (min-width: 1100px){' . $desktop_css . '}'; }?>
+  // Blog Styles
 
-<?php endif; ?>
+    // Pagination 
 
+      $pagination_item_background_color = $myoptions['pagination_item_background_color'];
+      $pagination_item_text_color = $myoptions['pagination_item_text_color'];
+      $pagination_current_background_color = $myoptions['pagination_current_background_color'];
+      $pagination_current_text_color = $myoptions['pagination_current_text_color'];
+
+      echo '.pagination .current,.pagination a:hover{ background-color: ' . $pagination_current_background_color . '; color: ' . $pagination_current_text_color . ';}.pagination a{background-color: ' . $pagination_item_background_color . '; color: ' . $pagination_item_text_color . ';}';
+
+  // Hover Box Styles
+
+    // Sadie Style Hover
+
+      $sadie_effect_gradient_top_color = $myoptions['sadie_effect_gradient_top_color'];
+      $sadie_effect_gradient_top_color_opacity = $myoptions['sadie_effect_gradient_top_color_opacity'];
+      $sadie_effect_gradient_top = 'rgba(' . hex2rgb($sadie_effect_gradient_top_color) . ', ' . $sadie_effect_gradient_top_color_opacity . ')';
+      $sadie_effect_gradient_bottom_color = $myoptions['sadie_effect_gradient_bottom_color'];
+      $sadie_effect_gradient_bottom_color_opacity = $myoptions['sadie_effect_gradient_bottom_color_opacity'];
+      $sadie_effect_gradient_bottom = 'rgba(' . hex2rgb($sadie_effect_gradient_bottom_color) . ', ' . $sadie_effect_gradient_bottom_color_opacity . ')';
+
+      if ($sadie_effect_gradient_top_color) {
+        echo '.effect-sadie .box-content:before{background: -webkit-linear-gradient(top,' . $sadie_effect_gradient_top . ' 0%, ' . $sadie_effect_gradient_bottom . ' 75%); background: linear-gradient(to bottom, ' . $sadie_effect_gradient_bottom . ' 75%);}';
+      }
+
+  // Global Classes
+
+    if( have_rows('theme_colors', 'option') ): while( have_rows('theme_colors', 'option') ): the_row(); 
+
+      $color = get_sub_field('color', 'option');
+      $color_class_name = get_sub_field('color_class_name', 'option');
+
+      echo '.'. $color_class_name .'-border{ border-color:' . $color . ';  }';
+      echo '.'. $color_class_name .'-bg{ background-color:' . $color . ';  }';
+      echo '.'. $color_class_name .'-txt{ color:' . $color . ';  }';
+      echo '.btn.'. $color_class_name .'.outline{ background: none; color:' . $color . ';  border: solid 2px ' . $color . ';}';
+      echo '.btn.'. $color_class_name .'.outline:hover{ color: #FFF; background: ' . $color . ';}';
+      echo '.btn.'. $color_class_name .'.solid{ color: #FFF; background: ' . $color . ';}';
+      echo '.btn.'. $color_class_name .'-hover:hover{ color: #FFF; background: ' . $color . ' !important;}';
+      echo '*[class*="hvr"].'. $color_class_name .':before{ background:' . $color . '; border-color:' . $color . ';}';
+      
+    endwhile; endif;
+
+  // Dynamic CSS
+
+    $global_css = $myoptions['global_css'];
+    $tablet_portrait_css = $myoptions['tablet_portrait_css'];
+    $tablet_landscape_css = $myoptions['tablet_landscape_css'];
+    $desktop_css = $myoptions['desktop_css'];
+
+    if ($global_css) { echo $global_css; }
+
+    if ($tablet_portrait_css) { echo '@media screen and (min-width: 700px) and (orientation: portrait){' . $tablet_portrait_css . '}'; }
+
+    if ($tablet_landscape_css) { echo '@media screen and (min-width: 700px) and (orientation: landscape){' . $tablet_landscape_css . '}'; }
+
+    if ($desktop_css) { echo '@media screen and (min-width: 1100px){' . $desktop_css . '}'; }
+
+} ?>

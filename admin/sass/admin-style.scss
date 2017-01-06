@@ -6,11 +6,16 @@ $md: 700px;
 $mdl: 900px;
 $lrg: 1100px;
 $xlrg: 1300px;
-$xxlrg: 1800px;
+$xxlrg: 1600px;
 
 .toplevel_page_theme-general-settings {
   *{
     @include box-sizing(border-box);  
+  }
+  .inside.acf-fields > .acf-tab-wrapper{
+    @include breakpoint($xxlrg){
+      padding: 20px;
+    }
   }
   .acf-fields{
     @include breakpoint($lrg){
@@ -30,10 +35,48 @@ $xxlrg: 1800px;
       }
     }
   }
+  .acf-tab-wrap.-left .acf-tab-group{
+    top: 0;
+  }
   .acf-field{
     padding: 10px;
     margin: 0;
-    border-bottom: 1px solid #eeeeee;
+    border: none;
+    &.acf-field-repeater{
+      width: 100%;
+    }
+    &[data-type="message"]{
+      width: 100%;
+      padding: 20px 0 10px;
+      border-bottom: none;
+      .acf-label{
+        display: none;
+      }
+      .acf-input{
+        padding: 0;
+      }
+      h1{
+        font-size: 26px !important;
+        font-weight: bold;
+        padding: 0 20px!important;
+        line-height: 50px !important;
+        color: #FFF;
+        background-color: #555555;
+      }
+      h2{
+        font-size: 20px !important;
+        line-height: 40px !important;
+        font-weight: 400;
+        padding: 0 20px !important;
+        color: #555;
+        background-color: #d5d5d5;
+      }
+      h3{
+        font-size: 15px !important;
+        font-weight: bold;
+        padding: 0 !important;
+      }
+    }
   }
   .acf-input-wrap input,
   .wp-color-result,

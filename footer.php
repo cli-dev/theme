@@ -1,12 +1,11 @@
-<!-- <div id="scrollTop"><i class="fa fa-angle-up"></i></div> -->
 </div>
-<footer id="footer">
+<footer id="footer" class="site-footer">
   <?php if ( is_active_sidebar( 'content-bottom' ) ) : ?> 
   <div id="content-bottom">   
     <?php dynamic_sidebar( 'content-bottom' ); ?>
   </div>
   <?php endif; ?>
-  <div id="top-footer" role="contentinfo">
+  <div id="top-footer" class="top-footer" role="contentinfo">
     <div class="footer-inner">
     <?php if ( is_active_sidebar( 'footer-1' ) ) : ?> 
       <div id="footer-1" class="footer-column">   
@@ -36,8 +35,8 @@
     </div>
   </div>
 <?php if ( is_active_sidebar( 'footer-bottom' ) ) : ?>  
-  <div id="bottom-footer">  
-    <div class="footer-inner grid-row">
+  <div id="bottom-footer" class="bottom-footer">  
+    <div class="footer-inner">
       <?php dynamic_sidebar( 'footer-bottom' ); ?>
     </div>
   </div>

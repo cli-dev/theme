@@ -141,6 +141,7 @@ function schemaInfo(){
     $company_logo = '"logo": "' . $logo . '", "image": "' . $logo . '", ';
   }
   $company_name = '"name": "' . get_bloginfo('name') . '", ';
+  $company_description = '';
   $tagline = get_bloginfo( 'description' );
   if($tagline){
     $company_description = '"description": "' . $tagline . '", ';

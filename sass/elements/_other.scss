@@ -435,11 +435,14 @@
           max-width: 40%; 
         }
       }
+      .team-title-area{
+        padding-bottom: 30px;
+        @include breakpoint($lrg){
+          padding-bottom: 40px;
+        }
+      }
       h3.team-title{
         padding-bottom: 5px;
-      }
-      .team-position{
-        padding-bottom: 30px;
       }
     }
 

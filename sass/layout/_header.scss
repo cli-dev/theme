@@ -96,6 +96,33 @@
       }
     }
 
+    .sticky-logo{
+      width: 100%;
+      @include display-flex;
+      a{
+        @include flex(1 1 auto);
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        @include breakpoint($lrg){
+          background-position: left center;
+        }
+      }
+    }
+
+    .mobile-logo{
+      width: 100%;
+      @include display-flex;
+      a{
+        @include flex(1 1 auto);
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
+
 // Page Header Styles
 
   .page-header{

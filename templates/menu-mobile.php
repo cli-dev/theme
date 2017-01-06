@@ -1,20 +1,56 @@
 <?php
   $myoptions = get_option( 'themesettings_');
-  $logoimg = ($myoptions['mobile_logo']) ? $myoptions['mobile_logo'] : '';
-  $logosvg = ($myoptions['svg_mobile_logo']) ? $myoptions['svg_mobile_logo'] : '';
-  $logo = ($logosvg) ? $logosvg : $logoimg;
-  $logo_max_width = ($myoptions['mobile_logo_maximum_width']) ? ' style="max-width: ' . $myoptions['mobile_logo_maximum_width'] . 'px;"' : '';
+  $sticky_header = $myoptions['sticky_header'];
 ?>
 <nav class="mobile-nav">
-  <div class="site-logo"<?php echo $logo_max_width; ?>> 
-    <a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'theme' ); ?>" rel="home" style="background: url('<?php echo $logo; ?>') center no-repeat; background-size: contain;">
-      <img src="<?php echo $logoimg;?>" alt="<?php esc_attr_e( get_bloginfo( 'name' ), 'theme' ); ?> Logo" class="site-main-logo"/>
-    </a>
+  <div class="mobile-logo"> 
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"></a>
   </div>
   <div class="menu-button-area">
     <button class="menu-button">
       <span>toggle menu</span>
     </button>
   </div>
-  <?php wp_nav_menu( array( 'theme_location' => 'mobile-menu', 'container_class' => 'menu-mobile-container', 'link_before' => '<span class="link-text">', 'link_after' => '</span>') ); ?>
+  <?php 
+    wp_nav_menu( array( 
+      'theme_location' => 'mobile-menu',
+      'container_class' => 'menu-mobile-container', 
+      'link_before' => '<span class="link-text">', 
+      'link_after' => '</span>'
+    )); 
+  ?>
 </nav>
+
+<?php if ($sticky_header == "1") {?>
+  <!-- <div class="mobile sticky">
+    <nav class="mobile-nav">
+      <div class="mobile-logo"> 
+        <a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"></a>
+      </div>
+      <div class="menu-button-area">
+        <button class="menu-button">
+          <span>toggle menu</span>
+        </button>
+      </div>
+      <?php 
+        wp_nav_menu( array( 
+          'theme_location' => 'mobile-menu',
+          'container_class' => 'menu-mobile-container', 
+          'link_before' => '<span class="link-text">', 
+          'link_after' => '</span>'
+        )); 
+      ?>
+    </nav>
+  </div> -->
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      var options = {
+        offset: '.site-header',
+        offsetSide: 'bottom',
+      }
+      //var header = new Headhesive('.sticky.mobile', options);
+
+      //$('.sticky.mobile').midnight();
+    });
+  </script>
+<?php } ?>
