@@ -42,8 +42,9 @@ if( function_exists('get_field') ) {
     // Desktop Logo Styles
 
       $desktop_logo_img = $myoptions['logo'];
+      $desktop_logo_img_url = $desktop_logo_img['url'];
       $desktop_logo_svg = $myoptions['svg_desktop_logo'];
-      $desktop_logo = ($myoptions['svg_desktop_logo']) ? $myoptions['svg_desktop_logo'] : $myoptions['logo'];
+      $desktop_logo = ($desktop_logo_svg) ? $desktop_logo_svg : $desktop_logo_img_url;
       $desktop_logo_bg = 'background-image: url(' . $desktop_logo . ');';
       $desktop_logo_max_width = ($myoptions['desktop_logo_maximum_width']) ? 'max-width: ' . $myoptions['desktop_logo_maximum_width'] . 'px;' : '';
 
