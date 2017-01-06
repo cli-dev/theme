@@ -19,7 +19,7 @@
 
  $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_animation_delay . $item_animation_offset : '';
  ?>
- <div class="col-item blog-feed<?php echo $animation_class . $item_animation_effect . $custom_class; ?>"<?php echo $animation;?>>
+ <div class="col-item blog-feed-widget<?php echo $animation_class . $item_animation_effect . $custom_class; ?>"<?php echo $animation;?>>
   
   <?php $args = array ('posts_per_page' => $blog_posts, 'offset' => $post_offset, 'cat' => $blog_category_id); $query = new WP_Query( $args ); if ( $query->have_posts() ) : ?>
   <div class="blog-feed-wrapper">
