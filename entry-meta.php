@@ -6,5 +6,5 @@
       echo '<span class="entry-cat ' . $category->slug . '" >' . $category->name . '</span>';
     } ?>
   </div>
-  <div class="post-date"><?php the_time( get_option( 'date_format' ) ); ?></div>
+  <time datetime="<?php the_time( 'c' ); ?>" itemprop="datePublished" class="post-date"><?php the_time( get_option( 'date_format' ) ); ?></time>
 </div>

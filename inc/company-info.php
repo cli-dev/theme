@@ -14,19 +14,19 @@ function companyAddress(){
       $i++;
 
       if($address_line_1){
-        $addressCode = '<span class="schema-info address1" itemprop="streetAddress">' . $address_line_1 . '</span>';  
+        $addressCode = '<span class="schema-info address1">' . $address_line_1 . '</span>';  
       }
       if($city){
-        $cityCode = '<span class="schema-info city" itemprop="addressLocality">' . $city . ', </span>';  
+        $cityCode = '<span class="schema-info city">' . $city . ', </span>';  
       }
       if($state){
-        $stateCode = '<span class="schema-info state" itemprop="addressRegion">' . $state . '</span>';  
+        $stateCode = '<span class="schema-info state">' . $state . '</span>';  
       }
       if($post_zip){
-        $zipCode = '<span class="schema-info zip" itemprop="postalCode">' . $post_zip . '</span>';  
+        $zipCode = '<span class="schema-info zip">' . $post_zip . '</span>';  
       }
 
-      $address .= '<a href="http://maps.google.com/?q=' . urlencode($full_address) . '" target="_blank" class="schema-info address address-' . $i . '" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><div class="address-inner"><div class="schema-info address-line-1">' . $addressCode . '</div><div class="schema-info address-line-2">' . $cityCode . $stateCode . ' ' . $zipCode . '</div></div></a>';
+      $address .= '<a href="http://maps.google.com/?q=' . urlencode($full_address) . '" target="_blank" class="schema-info address address-' . $i . '"><div class="address-inner"><div class="schema-info address-line-1">' . $addressCode . '</div><div class="schema-info address-line-2">' . $cityCode . $stateCode . ' ' . $zipCode . '</div></div></a>';
     }
     return $address;
   }
@@ -59,7 +59,7 @@ function companyPhone(){
       $phone_txt = $phone_row['phone'];
       $i++;
       if($phone_txt){
-        $phone .= '<div class="schema-info phone phone-' . $i . '"><a href="tel:' . $phone_txt . '" itemprop="telephone">' . $phone_txt . '</a></div>';  
+        $phone .= '<div class="schema-info phone phone-' . $i . '"><a href="tel:' . $phone_txt . '">' . $phone_txt . '</a></div>';  
       }
     }
     return $phone;
@@ -91,7 +91,7 @@ function companyEmail(){
       $email_txt = $email_row['email'];
       $i++;
       if($email_txt){
-        $email .= '<div class="schema-info email email-' . $i . '"><a href="mailto:' . $email_txt  . '" itemprop="email">' . $email_txt . '</a></div>';  
+        $email .= '<div class="schema-info email email-' . $i . '"><a href="mailto:' . $email_txt  . '">' . $email_txt . '</a></div>';  
       }
     }
     return $email;
@@ -115,31 +115,30 @@ function companyEmailTxt(){
 }
 
 function displayfullAddress() {
-  return '<div class="company-address" itemscope itemtype="http://schema.org/LocalBusiness">' . companyAddress() . companyPhone() . companyEmail() . '</div>';
+  return '<div class="company-address">' . companyAddress() . companyPhone() . companyEmail() . '</div>';
 }
 
 function displayAddress() {
-  return '<div class="company-address" itemscope itemtype="http://schema.org/LocalBusiness">' . companyAddress() . '</div>';
+  return '<div class="company-address">' . companyAddress() . '</div>';
 }
 
 function displayContactInfo() {
-  return '<div class="company-address" itemscope itemtype="http://schema.org/LocalBusiness">' . companyPhone() . companyEmail() . '</div>';
+  return '<div class="company-address">' . companyPhone() . companyEmail() . '</div>';
 }
 
 function displayPhone() {
-  return '<div class="company-address" itemscope itemtype="http://schema.org/LocalBusiness">' . companyPhone() .'</div>';
+  return '<div class="company-address">' . companyPhone() .'</div>';
 }
 
 function displayEmail() {
-  return '<div class="company-address" itemscope itemtype="http://schema.org/LocalBusiness">' . companyEmail() . '</div>';
+  return '<div class="company-address">' . companyEmail() . '</div>';
 }
 
 function schemaInfo(){
   $myoptions = get_option( 'themesettings_');
-  $logo = $myoptions['logo'];
-  if($logo){
-    $company_logo = '"logo": "' . $logo . '", "image": "' . $logo . '", ';
-  }
+  $logo_img = $myoptions['logo'];
+  $logo_img_url = $logo_img['url'];
+  $company_logo = '"logo": "' . $logo_img_url . '", "image": "' . $logo_img_url . '", ';
   $company_name = '"name": "' . get_bloginfo('name') . '", ';
   $company_description = '';
   $tagline = get_bloginfo( 'description' );

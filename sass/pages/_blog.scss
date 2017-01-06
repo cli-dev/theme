@@ -10,16 +10,6 @@
   }
 
   .post-header{
-    min-height: 100px;
-    font-size: 0;
-    line-height: 0;
-    position: relative;
-    @include breakpoint($md){
-      min-height: 200px;
-    }
-    @include breakpoint($lrg){
-      min-height: 300px;  
-    }
     &:before{
       content: '';
       display: block;
@@ -33,7 +23,7 @@
         padding-bottom: 33.333%;
       }
     }
-    img{
+    .post-img-inner{
       display: none;
     }
   }
@@ -69,6 +59,10 @@
         padding-left: 10px;
       }
     }
+  }
+
+  .post-author{
+    display: none;
   }
 
   .post-footer{

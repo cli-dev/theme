@@ -94,7 +94,7 @@ acf_add_local_field_group(array (
 			),
 		),
 		array (
-			'return_format' => 'url',
+			'return_format' => 'array',
 			'preview_size' => 'theme_image_preview',
 			'library' => 'all',
 			'min_width' => '',
