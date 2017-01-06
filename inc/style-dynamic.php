@@ -217,7 +217,7 @@ if( function_exists('get_field') ) {
 
     // Body Text
 
-      echo 'p, ul li, ol li, span, div, a, input, textarea, label{' . $paragraph_font_family . $paragraph_font_color . $paragraph_text_transform . $paragraph_line_height . $paragraph_font_weight . '}';
+      echo 'p, ul li, ol li, input, textarea, label{' . $paragraph_font_family . $paragraph_font_color . $paragraph_text_transform . $paragraph_line_height . $paragraph_font_weight . '}';
 
   // Footer Styles
 
