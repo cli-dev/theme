@@ -160,6 +160,7 @@
   add_filter('acf/load_field/name=menu_font_family', 'theme_font_choice_labels');
   add_filter('acf/load_field/name=headings_font_family', 'theme_font_choice_labels');
   add_filter('acf/load_field/name=paragraph_font_family', 'theme_font_choice_labels');
+  add_filter('acf/load_field/name=mobile_menu_font_family', 'theme_font_choice_labels');
 
 // Add Google Font url
 
@@ -177,9 +178,7 @@
       
     }
     add_action( 'wp_enqueue_scripts', 'add_google_fonts_css' );
-  }
-
-  
+  } 
 
 // Get the colors repeater and use it as choices for button colors
   function theme_button_choices( $field ) {
