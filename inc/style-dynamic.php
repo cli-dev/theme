@@ -74,14 +74,14 @@ if( function_exists('get_field') ) {
         echo '.desktop-nav .sub-menu{ background-color: ' . $menu_dropdown_bg_color. ';}';
       }
 
-      echo '.desktop-menu .link-text, .headhesive .link-text{' . $menu_link_color . $menu_line_height . $menu_font_size . $menu_font_family . '}';
+      echo '.desktop-menu .link-text, .side-menu .link-text, .headhesive .link-text{' . $menu_link_color . $menu_line_height . $menu_font_size . $menu_font_family . '}';
 
       if ($menu_link_color) {
-        echo '.desktop-menu .sub-menu-icon, .headhesive  .sub-menu-icon{' . $menu_link_color . '}';
+        echo '.desktop-menu .sub-menu-icon, .side-menu .sub-menu-icon, .headhesive  .sub-menu-icon{' . $menu_link_color . '}';
       }
 
       if($menu_link_active_color){
-        echo '.desktop-menu a:hover .link-text, .desktop-menu a:hover .sub-menu-icon, .desktop-menu li.current-menu-item a .link-text, .headhesive a:hover .link-text, .headhesive a:hover .sub-menu-icon, .headhesive li.current-menu-item a .link-text{' . $menu_link_active_color . '}';
+        echo '.desktop-menu a:hover .link-text, .desktop-menu a:hover .sub-menu-icon, .desktop-menu li.current-menu-item a .link-text, .headhesive a:hover .link-text, .side-menu a:hover .link-text, .side-menu a:hover .sub-menu-icon, .side-menu li.current-menu-item a .link-text, .headhesive a:hover .link-text, .headhesive a:hover .sub-menu-icon, .headhesive li.current-menu-item a .link-text{' . $menu_link_active_color . '}';
       }
 
 
