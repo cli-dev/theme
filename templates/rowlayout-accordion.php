@@ -43,7 +43,7 @@ $active_tab_bg_color = get_sub_field('active_tab_background_color', $item_id);
 
   <?php } ?>
 
-  <div class="accordion<?php echo ' ' . $accordion_class; ?>">
+  <div class="col-item accordion<?php echo ' ' . $accordion_class; ?>">
 
   <?php while( have_rows('accordion', $item_id) ): the_row(); 
 

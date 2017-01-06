@@ -37,36 +37,35 @@ $item_animation_offset =  (get_sub_field('item_animation_offset', $item_id)) ? '
 
 $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_animation_delay . $item_animation_offset : '';
 ?>
-<div class="col-item<?php echo $animation_class . $item_animation_effect; ?>"<?php echo $animation;?>>
-<div class="col-item<?php echo $animation_class . $item_animation_effect; ?>"<?php echo $animation;?>>
+<div class="col-item positions-grid<?php echo $animation_class . $item_animation_effect; ?>"<?php echo $animation;?>>
 
-<?php
+  <?php
 
-$args1 = array (
-  'post_type' => array( 'position' ),
-  'posts_per_page' => '-1',
-);
+  $args1 = array (
+    'post_type' => array( 'position' ),
+    'posts_per_page' => '-1',
+  );
 
-$query1 = new WP_Query( $args1 );
+  $query1 = new WP_Query( $args1 );
 
-if ( $query1->have_posts() ) : ?>
-  <div class="positions">
-    <?php echo $first_block; ?>
-    <?php while ( $query1->have_posts() ) : $query1->the_post(); ?>
-      <?php
-        $description = get_field('description');
-      ?>
-      <a href="<?php the_permalink(); ?>" class="position-block" <?php echo $number_of_columns; ?>>
-        <div class="position-block-inner <?php echo $extra_class; ?>" <?php echo $block_background_color; ?>>
-          <h3<?php echo $block_title_color; ?>><?php the_title(); ?></h3>
-          <div class="job-description">
-            <p<?php echo $block_text_color; ?>><?php echo $description; ?></p>
+  if ( $query1->have_posts() ) : ?>
+    <div class="positions">
+      <?php echo $first_block; ?>
+      <?php while ( $query1->have_posts() ) : $query1->the_post(); ?>
+        <?php
+          $description = get_field('description');
+        ?>
+        <a href="<?php the_permalink(); ?>" class="position-block" <?php echo $number_of_columns; ?>>
+          <div class="position-block-inner <?php echo $extra_class; ?>" <?php echo $block_background_color; ?>>
+            <h3<?php echo $block_title_color; ?>><?php the_title(); ?></h3>
+            <div class="job-description">
+              <p<?php echo $block_text_color; ?>><?php echo $description; ?></p>
+            </div>
+            <?php echo $button; ?>
           </div>
-          <?php echo $button; ?>
-        </div>
-      </a>
-    <?php endwhile; ?>
-  </div>
-<?php endif; ?>
-<?php wp_reset_postdata(); ?>
+        </a>
+      <?php endwhile; ?>
+    </div>
+  <?php endif; ?>
+  <?php wp_reset_postdata(); ?>
 </div>

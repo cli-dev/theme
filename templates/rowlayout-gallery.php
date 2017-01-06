@@ -23,7 +23,7 @@ $item_animation_offset =  (get_sub_field('item_animation_offset', $item_id)) ? '
 $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_animation_delay . $item_animation_offset : '';
 $gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'class="image-gallery"' . $gallery_negative_margin;
 ?>
-  <div class="col-item<?php echo $animation_class . $item_animation_effect . $custom_class;?>"<?php echo $animation;?>>
+  <div class="col-item gallery<?php echo $animation_class . $item_animation_effect . $custom_class;?>"<?php echo $animation;?>>
     <?php if( $images ): ?>
     <div <?php echo $gallery_classes ?>>
       <?php foreach( $images as $image ): ?>

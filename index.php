@@ -11,11 +11,7 @@ $blog_animation = $blog_animation_delay . $blog_animation_offset;
 <section id="content" role="main" class="blog-page">
   <?php get_template_part('templates/page', 'header') ; ?>
   <section class="entry-content">
-    <?php if( have_rows('row', $page_for_posts) ): ?>
-      <?php while( have_rows('row', $page_for_posts) ): the_row(); ?>
-        <?php get_template_part('templates/pagebuilder', 'row') ; ?>
-      <?php endwhile; ?>
-    <?php endif; ?>
+    <?php get_template_part('templates/pagebuilder', 'row') ; ?>
     <?php if ( have_posts() ) : ?>
       <div class="blog-feed<?php echo $blog_animation_effect ?>"<?php echo $blog_animation ?>>
         <div class="blog-feed-inner">

@@ -40,7 +40,7 @@ $item_animation_offset =  (get_sub_field('item_animation_offset', $item_id)) ? '
 
 $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_animation_delay . $item_animation_offset : '';
 ?>
-<div class="col-item<?php echo $animation_class . $item_animation_effect . $custom_class; ?>"<?php echo $animation;?>>
+<div class="col-item hover-box<?php echo $animation_class . $item_animation_effect . $custom_class; ?>"<?php echo $animation;?>>
   <?php echo $box_open_tag; ?>
     <?php if ($box_image) { echo '<div class="box-img" style="background: url(' . $box_image . ') center no-repeat; background-size: cover;"></div>';} ?>
     <div class="box-content">

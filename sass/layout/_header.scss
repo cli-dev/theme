@@ -83,6 +83,11 @@
       }
       .divided-menu-wrapper &{
         padding: 10px 20px;
+        a{
+          @include breakpoint($lrg){
+            background-position: center center;
+          }
+        }
       }
       a{
         @include flex(1 1 auto);
@@ -132,6 +137,13 @@
         background-position: center center;
         @include breakpoint($lrg){
           background-position: left center;
+        }
+      }
+      .divided-menu-wrapper &{
+        a{
+          @include breakpoint($lrg){
+            background-position: center center;
+          }
         }
       }
     }

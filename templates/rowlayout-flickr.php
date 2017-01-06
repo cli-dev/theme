@@ -25,7 +25,7 @@ $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_anima
 $item_classes = $animation_class . $item_animation_effect . $custom_class;
 ?>
 
-<div class="col-item<?php echo $item_classes; ?>"<?php echo $animation;?>>    
+<div class="col-item flickr-feed<?php echo $item_classes; ?>"<?php echo $animation;?>>    
   <div class="flickr-wrapper<?php echo $is_slider; ?>"<?php echo $gallery_negative_margin; ?>></div> 
 </div>
         

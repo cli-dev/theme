@@ -23,15 +23,13 @@ $item_animation_offset =  (get_sub_field('item_animation_offset', $item_id)) ? '
 
 $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_animation_delay . $item_animation_offset : '';
 ?>
-<div class="col-item<?php echo $animation_class . $item_animation_effect; ?>"<?php echo $animation;?>>
-
-<a href="<?php echo get_permalink($positionID); ?>" class="position-block">
-  <div class="position-block-inner <?php echo $extra_class; ?>" <?php echo $block_styles; ?>>
-    <h3><?php echo get_the_title($positionID); ?></h3>
-    <div class="job-description">
-      <?php echo $description; ?>
+<div class="col-item single-position<?php echo $animation_class . $item_animation_effect; ?>"<?php echo $animation;?>>
+  <a href="<?php echo get_permalink($positionID); ?>" class="position-block">
+    <div class="position-block-inner <?php echo $extra_class; ?>" <?php echo $block_styles; ?>>
+      <h3><?php echo get_the_title($positionID); ?></h3>
+      <div class="job-description">
+        <?php echo $description; ?>
+      </div>
     </div>
-  </div>
-</a>
-
+  </a>
 </div>

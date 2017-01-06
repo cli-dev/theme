@@ -32,7 +32,7 @@ $args1 = array (
 $query1 = new WP_Query( $args1 );
 ?>
 <?php if ( $query1->have_posts() ) : ?>
-<div class="col-item<?php echo $animation_class . $item_animation_effect . $custom_class; ?>"<?php echo $animation;?>>
+<div class="col-item team-grid<?php echo $animation_class . $item_animation_effect . $custom_class; ?>"<?php echo $animation;?>>
   <div class="team"<?php echo $gallery_negative_margin; ?>>
     <?php while ( $query1->have_posts() ) : $query1->the_post(); ?>
       <?php

@@ -41,7 +41,7 @@ $item_animation_offset =  (get_sub_field('item_animation_offset', $item_id)) ? '
 $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_animation_delay . $item_animation_offset : '';
 
 ?>
-<div class="col-item<?php echo $animation_class . $item_animation_effect . $custom_class; ?>"<?php echo $animation;?>>
+<div class="col-item twitter-feed<?php echo $animation_class . $item_animation_effect . $custom_class; ?>"<?php echo $animation;?>>
   <div class="twitter-wrapper<?php if ($is_slider == 1) { echo ' twitter-slider'; }?>">
     <?php echo $twitter_icon; ?>
     <?php echo returnTweet($username, $num_tweets, $add_links_to_tweet_text, $display_username, $link_username);?>
