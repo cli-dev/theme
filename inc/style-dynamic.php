@@ -18,13 +18,13 @@ if( function_exists('get_field') ) {
     $mobile_header_height = $myoptions['mobile_header_height'];
     $header_bg_rgb = hex2rgb($header_bg_color);
 
-    if($header_bg_color) { echo '.mobile-nav{background-color: ' . $header_bg_color . ';} .desktop-menu { background-color: rgba(' . $header_bg_rgb . ', ' . $header_background_opacity . ');}'; }
+    if($header_bg_color) { echo '.mobile-nav, .desktop-menu, .side-menu { background-color: rgba(' . $header_bg_rgb . ', ' . $header_background_opacity . ');}'; }
 
     if($mobile_header_height) { echo '.mobile-nav { height: ' . $mobile_header_height . 'px;}'; }
 
     if($menu_dropdown_bg_color) { echo '.desktop-menu-inner .sub-menu{ background-color: ' . $menu_dropdown_bg_color . ';}'; }
 
-    if($desktop_header_height) { echo '.desktop-menu{ height: ' . $desktop_header_height . 'px;} .desktop-menu .sub-menu-icon{ line-height: ' . $desktop_header_height . 'px;}'; }
+    if($desktop_header_height) { echo '.site-header.has-side-menu, .desktop-menu{ height: ' . $desktop_header_height . 'px;} .desktop-menu .sub-menu-icon{ line-height: ' . $desktop_header_height . 'px;}'; }
 
     // Header Top Bar
 
@@ -44,6 +44,10 @@ if( function_exists('get_field') ) {
       $desktop_logo_img = $myoptions['logo'];
       $desktop_logo_svg = $myoptions['svg_desktop_logo'];
       $desktop_logo = ($myoptions['svg_desktop_logo']) ? $myoptions['svg_desktop_logo'] : $myoptions['logo'];
+      $desktop_logo_bg = 'background-image: url(' . $desktop_logo . ');';
+      $desktop_logo_max_width = ($myoptions['desktop_logo_maximum_width']) ? 'max-width: ' . $myoptions['desktop_logo_maximum_width'] . 'px;' : '';
+
+      echo '.site-logo{' . $desktop_logo_max_width . '}.site-logo a{' . $desktop_logo_bg . '}';
 
     // Mobile Logo Styles
 

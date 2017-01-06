@@ -137,23 +137,6 @@ acf_add_local_field_group(array (
 			),
 		),
 		array (
-			'message' => '<h2>Mobile Logo</h2>',
-			'esc_html' => 0,
-			'new_lines' => 'wpautop',
-			'key' => 'field_586d9b622eb7c',
-			'label' => 'Mobile Logo',
-			'name' => '',
-			'type' => 'message',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-		),
-		array (
 			'default_value' => '',
 			'min' => '',
 			'max' => '',
@@ -175,6 +158,23 @@ acf_add_local_field_group(array (
 			),
 			'readonly' => 0,
 			'disabled' => 0,
+		),
+		array (
+			'message' => '<h2>Mobile Logo</h2>',
+			'esc_html' => 0,
+			'new_lines' => 'wpautop',
+			'key' => 'field_586d9b622eb7c',
+			'label' => 'Mobile Logo',
+			'name' => '',
+			'type' => 'message',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
 		),
 		array (
 			'return_format' => 'url',
@@ -566,6 +566,32 @@ acf_add_local_field_group(array (
 			),
 		),
 		array (
+			'multiple' => 0,
+			'allow_null' => 0,
+			'choices' => array (
+				'header-no-overlap' => 'Site header does not overlap page header',
+				'header-overlap' => 'Site header overlaps page header',
+			),
+			'default_value' => array (
+			),
+			'ui' => 0,
+			'ajax' => 0,
+			'placeholder' => '',
+			'return_format' => 'value',
+			'key' => 'field_572279229a959',
+			'label' => 'Site Header Position',
+			'name' => 'top_header_position',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+		),
+		array (
 			'default_value' => 0,
 			'message' => 'Will open with a button',
 			'ui' => 0,
@@ -760,40 +786,6 @@ acf_add_local_field_group(array (
 			),
 			'wrapper' => array (
 				'width' => '100',
-				'class' => '',
-				'id' => '',
-			),
-		),
-		array (
-			'multiple' => 0,
-			'allow_null' => 0,
-			'choices' => array (
-				'header-no-overlap' => 'Site header does not overlap page header',
-				'header-overlap' => 'Site header overlaps page header',
-			),
-			'default_value' => array (
-			),
-			'ui' => 0,
-			'ajax' => 0,
-			'placeholder' => '',
-			'return_format' => 'value',
-			'key' => 'field_572279229a959',
-			'label' => 'Top Header Position',
-			'name' => 'top_header_position',
-			'type' => 'select',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => array (
-				array (
-					array (
-						'field' => 'field_560ec99f29270',
-						'operator' => '==',
-						'value' => 'Top Menu',
-					),
-				),
-			),
-			'wrapper' => array (
-				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
@@ -1193,7 +1185,6 @@ acf_add_local_field_group(array (
 			'choices' => array (
 				'\'Bree Serif\', serif' => 'Bree Serif',
 				'\'Roboto\', sans' => 'Roboto',
-				'\'Open Sans\', sans' => 'Open Sans',
 			),
 			'default_value' => array (
 			),
@@ -1392,7 +1383,6 @@ acf_add_local_field_group(array (
 			'choices' => array (
 				'\'Bree Serif\', serif' => 'Bree Serif',
 				'\'Roboto\', sans' => 'Roboto',
-				'\'Open Sans\', sans' => 'Open Sans',
 			),
 			'default_value' => array (
 			),
@@ -1688,7 +1678,6 @@ acf_add_local_field_group(array (
 			'choices' => array (
 				'\'Bree Serif\', serif' => 'Bree Serif',
 				'\'Roboto\', sans' => 'Roboto',
-				'\'Open Sans\', sans' => 'Open Sans',
 			),
 			'default_value' => array (
 			),
@@ -1734,7 +1723,6 @@ acf_add_local_field_group(array (
 			'choices' => array (
 				'\'Bree Serif\', serif' => 'Bree Serif',
 				'\'Roboto\', sans' => 'Roboto',
-				'\'Open Sans\', sans' => 'Open Sans',
 			),
 			'default_value' => array (
 			),
@@ -1882,7 +1870,6 @@ acf_add_local_field_group(array (
 			'choices' => array (
 				'\'Bree Serif\', serif' => 'Bree Serif',
 				'\'Roboto\', sans' => 'Roboto',
-				'\'Open Sans\', sans' => 'Open Sans',
 			),
 			'default_value' => array (
 			),

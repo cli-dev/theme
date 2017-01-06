@@ -12,7 +12,7 @@ $hide_button = ($hide_menu_on_desktop == 0) ? ' hide_button' : '';
 $header_in_grid = ($is_header_in_grid == 1) ? ' header-in-grid' : '';
 
 if ($sticky_header == "1") {?>
-  <div class="<?php echo $sticky; ?>">
+  <div class="<?php echo $sticky . $header_in_grid; ?>">
     <nav class="sticky-nav-inner">
       <div class="desktop-menu-inner">
         <div class="sticky-logo"> 

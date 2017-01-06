@@ -255,7 +255,7 @@ function home_logo_link() {
 
   $logo_bg = ($logo) ? ' style="background: url(' . $logo . ') center no-repeat; background-size: contain;"' : '';
 
-  $siteLogo = '<div class="site-logo" itemtype="http://schema.org/LocalBusiness"'. $logo_max_width .'><a itemprop="url" href="' . esc_url( home_url( '/' ) ) . '" title="' . get_bloginfo( 'name' ) . '" rel="home"' . $logo_bg . '><img src="' . $logoimg . '" alt="' . get_bloginfo( 'name' ) . ' Logo" itemprop="logo" class="site-main-logo" /></a></div>';
+  $siteLogo = '<div class="site-logo" itemtype="http://schema.org/LocalBusiness"><a itemprop="url" href="' . esc_url( home_url( '/' ) ) . '" title="' . get_bloginfo( 'name' ) . '" rel="home"><img src="' . $logoimg . '" alt="' . get_bloginfo( 'name' ) . ' Logo" itemprop="logo" class="site-main-logo" /></a></div>';
 
   return $siteLogo;
 }

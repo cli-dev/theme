@@ -8,8 +8,14 @@
   .site-header{
     &.header-in-grid{
       max-width: $grid-width;
-      @include breakpoint($md){
+      @include breakpoint($mdl){
         width: 80%;
+      }
+      .desktop-menu-inner,
+      .header-widgets-inner{
+        @include breakpoint($mdl){
+          width: 100%;
+        }
       }
     }
     &.header-overlap{
@@ -19,6 +25,17 @@
       top: 0;
       left: 50%;
       @include transform(translateX(-50%));
+    }
+    &.has-side-menu{
+      @include display-flex;
+      .header-inner{
+        @include flex(1 1 auto);
+        @include display-flex;
+      }
+      .header-widgets{
+        width: 100%;
+        @include flex(1 1 auto);
+      }
     }
   }
 
@@ -42,6 +59,11 @@
         width: 80%;
         max-width: $grid-width;
       }
+      .header-in-grid &{
+        @include breakpoint($mdl){
+          padding: 10px 40px;
+        }
+      }
     }
 
   // Main Logo
@@ -56,8 +78,7 @@
       @include breakpoint($mdl){
         @include flex(0 1 auto);
       }
-      .desktop-menu &,
-      .sticky-header &{
+      .desktop-menu &{
         padding: 10px 0;
       }
       .divided-menu-wrapper &{
@@ -68,6 +89,9 @@
         display: block;
         width: 100%;
         position: relative;
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: contain;
       }
       &.center-logo{
         display: none;
@@ -102,6 +126,7 @@
       a{
         @include flex(1 1 auto);
         width: 100%;
+        padding: 10px 0;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;

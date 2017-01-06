@@ -135,23 +135,6 @@
             }
         },
         {
-            "message": "<h2>Mobile Logo<\/h2>",
-            "esc_html": 0,
-            "new_lines": "wpautop",
-            "key": "field_586d9b622eb7c",
-            "label": "Mobile Logo",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
             "default_value": "",
             "min": "",
             "max": "",
@@ -173,6 +156,23 @@
             },
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "message": "<h2>Mobile Logo<\/h2>",
+            "esc_html": 0,
+            "new_lines": "wpautop",
+            "key": "field_586d9b622eb7c",
+            "label": "Mobile Logo",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
         },
         {
             "return_format": "url",
@@ -563,6 +563,31 @@
             }
         },
         {
+            "multiple": 0,
+            "allow_null": 0,
+            "choices": {
+                "header-no-overlap": "Site header does not overlap page header",
+                "header-overlap": "Site header overlaps page header"
+            },
+            "default_value": [],
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "return_format": "value",
+            "key": "field_572279229a959",
+            "label": "Site Header Position",
+            "name": "top_header_position",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "default_value": 0,
             "message": "Will open with a button",
             "ui": 0,
@@ -757,39 +782,6 @@
             ],
             "wrapper": {
                 "width": "100",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "multiple": 0,
-            "allow_null": 0,
-            "choices": {
-                "header-no-overlap": "Site header does not overlap page header",
-                "header-overlap": "Site header overlaps page header"
-            },
-            "default_value": [],
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": "",
-            "return_format": "value",
-            "key": "field_572279229a959",
-            "label": "Top Header Position",
-            "name": "top_header_position",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_560ec99f29270",
-                        "operator": "==",
-                        "value": "Top Menu"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
                 "class": "",
                 "id": ""
             }
@@ -1186,8 +1178,7 @@
             "allow_null": 0,
             "choices": {
                 "'Bree Serif', serif": "Bree Serif",
-                "'Roboto', sans": "Roboto",
-                "'Open Sans', sans": "Open Sans"
+                "'Roboto', sans": "Roboto"
             },
             "default_value": [],
             "ui": 1,
@@ -1384,8 +1375,7 @@
             "allow_null": 0,
             "choices": {
                 "'Bree Serif', serif": "Bree Serif",
-                "'Roboto', sans": "Roboto",
-                "'Open Sans', sans": "Open Sans"
+                "'Roboto', sans": "Roboto"
             },
             "default_value": [],
             "ui": 1,
@@ -1679,8 +1669,7 @@
             "allow_null": 0,
             "choices": {
                 "'Bree Serif', serif": "Bree Serif",
-                "'Roboto', sans": "Roboto",
-                "'Open Sans', sans": "Open Sans"
+                "'Roboto', sans": "Roboto"
             },
             "default_value": [],
             "ui": 0,
@@ -1724,8 +1713,7 @@
             "allow_null": 0,
             "choices": {
                 "'Bree Serif', serif": "Bree Serif",
-                "'Roboto', sans": "Roboto",
-                "'Open Sans', sans": "Open Sans"
+                "'Roboto', sans": "Roboto"
             },
             "default_value": [],
             "ui": 0,
@@ -1869,8 +1857,7 @@
             "allow_null": 0,
             "choices": {
                 "'Bree Serif', serif": "Bree Serif",
-                "'Roboto', sans": "Roboto",
-                "'Open Sans', sans": "Open Sans"
+                "'Roboto', sans": "Roboto"
             },
             "default_value": [],
             "ui": 0,
@@ -2605,5 +2592,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483663112
+    "modified": 1483719709
 }
