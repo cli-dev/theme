@@ -20,6 +20,9 @@
       padding-right: 20px;
     }
   }
+  .link-text{
+    @include transition(ease-in-out all 0.2s);
+  }
 }
 
 // Menu Button
