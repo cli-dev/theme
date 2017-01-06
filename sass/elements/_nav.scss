@@ -53,6 +53,9 @@
         right: 40px;
       }
     } 
+    &.hide_button{
+      display: none;
+    }
   }
 
   .menu-button {
@@ -92,9 +95,6 @@
           @include box-shadow(rgba(0, 0, 0, 0) 0px 0px 5px);
         }
       }
-    }
-    &.hide_button{
-      display: none;
     }
     span {
       display: block;
