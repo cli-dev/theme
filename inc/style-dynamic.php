@@ -274,9 +274,11 @@ if( function_exists('get_field') ) {
       echo '.'. $color_class_name .'-bg{ background-color:' . $color . ';  }';
       echo '.'. $color_class_name .'-txt{ color:' . $color . ';  }';
       echo '.btn.'. $color_class_name .'.outline{ background: none; color:' . $color . ';  border: solid 2px ' . $color . ';}';
+      echo '.btn.'. $color_class_name .'.outline span{color:' . $color . ';}';
       echo '.btn.'. $color_class_name .'.outline:hover{ color: #FFF; background: ' . $color . ';}';
       echo '.btn.'. $color_class_name .'.solid{ color: #FFF; background: ' . $color . ';}';
       echo '.btn.'. $color_class_name .'-hover:hover{ color: #FFF; background: ' . $color . ' !important;}';
+      echo '.btn.'. $color_class_name .'-hvr-txt:hover, .btn.'. $color_class_name .'-hvr-txt:hover span, .'. $color_class_name .'-hvr-txt .btn:hover span{ color: ' . $color . ' !important;}';
       echo '*[class*="hvr"].'. $color_class_name .':before{ background:' . $color . '; border-color:' . $color . ';}';
       
     endwhile; endif;
