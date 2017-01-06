@@ -87,7 +87,7 @@ $row_index = 0;
         $col_alignment = $col_vertical_alignment;
         $row_direction = ' flex-direction-column';
       }
-      $row_slug = ' ' . the_slug($item_id);
+      $row_slug = (is_blog()) ? ' blog' : ' ' . the_slug($item_id);
       $row_index++;
       $row_wrapper_classes = ' class="row-wrapper' . $custom_class . $animation_class . $row_animation_effect . $row_slug . '-row-' . $row_index . '"';
       $row_wrapper_animation = $row_animation_duration . $row_animation_delay . $row_animation_offset;
