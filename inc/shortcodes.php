@@ -67,51 +67,83 @@ function divider_shortcode( $atts ) {
 }
 add_shortcode( 'divider', 'divider_shortcode' );
 
-function show_full_Address() {
-  
-  return displayfullAddress();
+function show_full_Address($atts) {
+  $a = shortcode_atts(
+    array(
+      'location' => '',
+    ), $atts );
+  $location_number = $a['location'];
+  return displayfullAddress($location_number);
 }
 add_shortcode( 'full_address', 'show_full_Address' );
 
-function show_Address() {
-  
-  return displayAddress();
+function show_Address($atts) {
+  $a = shortcode_atts(
+    array(
+      'location' => '',
+    ), $atts );
+  $location_number = $a['location'];
+  return displayAddress($location_number);
 }
 add_shortcode( 'address', 'show_Address' );
 
-function show_Address_txt() {
-  
-  return companyAddressTxt();
+function show_Address_txt($atts) {
+  $a = shortcode_atts(
+    array(
+      'location' => '',
+    ), $atts );
+  $location_number = $a['location'];
+  return companyAddressTxt($location_number);
 }
 add_shortcode( 'address_txt', 'show_Address_txt' );
 
-function show_Contact() {
-  
-  return displayContactInfo();
+function show_Contact($atts) {
+  $a = shortcode_atts(
+    array(
+      'location' => '',
+    ), $atts );
+  $location_number = $a['location'];
+  return displayContactInfo($location_number);
 }
 add_shortcode( 'contact_info', 'show_Contact' );
 
-function show_Phone() {
-  
-  return displayPhone();
+function show_Phone($atts) {
+  $a = shortcode_atts(
+    array(
+      'location' => '',
+    ), $atts );
+  $location_number = $a['location'];
+  return displayPhone($location_number);
 }
 add_shortcode( 'phone', 'show_Phone' );
 
-function show_phone_txt() {
-  
-  return companyPhoneTxt();
+function show_phone_txt($atts) {
+  $a = shortcode_atts(
+    array(
+      'location' => '',
+    ), $atts );
+  $location_number = $a['location'];
+  return companyPhoneTxt($location_number);
 }
 add_shortcode( 'phone_txt', 'show_phone_txt' );
 
-function show_Email() {
-  
-  return displayEmail();
+function show_Email($atts) {
+  $a = shortcode_atts(
+    array(
+      'location' => '',
+    ), $atts );
+  $location_number = $a['location'];
+  return displayEmail($location_number);
 }
 add_shortcode( 'email', 'show_Email' );
 
-function show_Email_txt() {
-  
-  return companyEmailTxt();
+function show_Email_txt($atts) {
+  $a = shortcode_atts(
+    array(
+      'location' => '',
+    ), $atts );
+  $location_number = $a['location'];
+  return companyEmailTxt($location_number);
 }
 add_shortcode( 'email_txt', 'show_Email_txt' );
 

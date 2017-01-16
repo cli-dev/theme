@@ -1,9 +1,10 @@
 <?php 
 
-function companyAddress(){
+function companyAddress($address_number){
   $address_rows = get_field('company_address', 'options');
   if($address_rows){
-    $address = '';
+    $all_addresses = '';
+    $addresses = array();
     $i = 0;
     foreach($address_rows as $address_row){
       $address_line_1 = $address_row['address_line_1'];
@@ -26,16 +27,26 @@ function companyAddress(){
         $zipCode = '<span class="schema-info zip">' . $post_zip . '</span>';  
       }
 
-      $address .= '<a href="http://maps.google.com/?q=' . urlencode($full_address) . '" target="_blank" class="schema-info address address-' . $i . '"><div class="address-inner"><div class="schema-info address-line-1">' . $addressCode . '</div><div class="schema-info address-line-2">' . $cityCode . $stateCode . ' ' . $zipCode . '</div></div></a>';
+      $address_code = '<a href="http://maps.google.com/?q=' . urlencode($full_address) . '" target="_blank" class="schema-info address address-' . $i . '"><div class="address-inner"><div class="schema-info address-line-1">' . $addressCode . '</div><div class="schema-info address-line-2">' . $cityCode . $stateCode . ' ' . $zipCode . '</div></div></a>';
+
+      $all_addresses .= $address_code;
+
+      $addresses += [ 'address_' . $i => strval ($address_code) ];
+
     }
-    return $address;
+    if ($address_number !== '') {
+      return $addresses['address_' . $address_number];
+    } else{
+      return $all_addresses;
+    }
   }
 }
 
-function companyAddressTxt(){
+function companyAddressTxt($address_number){
   $address_rows = get_field('company_address', 'options');
   if($address_rows){
-    $address = '';
+    $all_addresses = '';
+    $addresses = array();
     $i = 0;
     foreach($address_rows as $address_row){
       $address_line_1 = $address_row['address_line_1'] . ' ';
@@ -44,94 +55,120 @@ function companyAddressTxt(){
       $post_zip = $address_row['zip'];
       $full_address = $address_line_1 . $city . $post_zip;
       $i++;
-      $address .= '<span class="company-address-txt address-' . $i . '">' . $full_address . '</span>';
+      $address_code = '<span class="company-address-txt address-' . $i . '">' . $full_address . '</span>';
+      $all_addresses .= $address_code;
+      $addresses += [ 'address_' . $i => strval ($address_code) ];
     }
-    return $address;
+    if ($address_number !== '') {
+      return $addresses['address_' . $address_number];
+    } else{
+      return $all_addresses;
+    }
   }
 }
 
-function companyPhone(){
+function companyPhone($phone_number){
   $phone_rows = get_field('company_phone', 'options');
   if($phone_rows){
-    $phone = '';
+    $all_phones = '';
+    $phones = array();
     $i = 0;
     foreach($phone_rows as $phone_row){    
       $phone_txt = $phone_row['phone'];
       $i++;
-      if($phone_txt){
-        $phone .= '<div class="schema-info phone phone-' . $i . '"><a href="tel:' . $phone_txt . '">' . $phone_txt . '</a></div>';  
-      }
+      $phone_code = '<div class="schema-info phone phone-' . $i . '"><a href="tel:' . $phone_txt . '">' . $phone_txt . '</a></div>';  
+      $all_phones .= $phone_code;
+      $phones += [ 'phone_' . $i => strval ($phone_code) ];
     }
-    return $phone;
+    if ($phone_number !== '') {
+      return $phones['phone_' . $phone_number];
+    } else{
+      return $all_phones;
+    }
   }
 }
 
-function companyPhoneTxt(){
+function companyPhoneTxt($phone_number){
   $phone_rows = get_field('company_phone', 'options');
   if($phone_rows){
-    $phone = '';
+    $all_phones = '';
+    $phones = array();
     $i = 0;
     foreach($phone_rows as $phone_row){    
       $phone_txt = $phone_row['phone'];
       $i++;
-      if($phone_txt){
-        $phone .= '<span class="company-phone phone-' . $i . '">' . $phone_txt . '</span>';  
-      }
+      $phone_code = '<span class="company-phone phone-' . $i . '">' . $phone_txt . '</span>';  
+      $all_phones .= $phone_code;
+      $phones += [ 'phone_' . $i => strval ($phone_code) ];
     }
-    return $phone;
+    if ($phone_number !== '') {
+      return $phones['phone_' . $phone_number];
+    } else{
+      return $all_phones;
+    }
   }
 }
 
-function companyEmail(){
+function companyEmail($email_number){
   $email_rows = get_field('company_email', 'options');
   if($email_rows){
-    $email = '';
+    $all_emails = '';
+    $emails = array();
     $i = 0;
     foreach($email_rows as $email_row){
       $email_txt = $email_row['email'];
       $i++;
-      if($email_txt){
-        $email .= '<div class="schema-info email email-' . $i . '"><a href="mailto:' . $email_txt  . '">' . $email_txt . '</a></div>';  
-      }
+      $email_code = '<div class="schema-info email email-' . $i . '"><a href="mailto:' . $email_txt  . '">' . $email_txt . '</a></div>'; 
+      $all_emails .= $email_code;
+      $emails += [ 'email_' . $i => strval ($email_code) ];
     }
-    return $email;
+    if ($email_number !== '') {
+      return $emails['email_' . $email_number];
+    } else{
+      return $all_emails;
+    }
   }
 }
 
-function companyEmailTxt(){
+function companyEmailTxt($email_number){
   $email_rows = get_field('company_email', 'options');
   if($email_rows){
-    $email = '';
+    $all_emails = '';
+    $emails = array();
     $i = 0;
     foreach($email_rows as $email_row){
       $email_txt = $email_row['email'];
       $i++;
-      if($email_txt){
-        $email .= '<a href="mailto:' . $email_txt  . '" class="company-email email-' . $i . '">' . $email_txt . '</a>';  
-      }
+      $email_code = '<a href="mailto:' . $email_txt  . '" class="company-email email-' . $i . '">' . $email_txt . '</a>';
+      $all_emails .= $email_code;
+      $emails += [ 'email_' . $i => strval ($email_code) ];
     }
-    return $email;
+    if ($email_number !== '') {
+      return $emails['email_' . $email_number];
+    } else{
+      return $all_emails;
+    }
   }
 }
 
-function displayfullAddress() {
-  return '<div class="company-address">' . companyAddress() . companyPhone() . companyEmail() . '</div>';
+function displayfullAddress($full_address_number) {
+  return '<div class="company-address">' . companyAddress($full_address_number) . companyPhone($full_address_number) . companyEmail($full_address_number) . '</div>';
 }
 
-function displayAddress() {
-  return '<div class="company-address">' . companyAddress() . '</div>';
+function displayAddress($full_address_number) {
+  return '<div class="company-address">' . companyAddress($full_address_number) . '</div>';
 }
 
-function displayContactInfo() {
-  return '<div class="company-address">' . companyPhone() . companyEmail() . '</div>';
+function displayContactInfo($full_address_number) {
+  return '<div class="company-address">' . companyPhone($full_address_number) . companyEmail($full_address_number) . '</div>';
 }
 
-function displayPhone() {
-  return '<div class="company-address">' . companyPhone() .'</div>';
+function displayPhone($full_address_number) {
+  return '<div class="company-address">' . companyPhone($full_address_number) .'</div>';
 }
 
-function displayEmail() {
-  return '<div class="company-address">' . companyEmail() . '</div>';
+function displayEmail($full_address_number) {
+  return '<div class="company-address">' . companyEmail($full_address_number) . '</div>';
 }
 
 function schemaInfo(){
