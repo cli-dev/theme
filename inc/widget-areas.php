@@ -50,6 +50,16 @@ if ( function_exists('register_sidebar') ) {
     'before_title' => '<h4 class="widget-title">',
     'after_title' => '</h4>',
   ));
+
+  register_sidebar(array(
+    'name' => 'Footer Column 6',
+    'id' => 'footer-6',
+    'description' => 'Footer column 6 widget area',
+    'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h4 class="widget-title">',
+    'after_title' => '</h4>',
+  ));
   
   register_sidebar(array(
     'name' => 'Footer Bottom',

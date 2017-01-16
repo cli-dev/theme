@@ -32,6 +32,11 @@
         <?php dynamic_sidebar( 'footer-5' ); ?>
       </div>
     <?php endif; ?>
+    <?php if ( is_active_sidebar( 'footer-6' ) ) : ?>  
+      <div id="footer-6" class="footer-column">  
+        <?php dynamic_sidebar( 'footer-6' ); ?>
+      </div>
+    <?php endif; ?>
     </div>
   </div>
 <?php if ( is_active_sidebar( 'footer-bottom' ) ) : ?>  
