@@ -40,6 +40,9 @@ function companyAddress($address_number){
       return $all_addresses;
     }
   }
+  else{
+    return '';
+  }
 }
 
 function companyAddressTxt($address_number){
@@ -65,6 +68,9 @@ function companyAddressTxt($address_number){
       return $all_addresses;
     }
   }
+  else{
+    return '';
+  }
 }
 
 function companyPhone($phone_number){
@@ -85,6 +91,9 @@ function companyPhone($phone_number){
     } else{
       return $all_phones;
     }
+  }
+  else{
+    return '';
   }
 }
 
@@ -107,6 +116,9 @@ function companyPhoneTxt($phone_number){
       return $all_phones;
     }
   }
+  else{
+    return '';
+  }
 }
 
 function companyEmail($email_number){
@@ -128,6 +140,9 @@ function companyEmail($email_number){
       return $all_emails;
     }
   }
+  else{
+    return '';
+  }
 }
 
 function companyEmailTxt($email_number){
@@ -148,6 +163,9 @@ function companyEmailTxt($email_number){
     } else{
       return $all_emails;
     }
+  }
+  else{
+    return '';
   }
 }
 
