@@ -27,6 +27,7 @@ $col_index = 0;
     $content_horizontal_position = get_sub_field('content_horizontal_position', $item_id) ? ' flex-position-' . get_sub_field('content_horizontal_position', $item_id) : '';
     $content_vertical_alignment = get_sub_field('content_vertical_alignment', $item_id) ? ' flex-align-' . get_sub_field('content_vertical_alignment', $item_id) : '';
     $content_vertical_position = get_sub_field('content_vertical_position', $item_id) ? ' flex-position-' . get_sub_field('content_vertical_position', $item_id) : '';
+    $remove_col_padding = (get_sub_field('remove_col_padding', $item_id) == 1) ? ' no-padding' : '';
     $column_add_animation = get_sub_field('column_add_animation', $item_id);
     $column_animation_effect = get_sub_field('column_animation_effect', $item_id) ? ' ' . get_sub_field('column_animation_effect', $item_id) : '';
     $column_animation_delay = get_sub_field('column_animation_delay', $item_id) ? ' data-wow-delay="' . get_sub_field('column_animation_delay', $item_id) . 's"' : '';
@@ -80,7 +81,7 @@ $col_index = 0;
     }
 
 
-    $add_classes_to_inner_column = 'class="col-inner ' . $item_direction . $content_position . $content_alignment . $inner_column_class . '"';
+    $add_classes_to_inner_column = 'class="col-inner ' . $item_direction . $remove_col_padding . $content_position . $content_alignment . $inner_column_class . '"';
 
     $start_outer_column = ($link_column == 1) ? '<a href="' . $link . '" target="' . $target . '" ' . $add_classes_to_outer_column . (($column_add_animation == 1) ? $add_animation : '' ) . $column_styles . '>' : '<div ' . $add_classes_to_outer_column . (($column_add_animation == 1) ? $add_animation : '' ) . $column_styles . '>';
     $end_outer_column = ($link_column == 1) ? '</a>' : '</div>';

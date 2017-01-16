@@ -16,7 +16,8 @@ $row_index = 0;
       $col_vertical_alignment = (get_sub_field('vertical_alignment', $item_id)) ? ' flex-align-' . get_sub_field('vertical_alignment', $item_id) : '';
       $custom_class = (get_sub_field('custom_class', $item_id)) ? ' ' . get_sub_field('custom_class', $item_id) : '';
       $header_class = (get_sub_field('header_class', $item_id)) ? ' data-midnight="' . get_sub_field('header_class', $item_id) . '"' : '';
-      $wrap = (get_sub_field('wrap', $item_id) == 0) ? ' nowrap' : '';
+      $remove_row_padding = (get_sub_field('remove_row_padding', $item_id) == 1) ? ' no-padding' : '';
+      $wrap = (get_sub_field('wrap', $item_id) == 1) ? ' nowrap' : '';
       $is_in_grid = (get_sub_field('is_in_grid', $item_id) == 1) ? ' in-grid' : '';
       $row_id = (get_sub_field('row_id', $item_id)) ? ' id="' . get_sub_field('row_id', $item_id) . '"' : '';
       $row_add_animation = get_sub_field('row_add_animation', $item_id);
@@ -89,7 +90,7 @@ $row_index = 0;
       }
       $row_slug = (is_blog()) ? ' blog' : ' ' . the_slug($item_id);
       $row_index++;
-      $row_wrapper_classes = ' class="row-wrapper' . $custom_class . $animation_class . $row_animation_effect . $row_slug . '-row-' . $row_index . '"';
+      $row_wrapper_classes = ' class="row-wrapper' . $custom_class . $remove_row_padding . $animation_class . $row_animation_effect . $row_slug . '-row-' . $row_index . '"';
       $row_wrapper_animation = $row_animation_duration . $row_animation_delay . $row_animation_offset;
 
       $row_wrapper = $row_id . $row_wrapper_classes . $header_class . $row_wrapper_animation . $row_wrapper_styles;

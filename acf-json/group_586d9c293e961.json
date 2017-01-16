@@ -92,7 +92,7 @@
             }
         },
         {
-            "return_format": "url",
+            "return_format": "array",
             "preview_size": "theme_image_preview",
             "library": "all",
             "min_width": "",
@@ -2592,5 +2592,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483719709
+    "modified": 1483728844
 }

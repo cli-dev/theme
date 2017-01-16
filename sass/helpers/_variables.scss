@@ -4,10 +4,10 @@ $base-font-size: 16px;
 //breakpoints
 $sml: 360px;
 $mds: 480px;
-$md: 600px;
-$mdl: 800px;
-$lrg: 1100px;
-$xlrg: 1300px;
+$md: 768px;
+$mdl: 1024px;
+$lrg: 1280px;
+$xlrg: 1440px;
 $xxlrg: 1600px;
 
 $landscape-phone: (max-width 700px) (max-height 400px) (orientation landscape);

@@ -16,6 +16,12 @@
   @include breakpoint($lrg){
     padding: 40px 0;  
   }
+  &.nowrap{
+    @include flex-wrap(wrap);
+    @include breakpoint($lrg){
+      @include flex-wrap(nowrap);
+    }
+  }
 }
 
 .flex-direction-row{
