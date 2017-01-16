@@ -230,6 +230,8 @@ function schemaInfo(){
       }
       $jsonAddresses = rtrim($address, ', ');
       $company_addresses = '"address": [' . $jsonAddresses . '], ';
+    } else{
+      $company_addresses = '';
     }
   
   // Phone JSON
@@ -244,6 +246,8 @@ function schemaInfo(){
       }
       $jsonPhone = rtrim($phoneCode, ', ');
       $company_phones = '"telephone": [' . $jsonPhone . '], ';
+    } else {
+      $company_phones = '';
     }
 
   // Email JSON
@@ -255,9 +259,12 @@ function schemaInfo(){
           $emailCode .= '"mailto:' . $email_txt . '", ';
         }
       }
+      $jsonEmail = rtrim($emailCode, ', ');
+      $company_emails = '"email": [' . $jsonEmail . '], ';
+    } else {
+      $company_emails = '';
     }
-    $jsonEmail = rtrim($emailCode, ', ');
-    $company_emails = '"email": [' . $jsonEmail . '], ';
+    
 
   // Social JSON
 
