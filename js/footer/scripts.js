@@ -70,15 +70,6 @@ jQuery(document).ready(function($) {
       wow.init();
     });
 
-    var animationWaypoint = $('.has-animation').waypoint({
-      handler: function(direction) {
-        if(direction === 'down'){
-          $(this).addClass('wow');
-        }
-      },
-      offset: 'bottom-in-view'
-    });
-
   // Menu Functionality
 
     $('.sub-menu').hide();
@@ -165,4 +156,11 @@ jQuery(document).ready(function($) {
         }
       }
     }); 
+
+  // Plugins for forms
+
+    $('select').select2();
+
+    $("input:checkbox, input:radio, input:file").uniform();
+
 });
