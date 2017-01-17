@@ -3154,6 +3154,200 @@
                                     "max": ""
                                 },
                                 {
+                                    "key": "587e54ec7f3c8",
+                                    "name": "tabs",
+                                    "label": "Tabs",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "default_value": "default-tabs",
+                                            "maxlength": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "key": "field_587e54ec7f3c9",
+                                            "label": "Tabs Class",
+                                            "name": "tabs_class",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 1,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "multiple": 0,
+                                            "allow_null": 0,
+                                            "choices": {
+                                                "top": "Tabs on the top",
+                                                "left": "Tabs on the left",
+                                                "bottom": "Tabs on the bottom",
+                                                "right": "Tabs on the right"
+                                            },
+                                            "default_value": [],
+                                            "ui": 0,
+                                            "ajax": 0,
+                                            "placeholder": "",
+                                            "return_format": "value",
+                                            "key": "field_587e55b17f3d6",
+                                            "label": "Tabs Location",
+                                            "name": "tabs_location",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "key": "field_587e54ec7f3cc",
+                                            "label": "Tab Title Background Color",
+                                            "name": "tab_title_background_color",
+                                            "type": "color_picker",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "key": "field_587e54ec7f3cd",
+                                            "label": "Tab Content Background Color",
+                                            "name": "tab_content_background_color",
+                                            "type": "color_picker",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "key": "field_587e54ec7f3ce",
+                                            "label": "Active Tab Background Color",
+                                            "name": "active_tab_background_color",
+                                            "type": "color_picker",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "key": "field_587e54ec7f3cf",
+                                            "label": "Tab Background Hover Color",
+                                            "name": "tab_background_hover_color",
+                                            "type": "color_picker",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "sub_fields": [
+                                                {
+                                                    "tabs": "all",
+                                                    "toolbar": "full",
+                                                    "media_upload": 1,
+                                                    "default_value": "",
+                                                    "delay": 0,
+                                                    "key": "field_587e54ec7f3d1",
+                                                    "label": "Tab Title",
+                                                    "name": "tab_title",
+                                                    "type": "wysiwyg",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    }
+                                                },
+                                                {
+                                                    "tabs": "all",
+                                                    "toolbar": "full",
+                                                    "media_upload": 1,
+                                                    "default_value": "",
+                                                    "delay": 0,
+                                                    "key": "field_587e54ec7f3d2",
+                                                    "label": "Tab Content",
+                                                    "name": "tab_content",
+                                                    "type": "wysiwyg",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    }
+                                                },
+                                                {
+                                                    "default_value": "",
+                                                    "maxlength": "",
+                                                    "placeholder": "",
+                                                    "prepend": "",
+                                                    "append": "",
+                                                    "key": "field_587e54ec7f3d3",
+                                                    "label": "Custom Class",
+                                                    "name": "custom_class",
+                                                    "type": "text",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "70",
+                                                        "class": "",
+                                                        "id": ""
+                                                    }
+                                                }
+                                            ],
+                                            "min": 0,
+                                            "max": 0,
+                                            "layout": "block",
+                                            "button_label": "Add Tab",
+                                            "collapsed": "field_587e54ec7f3d1",
+                                            "key": "field_587e54ec7f3d0",
+                                            "label": "Tabs",
+                                            "name": "tabs",
+                                            "type": "repeater",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                },
+                                {
                                     "key": "55e5dcbfb475c",
                                     "name": "blog_feed",
                                     "label": "Blog feed",
@@ -4923,6 +5117,30 @@
                                                         "class": "",
                                                         "id": ""
                                                     }
+                                                },
+                                                {
+                                                    "return_format": "url",
+                                                    "preview_size": "theme_image_preview",
+                                                    "library": "all",
+                                                    "min_width": "",
+                                                    "min_height": "",
+                                                    "min_size": "",
+                                                    "max_width": "",
+                                                    "max_height": "",
+                                                    "max_size": "",
+                                                    "mime_types": "",
+                                                    "key": "field_587e51c3fadc7",
+                                                    "label": "Custom Location Marker",
+                                                    "name": "custom_marker",
+                                                    "type": "image",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    }
                                                 }
                                             ],
                                             "min": 1,
@@ -5095,14 +5313,99 @@
                                             "type": "select",
                                             "instructions": "",
                                             "required": 0,
-                                            "conditional_logic": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_565cc4756ed13",
+                                                        "operator": "==",
+                                                        "value": "1"
+                                                    }
+                                                ]
+                                            ],
                                             "wrapper": {
-                                                "width": "",
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "disabled": 0,
-                                            "readonly": 0
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "min": "",
+                                            "max": "",
+                                            "step": "0.01",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "seconds",
+                                            "key": "field_587e648394955",
+                                            "label": "Item Animation Duration",
+                                            "name": "item_animation_duration",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_565cc4756ed13",
+                                                        "operator": "==",
+                                                        "value": "1"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "min": "",
+                                            "max": "",
+                                            "step": "0.01",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "seconds",
+                                            "key": "field_587e649e94956",
+                                            "label": "Item Animation Delay",
+                                            "name": "item_animation_delay",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_565cc4756ed13",
+                                                        "operator": "==",
+                                                        "value": "1"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "min": "",
+                                            "max": "",
+                                            "step": 1,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "pixels",
+                                            "key": "field_587e64e094957",
+                                            "label": "Item Animation Offset",
+                                            "name": "item_animation_offset",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            }
                                         }
                                     ],
                                     "min": "",
@@ -5414,12 +5717,10 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         },
                                         {
                                             "default_value": "",
@@ -8566,5 +8867,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1484592438
+    "modified": 1484678388
 }

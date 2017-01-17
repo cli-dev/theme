@@ -154,6 +154,9 @@ $col_index = 0;
         else if ( get_row_layout() == 'vertical_accordion' ) { 
           get_template_part('templates/rowlayout', 'accordion');
         }
+        else if ( get_row_layout() == 'tabs' ) { 
+          get_template_part('templates/rowlayout', 'tabs');
+        }
       ?>
    <?php endwhile; endif; ?>
   <?php echo $end_inner_column ; ?>
