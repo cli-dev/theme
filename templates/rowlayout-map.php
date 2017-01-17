@@ -37,7 +37,7 @@ $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_anima
 </div>
 <?php endif; ?>
 </div>
-<script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyB7Eot1Oc1RXxwP08_Q-gaO77NLw1A5fds"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyB7Eot1Oc1RXxwP08_Q-gaO77NLw1A5fds"></script>
 <script type="text/javascript">
 	jQuery(function($) { 
 		function new_map( $el ) {
