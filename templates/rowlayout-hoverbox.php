@@ -40,7 +40,7 @@ $item_animation_offset =  (get_sub_field('item_animation_offset', $item_id)) ? '
 
 $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_animation_delay . $item_animation_offset : '';
 ?>
-<div class="col-item hover-box<?php echo $animation_class . $item_animation_effect . $custom_class; ?>"<?php echo $animation;?>>
+<div class="col-item hover-box-wrapper<?php echo $animation_class . $item_animation_effect . $custom_class; ?>"<?php echo $animation;?>>
   <?php echo $box_open_tag; ?>
     <?php if ($box_image) { echo '<div class="box-img" style="background: url(' . $box_image . ') center no-repeat; background-size: cover;"></div>';} ?>
     <div class="box-content">
@@ -49,3 +49,51 @@ $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_anima
     </div>
   <?php echo $box_close_tag; ?>
 </div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $('.hover-box').each(function(index, el) {
+      var boxTitle = $(this).find('.box-title').height();
+      var boxTxt = $(this).find('.box-txt').height();
+
+      $(this).find('.box-inner').css('min-height', boxTxt + boxTitle);
+
+      $(this).find('.box-txt').css({
+        '-webkit-transform' : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        '-moz-transform'    : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        '-ms-transform'     : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        '-o-transform'      : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        'transform'         : 'translate3d(0px, ' + boxTxt + 'px, 0px)'
+      });
+      $(this).find('.box-title').css({
+        '-webkit-transform' : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        '-moz-transform'    : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        '-ms-transform'     : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        '-o-transform'      : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        'transform'         : 'translate3d(0px, ' + boxTxt + 'px, 0px)'
+      });
+    });
+    $(window).resize(function(event) {
+      $('.hover-box').each(function(index, el) {
+        var boxTitle2 = $(this).find('.box-title').height();
+        var boxTxt2 = $(this).find('.box-txt').height();
+
+        $(this).find('.box-inner').css('min-height', boxTxt2 + boxTitle2);
+
+        $(this).find('.box-txt').css({
+          '-webkit-transform' : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          '-moz-transform'    : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          '-ms-transform'     : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          '-o-transform'      : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          'transform'         : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)'
+        });
+        $(this).find('.box-title').css({
+          '-webkit-transform' : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          '-moz-transform'    : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          '-ms-transform'     : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          '-o-transform'      : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          'transform'         : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)'
+        });
+      });
+    });
+  });

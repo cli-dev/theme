@@ -70,22 +70,22 @@ $active_tab_bg_color = get_sub_field('active_tab_background_color', $item_id);
   <script>
     jQuery(document).ready(function($){
 
-      element = $('.accordion.<?php echo $accordion_class; ?>').children('.accordion-tab');
+      element = $('.accordion.<?php echo $accordion_class; ?>').find('.accordion-tab-title');
       $('.accordion-content').hide();
       $('.accordion-tab.default-open-tab').addClass('active-tab');
       $('.accordion-tab.default-open-tab .accordion-content').show();
       $('.accordion-tab.default-open-tab .fa').removeClass('<?php echo $open_icon; ?>').addClass('<?php echo $close_icon; ?>');
 
       $(element).click(function() {
-        if($(this).children('.accordion-content').css('display') === 'none'){
+        if($(this).siblings('.accordion-content').css('display') === 'none'){
           $('.accordion-content').slideUp();
           $('.<?php echo $accordion_class; ?> .fa').removeClass('<?php echo $close_icon; ?>').addClass('<?php echo $open_icon; ?>');
-          $(this).addClass('active-tab').siblings().removeClass('active-tab');
-          $(this).children('.accordion-content').slideDown();
+          $(this).parents('.accordion-tab').addClass('active-tab').siblings().removeClass('active-tab');
+          $(this).siblings('.accordion-content').slideDown();
           $(this).find('.fa').removeClass('<?php echo $open_icon; ?>').addClass('<?php echo $close_icon; ?>');
         } else{
-          $(this).children('.accordion-content').slideUp();
-          $(this).removeClass('active-tab');
+          $(this).siblings('.accordion-content').slideUp();
+          $(this).parents('.accordion-tab').removeClass('active-tab');
           $(this).find('.fa').removeClass('<?php echo $close_icon; ?>').addClass('<?php echo $open_icon; ?>');
         }
       });

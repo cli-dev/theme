@@ -50,7 +50,7 @@
 
   $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_animation_delay . $item_animation_offset : '';
 ?>
-<div class="col-item button<?php echo $custom_class . $animation_class . $item_animation_effect; ?>"<?php echo $animation;?>>
+<div class="col-item btn-wrap<?php echo $custom_class . $animation_class . $item_animation_effect; ?>"<?php echo $animation;?>>
 
 
 <a class="<?php echo $classes; ?>" href="<?php echo $link; ?>" target="<?php echo $target; ?>"><span><?php echo $text; ?></span></a></div>
