@@ -72,6 +72,7 @@ $active_tab_bg_color = get_sub_field('active_tab_background_color', $item_id);
         </div>
       <?php endwhile; ?>
     </div>
+  </div>
 
   <script>
     jQuery(document).ready(function($){
