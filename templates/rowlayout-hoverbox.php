@@ -97,3 +97,4 @@ $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_anima
       });
     });
   });
+</script>
