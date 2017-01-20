@@ -97,7 +97,7 @@ jQuery(document).ready(function($) {
     );
     $('.menu-mobile-container').hide();
     $('.menu-button-area').click(function(){
-      if($(window).width() >= 900){
+      if($(window).width() >= 1280){
         if($(this).hasClass('active')){
           $(this).removeClass('active');
           $('.menu-button').removeClass('active');
