@@ -82,7 +82,7 @@ if( function_exists('get_field') ) {
       }
 
       if($menu_link_active_color){
-        echo '.desktop-menu a:hover .link-text, .desktop-menu a:hover .sub-menu-icon, .desktop-menu li.current-menu-item a .link-text, .desktop-menu li.current_page_parent a .link-text, .side-menu a:hover .link-text, .side-menu a:hover .sub-menu-icon, .side-menu li.current-menu-item a .link-text, .side-menu li.current_page_parent a .link-text, .headhesive a:hover .link-text, .headhesive a:hover .link-text, .headhesive a:hover .sub-menu-icon, .headhesive li.current-menu-item a .link-text, headhesive li.current_page_parent a .link-text{' . $menu_link_active_color . '}';
+        echo '.desktop-menu a:hover .link-text, .desktop-menu a:hover .sub-menu-icon, .desktop-menu li.current-menu-item > a .link-text, .desktop-menu li.current_page_parent > a .link-text, .side-menu a:hover .link-text, .side-menu a:hover .sub-menu-icon, .side-menu li.current-menu-item > a .link-text, .side-menu li.current_page_parent > a .link-text, .headhesive a:hover .link-text, .headhesive a:hover .link-text, .headhesive a:hover .sub-menu-icon, .headhesive li.current-menu-item > a .link-text, headhesive li.current_page_parent > a .link-text{' . $menu_link_active_color . '}';
       }
 
 
@@ -110,7 +110,7 @@ if( function_exists('get_field') ) {
       }
 
       if($mobile_menu_link_active_color){
-        echo '.mobile-nav a:hover span, .mobile-nav li.current-menu-item a span{' . $mobile_menu_link_active_color . '}';
+        echo '.mobile-nav a:hover span, .mobile-nav li.current-menu-item > a span{' . $mobile_menu_link_active_color . '}';
       }
 
       // if($light_menu_icon_color){
