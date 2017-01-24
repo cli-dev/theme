@@ -43,6 +43,7 @@ $row_index = 0;
       $parallax_horizontal_position = get_sub_field('parallax_horizontal_position', $item_id);
       $parallax_vertical_positon = get_sub_field('parallax_vertical_positon', $item_id);
       $speed = (get_sub_field('column_direction', $item_id)) ? 'data-speed="' . get_sub_field('speed', $item_id) . '"' : '';
+      $bg_type = '';
 
       $row_wrapper_styles = '';
 
@@ -50,27 +51,29 @@ $row_index = 0;
         $row_wrapper_styles = ' style="background: rgba(' . $row_bg_rgb . ', ' . $row_background_color_opacity . ');"';
       }
       else if ($background_type === 'image'){
+        $bg_type = ' lazyload has-bg-image';
         if($row_background_image && $background_image_overlay){
-          $row_wrapper_styles =  ' style="background: url(' . $row_background_image . ') center no-repeat; background-size: cover; box-shadow: inset 0 0 0 1000px rgba(' . $overlay_rgb . ', ' . $background_image_overlay_opacity . ');"'; 
+          $row_wrapper_styles =  ' data-original="' . $row_background_image . '" style="box-shadow: inset 0 0 0 1000px rgba(' . $overlay_rgb . ', ' . $background_image_overlay_opacity . ');"'; 
         } 
         else if($row_background_image && !$background_image_overlay){ 
-          $row_wrapper_styles = ' style="background: url(' . $row_background_image . ') center no-repeat; background-size: cover;"';
+          $row_wrapper_styles = ' data-original="' . $row_background_image . '"';
         } 
       }
       else if ($background_type === 'parallax'){
+        $bg_type = ' lazyload has-bg-image';
         if ( !$detect->isMobile() ) {
           if($parallax_image && $background_image_overlay){
-            $row_wrapper_styles = ' style="background: url(' . $parallax_image . ') ' . $parallax_horizontal_position . ' ' . $parallax_vertical_positon .  ' no-repeat; background-size: cover; background-attachment: fixed; box-shadow: inset 0 0 0 1000px rgba(' . $overlay_rgb . ', ' . $background_image_overlay_opacity . ');"';
+            $row_wrapper_styles = ' data-original="' . $parallax_image . '" style="background-position: ' . $parallax_horizontal_position . ' ' . $parallax_vertical_positon .  '; background-attachment: fixed; box-shadow: inset 0 0 0 1000px rgba(' . $overlay_rgb . ', ' . $background_image_overlay_opacity . ');"';
           } 
           else if($parallax_image && !$background_image_overlay){ 
-            $row_wrapper_styles = ' style="background: url(' . $parallax_image . ') ' . $parallax_horizontal_position . ' ' . $parallax_vertical_positon .  ' no-repeat; background-size: cover; background-attachment: fixed;"';
+            $row_wrapper_styles = ' data-original="' . $parallax_image . '" style="background-position: ' . $parallax_horizontal_position . ' ' . $parallax_vertical_positon .  '; background-attachment: fixed;"';
           } 
         } else{
           if($parallax_image && $background_image_overlay){
-            $row_wrapper_styles = ' style="background: url(' . $parallax_image . ') center no-repeat; background-size: cover; box-shadow: inset 0 0 0 1000px rgba(' . $overlay_rgb . ', ' . $background_image_overlay_opacity . ');"'; 
+            $row_wrapper_styles = ' data-original="' . $parallax_image . '" style="background-position: ' . $parallax_horizontal_position . ' ' . $parallax_vertical_positon .  '; background-repeat: no-repeat; background-size: cover; box-shadow: inset 0 0 0 1000px rgba(' . $overlay_rgb . ', ' . $background_image_overlay_opacity . ');"'; 
           } 
           else if($parallax_image && !$background_image_overlay){ 
-            $row_wrapper_styles = ' style="background: url(' . $parallax_image . ') center no-repeat; background-size: cover;"';
+            $row_wrapper_styles = ' data-original="' . $parallax_image . '" style="background-position: ' . $parallax_horizontal_position . ' ' . $parallax_vertical_positon .  '; background-repeat: no-repeat; background-size: cover;"';
           } 
         }
       }
@@ -90,7 +93,7 @@ $row_index = 0;
       }
       $row_slug = (is_blog()) ? ' blog' : ' ' . the_slug($item_id);
       $row_index++;
-      $row_wrapper_classes = ' class="row-wrapper' . $custom_class . $remove_row_padding . $animation_class . $row_animation_effect . $row_slug . '-row-' . $row_index . '"';
+      $row_wrapper_classes = ' class="row-wrapper' . $custom_class . $bg_type . $remove_row_padding . $animation_class . $row_animation_effect . $row_slug . '-row-' . $row_index . '"';
       $row_wrapper_animation = $row_animation_duration . $row_animation_delay . $row_animation_offset;
 
       $row_wrapper = $row_id . $row_wrapper_classes . $header_class . $row_wrapper_animation . $row_wrapper_styles;

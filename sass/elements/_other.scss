@@ -30,6 +30,12 @@
 
   .owl-stage-outer{
     z-index: 5;
+    overflow: hidden;
+  }
+
+  .owl-stage{
+    @include display-flex;
+    @include align-content(flex-start);
   }
 
   .owl-nav{

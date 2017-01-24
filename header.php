@@ -11,20 +11,6 @@
   if ($favicon) { 
     echo '<link rel="shortcut icon" href="' . $favicon . '" type="image/x-icon" />';
   } 
-  $url = "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCCi4NfyfjQhCvAdi1VHYKbQhLgl-0linc";
-  $google_fonts = json_decode($url, true);
-  $theme_fonts = $myoptions['theme_fonts'];
-  $add_typekit_fonts = $myoptions['add_typekit_fonts'];
-  if(isset($google_fonts['error'])){
-    echo '<script>WebFont.load({ google: { families: [';  
-    foreach($theme_fonts as $theme_font){
-      $font = $theme_font['theme_font'];
-      $variants = $theme_font['variants'];
-      $googleVariants = implode(",",$variants);
-      echo "'" . $font . ':' . $googleVariants . "', ";
-    }
-    echo ']}});</script>';
-  }
   if($add_typekit_fonts == '1')
   {  
     $typekit = $myoptions['typekit_id'];

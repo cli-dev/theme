@@ -52,6 +52,12 @@
   border-color: #FFF;  
 }
 
+.has-bg-image{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .no-padding{
   padding: 0;  
   &.row-wrapper .flex-row{

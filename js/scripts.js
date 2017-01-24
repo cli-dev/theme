@@ -4,11 +4,33 @@
 
 jQuery(document).ready(function($) {
 
-  $(".gallery-img").fancybox({
-    padding: 0,
-    maxWidth: 700,
-    margin: [50, 20, 20, 20]
+  $("img").each(function() {
+
+    imgClass = $(this).attr('class');
+    imgWidth = $(this).attr('width');
+    imgHeight = $(this).attr('height');
+    imgSrcSet = $(this).attr('srcset');
+    imgSrc = $(this).attr('src');
+
+    
+
+    $(this).removeAttr('src').removeAttr('class').removeAttr('srcset').attr('data-original-set', imgSrcSet).attr('data-original', imgSrc).addClass('lazyload ' + imgClass);
+
   });
+
+  // Code for lazy loading background images
+
+new LazyLoad({
+  elements_selector: ".lazyload"
+});
+
+  // Code for all gallery images
+  
+    $(".gallery-img").fancybox({
+      padding: 0,
+      maxWidth: 700,
+      margin: [50, 20, 20, 20]
+    });
 
   // Code for overlapping header
 
@@ -170,3 +192,4 @@ jQuery(document).ready(function($) {
     $("input:checkbox, input:radio, input:file").uniform();
 
 });
+

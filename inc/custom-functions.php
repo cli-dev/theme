@@ -1,5 +1,13 @@
 <?php
 
+// Remove Default jQuery
+
+function change_default_jquery( ){
+    wp_dequeue_script( 'jquery');
+    wp_deregister_script( 'jquery');   
+}
+add_filter( 'wp_enqueue_scripts', 'change_default_jquery', PHP_INT_MAX );
+
 // Add Favicon
   function add_favicon() {
     $myoptions = get_option( 'themesettings_');
@@ -283,12 +291,27 @@
   }
   add_filter('upload_mimes', 'custom_upload_mimes');
 
+// Add SVG Support for Wordpress 4.7.1
+
+  add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
+    global $wp_version;
+    if ( $wp_version !== '4.7.1' ) {
+     return $data;
+   }
+    $filetype = wp_check_filetype( $filename, $mimes );
+    return [
+      'ext'             => $filetype['ext'],
+      'type'            => $filetype['type'],
+      'proper_filename' => $data['proper_filename']
+    ];
+  }, 10, 4 );
+
 // Load Theme scripts
   function add_theme_scripts() {
-    wp_register_script( 'headerJS', CDM_ROOT . '/js/header/header-scripts.min.js', array('jquery'),'', false);
+    wp_register_script( 'headerJS', CDM_ROOT . '/js/header-scripts.min.js', '','', false);
     wp_enqueue_script( 'headerJS' );
     
-    wp_register_script( 'footerJS', CDM_ROOT . '/js/footer/footer-scripts.min.js', array('jquery'),'', true);
+    wp_register_script( 'footerJS', CDM_ROOT . '/js/footer-scripts.min.js', array('headerJS'),'', true);
     wp_enqueue_script( 'footerJS' );
   }
    

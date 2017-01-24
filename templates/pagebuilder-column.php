@@ -56,11 +56,15 @@ $col_index = 0;
 
     $column_styles = '';
 
+    $bg_type = '';
+
     if($column_background_image && $column_background_color){
-      $column_styles = ' style="background: url(' . $column_background_image . ') center no-repeat; background-size: cover; box-shadow: inset 0 0 0 1000px rgba(' . $column_bg_rgb . ', ' . $column_background_color_opacity . ');"'; 
+      $bg_type = ' lazyload has-bg-image';
+      $column_styles = 'data-original="' . $column_background_image . '" style="box-shadow: inset 0 0 0 1000px rgba(' . $column_bg_rgb . ', ' . $column_background_color_opacity . ');"'; 
     } 
     else if($column_background_image && !$column_background_color){ 
-      $column_styles = ' style="background: url(' . $column_background_image . ') center no-repeat; background-size: cover;"';
+      $bg_type = ' lazyload has-bg-image';
+      $column_styles = 'data-original="' . $column_background_image . '"';
     } 
     else if(!$column_background_image && $column_background_color) {
       $column_styles = ' style="background: rgba(' . $column_bg_rgb . ', ' . $column_background_color_opacity . ');"';
@@ -81,7 +85,7 @@ $col_index = 0;
     }
 
 
-    $add_classes_to_inner_column = 'class="col-inner ' . $item_direction . $remove_col_padding . $content_position . $content_alignment . $inner_column_class . '"';
+    $add_classes_to_inner_column = 'class="col-inner ' . $item_direction . $bg_type . $remove_col_padding . $content_position . $content_alignment . $inner_column_class . '"';
 
     $start_outer_column = ($link_column == 1) ? '<a href="' . $link . '" target="' . $target . '" ' . $add_classes_to_outer_column . (($column_add_animation == 1) ? $add_animation : '' ) . $column_styles . '>' : '<div ' . $add_classes_to_outer_column . (($column_add_animation == 1) ? $add_animation : '' ) . $column_styles . '>';
     $end_outer_column = ($link_column == 1) ? '</a>' : '</div>';
@@ -156,6 +160,12 @@ $col_index = 0;
         }
         else if ( get_row_layout() == 'tabs' ) { 
           get_template_part('templates/rowlayout', 'tabs');
+        }
+        else if ( get_row_layout() == 'custom_icon' ) { 
+          get_template_part('templates/rowlayout', 'icon');
+        }
+        else if ( get_row_layout() == 'inline_svg' ) { 
+          get_template_part('templates/rowlayout', 'svg');
         }
       ?>
    <?php endwhile; endif; ?>
