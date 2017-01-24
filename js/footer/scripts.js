@@ -4,6 +4,12 @@
 
 jQuery(document).ready(function($) {
 
+  $(".gallery-img").fancybox({
+    padding: 0,
+    maxWidth: 700,
+    margin: [50, 20, 20, 20]
+  });
+
   // Code for overlapping header
 
     var siteHeaderHeight = $('.site-header').outerHeight();

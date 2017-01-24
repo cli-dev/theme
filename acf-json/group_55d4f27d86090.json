@@ -3,6 +3,25 @@
     "title": "Page Header",
     "fields": [
         {
+            "default_value": 0,
+            "message": "",
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "key": "field_588699ffaf7ed",
+            "label": "Hide page header?",
+            "name": "hide_page_header",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "default_value": "",
             "maxlength": "",
             "placeholder": "",
@@ -831,7 +850,7 @@
                     "max": ""
                 }
             ],
-            "min": 1,
+            "min": "",
             "max": "",
             "button_label": "Add Header Item",
             "key": "field_55f706c4ecf36",
@@ -882,5 +901,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1484592085
+    "modified": 1485216292
 }

@@ -80,7 +80,7 @@
     }
     &.active{
       span{
-        background: none;
+        background-color: transparent !important;
         @include box-shadow(rgba(0, 0, 0, 0) 0px 0px 5px);
         &:before {
           top: 0;

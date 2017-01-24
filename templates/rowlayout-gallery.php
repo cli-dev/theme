@@ -3,6 +3,7 @@ $page_for_posts = get_option( 'page_for_posts' );
 $postid = get_the_ID();
 $item_id = (is_blog()) ? $page_for_posts : $postid;
 $images = get_sub_field('images', $item_id);
+$gallery_id = get_sub_field('gallery_id', $item_id);
 $custom_class = (get_sub_field('custom_class', $item_id)) ? ' ' . get_sub_field('custom_class', $item_id) : '';
 $is_slider = get_sub_field('is_slider', $item_id);
 $columns_on_desktop = get_sub_field('columns_on_desktop', $item_id);
@@ -21,14 +22,14 @@ $item_animation_duration = (get_sub_field('item_animation_duration')) ? ' data-w
 $item_animation_delay = (get_sub_field('item_animation_delay', $item_id)) ? ' data-wow-delay="' . get_sub_field('item_animation_delay', $item_id) . 's"'  : '';
 $item_animation_offset =  (get_sub_field('item_animation_offset', $item_id)) ? ' data-wow-offset="' . get_sub_field('item_animation_offset', $item_id) . '"'  : '';
 $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_animation_delay . $item_animation_offset : '';
-$gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'class="image-gallery"' . $gallery_negative_margin;
+$gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'class="image-gallery image-grid"';
 ?>
   <div class="col-item gallery<?php echo $animation_class . $item_animation_effect . $custom_class;?>"<?php echo $animation;?>>
     <?php if( $images ): ?>
-    <div <?php echo $gallery_classes ?>>
+    <div id="<?php echo $gallery_id; ?>" <?php echo $gallery_classes; if($is_slider != 1){echo $gallery_negative_margin;} ?>>
       <?php foreach( $images as $image ): ?>
       <div class="gallery-img-wrap"<?php if($is_slider != 1){echo $gallery_spacing;} ?>>
-        <a href="<?php echo $image['url']; ?>" rel="gallery1" title="<?php echo $image['title']; ?>" class="gallery-img" style="background-image: url(<?php echo $image['sizes']['medium']; ?>)"><span class="hover-panel"<?php echo $hover_bg; ?>><i class="img-zoom fa fa-search-plus"<?php echo $hover_icon_color; ?>></i></span></a>
+        <a href="<?php echo $image['url']; ?>" rel="<?php echo $gallery_id; ?>" title="<?php echo $image['title']; ?>" class="gallery-img" style="background-image: url(<?php echo $image['sizes']['medium']; ?>)"><span class="hover-panel"<?php echo $hover_bg; ?>><i class="img-zoom fa fa-search-plus"<?php echo $hover_icon_color; ?>></i></span></a>
       </div>
     <?php endforeach; ?>
   </div>
@@ -36,15 +37,10 @@ $gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'c
 </div>
 <script type="text/javascript">
   jQuery(document).ready(function($) {
-    $(".gallery-img").fancybox({
-      padding: 0,
-      maxWidth: 700,
-      margin: [50, 20, 20, 20]
-    });
     var columns = <?php echo $columns; ?>;
     <?php if ($is_slider == 1) { ?>
       if(columns == 1){
-        $('.image-gallery.owl-carousel').owlCarousel({
+        $('#<?php echo $gallery_id; ?>.owl-carousel').owlCarousel({
           items: 1,
           loop: true,
           margin: 0,
@@ -52,7 +48,7 @@ $gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'c
           navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
         });
       } else if (columns == 2) {
-        $('.image-gallery.owl-carousel').owlCarousel({
+        $('#<?php echo $gallery_id; ?>.owl-carousel').owlCarousel({
           items: 1,
           loop: true,
           margin: 0,
@@ -66,7 +62,7 @@ $gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'c
           }
         });
       } else if (columns >= 3) {
-        $('.image-gallery.owl-carousel').owlCarousel({
+        $('#<?php echo $gallery_id; ?>.owl-carousel').owlCarousel({
           items: 1,
           loop: true,
           margin: 0,
@@ -93,17 +89,17 @@ $gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'c
       var maxWidth = 1/columns * 100;
 
       if($(window).width() >= 1000){
-        $('.gallery-img-wrap').css('width', maxWidth + '%');
+        $('#<?php echo $gallery_id; ?> .gallery-img-wrap').css('width', maxWidth + '%');
       }
 
       $(window).resize(function(event) {
         if($(window).width() >= 1000){
-          $('.gallery-img-wrap').css('width', maxWidth + '%');
+          $('#<?php echo $gallery_id; ?> .gallery-img-wrap').css('width', maxWidth + '%');
         } else if($(window).width() >= 600){
-          $('.gallery-img-wrap').css('width','50%');
+          $('#<?php echo $gallery_id; ?> .gallery-img-wrap').css('width','50%');
         }
         else{
-          $('.gallery-img-wrap').css('width', '100%');
+          $('#<?php echo $gallery_id; ?> .gallery-img-wrap').css('width', '100%');
         }
       });
     <?php } ?>

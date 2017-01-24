@@ -8,6 +8,7 @@
   else{ 
     $item_id = $postid;
   } 
+  $hide_page_header = $myoptions['hide_page_header'];
   $logo_position = $myoptions['logo_position'];
   $site_header_type = $myoptions['header_type'];
   $top_header_type = $myoptions['top_header_position'];
@@ -87,6 +88,7 @@
 
   $header_classes = 'class="page-header ' . $top_header_type . ' ' . $header_type .  $header_class . $overlapping_header . $animation_class . $animation_effect . '"';
 ?>
+<?php if ($hide_page_header != 1) : ?>
 <header <?php echo $header_classes . ' ' . $pageHeaderWrapperStyles . $site_header_color;?><?php echo $animation;?>>
   <?php if($header_type === 'slider'){ echo do_shortcode($slider_shortcode); } else {
     if(!$detect->isMobile() && $header_type === 'bg-vid') { ?>
@@ -125,3 +127,4 @@
     
   <?php } ?>
 </header>
+<?php endif; ?>

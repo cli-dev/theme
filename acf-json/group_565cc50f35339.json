@@ -721,6 +721,25 @@
                                             "placeholder": "",
                                             "prepend": "",
                                             "append": "",
+                                            "key": "field_5886992a33ede",
+                                            "label": "Gallery ID",
+                                            "name": "gallery_id",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 1,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
                                             "key": "field_5786c8908bdbe",
                                             "label": "Custom Class",
                                             "name": "custom_class",
@@ -729,12 +748,10 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 70,
+                                                "width": "70",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         },
                                         {
                                             "default_value": 0,
@@ -756,22 +773,22 @@
                                             }
                                         },
                                         {
-                                            "default_value": "",
+                                            "default_value": "#000000",
                                             "key": "field_5786c8908bdc0",
                                             "label": "Hover Color",
                                             "name": "hover_color",
                                             "type": "color_picker",
                                             "instructions": "",
-                                            "required": 1,
+                                            "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 33,
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
                                             }
                                         },
                                         {
-                                            "default_value": "",
+                                            "default_value": "0.7",
                                             "maxlength": "",
                                             "placeholder": "",
                                             "prepend": "",
@@ -781,15 +798,13 @@
                                             "name": "hover_color_opacity",
                                             "type": "text",
                                             "instructions": "",
-                                            "required": 1,
+                                            "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 33,
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         },
                                         {
                                             "default_value": "",
@@ -798,10 +813,10 @@
                                             "name": "hover_icon_color",
                                             "type": "color_picker",
                                             "instructions": "",
-                                            "required": 1,
+                                            "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 33,
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
                                             }
@@ -819,18 +834,16 @@
                                             "name": "columns_on_desktop",
                                             "type": "number",
                                             "instructions": "",
-                                            "required": 1,
+                                            "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 33,
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         },
                                         {
-                                            "default_value": "",
+                                            "default_value": 0,
                                             "min": "",
                                             "max": "",
                                             "step": 1,
@@ -842,15 +855,13 @@
                                             "name": "grid_spacing",
                                             "type": "number",
                                             "instructions": "",
-                                            "required": 1,
+                                            "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 33,
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         },
                                         {
                                             "default_value": 0,
@@ -8867,5 +8878,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1484678388
+    "modified": 1485216185
 }

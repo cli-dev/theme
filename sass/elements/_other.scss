@@ -301,12 +301,14 @@
 // Image Gallery
 
   .image-gallery{
-    @include display-flex;
-    @include flex-wrap(wrap);
     &.owl-carousel{
       .gallery-img-wrap{
         width: 100%;
       }
+    }
+    &.image-grid{
+      @include display-flex;
+      @include flex-wrap(wrap);
     }
     .gallery-img-wrap{
       width: 100%;
