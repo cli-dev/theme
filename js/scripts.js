@@ -20,9 +20,9 @@ jQuery(document).ready(function($) {
 
   // Code for lazy loading background images
 
-new LazyLoad({
-  elements_selector: ".lazyload"
-});
+    new LazyLoad({
+      elements_selector: ".lazyload"
+    });
 
   // Code for all gallery images
   

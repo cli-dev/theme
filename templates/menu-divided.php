@@ -30,14 +30,3 @@ if ($sticky_header == "1") {?>
     <?php wp_nav_menu( array( 'theme_location' => 'divided-right-menu', 'container_class' => 'right-side-menu divided-menu', 'link_before' => '<span class="link-text">', 'link_after' => '</span>') ); ?>
   </div>
 </nav>
-<script type="text/javascript">
-  jQuery(document).ready(function($) {
-    $(window).load(function(){
-      var navWidths = $('.divided-menu').map(function() {
-        return $(this).outerWidth();
-      }).get();
-      var navWidth = Math.max.apply(null, navWidths);
-      $('.divided-menu').css('min-width', navWidth);
-    });
-  });
-</script>
