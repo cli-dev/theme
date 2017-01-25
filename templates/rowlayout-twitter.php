@@ -52,7 +52,7 @@ $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_anima
         $('.twitter-slider .twitter-feed').owlCarousel({
           items: 1,
           nav: true,
-          navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+          navText: ['<span class="nav-icon"></span>', '<span class="nav-icon"></span>'],
         });
       });
     </script>

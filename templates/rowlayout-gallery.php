@@ -11,6 +11,7 @@ $columns = intval($columns_on_desktop);
 $column_spacing = get_sub_field('grid_spacing', $item_id);
 $gallery_negative_margin = ($column_spacing) ? ' style="margin: -' . ($column_spacing/2) . 'px"' : '"';
 $gallery_spacing = ($column_spacing) ? ' style="padding: ' . ($column_spacing/2) . 'px"' : ''; 
+$gallery_item_styles = ($is_slider == 1) ? '' : $gallery_spacing; 
 $hover_panel_background_color = (get_sub_field('hover_color', $item_id)) ? hex2rgb(get_sub_field('hover_color', $item_id)) : '';
 $bg_color_opacity = (get_sub_field('hover_color_opacity', $item_id)) ? get_sub_field('hover_color_opacity', $item_id) : '';
 $hover_bg = ($hover_panel_background_color) ? ' style="background-color: rgba(' . $hover_panel_background_color . ',' . $bg_color_opacity . ');"' : '';
@@ -22,13 +23,13 @@ $item_animation_duration = (get_sub_field('item_animation_duration')) ? ' data-w
 $item_animation_delay = (get_sub_field('item_animation_delay', $item_id)) ? ' data-wow-delay="' . get_sub_field('item_animation_delay', $item_id) . 's"'  : '';
 $item_animation_offset =  (get_sub_field('item_animation_offset', $item_id)) ? ' data-wow-offset="' . get_sub_field('item_animation_offset', $item_id) . '"'  : '';
 $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_animation_delay . $item_animation_offset : '';
-$gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'class="image-gallery image-grid"';
+$gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'class="image-gallery image-grid"' . $gallery_negative_margin;
 ?>
   <div class="col-item gallery<?php echo $animation_class . $item_animation_effect . $custom_class;?>"<?php echo $animation;?>>
     <?php if( $images ): ?>
-    <div id="<?php echo $gallery_id; ?>" <?php echo $gallery_classes; if($is_slider != 1){echo $gallery_negative_margin;} ?>>
+    <div id="<?php echo $gallery_id; ?>" <?php echo $gallery_classes;?>>
       <?php foreach( $images as $image ): ?>
-      <div class="gallery-img-wrap"<?php if($is_slider !== 1){echo $gallery_spacing;} ?>>
+      <div class="gallery-img-wrap"<?php echo $gallery_item_styles; ?>>
         <a href="<?php echo $image['url']; ?>" rel="<?php echo $gallery_id; ?>" title="<?php echo $image['title']; ?>" class="gallery-img lazyload" data-original="<?php echo $image['sizes']['medium']; ?>"><span class="hover-panel"<?php echo $hover_bg; ?>><i class="img-zoom fa fa-search-plus"<?php echo $hover_icon_color; ?>></i></span></a>
       </div>
     <?php endforeach; ?>
@@ -38,22 +39,29 @@ $gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'c
 <script type="text/javascript">
   jQuery(document).ready(function($) {
     var columns = <?php echo $columns; ?>;
+    $(".gallery-img").fancybox({
+      padding: 0,
+      maxWidth: 700,
+      margin: [50, 20, 20, 20]
+    });
     <?php if ($is_slider == 1) { ?>
-      if(columns == 1){
-        $('#<?php echo $gallery_id; ?>.owl-carousel').owlCarousel({
+      var <?php echo $gallery_id; ?> = $('#<?php echo $gallery_id; ?>.owl-carousel');
+      <?php if ($columns == 1) { ?>
+        <?php echo $gallery_id; ?>.owlCarousel({
           items: 1,
-          loop: true,
+          loop: false,
           margin: 0,
           nav: true,
-          navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
+          navText: ['<span class="nav-icon"></span>', '<span class="nav-icon"></span>'],
         });
-      } else if (columns == 2) {
-        $('#<?php echo $gallery_id; ?>.owl-carousel').owlCarousel({
+      <?php } else if ($columns == 2) { ?>
+        <?php echo $gallery_id; ?>.owlCarousel({
           items: 1,
-          loop: true,
+          loop: false,
           margin: 0,
+          slideBy: 'page',
           nav: true,
-          navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+          navText: ['<span class="nav-icon"></span>', '<span class="nav-icon"></span>'],
           responsive:{
             500:{
               items:2,
@@ -61,13 +69,14 @@ $gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'c
             }
           }
         });
-      } else if (columns >= 3) {
-        $('#<?php echo $gallery_id; ?>.owl-carousel').owlCarousel({
+      <?php } else if ($columns >= 3) { ?>
+        <?php echo $gallery_id; ?>.owlCarousel({
           items: 1,
-          loop: true,
+          loop: false,
           margin: 0,
+          slideBy: 'page',
           nav: true,
-          navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+          navText: ['<span class="nav-icon"></span>', '<span class="nav-icon"></span>'],
           responsive:{
             500:{
               items:2,
@@ -83,7 +92,30 @@ $gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'c
             }
           }
         });
-      }
+      <?php } ?>
+
+      <?php echo $gallery_id; ?>.on('changed.owl.carousel', function(event) {
+        var currentItem = event.item.index;
+        var items = event.item.count;
+        var lastItem = event.item.count - 1;
+        var firstItem = 0;
+        var currentPage = event.page.index;
+        var pages = event.page.count;
+        var lastPage = event.page.count - 1;
+        var firstPage = 0;
+        if (currentItem === lastItem || currentPage === lastPage) {
+          console.log('Last Page');
+          $('#<?php echo $gallery_id; ?> .owl-next').addClass('disabled-nav-item');
+        } else{
+          $('#<?php echo $gallery_id; ?> .owl-next').removeClass('disabled-nav-item');
+        }
+        if (currentItem === firstItem || currentPage === firstPage) {
+          console.log('First Page');
+          $('#<?php echo $gallery_id; ?> .owl-prev').addClass('disabled-nav-item');
+        } else{
+          $('#<?php echo $gallery_id; ?> .owl-prev').removeClass('disabled-nav-item');
+        }
+      });
 
     <?php } else { ?>
       var maxWidth = 1/columns * 100;
