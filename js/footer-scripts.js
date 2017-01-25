@@ -20696,5 +20696,52 @@ jQuery(document).ready(function($) {
 
     $("input:checkbox, input:radio, input:file").uniform();
 
+  // Hover box scripts
+
+    $('.hover-box').each(function(index, el) {
+      var boxTitle = $(this).find('.box-title').height();
+      var boxTxt = $(this).find('.box-txt').height();
+
+      $(this).find('.box-inner').css('min-height', boxTxt + boxTitle);
+
+      $(this).find('.box-txt').css({
+        '-webkit-transform' : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        '-moz-transform'    : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        '-ms-transform'     : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        '-o-transform'      : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        'transform'         : 'translate3d(0px, ' + boxTxt + 'px, 0px)'
+      });
+      $(this).find('.box-title').css({
+        '-webkit-transform' : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        '-moz-transform'    : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        '-ms-transform'     : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        '-o-transform'      : 'translate3d(0px, ' + boxTxt + 'px, 0px)',
+        'transform'         : 'translate3d(0px, ' + boxTxt + 'px, 0px)'
+      });
+    });
+    $(window).resize(function(event) {
+      $('.hover-box').each(function(index, el) {
+        var boxTitle2 = $(this).find('.box-title').height();
+        var boxTxt2 = $(this).find('.box-txt').height();
+
+        $(this).find('.box-inner').css('min-height', boxTxt2 + boxTitle2);
+
+        $(this).find('.box-txt').css({
+          '-webkit-transform' : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          '-moz-transform'    : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          '-ms-transform'     : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          '-o-transform'      : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          'transform'         : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)'
+        });
+        $(this).find('.box-title').css({
+          '-webkit-transform' : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          '-moz-transform'    : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          '-ms-transform'     : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          '-o-transform'      : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)',
+          'transform'         : 'translate3d(0px, ' + boxTxt2 + 'px, 0px)'
+        });
+      });
+    });
+
 });
 

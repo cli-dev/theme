@@ -307,15 +307,19 @@ add_filter( 'wp_enqueue_scripts', 'change_default_jquery', PHP_INT_MAX );
   }, 10, 4 );
 
 // Load Theme scripts
-  function add_theme_scripts() {
+  function add_header_scripts() {
     wp_register_script( 'headerJS', CDM_ROOT . '/js/header-scripts.min.js', '','', false);
     wp_enqueue_script( 'headerJS' );
-    
+  }
+   
+  add_action( 'wp_enqueue_scripts', 'add_header_scripts', 0 );
+
+  function add_footer_scripts() {
     wp_register_script( 'footerJS', CDM_ROOT . '/js/footer-scripts.min.js', array('headerJS'),'', true);
     wp_enqueue_script( 'footerJS' );
   }
    
-  add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+  add_action( 'wp_enqueue_scripts', 'add_footer_scripts', 99);
 
 // Load backend styles
   function load_admin_style() {
