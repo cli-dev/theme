@@ -51,9 +51,6 @@ $col_index = 0;
     $col_slug = ' ' . the_slug($item_id);
     $col_index++;
 
-    $add_classes_to_outer_column = ' class="flex-col' . $column_width . $custom_column_alignment . ' column-' . $col_index . $col_custom_class . (($column_add_animation == 1) ? ' wow' : '' ) . $column_animation_effect . '"' . $header_class_structure;
-    $add_animation = $column_animation_delay . $column_animation_offset;
-
     $column_styles = '';
 
     $bg_type = '';
@@ -73,6 +70,9 @@ $col_index = 0;
       $column_styles = '';  
     }
 
+    $add_classes_to_outer_column = ' class="flex-col' . $bg_type . $column_width . $custom_column_alignment . ' column-' . $col_index . $col_custom_class . (($column_add_animation == 1) ? ' wow' : '' ) . $column_animation_effect . '"' . $header_class_structure;
+    $add_animation = $column_animation_delay . $column_animation_offset;
+
     if($content_direction === 'row'){
       $content_position = $content_horizontal_position;
       $content_alignment = $content_horizontal_alignment;
@@ -85,7 +85,7 @@ $col_index = 0;
     }
 
 
-    $add_classes_to_inner_column = 'class="col-inner ' . $item_direction . $bg_type . $remove_col_padding . $content_position . $content_alignment . $inner_column_class . '"';
+    $add_classes_to_inner_column = 'class="col-inner ' . $item_direction . $remove_col_padding . $content_position . $content_alignment . $inner_column_class . '"';
 
     $start_outer_column = ($link_column == 1) ? '<a href="' . $link . '" target="' . $target . '" ' . $add_classes_to_outer_column . (($column_add_animation == 1) ? $add_animation : '' ) . $column_styles . '>' : '<div ' . $add_classes_to_outer_column . (($column_add_animation == 1) ? $add_animation : '' ) . $column_styles . '>';
     $end_outer_column = ($link_column == 1) ? '</a>' : '</div>';
