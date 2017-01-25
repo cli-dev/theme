@@ -199,10 +199,10 @@ if( function_exists('get_field') ) {
 
     // Global Text
 
-      echo 'body{' . $default_font_family . $main_font_color . '}';
+      echo 'body, .select2-container--default span[class^="select2-selection"] .select2-selection__rendered, .select2-selection__arrow{' . $default_font_family . $main_font_color . '}';
 
       if ($text_highlight_color) {
-        echo '::-moz-selection{background:' . $text_highlight_color . '; color: #FFF;}::selection{background:' . $text_highlight_color . '; color: #FFF;}';
+        echo '::-moz-selection{background:' . $text_highlight_color . '; color: #FFF;}::selection{background:' . $text_highlight_color . '; color: #FFF;}.select2-container--default .select2-results__option--highlighted[aria-selected]{background-color:' . $text_highlight_color . '; color: #FFF;}';
       }
 
     // Links

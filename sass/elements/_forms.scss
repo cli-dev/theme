@@ -1,36 +1,111 @@
-.caldera-grid{
-  width: 100%; 
-}
-
-.form .caldera-grid{
-  .form-control{
-    border-radius: 0;
-    border: none;
-    box-shadow: none;
-    font-size: 16px;
-  }
-  .form-group{
-    margin-bottom: 20px;  
+form{
+  div{
+    &.checker{
+      width: auto;
+      height: auto;
+      span{
+        background: none;
+        position: relative;
+        display: block;
+        width: auto;
+        height: auto;
+        &.checked:before{
+          content: "\5a";
+        }
+        &:before{
+          content: "\56";
+          font-family: 'ElegantIcons';
+          display: block;
+          font-size: 25px;
+        }
+        input{
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: -1;
+        }
+      }
+    }
+    &.radio{
+      width: auto;
+      height: auto;
+      span{
+        background: none;
+        position: relative;
+        display: block;
+        width: auto;
+        height: auto;
+        &.checked:before{
+          content: "\5c";
+        }
+        &:before{
+          content: "\5b";
+          font-family: 'ElegantIcons';
+          display: block;
+          font-size: 25px;
+        }
+        input{
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: -1;
+        }
+      }
+    }
   }
   input[type="text"],
   input[type="email"],
+  input[type="url"],
+  input[type="tel"],
+  input[type="date"],{
+    height: 30px;
+    padding: 0 15px;
+    line-height: 30px;
+    border-radius: 0;
+    box-shadow: none;
+    &:focus{
+      outline: none;
+    }
+  }
   textarea{
-    color: $black;  
-    padding: 10px;
-    line-height: 20px;
-    background-color: $off-white;
+    padding: 15px;
+    line-height: 1.5;
+    border-radius: 0;
+    box-shadow: none;
+    &:focus{
+      outline: none;
+    }
   }
-  input[type="text"],
-  input[type="email"]{
-    height: 50px;
-  }
-  div[class^="col"]{
-    padding-left: 10px;
-    padding-right: 10px;  
-  }
-  .row{
-    margin-left: -10px;
-    margin-right: -10px;
+}
+
+.select2-container--default{
+  span[class^="select2-selection"]{
+    border-radius: 0;
+    height: 30px;
+    .select2-selection__rendered{
+      line-height: 28px;
+      padding-left: 15px;
+      padding-right: 45px;
+    }
+    .select2-selection__arrow {
+      height: 28px;
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      width: 30px;
+      @include display-flex;
+      @include justify-content(center);
+      @include align-items(center);
+      &:before{
+        content: "\43";
+        font-family: 'ElegantIcons';
+        display: block;
+        font-size: 15px;
+      }
+      b{
+        display: none;
+      }
+    }
   }
 }
 
@@ -47,26 +122,40 @@
 #searchsubmit{
   @include flex(0 1 auto);
   width: 100%;
+  padding: 0 30px;
+  line-height: 30px;
+  height: 30px;
+  border: none;
   @include breakpoint($mds){
     width: auto;
+  }
+  @include breakpoint($lrg){
+    height: 50px;
+    line-height: 50px;
   }
 }
 
 #s{
   @include flex(1 1 auto);
-  color: $black;  
-  padding: 10px;
-  line-height: 20px;
-  background-color: $off-white;
-  font-family: $primary-font;
-  border: none;
   margin-bottom: 20px;
   width: 100%;
   text-align: center;
+  height: 30px;
+  padding: 0 15px;
+  line-height: 28px;
+  border-radius: 0;
+  box-shadow: none;
   @include breakpoint($mds){
     margin-right: 15px;
     margin-bottom: 0;
     width: auto;
+  }
+  @include breakpoint($lrg){
+    height: 50px;
+    line-height: 48px;
+  }
+  &:focus{
+    outline: none;
   }
 }
 
