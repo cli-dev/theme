@@ -8,7 +8,7 @@
   else{ 
     $item_id = $postid;
   } 
-  $hide_page_header = $myoptions['hide_page_header'];
+  
   $logo_position = $myoptions['logo_position'];
   $site_header_type = $myoptions['header_type'];
   $top_header_type = $myoptions['top_header_position'];
@@ -26,6 +26,7 @@
   $header_item_horizontal_alignment = (get_field('header_item_horizontal_alignment', $item_id)) ? ' flex-align-' . get_field('header_item_horizontal_alignment', $item_id) : '';
   $header_item_vertical_distribution = (get_field('header_item_vertical_distribution', $item_id)) ? ' flex-position-' . get_field('header_item_vertical_distribution', $item_id) : '';
   $header_item_vertical_alignment = (get_field('header_item_vertical_alignment', $item_id)) ? ' flex-align-' . get_field('header_item_vertical_alignment', $item_id) : '';
+  $hide_page_header = get_field('hide_page_header', $item_id);
   if($header_item_direction === 'row'){
     $col_position = $header_item_horizontal_distribution;
     $col_alignment = $header_item_horizontal_alignment;
@@ -91,23 +92,14 @@
 <?php if ($hide_page_header != 1) : ?>
 <header <?php echo $header_classes . ' ' . $pageHeaderWrapperStyles . $site_header_color;?><?php echo $animation;?>>
   <?php if($header_type === 'slider'){ echo do_shortcode($slider_shortcode); } else {
-    if(!$detect->isMobile() && $header_type === 'bg-vid') { ?>
-      <div class="header-bg-video bg-video">
-        <video autoplay loop poster="<?php echo $video_placeholder_image; ?>" class="bgvid">
-          <source src="<?php echo $video_webm; ?>" type="video/webm">
-          <source src="<?php echo $video_mp4; ?>" type="video/mp4">
-          <source src="<?php echo $video_ogg; ?>" type="video/ogv">
-        </video>
-        <div class="bg-video-overlay"></div>
-      </div>
-    <?php } else if($detect->isMobile() && $header_type === 'bg-vid'){?>
+    if($header_type === 'bg-vid') { ?>
       <div class="header-bg-video bg-video" style="background: url('<?php echo $video_placeholder_image; ?>') center no-repeat; background-size: cover;">
         <div class="bg-video-overlay"></div>
       </div>
     <?php } ?>
     <div class="page-header-inner-wrapper"<?php echo ' ' . $pageHeaderStyles;?>>
       <div class="page-header-inner in-grid flex-row <?php echo $header_items ?>">
-      <?php if( have_rows('header_content', $item_id) ): while ( have_rows('header_content', $item_id) ) : the_row(); ?>
+        <?php if( have_rows('header_content', $item_id) ): while ( have_rows('header_content', $item_id) ) : the_row(); ?>
           <?php if( get_row_layout() == 'header_text' ) {?>
             <?php $custom_class = (get_sub_field('custom_class', $item_id)) ? ' ' . get_sub_field('custom_class', $item_id) : ''; ?>  
             <div class="header-block<?php echo $custom_class; ?>"> 
@@ -121,10 +113,16 @@
               <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="single-image" />
             </div>
           <?php } ?>
-     <?php endwhile; endif; ?>  
+        <?php endwhile; endif; ?>  
+      </div>
     </div>
-    </div>
-    
+    <?php if(!$detect->isMobile() && $header_type === 'bg-vid') { ?>
+      <script type="text/javascript">
+        jQuery(function($) {
+            $('.header-bg-video').prepend('<video autoplay loop poster="<?php echo $video_placeholder_image; ?>" class="bgvid"><source src="<?php echo $video_webm; ?>" type="video/webm"><source src="<?php echo $video_mp4; ?>" type="video/mp4"><source src="<?php echo $video_ogg; ?>" type="video/ogv"></video>');
+        }); 
+      </script>
+    <?php } ?>
   <?php } ?>
 </header>
 <?php endif; ?>
