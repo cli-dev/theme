@@ -17,7 +17,6 @@
       <meta itemprop='isFamilyFriendly' content='True'/>
       <?php ($news_header == 1) ? get_template_part('templates/page', 'header') : get_template_part( 'entry', 'header' ); ?>
       <section class="entry-content">
-        <?php print_r($post_image_array); ?>
         <?php if ($news_header == 1 && has_post_thumbnail()){ ?>
           <div class="single-post-img lazyload" data-original="<?php echo $post_image_url; ?>">
             <img itemprop="url" data-original="<?php echo $post_image_url; ?>" data-original-set="<?php echo $post_image_srcset; ?>"  title="<?php echo $post_title; ?>" width="<?php echo $post_image_width; ?>" height="<?php echo $post_image_height; ?>" alt="<?php echo $post_title; ?>" class="lazyload" />
