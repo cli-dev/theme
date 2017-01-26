@@ -1,13 +1,5 @@
 <?php
 
-// Remove Default jQuery
-
-function change_default_jquery( ){
-    wp_dequeue_script( 'jquery');
-    wp_deregister_script( 'jquery');   
-}
-add_filter( 'wp_enqueue_scripts', 'change_default_jquery', PHP_INT_MAX );
-
 // Add Favicon
   function add_favicon() {
     $myoptions = get_option( 'themesettings_');
