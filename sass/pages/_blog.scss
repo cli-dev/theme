@@ -9,6 +9,23 @@
     }
   }
 
+  .single-post-img{
+    width: 100%;
+    max-width: $grid-width;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    @include breakpoint($mdl){
+      width: 80%;
+    }
+    img{
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
   .post-header{
     &:before{
       content: '';

@@ -2,11 +2,25 @@
   $myoptions = get_option( 'themesettings_');
   $page_for_posts = get_option( 'page_for_posts' );  
   $postid = get_the_ID();
-  if(is_blog()){ 
-    $item_id = $page_for_posts;
-  }
-  else{ 
-    $item_id = $postid;
+
+  $item_id = '';
+
+  $news_header = $myoptions['news_header'];
+
+  if($news_header == 1){
+    if(is_blog() || is_single()){ 
+       $item_id = $page_for_posts;
+     }
+     else{ 
+       $item_id = $postid;
+     }
+  } else {
+    if(is_blog()){ 
+       $item_id = $page_for_posts;
+     }
+     else{ 
+       $item_id = $postid;
+     }
   } 
   
   $logo_position = $myoptions['logo_position'];
@@ -37,6 +51,7 @@
     $col_alignment = $header_item_vertical_alignment;
     $row_direction = ' flex-direction-column';
   }
+  $news_title = $myoptions['news_title'];
   $header_items = $row_direction . $col_position . $col_alignment;
   $add_background_video = get_field('add_background_video', $item_id);
   $video_mp4 = get_field('video_mp4', $item_id);
@@ -90,39 +105,31 @@
   $header_classes = 'class="page-header ' . $top_header_type . ' ' . $header_type .  $header_class . $overlapping_header . $animation_class . $animation_effect . '"';
 ?>
 <?php if ($hide_page_header != 1) : ?>
-<header <?php echo $header_classes . ' ' . $pageHeaderWrapperStyles . $site_header_color;?><?php echo $animation;?>>
-  <?php if($header_type === 'slider'){ echo do_shortcode($slider_shortcode); } else {
-    if($header_type === 'bg-vid') { ?>
-      <div class="header-bg-video bg-video" style="background: url('<?php echo $video_placeholder_image; ?>') center no-repeat; background-size: cover;">
-        <div class="bg-video-overlay"></div>
+  <header <?php echo $header_classes . ' ' . $pageHeaderWrapperStyles . $site_header_color;?><?php echo $animation;?>>
+    <?php if($header_type === 'slider'){ echo do_shortcode($slider_shortcode); } else { ?>
+      <?php if($header_type === 'bg-vid') { ?>
+        <div class="header-bg-video bg-video" style="background: url('<?php echo $video_placeholder_image; ?>') center no-repeat; background-size: cover;">
+          <div class="bg-video-overlay"></div>
+        </div>
+      <?php } ?>
+      <div class="page-header-inner-wrapper"<?php echo ' ' . $pageHeaderStyles;?>>
+        <div class="page-header-inner in-grid flex-row <?php echo $header_items ?>">
+          <?php 
+            if (is_single() &&  $news_title != 1){ 
+              get_template_part('templates/page', 'header-content'); 
+            } else if(!is_single()) {
+              get_template_part('templates/page', 'header-content'); 
+            } 
+          ?>
+        </div>
       </div>
-    <?php } ?>
-    <div class="page-header-inner-wrapper"<?php echo ' ' . $pageHeaderStyles;?>>
-      <div class="page-header-inner in-grid flex-row <?php echo $header_items ?>">
-        <?php if( have_rows('header_content', $item_id) ): while ( have_rows('header_content', $item_id) ) : the_row(); ?>
-          <?php if( get_row_layout() == 'header_text' ) {?>
-            <?php $custom_class = (get_sub_field('custom_class', $item_id)) ? ' ' . get_sub_field('custom_class', $item_id) : ''; ?>  
-            <div class="header-block<?php echo $custom_class; ?>"> 
-              <?php the_sub_field('header_text', $item_id); ?>
-            </div>
-          <?php } ?>
-          
-          <?php if( get_row_layout() == 'image' ) { $image = get_sub_field('header_image', $item_id);?>
-            <?php $custom_class = (get_sub_field('custom_class', $item_id)) ? ' ' . get_sub_field('custom_class', $item_id) : ''; ?>  
-            <div class="header-block<?php echo $custom_class; ?>"> 
-              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="single-image" />
-            </div>
-          <?php } ?>
-        <?php endwhile; endif; ?>  
-      </div>
-    </div>
-    <?php if(!$detect->isMobile() && $header_type === 'bg-vid') { ?>
-      <script type="text/javascript">
-        jQuery(function($) {
+      <?php if(!$detect->isMobile() && $header_type === 'bg-vid') { ?>
+        <script type="text/javascript">
+          jQuery(function($) {
             $('.header-bg-video').prepend('<video autoplay loop poster="<?php echo $video_placeholder_image; ?>" class="bgvid"><source src="<?php echo $video_webm; ?>" type="video/webm"><source src="<?php echo $video_mp4; ?>" type="video/mp4"><source src="<?php echo $video_ogg; ?>" type="video/ogv"></video>');
-        }); 
-      </script>
+          }); 
+        </script>
+      <?php } ?>
     <?php } ?>
-  <?php } ?>
-</header>
+  </header>
 <?php endif; ?>

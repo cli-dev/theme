@@ -34,11 +34,11 @@ else{
 }
 $post_title = get_the_title();
 $post_image_id = get_post_thumbnail_id();
-$post_image_array = wp_get_attachment_image_src($post_image_id, 'large', true);
+$post_image_array = wp_get_attachment_image_src($post_image_id, 'post-image', true);
 $post_image_url = $post_image_array[0];
 $post_image_width = $post_image_array[1];
 $post_image_height = $post_image_array[2];
-$post_image_thumb_array = wp_get_attachment_image_src($post_image_id, 'thumbnail', true);
+$post_image_thumb_array = wp_get_attachment_image_src($post_image_id, 'post-image', true);
 $post_image_thumb_url = $post_image_thumb_array[0];
 ?>
 

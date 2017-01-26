@@ -132,6 +132,8 @@
   add_image_size( 'sidebar-thumb', 50, 50, true );
   add_image_size( 'theme_image_preview', 100, 100);
   add_image_size( 'team-headshot', 300, 300, array( 'center', 'top' ) );
+  add_image_size( 'post-image', 1200, 800, array( 'center', 'center' ) );
+  add_image_size( 'post-thumb', 300, 200, array( 'center', 'center' ) );
 
 // Display list of availble fonts
 

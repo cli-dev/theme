@@ -2387,6 +2387,61 @@
             }
         },
         {
+            "message": "<h2>Single Post Options<\/h2>",
+            "esc_html": 0,
+            "new_lines": "wpautop",
+            "key": "field_588a3e7ac0fab",
+            "label": "Single Post Options",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": 0,
+            "message": "Do you want to use the news page header for your single post page (instead of the post image)?",
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "key": "field_588a3e06b2de0",
+            "label": "Use News Page Header for Single Post",
+            "name": "news_header",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": 0,
+            "message": "Do you want to hide the news page header content for your single post page?",
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "key": "field_588a3eacc0fac",
+            "label": "Hide News Page Title",
+            "name": "news_title",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "placement": "left",
             "endpoint": 0,
             "key": "field_564a234a7b6c1",
@@ -2592,5 +2647,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483728844
+    "modified": 1485455058
 }
