@@ -283,20 +283,20 @@
   }
   add_filter('upload_mimes', 'custom_upload_mimes');
 
-// Add SVG Support for Wordpress 4.7.1
+  // Add SVG Support for Wordpress 4.7.1
 
-  add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
-    global $wp_version;
-    if ( $wp_version !== '4.7.1' ) {
-     return $data;
-   }
-    $filetype = wp_check_filetype( $filename, $mimes );
-    return [
-      'ext'             => $filetype['ext'],
-      'type'            => $filetype['type'],
-      'proper_filename' => $data['proper_filename']
-    ];
-  }, 10, 4 );
+    add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
+      global $wp_version;
+      if ( $wp_version !== '4.7.1' ) {
+       return $data;
+     }
+      $filetype = wp_check_filetype( $filename, $mimes );
+      return [
+        'ext'             => $filetype['ext'],
+        'type'            => $filetype['type'],
+        'proper_filename' => $data['proper_filename']
+      ];
+    }, 10, 4 );
 
 // Load Theme scripts
   function add_header_scripts() {
@@ -304,14 +304,14 @@
     wp_enqueue_script( 'headerJS' );
   }
    
-  add_action( 'wp_enqueue_scripts', 'add_header_scripts', 0 );
+  add_action( 'wp_enqueue_scripts', 'add_header_scripts');
 
   function add_footer_scripts() {
     wp_register_script( 'footerJS', CDM_ROOT . '/js/footer-scripts.min.js', array('headerJS'),'', true);
     wp_enqueue_script( 'footerJS' );
   }
    
-  add_action( 'wp_enqueue_scripts', 'add_footer_scripts', 99);
+  add_action( 'wp_enqueue_scripts', 'add_footer_scripts');
 
 // Load backend styles
   function load_admin_style() {
