@@ -30,7 +30,7 @@ $gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'c
     <div id="<?php echo $gallery_id; ?>" <?php echo $gallery_classes;?>>
       <?php foreach( $images as $image ): ?>
       <div class="gallery-img-wrap"<?php echo $gallery_item_styles; ?>>
-        <a href="<?php echo $image['url']; ?>" rel="<?php echo $gallery_id; ?>" title="<?php echo $image['title']; ?>" class="gallery-img lazyload" data-original="<?php echo $image['sizes']['medium']; ?>"><span class="hover-panel"<?php echo $hover_bg; ?>><i class="img-zoom fa fa-search-plus"<?php echo $hover_icon_color; ?>></i></span></a>
+        <a href="<?php echo $image['url']; ?>" rel="<?php echo $gallery_id; ?>" title="<?php echo $image['title']; ?>" class="gallery-img" data-original="<?php echo $image['sizes']['medium']; ?>"><span class="hover-panel"<?php echo $hover_bg; ?>><i class="img-zoom fa fa-search-plus"<?php echo $hover_icon_color; ?>></i></span></a>
       </div>
     <?php endforeach; ?>
   </div>
@@ -43,6 +43,10 @@ $gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'c
       padding: 0,
       maxWidth: 700,
       margin: [50, 20, 20, 20]
+    });
+    var myLazyLoad = new LazyLoad({
+      container: document.getElementById('<?php echo $gallery_id; ?>'),
+      elements_selector: ".gallery-img",
     });
     <?php if ($is_slider == 1) { ?>
       var <?php echo $gallery_id; ?> = $('#<?php echo $gallery_id; ?>.owl-carousel');
