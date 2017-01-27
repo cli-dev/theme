@@ -36,35 +36,23 @@
 <script type="text/javascript">
   jQuery(document).ready(function($) {
     $('.sub-menu').hide();
-    $('li.menu-item-has-children').append('<span class="sub-menu-icon genericon genericon-expand"></span>');
-    $('li.menu-item-has-children').click(function(){
+    $('li.menu-item-has-children').append('<span class="sub-menu-icon"></span>');
+    $('.menu-mobile-container li.menu-item-has-children').click(function(){
       if($(this).children('.sub-menu').css('display') === 'none'){
         $('.sub-menu').slideUp(200);
-        $('.sub-menu-icon').removeClass('genericon-collapse').addClass('genericon-expand');
+        $('.sub-menu-icon').removeClass('active-sub-icon');
+        $(this).children('.sub-menu-icon').addClass('active-sub-icon');
         $(this).children('.sub-menu').slideDown(200);
-        $(this).children('.sub-menu-icon').removeClass('genericon-expand').addClass('genericon-collapse');
       } else{
         $(this).children('.sub-menu').slideUp(200);
-        $(this).children('.sub-menu-icon').removeClass('genericon-collapse').addClass('genericon-expand');
+        $(this).children('.sub-menu-icon').removeClass('active-sub-icon');
       }
-    });
-    $('.menu-button-area').click(function(){
-      if($(this).hasClass('active')){
-        $(this).removeClass('active');
-        $('.menu-button').removeClass('active');
-        $('.menu-container').removeClass('active');
-        $('.side-menu').removeClass('active');
-        $('#wrapper').removeClass('active-menu');
-        $('.headhesive').removeClass('active-menu');
-      }
-      else{
-        $(this).addClass('active');
-        $('.menu-button').addClass('active');
-        $('.side-menu').addClass('active');
-        $('.menu-container').addClass('active');
-        $('#wrapper').addClass('active-menu');
-        $('.headhesive').addClass('active-menu');
-      }
+    });  
+    $('.menu-button').click(function(){
+      $(this).toggleClass('active');
+      $('#wrapper').toggleClass('active-menu');
+      $('.menu-mobile-container').slideToggle();
+      $('.side-menu').toggleClass('active');
     });
   });
 </script>

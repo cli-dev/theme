@@ -309,14 +309,19 @@
   add_action( 'wp_enqueue_scripts', 'add_header_scripts');
 
   function add_footer_scripts() {
+    $myoptions = get_option( 'themesettings_');
+    $header_type = $myoptions['header_type'];
     $detect = new Mobile_Detect;
     wp_register_script( 'mobileNav', CDM_ROOT . '/js/mobile-nav.js', array('jquery'),'', true);
     wp_register_script( 'desktopNav', CDM_ROOT . '/js/desktop-nav.js', array('jquery'),'', true);
-    if($detect->isMobile()){
-      wp_enqueue_script( 'mobileNav' );
-    } else{
-      wp_enqueue_script( 'desktopNav' );
+    if ($header_type === 'Top Menu') {
+      if($detect->isMobile()){
+        wp_enqueue_script( 'mobileNav' );
+      } else{
+        wp_enqueue_script( 'desktopNav' );
+      }
     }
+    
     wp_register_script( 'footerJS', CDM_ROOT . '/js/footer-scripts.min.js', array('jquery'),'', true);
     wp_enqueue_script( 'footerJS' );
   }
