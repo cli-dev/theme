@@ -18,6 +18,8 @@
 
   $header_classes = 'class="site-header ' . $header_in_grid . $top_header_type . '"';
 
+  $detect = new Mobile_Detect;
+
 ?>
 
 <?php if ($header_type === 'Top Menu') { ?>
@@ -29,18 +31,20 @@
             <div class="header-widgets-inner"><?php dynamic_sidebar( 'header-widgets' ); ?></div>
           </div>
         <?php endif; ?>
-        <?php  
-          get_template_part('templates/menu' , 'mobile');
-       
-          if($logo_position === 'center' && $center_logo_menu_type === 'divided'){ 
-            get_template_part('templates/menu' , 'divided'); 
-          } 
-          else if($logo_position === 'center' && $center_logo_menu_type === 'top'){
-            get_template_part('templates/menu' , 'center'); 
+        <?php if(!$detect->isMobile()){
+            get_template_part('templates/menu' , 'mobile');
+            if($logo_position === 'center' && $center_logo_menu_type === 'divided'){ 
+              get_template_part('templates/menu' , 'divided'); 
+            } 
+            else if($logo_position === 'center' && $center_logo_menu_type === 'top'){
+              get_template_part('templates/menu' , 'center'); 
+            }
+            else { 
+              get_template_part('templates/menu' , 'right'); 
+            }  
+          } else{
+            get_template_part('templates/menu' , 'mobile');
           }
-          else { 
-            get_template_part('templates/menu' , 'right'); 
-          }  
          ?>
       </div>
     </header>

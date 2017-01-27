@@ -24,7 +24,7 @@ if( function_exists('get_field') ) {
 
     if($menu_dropdown_bg_color) { echo '.desktop-menu-inner .sub-menu{ background-color: ' . $menu_dropdown_bg_color . ';}'; }
 
-    if($desktop_header_height) { echo '.site-header.has-side-menu, .desktop-menu{ height: ' . $desktop_header_height . 'px;} .desktop-menu .sub-menu-icon{ line-height: ' . $desktop_header_height . 'px;}'; }
+    if($desktop_header_height) { echo '.site-header.has-side-menu, .desktop-menu{ height: ' . $desktop_header_height . 'px;}'; }
 
     // Header Top Bar
 

@@ -17,7 +17,18 @@
     echo '<script src="https://use.typekit.net/' . $typekit . '.js"></script><script>try{Typekit.load({ async: true });}catch(e){}</script>';
   }
   $slug = (!is_blog()) ? the_slug() . '-page' : '';
+  $detect = new Mobile_Detect;
 ?>
+<?php if(!$detect->isMobile()){ ?>
+  <style type="text/css">
+    @media screen and (min-width: 1024px){
+      nav.mobile-nav{
+        display: none;
+      }
+    }
+  </style>
+<?php } ?>
+
 </head>
 <body <?php body_class($slug); ?> >
 <div id="top"></div>

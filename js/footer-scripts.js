@@ -15436,19 +15436,19 @@ return Packery;
 
 jQuery(document).ready(function($) {
 
-  $("img").each(function() {
+  // Lazy load images
 
-    imgClass = $(this).attr('class');
-    imgWidth = $(this).attr('width');
-    imgHeight = $(this).attr('height');
-    imgSrcSet = $(this).attr('srcset');
-    imgSrc = $(this).attr('src');
+    $("img").each(function() {
 
-    
+      imgClass = $(this).attr('class');
+      imgWidth = $(this).attr('width');
+      imgHeight = $(this).attr('height');
+      imgSrcSet = $(this).attr('srcset');
+      imgSrc = $(this).attr('src');
 
-    $(this).removeAttr('src').removeAttr('class').removeAttr('srcset').attr('data-original-set', imgSrcSet).attr('data-original', imgSrc).addClass('lazyload ' + imgClass);
+      $(this).removeAttr('src').removeAttr('class').removeAttr('srcset').attr('data-original-set', imgSrcSet).attr('data-original', imgSrc).addClass('lazyload ' + imgClass);
 
-  });
+    });
 
   // Code for lazy loading background images
 
@@ -15529,93 +15529,6 @@ jQuery(document).ready(function($) {
       });
       wow.init();
     });
-
-  // Menu Functionality
-
-    $('.sub-menu').hide();
-    $('li.menu-item-has-children').append('<span class="sub-menu-icon genericon genericon-expand"></span>');
-    $('.menu-mobile-container li.menu-item-has-children').click(function(){
-      if($(this).children('.sub-menu').css('display') === 'none'){
-        $('.sub-menu').slideUp(200);
-        $('.sub-menu-icon').removeClass('genericon-collapse').addClass('genericon-expand');
-        $(this).children('.sub-menu').slideDown(200);
-        $(this).children('.sub-menu-icon').removeClass('genericon-expand').addClass('genericon-collapse');
-      } else{
-        $(this).children('.sub-menu').slideUp(200);
-        $(this).children('.sub-menu-icon').removeClass('genericon-collapse').addClass('genericon-expand');
-      }
-    });
-    $('.menu-container > .menu > li.menu-item-has-children').hoverIntent(
-      function(){
-        $(this).children('.sub-menu').slideDown(200);
-        $(this).children('.sub-menu-icon').removeClass('genericon-expand').addClass('genericon-collapse');
-      },
-      function(){
-        $(this).children('.sub-menu').slideUp(200);
-        $(this).children('.sub-menu-icon').removeClass('genericon-collapse').addClass('genericon-expand');
-      }
-    );
-    $('.menu-mobile-container').hide();
-    $('.menu-button-area').click(function(){
-      if($(window).width() >= 1280){
-        if($(this).hasClass('active')){
-          $(this).removeClass('active');
-          $('.menu-button').removeClass('active');
-          $('.menu-container').removeClass('active');
-          $('#side-menu').removeClass('active');
-          $('.menu-button-txt').html('Menu');
-          $('#wrapper').removeClass('active-menu');
-          $('.headhesive').removeClass('active-menu');
-        }
-        else{
-          $(this).addClass('active');
-          $('.menu-button').addClass('active');
-          $('#side-menu').addClass('active');
-          $('.menu-container').addClass('active');
-          $('.menu-button-txt').html('Close');
-          $('#wrapper').addClass('active-menu');
-          $('.headhesive').addClass('active-menu');
-        }
-      }
-      else{
-        if($('.menu-mobile-container').css('display') === 'none'){
-          $(this).addClass('active');
-          $('.menu-button').addClass('active');
-          $('.menu-mobile-container').slideDown();
-          $('.menu-button-txt').html('Close');
-          $('#wrapper').addClass('active-menu');
-          $('.headhesive').addClass('active-menu');
-        }
-        else if($('.menu-mobile-container').css('display') === 'block'){
-          $(this).removeClass('active');
-          $('.menu-button').removeClass('active');
-          $('.menu-mobile-container').slideUp();
-          $('.menu-button-txt').html('Menu');
-          $('#wrapper').removeClass('active-menu');
-          $('.headhesive').removeClass('active-menu');
-        } 
-        else{
-          if($(this).hasClass('active')){
-            $(this).removeClass('active');
-            $('.menu-button').removeClass('active');
-            $('.menu-container').removeClass('active');
-            $('#side-menu').removeClass('active');
-            $('.menu-button-txt').html('Menu');
-            $('#wrapper').removeClass('active-menu');
-            $('.headhesive').removeClass('active-menu');
-          }
-          else{
-            $(this).addClass('active');
-            $('.menu-button').addClass('active');
-            $('#side-menu').addClass('active');
-            $('.menu-container').addClass('active');
-            $('.menu-button-txt').html('Close');
-            $('#wrapper').addClass('active-menu');
-            $('.headhesive').addClass('active-menu');
-          }
-        }
-      }
-    }); 
 
   // Plugins for forms
 

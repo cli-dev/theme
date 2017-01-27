@@ -302,14 +302,22 @@
 
 // Load Theme scripts
   function add_header_scripts() {
-    wp_register_script( 'headerJS', CDM_ROOT . '/js/header-scripts.min.js', '','', false);
+    wp_register_script( 'headerJS', CDM_ROOT . '/js/header-scripts.min.js', array('jquery'),'', false);
     wp_enqueue_script( 'headerJS' );
   }
    
   add_action( 'wp_enqueue_scripts', 'add_header_scripts');
 
   function add_footer_scripts() {
-    wp_register_script( 'footerJS', CDM_ROOT . '/js/footer-scripts.min.js', array('headerJS'),'', true);
+    $detect = new Mobile_Detect;
+    wp_register_script( 'mobileNav', CDM_ROOT . '/js/mobile-nav.js', array('jquery'),'', true);
+    wp_register_script( 'desktopNav', CDM_ROOT . '/js/desktop-nav.js', array('jquery'),'', true);
+    if($detect->isMobile()){
+      wp_enqueue_script( 'mobileNav' );
+    } else{
+      wp_enqueue_script( 'desktopNav' );
+    }
+    wp_register_script( 'footerJS', CDM_ROOT . '/js/footer-scripts.min.js', array('jquery'),'', true);
     wp_enqueue_script( 'footerJS' );
   }
    

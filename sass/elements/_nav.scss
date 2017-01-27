@@ -152,9 +152,6 @@
     @include display-flex;
     @include justify-content(center);
     position: relative; 
-    @include breakpoint($lrg){
-      display: none;
-    }
     li{
       padding: 0;
     }
@@ -257,7 +254,7 @@
       .desktop-menu,
       .sticky-nav-inner{
         display: none;
-        @include breakpoint($lrg){
+        @include breakpoint($mdl){
           @include transition(all ease-in-out 0.5s);
           @include display-flex;
           @include justify-content(center);
@@ -273,26 +270,30 @@
         }
         .header-in-grid &{
           .desktop-menu-inner{
-            @include breakpoint($lrg){
+            @include breakpoint($mdl){
               width: 100%;
-              padding: 10px 40px;
+              padding: 0 40px;
             }
           }
         }
         .menu-container{
-          @include breakpoint($lrg){
+          @include breakpoint($mdl){
             @include flex(0 1 auto);
             @include display-flex;
             @include flex-direction(column);
             @include align-items(stretch);
             &.hidden-menu{
               margin-right: $button-width;
-              overflow-x: hidden;
+              overflow: hidden;
               .menu{
                 @include transform(translateX(100%));
+                @include transition(ease-in-out all 0.3s);
               }
-              &.active .menu{
-                @include transform(translateX(0));
+              &.active {
+                overflow: visible;
+                .menu{
+                  @include transform(translateX(0));
+                }
               }
             }
           }
@@ -303,7 +304,7 @@
           }
           li{
             padding: 0;
-            @include breakpoint($lrg){
+            @include breakpoint($mdl){
               padding: 0 15px;
               @include flex(1 1 auto); 
               @include display-flex;
@@ -315,11 +316,17 @@
             }
           }
           a{
-            @include breakpoint($lrg){
+            @include breakpoint($mdl){
               @include flex(1 1 auto); 
               @include display-flex;
               @include align-items(center);
             }
+          }
+          .sub-menu-icon{
+            height: 100%;
+            @include display-flex;
+            @include justify-content(center);
+            @include align-items(center);
           }
         }
       }
@@ -338,7 +345,7 @@
             @include transform(translate(-50%, 0));
           }
           &.header-in-grid{
-            @include breakpoint($lrg){
+            @include breakpoint($mdl){
               width: 80%;
               max-width: $grid-width;
             }
@@ -397,7 +404,7 @@
       .desktop-menu.menu-center {
         height: auto;
         .desktop-menu-inner{
-          @include breakpoint($lrg){
+          @include breakpoint($mdl){
             @include flex-direction(column);
             @include align-items(center);
           }
@@ -413,14 +420,25 @@
     width: 20px;
     display: block;
     text-align: center;
-    @include breakpoint($lrg){
+    @include breakpoint($mdl){
       right: 15px;
+    }
+    &:before{
+      content: '\33';
+      display: block;
+      font-family: 'ElegantIcons';
+      color: #FFF;
+      font-size: 20px;
+      @include transition(ease-in-out all 0.2s);
+    }
+    &.active-sub-icon:before{
+      content: '\32';
     }
   }
 
   .site-header .menu-container > .menu > li.menu-item-has-children,
   .sticky-header.headhesive .menu-container > .menu > li.menu-item-has-children{
-    @include breakpoint($lrg){
+    @include breakpoint($mdl){
       >.sub-menu{
         position: absolute;
         top: 100%;

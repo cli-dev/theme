@@ -150,7 +150,10 @@
 
     .mobile-logo{
       width: 100%;
+      padding: 10px 0;
       @include display-flex;
+      @include justify-content(center);
+      @include align-items(stretch);
       a{
         @include flex(1 1 auto);
         width: 100%;
