@@ -11,6 +11,7 @@
   if ($favicon) { 
     echo '<link rel="shortcut icon" href="' . $favicon . '" type="image/x-icon" />';
   } 
+  $add_typekit_fonts = $typekit = $myoptions['add_typekit_fonts'];
   if($add_typekit_fonts == '1')
   {  
     $typekit = $myoptions['typekit_id'];

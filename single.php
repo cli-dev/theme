@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <?php 
+  $myoptions = get_option( 'themesettings_');
   $news_header = $myoptions['news_header']; 
   $post_title = get_the_title();
   $post_image_id = get_post_thumbnail_id();

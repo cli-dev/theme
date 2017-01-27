@@ -238,6 +238,7 @@ function schemaInfo(){
     $phone_rows = get_field('company_phone', 'options');
     if($phone_rows){
       $phone = '';
+      $phoneCode = '';
       foreach($phone_rows as $phone_row){    
         $phone_txt = $phone_row['phone'];
         if($phone_txt){

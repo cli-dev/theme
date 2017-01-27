@@ -106,7 +106,9 @@
 ?>
 <?php if ($hide_page_header != 1) : ?>
   <header <?php echo $header_classes . ' ' . $pageHeaderWrapperStyles . $site_header_color;?><?php echo $animation;?>>
-    <?php if($header_type === 'slider'){ echo do_shortcode($slider_shortcode); } else { ?>
+    <?php if($header_type === 'slider'){?>
+      <?php echo do_shortcode($slider_shortcode); ?>
+    <?php } else { ?>
       <?php if($header_type === 'bg-vid') { ?>
         <div class="header-bg-video bg-video" style="background: url('<?php echo $video_placeholder_image; ?>') center no-repeat; background-size: cover;">
           <div class="bg-video-overlay"></div>
@@ -119,7 +121,9 @@
               get_template_part('templates/page', 'header-content'); 
             } else if(!is_single()) {
               get_template_part('templates/page', 'header-content'); 
-            } 
+            } else {
+              
+            }
           ?>
         </div>
       </div>
