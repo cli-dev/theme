@@ -42,6 +42,7 @@
     div{
       position: absolute;
       top: 50%;
+      z-index: 20;
       @include transform(translateY(-50%));
       @include transition(ease-in-out all 0.2s);
       &.owl-prev{
