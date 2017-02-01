@@ -108,13 +108,11 @@ $gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'c
         var lastPage = event.page.count - 1;
         var firstPage = 0;
         if (currentItem === lastItem || currentPage === lastPage) {
-          console.log('Last Page');
           $('#<?php echo $gallery_id; ?> .owl-next').addClass('disabled-nav-item');
         } else{
           $('#<?php echo $gallery_id; ?> .owl-next').removeClass('disabled-nav-item');
         }
         if (currentItem === firstItem || currentPage === firstPage) {
-          console.log('First Page');
           $('#<?php echo $gallery_id; ?> .owl-prev').addClass('disabled-nav-item');
         } else{
           $('#<?php echo $gallery_id; ?> .owl-prev').removeClass('disabled-nav-item');

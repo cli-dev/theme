@@ -45,7 +45,7 @@ $query1 = new WP_Query( $args1 );
       if( has_post_thumbnail() ){
         $team_img = ' style="background: url(' . $thumb_url . ') center top no-repeat; background-size: cover;"';
       }
-      $team_img = ($thumb_url) ? ' style="background: url(' . $thumb_url . ') center top no-repeat; background-size: cover;"' : '';
+      $team_img = ($thumb_url) ? ' data-original="' . $thumb_url . '" style="background-position: center top; background-repeat: no-repeat; background-size: cover;"' : '';
       $team_open_tag = ($bio) ? '<a class="team-member fancybox"' . $team_img . 'href="#' . the_slug() . '">' : '<div class="team-member"' . $team_img . '>';
       $team_close_tag = ($bio) ? '</a>' : '</div>';
       ?>

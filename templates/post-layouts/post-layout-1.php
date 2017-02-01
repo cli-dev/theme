@@ -6,7 +6,7 @@ $thumb_url = $thumb_url_array[0];
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-block post-layout-1'); ?>>
   <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" >
     <?php if ( has_post_thumbnail() ) : ?>
-      <div class="post-img lazyload" style="background: url('<?php echo $thumb_url; ?>') center no-repeat; background-size: cover;">
+      <div class="post-img lazyload" data-original="<?php echo $thumb_url; ?>" style="background-position: center top; background-repeat: no-repeat; background-size: cover;">
         <?php 
         $title = get_the_title();
         $attr = array('class' => "post-img-inner", 'alt' => $title,);
