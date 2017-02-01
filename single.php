@@ -18,15 +18,17 @@
       <meta itemprop='isFamilyFriendly' content='True'/>
       <?php ($news_header == 1) ? get_template_part('templates/page', 'header') : get_template_part( 'entry', 'header' ); ?>
       <section class="entry-content">
-        <?php if ($news_header == 1 && has_post_thumbnail()){ ?>
-          <div class="single-post-img lazyload" data-original="<?php echo $post_image_url; ?>">
-            <img itemprop="url" data-original="<?php echo $post_image_url; ?>" data-original-set="<?php echo $post_image_srcset; ?>"  title="<?php echo $post_title; ?>" width="<?php echo $post_image_width; ?>" height="<?php echo $post_image_height; ?>" alt="<?php echo $post_title; ?>" class="lazyload" />
-            <meta itemprop="thumbnail" content="<?php echo $post_image_thumb_url; ?>" />
-            <meta itemprop="width" content="<?php echo $post_image_width; ?>" />
-            <meta itemprop="height" content="<?php echo $post_image_height; ?>" />
-          </div>
-        <?php } ?>
-        <?php get_template_part( 'entry', 'content' ); ?>
+        <div class="post-wrapper" >
+          <?php if ($news_header == 1 && has_post_thumbnail()){ ?>
+            <div class="single-post-img lazyload" data-original="<?php echo $post_image_url; ?>">
+              <img itemprop="url" data-original="<?php echo $post_image_url; ?>" data-original-set="<?php echo $post_image_srcset; ?>"  title="<?php echo $post_title; ?>" width="<?php echo $post_image_width; ?>" height="<?php echo $post_image_height; ?>" alt="<?php echo $post_title; ?>" class="lazyload" />
+              <meta itemprop="thumbnail" content="<?php echo $post_image_thumb_url; ?>" />
+              <meta itemprop="width" content="<?php echo $post_image_width; ?>" />
+              <meta itemprop="height" content="<?php echo $post_image_height; ?>" />
+            </div>
+          <?php } ?>
+          <?php get_template_part( 'entry', 'content' ); ?>
+        </div>
       </section>
     </article>
   <?php endwhile; endif; ?>
