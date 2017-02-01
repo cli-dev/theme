@@ -13,8 +13,11 @@
     position: relative;
     overflow: hidden;
     margin-bottom: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     @include breakpoint($md){
-      margin-bottom: 40px;
+      margin-bottom-bottom: 40px;
     }
     img{
       position: absolute;
