@@ -31,247 +31,247 @@
     
     if($facebook){
       if($type_of_icon === 'icon5'){
-        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" target="_blank"><i class="cli-facebook-circle-outline"></i></a></div>';  
+        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" itemprop="sameAs" target="_blank"><i class="cli-facebook-circle-outline"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon1'){
-        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" target="_blank"><i class="cli-facebook"></i></a></div>';  
+        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" itemprop="sameAs" target="_blank"><i class="cli-facebook"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" target="_blank"><i class="cli-facebook-square"></i></a></div>';  
+        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" itemprop="sameAs" target="_blank"><i class="cli-facebook-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" target="_blank"><i class="cli-facebook-circle"></i></a></div>';  
+        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" itemprop="sameAs" target="_blank"><i class="cli-facebook-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" target="_blank"><i class="cli-facebook-square-round"></i></a></div>';  
+        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" itemprop="sameAs" target="_blank"><i class="cli-facebook-square-round"></i></a></div>';  
       }
       else{
-        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" target="_blank"><i class="cli-facebook"></i></a></div>';  
+        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" itemprop="sameAs" target="_blank"><i class="cli-facebook"></i></a></div>';  
       }
       
     }
     
     if($twitter){
       if($type_of_icon === 'icon5'){
-        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" target="_blank"><i class="cli-twitter-circle-outline"></i></a></div>';  
+        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-circle-outline"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon1'){
-        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" target="_blank"><i class="cli-twitter"></i></a></div>';  
+        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" target="_blank"><i class="cli-twitter-square"></i></a></div>';  
+        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" target="_blank"><i class="cli-twitter-circle"></i></a></div>';  
+        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" target="_blank"><i class="cli-twitter-square-round"></i></a></div>';  
+        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-square-round"></i></a></div>';  
       }
       else{
-        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" target="_blank"><i class="cli-twitter"></i></a></div>';  
+        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter"></i></a></div>';  
       }
 
     }
     
     if($google){
       if($type_of_icon === 'icon5'){
-        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" target="_blank"><i class="cli-google-circle-outline"></i></a></div>';  
+        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" target="_blank"><i class="cli-google"></i></a></div>';  
+        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" target="_blank"><i class="cli-google-square"></i></a></div>';  
+        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" target="_blank"><i class="cli-google-circle"></i></a></div>';  
+        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" target="_blank"><i class="cli-google-square-round"></i></a></div>';  
+        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-square-round"></i></a></div>';  
       }
       else{
-        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" target="_blank"><i class="cli-google"></i></a></div>';  
+        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google"></i></a></div>';  
       }
 
     }
     
     if($linkedin){
       if($type_of_icon === 'icon5'){
-        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" target="_blank"><i class="cli-linkedin-circle-outline"></i></a></div>';  
+        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" target="_blank"><i class="cli-linkedin"></i></a></div>';  
+        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" target="_blank"><i class="cli-linkedin-square"></i></a></div>';  
+        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" target="_blank"><i class="cli-linkedin-circle"></i></a></div>';  
+        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" target="_blank"><i class="cli-linkedin-square-round"></i></a></div>';  
+        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-square-round"></i></a></div>';  
       }
       else{
-        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" target="_blank"><i class="cli-linkedin"></i></a></div>';  
+        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin"></i></a></div>';  
       }
 
     }
     
     if($tumblr){
       if($type_of_icon === 'icon5'){
-        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" target="_blank"><i class="cli-tumblr-circle-outline"></i></a></div>';  
+        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" target="_blank"><i class="cli-tumblr"></i></a></div>'; 
+        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr"></i></a></div>'; 
       }
       else if ($type_of_icon === 'icon2'){
-        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" target="_blank"><i class="cli-tumblr-square"></i></a></div>';  
+        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-square"></i></a></div>';  
       }
       else if ($type_of_icon == 'icon3'){
-        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" target="_blank"><i class="cli-tumblr-circle"></i></a></div>';  
+        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" target="_blank"><i class="cli-tumblr-square-round"></i></a></div>';  
+        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-square-round"></i></a></div>';  
       }
       else{
-        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" target="_blank"><i class="cli-tumblr"></i></a></div>'; 
+        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr"></i></a></div>'; 
       }
 
     }
     
     if($pinterest){
       if($type_of_icon === 'icon5'){
-        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" target="_blank"><i class="cli-pinterest-circle-outline"></i></a></div>';  
+        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" target="_blank"><i class="cli-pinterest"></i></a></div>'; 
+        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest"></i></a></div>'; 
       }
       else if ($type_of_icon === 'icon2'){
-        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" target="_blank"><i class="cli-pinterest-square"></i></a></div>';  
+        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" target="_blank"><i class="cli-pinterest-circle"></i></a></div>';  
+        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" target="_blank"><i class="cli-pinterest-square-round"></i></a></div>';  
+        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-square-round"></i></a></div>';  
       }
       else{
-        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" target="_blank"><i class="cli-pinterest"></i></a></div>'; 
+        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest"></i></a></div>'; 
       }
 
     }
     
     if($flickr){
       if($type_of_icon === 'icon5'){
-        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" target="_blank"><i class="cli-flickr-circle-outline"></i></a></div>';  
+        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" target="_blank"><i class="cli-flickr"></i></a></div>';  
+        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" target="_blank"><i class="cli-flickr-square"></i></a></div>';  
+        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" target="_blank"><i class="cli-flickr-circle"></i></a></div>';  
+        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" target="_blank"><i class="cli-flickr-square-round"></i></a></div>';  
+        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-square-round"></i></a></div>';  
       }
       else{
-        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" target="_blank"><i class="cli-flickr"></i></a></div>';  
+        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr"></i></a></div>';  
       }
 
     }
     
     if($newswire){
       if($type_of_icon === 'icon5'){
-        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" target="_blank"><i class="cli-newswire-circle-outline"></i></a></div>';  
+        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" target="_blank"><i class="cli-newswire"></i></a></div>';  
+        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" target="_blank"><i class="cli-newswire-square"></i></a></div>';  
+        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" target="_blank"><i class="cli-newswire-circle"></i></a></div>';  
+        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" target="_blank"><i class="cli-newswire-square-round"></i></a></div>';  
+        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-square-round"></i></a></div>';  
       }
       else{
-        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" target="_blank"><i class="cli-newswire"></i></a></div>';  
+        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire"></i></a></div>';  
       }
 
     }
     
     if($instagram){
       if($type_of_icon === 'icon5'){
-        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" target="_blank"><i class="cli-instagram-circle-outline"></i></a></div>';  
+        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" target="_blank"><i class="cli-instagram"></i></a></div>';  
+        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" target="_blank"><i class="cli-instagram-square"></i></a></div>';  
+        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" target="_blank"><i class="cli-instagram-circle"></i></a></div>';  
+        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" target="_blank"><i class="cli-instagram-square-round"></i></a></div>';  
+        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-square-round"></i></a></div>';  
       }
       else{
-        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" target="_blank"><i class="cli-instagram"></i></a></div>';  
+        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram"></i></a></div>';  
       }
 
     }
 
     if($youtube){
       if($type_of_icon === 'icon5'){
-        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" target="_blank"><i class="cli-youtube-circle-outline"></i></a></div>';  
+        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" target="_blank"><i class="cli-youtube"></i></a></div>';  
+        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" target="_blank"><i class="cli-youtube-square"></i></a></div>';  
+        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" target="_blank"><i class="cli-youtube-circle"></i></a></div>';  
+        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" target="_blank"><i class="cli-youtube-square-round"></i></a></div>';  
+        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-square-round"></i></a></div>';  
       }
       else{
-        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" target="_blank"><i class="cli-youtube"></i></a></div>';  
+        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube"></i></a></div>';  
       }
 
     }
 
     if($vimeo){
       if($type_of_icon === 'icon5'){
-        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" target="_blank"><i class="cli-vimeo-circle-outline"></i></a></div>';  
+        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" target="_blank"><i class="cli-vimeo"></i></a></div>';  
+        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" target="_blank"><i class="cli-vimeo-square"></i></a></div>';  
+        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" target="_blank"><i class="cli-vimeo-circle"></i></a></div>';  
+        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" target="_blank"><i class="cli-vimeo-square-round"></i></a></div>';  
+        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-square-round"></i></a></div>';  
       }
       else{
-        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" target="_blank"><i class="cli-vimeo"></i></a></div>';  
+        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo"></i></a></div>';  
       }
 
     }
 
-    return '<div class="social social-profiles ' . $type_of_icon . ' ' . $custom_class . '">' . $facebookCode . $twitterCode . $googleCode . $linkedinCode . $tumblrCode  . $pinterestCode  . $flickrCode  . $newswireCode . $instagramCode . $youtubeCode . $vimeoCode .'</div>';
+    return '<div itemscope itemtype="http://schema.org/Organization" class="social social-profiles ' . $type_of_icon . ' ' . $custom_class . '">' . $facebookCode . $twitterCode . $googleCode . $linkedinCode . $tumblrCode  . $pinterestCode  . $flickrCode  . $newswireCode . $instagramCode . $youtubeCode . $vimeoCode .'</div>';
     
   }
   
@@ -334,12 +334,12 @@
       $pinterestCode = '<div class="social-icon"><a href="http://pinterest.com/pin/create/button/?url=' . get_permalink()  . '" target="_blank"><i class="cli-pinterest-square-round"></i></a></div>';
     }
     else{
-      $facebookCode = '<div class="social-icon"><a href="http://www.facebook.com/share.php?u=' . get_permalink()  . '" target="_blank"><i class="cli-facebook"></i></a></div>';
-      $twitterCode = '<div class="social-icon"><a href="http://twitter.com/home?status=' . get_permalink()  . '" target="_blank"><i class="cli-twitter"></i></a></div>';  
-      $googleCode = '<div class="social-icon"><a href="https://plus.google.com/share?url=' . get_permalink()  . '" target="_blank"><i class="cli-google"></i></a></div>';
-      $linkedinCode = '<div class="social-icon"><a href="http://linkedin.com/shareArticle?mini=true&url=' . get_permalink()  . '" target="_blank"><i class="cli-linkedin"></i></a></div>';
-      $tumblrCode = '<div class="social-icon"><a href="http://www.tumblr.com/share/link?url=' . get_permalink()  . '" target="_blank"><i class="cli-tumblr"></i></a></div>'; 
-      $pinterestCode = '<div class="social-icon"><a href="http://pinterest.com/pin/create/button/?url=' . get_permalink()  . '" target="_blank"><i class="cli-pinterest"></i></a></div>';  
+      $facebookCode = '<div class="social-icon"><a href="http://www.facebook.com/share.php?u=' . get_permalink()  . '"  target="_blank"><i class="cli-facebook"></i></a></div>';
+      $twitterCode = '<div class="social-icon"><a href="http://twitter.com/home?status=' . get_permalink()  . '"  target="_blank"><i class="cli-twitter"></i></a></div>';  
+      $googleCode = '<div class="social-icon"><a href="https://plus.google.com/share?url=' . get_permalink()  . '"  target="_blank"><i class="cli-google"></i></a></div>';
+      $linkedinCode = '<div class="social-icon"><a href="http://linkedin.com/shareArticle?mini=true&url=' . get_permalink()  . '"  target="_blank"><i class="cli-linkedin"></i></a></div>';
+      $tumblrCode = '<div class="social-icon"><a href="http://www.tumblr.com/share/link?url=' . get_permalink()  . '"  target="_blank"><i class="cli-tumblr"></i></a></div>'; 
+      $pinterestCode = '<div class="social-icon"><a href="http://pinterest.com/pin/create/button/?url=' . get_permalink()  . '"  target="_blank"><i class="cli-pinterest"></i></a></div>';  
     }
 
     
@@ -358,22 +358,22 @@
     
     if($facebook){
       if($type_of_icon === 'icon5'){
-        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" target="_blank"><i class="cli-facebook-circle-outline"></i></a></div>';  
+        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" target="_blank"><i class="cli-facebook-circle-outline"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon1'){
-        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" target="_blank"><i class="cli-facebook"></i></a></div>';  
+        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" target="_blank"><i class="cli-facebook"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" target="_blank"><i class="cli-facebook-square"></i></a></div>';  
+        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" target="_blank"><i class="cli-facebook-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" target="_blank"><i class="cli-facebook-circle"></i></a></div>';  
+        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" target="_blank"><i class="cli-facebook-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" target="_blank"><i class="cli-facebook-square-round"></i></a></div>';  
+        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" target="_blank"><i class="cli-facebook-square-round"></i></a></div>';  
       }
       else{
-        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" target="_blank"><i class="cli-facebook"></i></a></div>';  
+        $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" target="_blank"><i class="cli-facebook"></i></a></div>';  
       }
       
     }
@@ -391,22 +391,22 @@
     
     if($twitter){
       if($type_of_icon === 'icon5'){
-        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" target="_blank"><i class="cli-twitter-circle-outline"></i></a></div>';  
+        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-circle-outline"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon1'){
-        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" target="_blank"><i class="cli-twitter"></i></a></div>';  
+        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" target="_blank"><i class="cli-twitter-square"></i></a></div>';  
+        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" target="_blank"><i class="cli-twitter-circle"></i></a></div>';  
+        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" target="_blank"><i class="cli-twitter-square-round"></i></a></div>';  
+        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-square-round"></i></a></div>';  
       }
       else{
-        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" target="_blank"><i class="cli-twitter"></i></a></div>';  
+        $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter"></i></a></div>';  
       }
 
     }
@@ -424,22 +424,22 @@
     
     if($google){
       if($type_of_icon === 'icon5'){
-        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" target="_blank"><i class="cli-google-circle-outline"></i></a></div>';  
+        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" target="_blank"><i class="cli-google"></i></a></div>';  
+        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" target="_blank"><i class="cli-google-square"></i></a></div>';  
+        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" target="_blank"><i class="cli-google-circle"></i></a></div>';  
+        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" target="_blank"><i class="cli-google-square-round"></i></a></div>';  
+        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-square-round"></i></a></div>';  
       }
       else{
-        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" target="_blank"><i class="cli-google"></i></a></div>';  
+        $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google"></i></a></div>';  
       }
 
     }
@@ -457,22 +457,22 @@
     
     if($linkedin){
       if($type_of_icon === 'icon5'){
-        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" target="_blank"><i class="cli-linkedin-circle-outline"></i></a></div>';  
+        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" target="_blank"><i class="cli-linkedin"></i></a></div>';  
+        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" target="_blank"><i class="cli-linkedin-square"></i></a></div>';  
+        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" target="_blank"><i class="cli-linkedin-circle"></i></a></div>';  
+        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" target="_blank"><i class="cli-linkedin-square-round"></i></a></div>';  
+        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-square-round"></i></a></div>';  
       }
       else{
-        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" target="_blank"><i class="cli-linkedin"></i></a></div>';  
+        $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin"></i></a></div>';  
       }
 
     }
@@ -490,22 +490,22 @@
     
     if($tumblr){
       if($type_of_icon === 'icon5'){
-        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" target="_blank"><i class="cli-tumblr-circle-outline"></i></a></div>';  
+        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" target="_blank"><i class="cli-tumblr"></i></a></div>'; 
+        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr"></i></a></div>'; 
       }
       else if ($type_of_icon === 'icon2'){
-        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" target="_blank"><i class="cli-tumblr-square"></i></a></div>';  
+        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-square"></i></a></div>';  
       }
       else if ($type_of_icon == 'icon3'){
-        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" target="_blank"><i class="cli-tumblr-circle"></i></a></div>';  
+        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" target="_blank"><i class="cli-tumblr-square-round"></i></a></div>';  
+        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-square-round"></i></a></div>';  
       }
       else{
-        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" target="_blank"><i class="cli-tumblr"></i></a></div>'; 
+        $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr"></i></a></div>'; 
       }
 
     }
@@ -523,22 +523,22 @@
     
     if($pinterest){
       if($type_of_icon === 'icon5'){
-        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" target="_blank"><i class="cli-pinterest-circle-outline"></i></a></div>';  
+        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" target="_blank"><i class="cli-pinterest"></i></a></div>'; 
+        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest"></i></a></div>'; 
       }
       else if ($type_of_icon === 'icon2'){
-        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" target="_blank"><i class="cli-pinterest-square"></i></a></div>';  
+        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" target="_blank"><i class="cli-pinterest-circle"></i></a></div>';  
+        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" target="_blank"><i class="cli-pinterest-square-round"></i></a></div>';  
+        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-square-round"></i></a></div>';  
       }
       else{
-        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" target="_blank"><i class="cli-pinterest"></i></a></div>'; 
+        $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest"></i></a></div>'; 
       }
 
     }
@@ -556,22 +556,22 @@
     
     if($flickr){
       if($type_of_icon === 'icon5'){
-        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" target="_blank"><i class="cli-flickr-circle-outline"></i></a></div>';  
+        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" target="_blank"><i class="cli-flickr"></i></a></div>';  
+        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" target="_blank"><i class="cli-flickr-square"></i></a></div>';  
+        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" target="_blank"><i class="cli-flickr-circle"></i></a></div>';  
+        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" target="_blank"><i class="cli-flickr-square-round"></i></a></div>';  
+        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-square-round"></i></a></div>';  
       }
       else{
-        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" target="_blank"><i class="cli-flickr"></i></a></div>';  
+        $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr"></i></a></div>';  
       }
 
     }
@@ -589,22 +589,22 @@
 
     if($newswire){
       if($type_of_icon === 'icon5'){
-        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" target="_blank"><i class="cli-newswire-circle-outline"></i></a></div>';  
+        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" target="_blank"><i class="cli-newswire"></i></a></div>';  
+        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" target="_blank"><i class="cli-newswire-square"></i></a></div>';  
+        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" target="_blank"><i class="cli-newswire-circle"></i></a></div>';  
+        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" target="_blank"><i class="cli-newswire-square-round"></i></a></div>';  
+        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-square-round"></i></a></div>';  
       }
       else{
-        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" target="_blank"><i class="cli-newswire"></i></a></div>';  
+        $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire"></i></a></div>';  
       }
 
     }
@@ -622,22 +622,22 @@
     
     if($instagram){
       if($type_of_icon === 'icon5'){
-        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" target="_blank"><i class="cli-instagram-circle-outline"></i></a></div>';  
+        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" target="_blank"><i class="cli-instagram"></i></a></div>';  
+        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" target="_blank"><i class="cli-instagram-square"></i></a></div>';  
+        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" target="_blank"><i class="cli-instagram-circle"></i></a></div>';  
+        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" target="_blank"><i class="cli-instagram-square-round"></i></a></div>';  
+        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-square-round"></i></a></div>';  
       }
       else{
-        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" target="_blank"><i class="cli-instagram"></i></a></div>';  
+        $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram"></i></a></div>';  
       }
 
     }
@@ -655,22 +655,22 @@
 
     if($youtube){
       if($type_of_icon === 'icon5'){
-        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" target="_blank"><i class="cli-youtube-circle-outline"></i></a></div>';  
+        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" target="_blank"><i class="cli-youtube"></i></a></div>';  
+        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" target="_blank"><i class="cli-youtube-square"></i></a></div>';  
+        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" target="_blank"><i class="cli-youtube-circle"></i></a></div>';  
+        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" target="_blank"><i class="cli-youtube-square-round"></i></a></div>';  
+        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-square-round"></i></a></div>';  
       }
       else{
-        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" target="_blank"><i class="cli-youtube"></i></a></div>';  
+        $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube"></i></a></div>';  
       }
 
     }
@@ -690,22 +690,22 @@
 
     if($vimeo){
       if($type_of_icon === 'icon5'){
-        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" target="_blank"><i class="cli-vimeo-circle-outline"></i></a></div>';  
+        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-circle-outline"></i></a></div>';  
       }
       else if($type_of_icon === 'icon1'){
-        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" target="_blank"><i class="cli-vimeo"></i></a></div>';  
+        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon2'){
-        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" target="_blank"><i class="cli-vimeo-square"></i></a></div>';  
+        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-square"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon3'){
-        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" target="_blank"><i class="cli-vimeo-circle"></i></a></div>';  
+        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-circle"></i></a></div>';  
       }
       else if ($type_of_icon === 'icon4'){
-        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" target="_blank"><i class="cli-vimeo-square-round"></i></a></div>';  
+        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-square-round"></i></a></div>';  
       }
       else{
-        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" target="_blank"><i class="cli-vimeo"></i></a></div>';  
+        $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo"></i></a></div>';  
       }
 
     }
@@ -723,7 +723,7 @@
 
     $fbr_profile = 'http://www.fairbusinessreport.org/company/' . $fbr_profile_slug . '/profile';
 
-    $fbr_verified = '<div class="fbr-badge fbr-verified"><a href="' . $fbr_profile . '" target="_blank" title="' . get_bloginfo( 'name' ) . '"><img src="' . CDM_ROOT . '/imgs/FBR_Verified_Badge_' . $fbr_badge_color . '.png" alt="' . get_bloginfo( 'name' ) . ' Fair Business Report Profile" /></a></div>';
+    $fbr_verified = '<div class="fbr-badge fbr-verified"><a href="' . $fbr_profile . '" itemprop="sameAs" target="_blank" title="' . get_bloginfo( 'name' ) . '"><img src="' . CDM_ROOT . '/imgs/FBR_Verified_Badge_' . $fbr_badge_color . '.png" alt="' . get_bloginfo( 'name' ) . ' Fair Business Report Profile" /></a></div>';
 
     return $fbr_verified;
   }
@@ -747,7 +747,7 @@
 
     $fbr_profile = 'http://www.fairbusinessreport.org/company/' . $fbr_profile_slug . '/profile';
 
-    $fbr_top_place = '<div class="fbr-badge fbr-top-place"><a href="' . $fbr_profile . '" target="_blank" title="' . get_bloginfo( 'name' ) . '"><img src="' . CDM_ROOT . '/imgs/FBR_TopPlacesToWork_Badge_' . $fbr_badge_color . '.png" alt="' . get_bloginfo( 'name' ) . ' Fair Business Report Top Place to Work Award" /></a></div>';
+    $fbr_top_place = '<div class="fbr-badge fbr-top-place"><a href="' . $fbr_profile . '" itemprop="sameAs" target="_blank" title="' . get_bloginfo( 'name' ) . '"><img src="' . CDM_ROOT . '/imgs/FBR_TopPlacesToWork_Badge_' . $fbr_badge_color . '.png" alt="' . get_bloginfo( 'name' ) . ' Fair Business Report Top Place to Work Award" /></a></div>';
 
     return $fbr_top_place;
   }
@@ -760,7 +760,7 @@
 
     $fbr_profile = 'http://www.fairbusinessreport.org/company/' . $fbr_profile_slug . '/profile';
 
-    $fbr_customer_service = '<div class="fbr-badge fbr-customer-service"><a href="' . $fbr_profile . '" target="_blank" title="' . get_bloginfo( 'name' ) . '"><img src="' . CDM_ROOT . '/imgs/FBR_TopCustomerService_Badge_' . $fbr_badge_color . '.png" alt="' . get_bloginfo( 'name' ) . ' Fair Business Report Top Customer Service Award" /></a></div>';
+    $fbr_customer_service = '<div class="fbr-badge fbr-customer-service"><a href="' . $fbr_profile . '" itemprop="sameAs" target="_blank" title="' . get_bloginfo( 'name' ) . '"><img src="' . CDM_ROOT . '/imgs/FBR_TopCustomerService_Badge_' . $fbr_badge_color . '.png" alt="' . get_bloginfo( 'name' ) . ' Fair Business Report Top Customer Service Award" /></a></div>';
 
     return $fbr_customer_service;
   }
@@ -798,7 +798,7 @@
         $tweetEntites[] = array (
             'type'    => 'url',
             'curText' => substr( $tweetText, $url['indices'][0], ( $url['indices'][1] - $url['indices'][0] ) ),
-            'newText' => '<a href="' . $url['expanded_url'] . '" target="_blank">'.$url['display_url'].'</a>'
+            'newText' => '<a href="' . $url['expanded_url'] . '" itemprop="sameAs" target="_blank">'.$url['display_url'].'</a>'
           );
       }  // end foreach
      
@@ -808,7 +808,7 @@
         $tweetEntites[] = array (
             'type'    => 'mention',
             'curText' => mb_substr( $tweetText, $mention['indices'][0], ( $mention['indices'][1] - $mention['indices'][0] ), 'UTF-8'),
-            'newText' => '<a href="http://twitter.com/' .$mention['screen_name'].'" target="_blank">'.$string.'</a>'
+            'newText' => '<a href="http://twitter.com/' .$mention['screen_name'].'" itemprop="sameAs" target="_blank">'.$string.'</a>'
           );
       }  // end foreach
      
@@ -883,7 +883,7 @@
     $allTweets = '';
     $entities = array();
     foreach($tweets as $tweet){
-      $tweetAuthor = ($add_author_link == 1) ? '<a href="https://twitter.com/' . $tweet['user']['screen_name'] . '" target="_blank" class="tweet-user"><i class="fa fa-user"></i> <span>@' . $tweet['user']['screen_name'] . '</span></a>' : '<div class="tweet-user"><i class="fa fa-user"></i> <span>@' . $tweet['user']['screen_name'] . '</span></div>';
+      $tweetAuthor = ($add_author_link == 1) ? '<a href="https://twitter.com/' . $tweet['user']['screen_name'] . '" itemprop="sameAs" target="_blank" class="tweet-user"><i class="fa fa-user"></i> <span>@' . $tweet['user']['screen_name'] . '</span></a>' : '<div class="tweet-user"><i class="fa fa-user"></i> <span>@' . $tweet['user']['screen_name'] . '</span></div>';
       $tweetUSER = ($add_username == 1) ? $tweetAuthor : '';
       $tweetTXT = addTweetEntityLinks( $tweet, $add_links );
       $tweetDATE = time_elapsed_string($tweet['created_at']); 
