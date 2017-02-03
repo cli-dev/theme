@@ -3,8 +3,7 @@
 // Company social profiles
   function displaySocialProfiles($icon_type, $extra_class) {
     $myoptions = get_option( 'themesettings_');
-    $custom_class = $extra_class;
-    $type_of_icon = $icon_type;
+    
     $facebook= $myoptions['facebook'];
     $twitter = $myoptions['twitter'];
     $google = $myoptions['google'];
@@ -30,19 +29,19 @@
     $vimeoCode = '';
     
     if($facebook){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" itemprop="sameAs" target="_blank"><i class="cli-facebook-circle-outline"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon1'){
+      else if ($icon_type === 'icon1'){
         $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" itemprop="sameAs" target="_blank"><i class="cli-facebook"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" itemprop="sameAs" target="_blank"><i class="cli-facebook-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" itemprop="sameAs" target="_blank"><i class="cli-facebook-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" itemprop="sameAs" target="_blank"><i class="cli-facebook-square-round"></i></a></div>';  
       }
       else{
@@ -52,19 +51,19 @@
     }
     
     if($twitter){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-circle-outline"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon1'){
+      else if ($icon_type === 'icon1'){
         $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-square-round"></i></a></div>';  
       }
       else{
@@ -74,19 +73,19 @@
     }
     
     if($google){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-square-round"></i></a></div>';  
       }
       else{
@@ -96,19 +95,19 @@
     }
     
     if($linkedin){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-square-round"></i></a></div>';  
       }
       else{
@@ -118,19 +117,19 @@
     }
     
     if($tumblr){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr"></i></a></div>'; 
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-square"></i></a></div>';  
       }
-      else if ($type_of_icon == 'icon3'){
+      else if ($icon_type == 'icon3'){
         $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-square-round"></i></a></div>';  
       }
       else{
@@ -140,19 +139,19 @@
     }
     
     if($pinterest){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest"></i></a></div>'; 
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-square-round"></i></a></div>';  
       }
       else{
@@ -162,19 +161,19 @@
     }
     
     if($flickr){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-square-round"></i></a></div>';  
       }
       else{
@@ -184,19 +183,19 @@
     }
     
     if($newswire){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-square-round"></i></a></div>';  
       }
       else{
@@ -206,19 +205,19 @@
     }
     
     if($instagram){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-square-round"></i></a></div>';  
       }
       else{
@@ -228,19 +227,19 @@
     }
 
     if($youtube){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-square-round"></i></a></div>';  
       }
       else{
@@ -250,19 +249,19 @@
     }
 
     if($vimeo){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-square-round"></i></a></div>';  
       }
       else{
@@ -270,15 +269,13 @@
       }
 
     }
-
-    return '<div itemscope itemtype="http://schema.org/Organization" class="social social-profiles ' . $type_of_icon . ' ' . $custom_class . '">' . $facebookCode . $twitterCode . $googleCode . $linkedinCode . $tumblrCode  . $pinterestCode  . $flickrCode  . $newswireCode . $instagramCode . $youtubeCode . $vimeoCode .'</div>';
-    
+    return '<div itemscope itemtype="http://schema.org/Organization" class="social social-profiles ' . $icon_type . ' ' . $extra_class . '">' . $facebookCode . $twitterCode . $googleCode . $linkedinCode . $tumblrCode  . $pinterestCode  . $flickrCode  . $newswireCode . $instagramCode . $youtubeCode . $vimeoCode .'</div>';   
   }
-  
+
 // Post social share
-  function displaySocialShare() {
+  function displaySocialShare($icon_type, $extra_class) {
     $myoptions = get_option( 'themesettings_');
-    $type_of_icon = $myoptions['type_of_icon'];
+    $icon_type = $myoptions['type_of_icon'];
     $facebook= $myoptions['facebook'];
     $twitter = $myoptions['twitter'];
     $google = $myoptions['google'];
@@ -293,7 +290,7 @@
     $tumblrCode = '';
     $pinterestCode = '';
 
-    if($type_of_icon === 'icon5'){
+    if($icon_type === 'icon5'){
       $facebookCode = '<div class="social-icon"><a href="http://www.facebook.com/share.php?u=' . get_permalink()  . '" target="_blank"><i class="cli-facebook-circle-outline"></i></a></div>';
       $twitterCode = '<div class="social-icon"><a href="http://twitter.com/home?status=' . get_permalink()  . '" target="_blank"><i class="cli-twitter-circle-outline"></i></a></div>';  
       $googleCode = '<div class="social-icon"><a href="https://plus.google.com/share?url=' . get_permalink()  . '" target="_blank"><i class="cli-google-circle-outline"></i></a></div>';
@@ -301,7 +298,7 @@
       $tumblrCode = '<div class="social-icon"><a href="http://www.tumblr.com/share/link?url=' . get_permalink()  . '" target="_blank"><i class="cli-tumblr-circle-outline"></i></a></div>'; 
       $pinterestCode = '<div class="social-icon"><a href="http://pinterest.com/pin/create/button/?url=' . get_permalink()  . '" target="_blank"><i class="cli-pinterest-circle-outline"></i></a></div>'; 
     }
-    else if ($type_of_icon === 'icon1'){
+    else if ($icon_type === 'icon1'){
       $facebookCode = '<div class="social-icon"><a href="http://www.facebook.com/share.php?u=' . get_permalink()  . '" target="_blank"><i class="cli-facebook"></i></a></div>';
       $twitterCode = '<div class="social-icon"><a href="http://twitter.com/home?status=' . get_permalink()  . '" target="_blank"><i class="cli-twitter"></i></a></div>';  
       $googleCode = '<div class="social-icon"><a href="https://plus.google.com/share?url=' . get_permalink()  . '" target="_blank"><i class="cli-google"></i></a></div>';
@@ -309,7 +306,7 @@
       $tumblrCode = '<div class="social-icon"><a href="http://www.tumblr.com/share/link?url=' . get_permalink()  . '" target="_blank"><i class="cli-tumblr"></i></a></div>'; 
       $pinterestCode = '<div class="social-icon"><a href="http://pinterest.com/pin/create/button/?url=' . get_permalink()  . '" target="_blank"><i class="cli-pinterest"></i></a></div>';
     }
-    else if($type_of_icon === 'icon2'){
+    else if($icon_type === 'icon2'){
       $facebookCode = '<div class="social-icon"><a href="http://www.facebook.com/share.php?u=' . get_permalink()  . '" target="_blank"><i class="cli-facebook-square"></i></a></div>';
       $twitterCode = '<div class="social-icon"><a href="http://twitter.com/home?status=' . get_permalink()  . '" target="_blank"><i class="cli-twitter-square"></i></a></div>';  
       $googleCode = '<div class="social-icon"><a href="https://plus.google.com/share?url=' . get_permalink()  . '" target="_blank"><i class="cli-google-square"></i></a></div>';
@@ -317,7 +314,7 @@
       $tumblrCode = '<div class="social-icon"><a href="http://www.tumblr.com/share/link?url=' . get_permalink()  . '" target="_blank"><i class="cli-tumblr-square"></i></a></div>'; 
       $pinterestCode = '<div class="social-icon"><a href="http://pinterest.com/pin/create/button/?url=' . get_permalink()  . '" target="_blank"><i class="cli-pinterest-square"></i></a></div>';
     }
-    else if ($type_of_icon === 'icon3'){
+    else if ($icon_type === 'icon3'){
       $facebookCode = '<div class="social-icon"><a href="http://www.facebook.com/share.php?u=' . get_permalink()  . '" target="_blank"><i class="cli-facebook-circle"></i></a></div>';
       $twitterCode = '<div class="social-icon"><a href="http://twitter.com/home?status=' . get_permalink()  . '" target="_blank"><i class="cli-twitter-circle"></i></a></div>';  
       $googleCode = '<div class="social-icon"><a href="https://plus.google.com/share?url=' . get_permalink()  . '" target="_blank"><i class="cli-google-circle"></i></a></div>';
@@ -325,7 +322,7 @@
       $tumblrCode = '<div class="social-icon"><a href="http://www.tumblr.com/share/link?url=' . get_permalink()  . '" target="_blank"><i class="cli-tumblr-circle"></i></a></div>'; 
       $pinterestCode = '<div class="social-icon"><a href="http://pinterest.com/pin/create/button/?url=' . get_permalink()  . '" target="_blank"><i class="cli-pinterest-circle"></i></a></div>';
     }
-    else if ($type_of_icon === 'icon4'){
+    else if ($icon_type === 'icon4'){
       $facebookCode = '<div class="social-icon"><a href="http://www.facebook.com/share.php?u=' . get_permalink()  . '" target="_blank"><i class="cli-facebook-square-round"></i></a></div>';
       $twitterCode = '<div class="social-icon"><a href="http://twitter.com/home?status=' . get_permalink()  . '" target="_blank"><i class="cli-twitter-square-round"></i></a></div>';  
       $googleCode = '<div class="social-icon"><a href="https://plus.google.com/share?url=' . get_permalink()  . '" target="_blank"><i class="cli-google-square-round"></i></a></div>';
@@ -342,34 +339,31 @@
       $pinterestCode = '<div class="social-icon"><a href="http://pinterest.com/pin/create/button/?url=' . get_permalink()  . '"  target="_blank"><i class="cli-pinterest"></i></a></div>';  
     }
 
-    
-
-    return '<div class="social social-share ' . $type_of_icon . '">' . $facebookCode . $twitterCode . $googleCode . $linkedinCode . $tumblrCode  . $pinterestCode  . '</div>';
-    
+    return '<div class="social social-share ' . $icon_type . ' ' . $extra_class . '">' . $facebookCode . $twitterCode . $googleCode . $linkedinCode . $tumblrCode  . $pinterestCode  . '</div>';  
   }
 
 // Individual Profiles
   function displayFacebookProfile($icon_type, $extra_class) {
     $myoptions = get_option( 'themesettings_');
-    $custom_class = $extra_class;
-    $type_of_icon = $icon_type;
+    
+    $icon_type = $icon_type;
     $facebook = $myoptions['facebook'];
     $facebookCode = '';
     
     if($facebook){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" target="_blank"><i class="cli-facebook-circle-outline"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon1'){
+      else if ($icon_type === 'icon1'){
         $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" target="_blank"><i class="cli-facebook"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" target="_blank"><i class="cli-facebook-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" target="_blank"><i class="cli-facebook-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $facebookCode = '<div class="social-icon facebook"><a href="' . $facebook  . '" itemprop="sameAs" target="_blank"><i class="cli-facebook-square-round"></i></a></div>';  
       }
       else{
@@ -384,25 +378,25 @@
 
   function displayTwitterProfile($icon_type, $extra_class) {
     $myoptions = get_option( 'themesettings_');
-    $custom_class = $extra_class;
-    $type_of_icon = $icon_type;
+    
+    $icon_type = $icon_type;
     $twitter = $myoptions['twitter'];
     $twitterCode = '';
     
     if($twitter){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-circle-outline"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon1'){
+      else if ($icon_type === 'icon1'){
         $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $twitterCode = '<div class="social-icon twitter"><a href="' . $twitter  . '" itemprop="sameAs" target="_blank"><i class="cli-twitter-square-round"></i></a></div>';  
       }
       else{
@@ -417,25 +411,25 @@
 
   function displayGoogleProfile($icon_type, $extra_class) {
     $myoptions = get_option( 'themesettings_');
-    $custom_class = $extra_class;
-    $type_of_icon = $icon_type;
+    
+    $icon_type = $icon_type;
     $google = $myoptions['google'];
     $googleCode = '';
     
     if($google){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $googleCode = '<div class="social-icon google"><a href="' . $google  . '" itemprop="sameAs" target="_blank"><i class="cli-google-square-round"></i></a></div>';  
       }
       else{
@@ -450,25 +444,25 @@
 
   function displayLinkedInProfile($icon_type, $extra_class) {
     $myoptions = get_option( 'themesettings_');
-    $custom_class = $extra_class;
-    $type_of_icon = $icon_type;
+    
+    $icon_type = $icon_type;
     $linkedin = $myoptions['linkedin'];
     $linkedinCode = '';
     
     if($linkedin){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $linkedinCode = '<div class="social-icon linkedin"><a href="' . $linkedin  . '" itemprop="sameAs" target="_blank"><i class="cli-linkedin-square-round"></i></a></div>';  
       }
       else{
@@ -483,25 +477,25 @@
 
   function displayTumblrProfile($icon_type, $extra_class) {
     $myoptions = get_option( 'themesettings_');
-    $custom_class = $extra_class;
-    $type_of_icon = $icon_type;
+    
+    $icon_type = $icon_type;
     $tumblr = $myoptions['tumblr'];
     $tumblrCode = '';
     
     if($tumblr){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr"></i></a></div>'; 
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-square"></i></a></div>';  
       }
-      else if ($type_of_icon == 'icon3'){
+      else if ($icon_type == 'icon3'){
         $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $tumblrCode = '<div class="social-icon tumblr"><a href="' . $tumblr  . '" itemprop="sameAs" target="_blank"><i class="cli-tumblr-square-round"></i></a></div>';  
       }
       else{
@@ -516,25 +510,25 @@
 
   function displayPinterestProfile($icon_type, $extra_class) {
     $myoptions = get_option( 'themesettings_');
-    $custom_class = $extra_class;
-    $type_of_icon = $icon_type;
+    
+    $icon_type = $icon_type;
     $pinterest = $myoptions['pinterest'];
     $pinterestCode = '';
     
     if($pinterest){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest"></i></a></div>'; 
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $pinterestCode = '<div class="social-icon pinterest"><a href="' . $pinterest  . '" itemprop="sameAs" target="_blank"><i class="cli-pinterest-square-round"></i></a></div>';  
       }
       else{
@@ -549,25 +543,25 @@
 
   function displayFlickrProfile($icon_type, $extra_class) {
     $myoptions = get_option( 'themesettings_');
-    $custom_class = $extra_class;
-    $type_of_icon = $icon_type;
+    
+    $icon_type = $icon_type;
     $flickr = $myoptions['flickr'];
     $flickrCode = '';
     
     if($flickr){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $flickrCode = '<div class="social-icon flickr"><a href="' . $flickr  . '" itemprop="sameAs" target="_blank"><i class="cli-flickr-square-round"></i></a></div>';  
       }
       else{
@@ -582,25 +576,25 @@
 
   function displayNewswireProfile($icon_type, $extra_class) {
     $myoptions = get_option( 'themesettings_');
-    $custom_class = $extra_class;
-    $type_of_icon = $icon_type;
+    
+    $icon_type = $icon_type;
     $newswire = $myoptions['newswire'];
     $newswireCode = '';
 
     if($newswire){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $newswireCode = '<div class="social-icon newswire"><a href="' . $newswire  . '" itemprop="sameAs" target="_blank"><i class="cli-newswire-square-round"></i></a></div>';  
       }
       else{
@@ -615,25 +609,25 @@
 
   function displayInstagramProfile($icon_type, $extra_class) {
     $myoptions = get_option( 'themesettings_');
-    $custom_class = $extra_class;
-    $type_of_icon = $icon_type;
+    
+    $icon_type = $icon_type;
     $instagram = $myoptions['instagram'];
     $instagramCode = '';
     
     if($instagram){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $instagramCode = '<div class="social-icon instagram"><a href="' . $instagram  . '" itemprop="sameAs" target="_blank"><i class="cli-instagram-square-round"></i></a></div>';  
       }
       else{
@@ -648,25 +642,25 @@
 
   function displayYoutubeProfile($icon_type, $extra_class) {
     $myoptions = get_option( 'themesettings_');
-    $custom_class = $extra_class;
-    $type_of_icon = $icon_type;
+    
+    $icon_type = $icon_type;
     $youtube = $myoptions['youtube'];
     $youtubeCode = '';
 
     if($youtube){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $youtubeCode = '<div class="social-icon youtube"><a href="' . $youtube  . '" itemprop="sameAs" target="_blank"><i class="cli-youtube-square-round"></i></a></div>';  
       }
       else{
@@ -681,27 +675,27 @@
 
   function displayVimeoProfile($icon_type, $extra_class) {
     $myoptions = get_option( 'themesettings_');
-    $custom_class = $extra_class;
-    $type_of_icon = $icon_type;
+    
+    $icon_type = $icon_type;
 
     $vimeo = $myoptions['vimeo'];
 
     $vimeoCode = '';
 
     if($vimeo){
-      if($type_of_icon === 'icon5'){
+      if($icon_type === 'icon5'){
         $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-circle-outline"></i></a></div>';  
       }
-      else if($type_of_icon === 'icon1'){
+      else if($icon_type === 'icon1'){
         $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon2'){
+      else if ($icon_type === 'icon2'){
         $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-square"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon3'){
+      else if ($icon_type === 'icon3'){
         $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-circle"></i></a></div>';  
       }
-      else if ($type_of_icon === 'icon4'){
+      else if ($icon_type === 'icon4'){
         $vimeoCode = '<div class="social-icon vimeo"><a href="' . $vimeo  . '" itemprop="sameAs" target="_blank"><i class="cli-vimeo-square-round"></i></a></div>';  
       }
       else{
