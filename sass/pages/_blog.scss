@@ -155,10 +155,7 @@
         width: auto;
         margin: 0 5px;
       }
-      .nav-txt, .fa{
-        @include flex(0 1 auto); 
-      }
-      .fa{
+      i{
         font-size: 25px;
         padding: 0 3px;
       }
