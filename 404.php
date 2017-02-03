@@ -43,8 +43,8 @@
     <section class="entry-content">
     <?php query_posts('posts_per_page=4'); if ( have_posts() ) : ?>
       <div class="blog-feed">
-        <h2>Or if you can't fine what you're looking for, try viewing one of our latest blog posts</h2>
         <div class="blog-feed-inner">
+          <h2>Or if you can't find what you're looking for, try viewing one of our latest blog posts</h2>
           <?php while ( have_posts() ) : the_post(); ?>
             <?php get_template_part( 'templates/post-layouts/post-layout', $blog_post_layout ); ?>
           <?php endwhile; ?>

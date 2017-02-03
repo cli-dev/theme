@@ -216,13 +216,34 @@
       width: 100%;
       max-width: 500px;
       h1{
+        padding-bottom: 30px;
         span{
           display: block;
           text-align: center;
+          line-height: 1;
         }
       }
       p{
         text-align: center;
+      }
+      h1,h2,p,.search-btn-wrapper:before{
+        color: #000;
+      }
+      #s::-webkit-input-placeholder {
+        color: #000;
+      }
+      #s:-moz-placeholder { /* Firefox 18- */
+        color: #000;  
+      }
+      #s::-moz-placeholder {  /* Firefox 19+ */
+        color: #000;  
+      }
+      #s:-ms-input-placeholder {  
+        color: #000;  
+      }
+      .search-btn-wrapper,
+      #s{
+        border-bottom-color: #000;
       }
     }
     &.background--dark{
