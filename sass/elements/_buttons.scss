@@ -1,6 +1,7 @@
 .btn, 
 button, 
-input[type="submit"]{
+input[type="submit"],
+input[type="reset"]{
   display: block;
   text-align: center;
   padding: 15px 30px;
@@ -14,6 +15,33 @@ input[type="submit"]{
   &.btn-full-width{
     display: block;
     width: 100%;
+  }
+  &.solid{
+    border: none;
+    color: #FFF;
+    &.white{
+      color: inherit;
+      span{
+        color: inherit;
+      }
+    }
+  }
+  &.outline{
+    border-width: 1px;
+    background: none;
+    background-color: transparent;
+    &:hover{
+      color: #FFF;
+      span{
+        color: #FFF;
+      }
+    }
+    &.white.hover{
+      color: inherit;
+      span{
+        color: inherit;
+      }
+    }
   }
   span{
     @include transition(ease-in-out all 0.2s);

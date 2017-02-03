@@ -56,19 +56,54 @@ form{
         }
       }
     }
+    &.uploader{
+      background: none;
+      height: auto;
+      width: auto;
+      @include display-flex(inline-flex);
+      @include justify-content(flex-start);
+      @include align-items(stretch);
+      span.filename{
+        height: auto;
+        float: none;
+        margin: 0;
+        width: auto;
+        padding: 5px 10px;
+        line-height: 1;
+        font-size: 16px;
+        white-space: normal;
+      }
+      span.action{
+        height: auto;
+        float: none;
+        margin: 0;
+        width: auto;
+        padding: 5px 10px;
+        line-height: 1;
+        font-size: 16px;
+        display: block;
+        text-shadow: none;
+        background-color: inherit;
+        background: none;
+      }
+    }
   }
   input[type="text"],
   input[type="email"],
   input[type="url"],
+  input[type="search"],
+  input[type="password"],
   input[type="tel"],
-  input[type="date"],{
-    height: 30px;
+  input[type="date"]{
+    width: 100%;
+    margin: 0;
+    height: auto;
     padding: 0 15px;
     line-height: 30px;
     border-radius: 0;
     box-shadow: none;
-    &:focus{
-      outline: none;
+    @include breakpoint($lrg){
+      line-height: 40px;
     }
   }
   textarea{
@@ -76,27 +111,27 @@ form{
     line-height: 1.5;
     border-radius: 0;
     box-shadow: none;
-    &:focus{
-      outline: none;
-    }
   }
 }
 
 .select2-container--default{
   span[class^="select2-selection"]{
     border-radius: 0;
-    height: 30px;
+    height: auto;
     .select2-selection__rendered{
-      line-height: 28px;
-      padding-left: 15px;
-      padding-right: 45px;
+      line-height: 30px;
+      @include flex(1 1 auto);
+      @include breakpoint($lrg){
+        line-height: 40px;
+      }
     }
     .select2-selection__arrow {
-      height: 28px;
-      position: absolute;
-      top: 1px;
-      right: 1px;
-      width: 30px;
+      position: relative;
+      top: auto;
+      right: auto;
+      height: auto;
+      width: auto;
+      padding-right: 15px;
       @include display-flex;
       @include justify-content(center);
       @include align-items(center);
@@ -112,54 +147,85 @@ form{
       }
     }
   }
+  .select2-selection--single{
+    @include display-flex;
+    padding: 0 15px;
+    min-height: 30px;
+    @include breakpoint($lrg){
+      min-height: 40px;
+    }
+  }
+  .select2-selection--multiple{
+    .select2-selection__rendered{
+      padding: 0;
+      min-height: 30px;
+      @include display-flex;
+      @include justify-content(flex-start);
+      @include align-items(center);
+      @include flex-wrap(wrap);
+      @include breakpoint($lrg){
+        min-height: 40px;
+      }
+      li.select2-selection__choice{
+        margin: 5px;
+        float: none;
+        padding: 5px 8px;
+        @include display-flex(inline-flex);
+        @include justify-content(flex-start);
+        @include align-items(center);
+        &:before{
+          content: '\4d';
+          font-family: 'ElegantIcons';
+          display: block;
+          font-size: 14px;
+          padding-right: 5px;
+        }
+      }
+    }
+    .select2-selection__choice__remove{
+      display: none;
+    }
+  }
 }
 
 #searchform{
   width: 100%;
   max-width: 650px;
   margin: 0 auto;
-  padding: 20px 0;
-  @include breakpoint($mds){
-    @include display-flex;
+  @include display-flex;
+  @include align-items(stretch);
+}
+
+.search-btn-wrapper{
+  position: relative;
+  display: block;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  &:before{
+    display: block;
+    content: '\55';
+    font-family: 'ElegantIcons';
+    display: block;
+    font-size: 25px;
+    @include transform(rotate(0deg) rotateY(180deg));
   }
 }
 
 #searchsubmit{
-  @include flex(0 1 auto);
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
-  padding: 0 30px;
-  line-height: 30px;
-  height: 30px;
-  border: none;
-  @include breakpoint($mds){
-    width: auto;
-  }
-  @include breakpoint($lrg){
-    height: 50px;
-    line-height: 50px;
-  }
+  height: 100%;
+  opacity: 0;
 }
 
 #s{
   @include flex(1 1 auto);
-  margin-bottom: 20px;
-  width: 100%;
-  text-align: center;
-  height: 30px;
-  padding: 0 15px;
-  line-height: 28px;
-  border-radius: 0;
-  box-shadow: none;
-  @include breakpoint($mds){
-    margin-right: 15px;
-    margin-bottom: 0;
-    width: auto;
-  }
-  @include breakpoint($lrg){
-    height: 50px;
-    line-height: 48px;
-  }
-  &:focus{
-    outline: none;
-  }
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-color: transparent;
 }

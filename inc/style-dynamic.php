@@ -202,7 +202,7 @@ if( function_exists('get_field') ) {
       echo 'body, .select2-container--default span[class^="select2-selection"] .select2-selection__rendered, .select2-selection__arrow{' . $default_font_family . $main_font_color . '}';
 
       if ($text_highlight_color) {
-        echo '::-moz-selection{background:' . $text_highlight_color . '; color: #FFF;}::selection{background:' . $text_highlight_color . '; color: #FFF;}.select2-container--default .select2-results__option--highlighted[aria-selected]{background-color:' . $text_highlight_color . '; color: #FFF;}';
+        echo '::-moz-selection{background:' . $text_highlight_color . '; color: #FFF;}::selection{background:' . $text_highlight_color . '; color: #FFF;}.select2-container--default .select2-results__option--highlighted[aria-selected]{background-color:' . $text_highlight_color . '; color: #FFF;} input:focus{outline-color:' . $text_highlight_color . '}.select2-container--default .select2-selection--multiple .select2-selection__choice{background-color:' . $text_highlight_color . '; color: #FFF;}';
       }
 
     // Links
@@ -217,7 +217,12 @@ if( function_exists('get_field') ) {
 
     // Body Text
 
-      echo 'p, ul li, ol li, input, textarea, label{' . $paragraph_font_family . $paragraph_font_color . $paragraph_text_transform . $paragraph_line_height . $paragraph_font_weight . '}';
+      echo 'p, ul li, ol li, input, textarea, label, div.uploader span.filename, div.uploader span.action, .select2-container--default .select2-selection--multiple .select2-selection__choice,{' . $paragraph_font_family . $paragraph_font_color . $paragraph_text_transform . $paragraph_line_height . $paragraph_font_weight . '}';
+
+      echo '::-webkit-input-placeholder{' . $paragraph_font_family . $paragraph_font_color . $paragraph_text_transform . $paragraph_line_height . $paragraph_font_weight . '}';
+      echo ':-moz-placeholder{' . $paragraph_font_family . $paragraph_font_color . $paragraph_text_transform . $paragraph_line_height . $paragraph_font_weight . '}';
+      echo '::-moz-placeholder{' . $paragraph_font_family . $paragraph_font_color . $paragraph_text_transform . $paragraph_line_height . $paragraph_font_weight . '}';
+      echo ':-ms-input-placeholder{' . $paragraph_font_family . $paragraph_font_color . $paragraph_text_transform . $paragraph_line_height . $paragraph_font_weight . '}';
 
   // Footer Styles
 

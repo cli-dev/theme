@@ -18,6 +18,7 @@
         }
       }
     }
+    .error404 &,
     &.header-overlap{
       width: 100%;
       position: absolute;
@@ -170,6 +171,10 @@
     position: relative;
     overflow: hidden;
     @include display-flex;
+    .error404 &,
+    .search &{
+      min-height: 100vh;
+    }
   }
 
   .page-header-inner-wrapper{
@@ -193,8 +198,76 @@
       width: 80%;
       padding: 80px 0;
     }
+    .error404 &{
+      padding: 0;
+      @include breakpoint($md){
+        padding: 40px;
+      }
+      @include breakpoint($mdl){
+        padding: 80px 0;
+      }
+    }
   }
 
   .header-block{
     max-width: 100%;
+    .error404 &,
+    .search &{
+      width: 100%;
+      max-width: 500px;
+      h1{
+        span{
+          display: block;
+          text-align: center;
+        }
+      }
+      p{
+        text-align: center;
+      }
+    }
+    &.background--dark{
+      h1,h2,p,.search-btn-wrapper:before{
+        color: #FFF;
+      }
+      .search-btn-wrapper,
+      #s{
+        border-bottom-color: #FFF;
+      }
+      #s::-webkit-input-placeholder {
+        color: #FFF;
+      }
+      #s:-moz-placeholder { /* Firefox 18- */
+        color: #FFF;  
+      }
+      #s::-moz-placeholder {  /* Firefox 19+ */
+        color: #FFF;  
+      }
+      #s:-ms-input-placeholder {  
+        color: #FFF;  
+      }
+    }
+    &.background--light{
+      h1,h2,p,.search-btn-wrapper:before{
+        color: #000;
+      }
+      #s::-webkit-input-placeholder {
+        color: #000;
+      }
+      #s:-moz-placeholder { /* Firefox 18- */
+        color: #000;  
+      }
+      #s::-moz-placeholder {  /* Firefox 19+ */
+        color: #000;  
+      }
+      #s:-ms-input-placeholder {  
+        color: #000;  
+      }
+      .search-btn-wrapper,
+      #s{
+        border-bottom-color: #000;
+      }
+    }
+    #searchform{
+      margin-top: 30px;
+    }
   }

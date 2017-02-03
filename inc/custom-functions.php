@@ -262,8 +262,8 @@
 // Update the default wordpress search form
   function my_search_form( $form ) {
     $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
-    <input type="text" value="' . get_search_query() . '" name="s" id="s" />
-    <input type="submit" id="searchsubmit" value="'. esc_attr__( 'Search' ) .'" class="btn" /></form>';
+    <input type="search" value="' . get_search_query() . '" name="s" placeholder="Search" id="s" />
+    <span class="search-btn-wrapper"><input type="submit" id="searchsubmit" value="'. esc_attr__( 'Search' ) .'" class="btn" /></span></form>';
 
     return $form;
   }
