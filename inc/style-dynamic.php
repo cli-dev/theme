@@ -95,6 +95,10 @@ if( function_exists('get_field') ) {
       $mobile_menu_font_family = ($myoptions['mobile_menu_font_family']) ? 'font-family: ' . $myoptions['mobile_menu_font_family'] . ';' : '';
       $mobile_menu_link_active_color = ($myoptions['mobile_menu_link_active_color']) ? 'color: ' . $myoptions['mobile_menu_link_active_color'] . ';' : '';
 
+      $menu_icon_color = $myoptions['menu_icon_color'];
+      $active_menu_icon_color = $myoptions['active_menu_icon_color'];
+
+
       if ($mobile_menu_bg_color) {
         echo '.menu-mobile-container{ background-color: ' . $mobile_menu_bg_color . ';}';
       }
@@ -113,42 +117,13 @@ if( function_exists('get_field') ) {
         echo '.mobile-nav a:hover span, .mobile-nav li.current-menu-item > a span{' . $mobile_menu_link_active_color . '}';
       }
 
-      // if($light_menu_icon_color){
-      //   echo '.menu-button span::before, .menu-button span, .menu-button span::after{ background-color: ' . $light_menu_icon_color . ';}';
-      // }
+      echo '.menu-button span::before, .menu-button span, .menu-button span::after{ background-color: ' . $menu_icon_color . ';}.menu-button.active span::before, .menu-button.active span::after{ background-color: ' . $active_menu_icon_color . ';}';
 
   // Sticky Header Styles
 
       $sticky_header_height = $myoptions['sticky_header_height'];
 
       if($sticky_header_height) { echo '.headhesive .sub-menu-icon{ line-height: ' . $sticky_header_height . 'px;} .headhesive .sticky-nav-inner{ height: ' . $sticky_header_height . 'px;}'; }
-
-    // Light Style
-      // $light_menu_icon_color = $myoptions['light_menu_icon_color'];
-      // $light_sticky_logo = $myoptions['light_sticky_logo'];
-      // $light_sticky_link = $myoptions['light_sticky_link'];
-      // $light_sticky_bg = $myoptions['light_sticky_bg'];
-      // $light_sticky_link_hover = $myoptions['light_sticky_link_hover'];
-
-      // if ($light_sticky_logo) {
-      //   $light_sticky_logo_bg = 'background-image: url(' . $light_sticky_logo . ');';
-      //   echo '.headhesive .light .sticky-logo a{' . $light_sticky_logo_bg . '}';
-      // }
-
-      // if ($light_sticky_link) {
-      //   $light_sticky_link_color = 'color: ' . $light_sticky_link . ';';
-      //   echo '.headhesive .light a .link-text, .headhesive .light a .sub-menu-icon{' . $light_sticky_link_color . '}';
-      // }
-
-      // if ($light_sticky_link_hover) {
-      //   $light_sticky_link_hover_color = 'color: ' . $light_sticky_link_hover . ';';
-      //   echo '.headhesive .light a:hover .link-text, .headhesive .light a:hover .sub-menu-icon{' . $light_sticky_link_hover_color . '}';
-      // }
-
-      // if ($light_sticky_bg) {
-      //   $light_sticky_bg_color = 'background-color: ' . $light_sticky_bg . ';';
-      //   echo '.headhesive .light .sticky-nav-inner{' . $light_sticky_bg_color . '}';
-      // }
 
     // Dark Style
 

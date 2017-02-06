@@ -1178,7 +1178,8 @@
             "allow_null": 0,
             "choices": {
                 "'Bree Serif', serif": "Bree Serif",
-                "'Roboto', sans": "Roboto"
+                "'Roboto', sans": "Roboto",
+                "'museo-sans', sans": "Museo Sans"
             },
             "default_value": [],
             "ui": 1,
@@ -1256,8 +1257,8 @@
         {
             "default_value": "#FFFFFF",
             "key": "field_5665e4d43c1ea",
-            "label": "Light Menu Icon Color",
-            "name": "light_menu_icon_color",
+            "label": "Menu Icon Color",
+            "name": "menu_icon_color",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -1269,10 +1270,10 @@
             }
         },
         {
-            "default_value": "#000000",
+            "default_value": "#FFFFFF",
             "key": "field_5665e5293c1ec",
-            "label": "Dark Menu Icon Color",
-            "name": "dark_menu_icon_color",
+            "label": "Active Menu Icon Color",
+            "name": "active_menu_icon_color",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -1375,7 +1376,8 @@
             "allow_null": 0,
             "choices": {
                 "'Bree Serif', serif": "Bree Serif",
-                "'Roboto', sans": "Roboto"
+                "'Roboto', sans": "Roboto",
+                "'museo-sans', sans": "Museo Sans"
             },
             "default_value": [],
             "ui": 1,
@@ -1669,7 +1671,8 @@
             "allow_null": 0,
             "choices": {
                 "'Bree Serif', serif": "Bree Serif",
-                "'Roboto', sans": "Roboto"
+                "'Roboto', sans": "Roboto",
+                "'museo-sans', sans": "Museo Sans"
             },
             "default_value": [],
             "ui": 0,
@@ -1713,7 +1716,8 @@
             "allow_null": 0,
             "choices": {
                 "'Bree Serif', serif": "Bree Serif",
-                "'Roboto', sans": "Roboto"
+                "'Roboto', sans": "Roboto",
+                "'museo-sans', sans": "Museo Sans"
             },
             "default_value": [],
             "ui": 0,
@@ -1857,7 +1861,8 @@
             "allow_null": 0,
             "choices": {
                 "'Bree Serif', serif": "Bree Serif",
-                "'Roboto', sans": "Roboto"
+                "'Roboto', sans": "Roboto",
+                "'museo-sans', sans": "Museo Sans"
             },
             "default_value": [],
             "ui": 0,
@@ -2647,5 +2652,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1485455058
+    "modified": 1486414206
 }

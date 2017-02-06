@@ -1185,6 +1185,7 @@ acf_add_local_field_group(array (
 			'choices' => array (
 				'\'Bree Serif\', serif' => 'Bree Serif',
 				'\'Roboto\', sans' => 'Roboto',
+				'\'museo-sans\', sans' => 'Museo Sans',
 			),
 			'default_value' => array (
 			),
@@ -1263,8 +1264,8 @@ acf_add_local_field_group(array (
 		array (
 			'default_value' => '#FFFFFF',
 			'key' => 'field_5665e4d43c1ea',
-			'label' => 'Light Menu Icon Color',
-			'name' => 'light_menu_icon_color',
+			'label' => 'Menu Icon Color',
+			'name' => 'menu_icon_color',
 			'type' => 'color_picker',
 			'instructions' => '',
 			'required' => 0,
@@ -1276,10 +1277,10 @@ acf_add_local_field_group(array (
 			),
 		),
 		array (
-			'default_value' => '#000000',
+			'default_value' => '#FFFFFF',
 			'key' => 'field_5665e5293c1ec',
-			'label' => 'Dark Menu Icon Color',
-			'name' => 'dark_menu_icon_color',
+			'label' => 'Active Menu Icon Color',
+			'name' => 'active_menu_icon_color',
 			'type' => 'color_picker',
 			'instructions' => '',
 			'required' => 0,
@@ -1383,6 +1384,7 @@ acf_add_local_field_group(array (
 			'choices' => array (
 				'\'Bree Serif\', serif' => 'Bree Serif',
 				'\'Roboto\', sans' => 'Roboto',
+				'\'museo-sans\', sans' => 'Museo Sans',
 			),
 			'default_value' => array (
 			),
@@ -1678,6 +1680,7 @@ acf_add_local_field_group(array (
 			'choices' => array (
 				'\'Bree Serif\', serif' => 'Bree Serif',
 				'\'Roboto\', sans' => 'Roboto',
+				'\'museo-sans\', sans' => 'Museo Sans',
 			),
 			'default_value' => array (
 			),
@@ -1723,6 +1726,7 @@ acf_add_local_field_group(array (
 			'choices' => array (
 				'\'Bree Serif\', serif' => 'Bree Serif',
 				'\'Roboto\', sans' => 'Roboto',
+				'\'museo-sans\', sans' => 'Museo Sans',
 			),
 			'default_value' => array (
 			),
@@ -1870,6 +1874,7 @@ acf_add_local_field_group(array (
 			'choices' => array (
 				'\'Bree Serif\', serif' => 'Bree Serif',
 				'\'Roboto\', sans' => 'Roboto',
+				'\'museo-sans\', sans' => 'Museo Sans',
 			),
 			'default_value' => array (
 			),
