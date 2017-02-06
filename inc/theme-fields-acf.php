@@ -1254,7 +1254,15 @@ acf_add_local_field_group(array (
 			'type' => 'color_picker',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_560ec99f29270',
+						'operator' => '==',
+						'value' => 'Top Menu',
+					),
+				),
+			),
 			'wrapper' => array (
 				'width' => '',
 				'class' => '',
@@ -1299,7 +1307,15 @@ acf_add_local_field_group(array (
 			'type' => 'color_picker',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_560ec99f29270',
+						'operator' => '==',
+						'value' => 'Top Menu',
+					),
+				),
+			),
 			'wrapper' => array (
 				'width' => '',
 				'class' => '',
@@ -1314,7 +1330,15 @@ acf_add_local_field_group(array (
 			'type' => 'color_picker',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_560ec99f29270',
+						'operator' => '==',
+						'value' => 'Top Menu',
+					),
+				),
+			),
 			'wrapper' => array (
 				'width' => '',
 				'class' => 'field_type-color_picker field_key-field_55d4c9004b509',
@@ -1329,7 +1353,15 @@ acf_add_local_field_group(array (
 			'type' => 'color_picker',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_560ec99f29270',
+						'operator' => '==',
+						'value' => 'Top Menu',
+					),
+				),
+			),
 			'wrapper' => array (
 				'width' => '',
 				'class' => 'field_type-color_picker field_key-field_55d4ccd62c1e6',
@@ -1350,7 +1382,15 @@ acf_add_local_field_group(array (
 			'type' => 'number',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_560ec99f29270',
+						'operator' => '==',
+						'value' => 'Top Menu',
+					),
+				),
+			),
 			'wrapper' => array (
 				'width' => '',
 				'class' => 'field_type-number field_key-field_55d4c9204b50a',
@@ -1371,7 +1411,15 @@ acf_add_local_field_group(array (
 			'type' => 'number',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_560ec99f29270',
+						'operator' => '==',
+						'value' => 'Top Menu',
+					),
+				),
+			),
 			'wrapper' => array (
 				'width' => '',
 				'class' => 'field_type-number field_key-field_55d4c9204b50a',
@@ -1398,7 +1446,15 @@ acf_add_local_field_group(array (
 			'type' => 'select',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_560ec99f29270',
+						'operator' => '==',
+						'value' => 'Top Menu',
+					),
+				),
+			),
 			'wrapper' => array (
 				'width' => '',
 				'class' => '',
@@ -1662,7 +1718,7 @@ acf_add_local_field_group(array (
 		array (
 			'default_value' => '#000000',
 			'key' => 'field_55e4b1fd06820',
-			'label' => 'Main Font Color',
+			'label' => 'Default Font Color',
 			'name' => 'main_font_color',
 			'type' => 'color_picker',
 			'instructions' => '',

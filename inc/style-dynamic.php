@@ -35,8 +35,6 @@ if( function_exists('get_field') ) {
 
     echo '.header-widgets{' . $header_widget_bg_color . '} .header-widgets p, .header-widgets li, .header-widgets span, .header-widgets div, .header-widgets input, .header-widgets textarea, .header-widgets label{' . $header_widget_txt_color . '}.header-widgets a, .header-widgets a span{' . $header_widget_link_color . '}.header-widgets a:hover, .header-widgets a:hover span{' . $header_widget_link_hover_color . ';}';
 
-
-
   // Logos
 
     // Desktop Logo Styles
@@ -119,43 +117,43 @@ if( function_exists('get_field') ) {
 
       echo '.menu-button span::before, .menu-button span, .menu-button span::after{ background-color: ' . $menu_icon_color . ';}.menu-button.active span::before, .menu-button.active span::after{ background-color: ' . $active_menu_icon_color . ';}';
 
-  // Sticky Header Styles
+    // Sticky Header Styles
 
-      $sticky_header_height = $myoptions['sticky_header_height'];
+        $sticky_header_height = $myoptions['sticky_header_height'];
 
-      if($sticky_header_height) { echo '.headhesive .sub-menu-icon{ line-height: ' . $sticky_header_height . 'px;} .headhesive .sticky-nav-inner{ height: ' . $sticky_header_height . 'px;}'; }
+        if($sticky_header_height) { echo '.headhesive .sub-menu-icon{ line-height: ' . $sticky_header_height . 'px;} .headhesive .sticky-nav-inner{ height: ' . $sticky_header_height . 'px;}'; }
 
-    // Dark Style
+      // Dark Style
 
-      $dark_sticky_logo = $myoptions['dark_sticky_logo'];
-      $dark_sticky_link = $myoptions['dark_sticky_link'];
-      $dark_sticky_bg = $myoptions['dark_sticky_bg'];
-      $dark_sticky_link_hover = $myoptions['dark_sticky_link_hover'];
+        $dark_sticky_logo = $myoptions['dark_sticky_logo'];
+        $dark_sticky_link = $myoptions['dark_sticky_link'];
+        $dark_sticky_bg = $myoptions['dark_sticky_bg'];
+        $dark_sticky_link_hover = $myoptions['dark_sticky_link_hover'];
 
-      if ($dark_sticky_logo) {
-        $dark_sticky_logo_bg = 'background-image: url(' . $dark_sticky_logo . ');';
-        echo '.headhesive .sticky-logo a{' . $dark_sticky_logo_bg . '}';
-      }
+        if ($dark_sticky_logo) {
+          $dark_sticky_logo_bg = 'background-image: url(' . $dark_sticky_logo . ');';
+          echo '.headhesive .sticky-logo a{' . $dark_sticky_logo_bg . '}';
+        }
 
-      if ($dark_sticky_link) {
-        $dark_sticky_link_color = 'color: ' . $dark_sticky_link . ';';
-        echo '.headhesive a .link-text, .headhesive a .sub-menu-icon{' . $dark_sticky_link_color . '}';
-      }
+        if ($dark_sticky_link) {
+          $dark_sticky_link_color = 'color: ' . $dark_sticky_link . ';';
+          echo '.headhesive a .link-text, .headhesive a .sub-menu-icon{' . $dark_sticky_link_color . '}';
+        }
 
-      if ($dark_sticky_link_hover) {
-        $dark_sticky_link_hover_color = 'color: ' . $dark_sticky_link_hover . ';';
-        echo '.headhesive a:hover .link-text, .headhesive .dark a:hover .sub-menu-icon{' . $dark_sticky_link_hover_color . '}';
-      }
+        if ($dark_sticky_link_hover) {
+          $dark_sticky_link_hover_color = 'color: ' . $dark_sticky_link_hover . ';';
+          echo '.headhesive a:hover .link-text, .headhesive .dark a:hover .sub-menu-icon{' . $dark_sticky_link_hover_color . '}';
+        }
 
-      if ($dark_sticky_bg) {
-        $dark_sticky_bg_color = 'background-color: ' . $dark_sticky_bg . ';';
-        echo '.headhesive .sticky-nav-inner{' . $dark_sticky_bg_color . '}';
-      }
+        if ($dark_sticky_bg) {
+          $dark_sticky_bg_color = 'background-color: ' . $dark_sticky_bg . ';';
+          echo '.headhesive .sticky-nav-inner{' . $dark_sticky_bg_color . '}';
+        }
 
   // Text Styles
 
     $default_font_family = ($myoptions['default_font_family']) ? 'font-family: ' . $myoptions['default_font_family'] . ';' : '';
-    $main_font_color = ($myoptions['main_font_color']) ? 'color: ' . $myoptions['main_font_color'] . ';' : '';
+    $default_font_color = ($myoptions['main_font_color']) ? 'color: ' . $myoptions['main_font_color'] . ';' : '';
     $text_highlight_color = $myoptions['text_highlight_color'];
     $link_text_color = ($myoptions['link_text_color']) ? 'color: ' . $myoptions['link_text_color'] . ';' : '';
     $link_text_hover_color = ($myoptions['link_text_hover_color']) ? 'color: ' . $myoptions['link_text_hover_color'] . ';' : '';
@@ -174,7 +172,7 @@ if( function_exists('get_field') ) {
 
     // Global Text
 
-      echo 'body, .select2-container--default span[class^="select2-selection"] .select2-selection__rendered, .select2-selection__arrow{' . $default_font_family . $main_font_color . '}';
+      echo 'body, .select2-container--default span[class^="select2-selection"] .select2-selection__rendered, .select2-selection__arrow, input, textarea, label, div.uploader span.filename, div.uploader span.action, .select2-container--default .select2-selection--multiple .select2-selection__choice{' . $default_font_family . $main_font_color . '}';
 
       if ($text_highlight_color) {
         echo '::-moz-selection{background:' . $text_highlight_color . '; color: #FFF;}::selection{background:' . $text_highlight_color . '; color: #FFF;}.select2-container--default .select2-results__option--highlighted[aria-selected]{background-color:' . $text_highlight_color . '; color: #FFF;} input:focus{outline-color:' . $text_highlight_color . '}.select2-container--default .select2-selection--multiple .select2-selection__choice{background-color:' . $text_highlight_color . '; color: #FFF;}';
@@ -192,7 +190,7 @@ if( function_exists('get_field') ) {
 
     // Body Text
 
-      echo 'p, ul li, ol li, input, textarea, label, div.uploader span.filename, div.uploader span.action, .select2-container--default .select2-selection--multiple .select2-selection__choice,{' . $paragraph_font_family . $paragraph_font_color . $paragraph_text_transform . $paragraph_line_height . $paragraph_font_weight . '}';
+      echo 'p, ul li, ol li{' . $paragraph_font_family . $paragraph_font_color . $paragraph_text_transform . $paragraph_line_height . $paragraph_font_weight . '}';
 
       echo '::-webkit-input-placeholder{' . $paragraph_font_family . $paragraph_font_color . $paragraph_text_transform . $paragraph_line_height . $paragraph_font_weight . '}';
       echo ':-moz-placeholder{' . $paragraph_font_family . $paragraph_font_color . $paragraph_text_transform . $paragraph_line_height . $paragraph_font_weight . '}';
