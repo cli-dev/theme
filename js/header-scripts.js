@@ -2244,6 +2244,286 @@
 
 }(window, document, jQuery));
 
+/*!
+ * hoverIntent v1.8.1
+ */
+
+(function(factory) {
+    'use strict';
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], factory);
+    } else if (jQuery && !jQuery.fn.hoverIntent) {
+        factory(jQuery);
+    }
+})(function($) {
+    'use strict';
+
+    // default configuration values
+    var _cfg = {
+        interval: 100,
+        sensitivity: 6,
+        timeout: 0
+    };
+
+    // counter used to generate an ID for each instance
+    var INSTANCE_COUNT = 0;
+
+    // current X and Y position of mouse, updated during mousemove tracking (shared across instances)
+    var cX, cY;
+
+    // saves the current pointer position coordinates based on the given mousemove event
+    var track = function(ev) {
+        cX = ev.pageX;
+        cY = ev.pageY;
+    };
+
+    // compares current and previous mouse positions
+    var compare = function(ev,$el,s,cfg) {
+        // compare mouse positions to see if pointer has slowed enough to trigger `over` function
+        if ( Math.sqrt( (s.pX-cX)*(s.pX-cX) + (s.pY-cY)*(s.pY-cY) ) < cfg.sensitivity ) {
+            $el.off(s.event,track);
+            delete s.timeoutId;
+            // set hoverIntent state as active for this element (permits `out` handler to trigger)
+            s.isActive = true;
+            // overwrite old mouseenter event coordinates with most recent pointer position
+            ev.pageX = cX; ev.pageY = cY;
+            // clear coordinate data from state object
+            delete s.pX; delete s.pY;
+            return cfg.over.apply($el[0],[ev]);
+        } else {
+            // set previous coordinates for next comparison
+            s.pX = cX; s.pY = cY;
+            // use self-calling timeout, guarantees intervals are spaced out properly (avoids JavaScript timer bugs)
+            s.timeoutId = setTimeout( function(){compare(ev, $el, s, cfg);} , cfg.interval );
+        }
+    };
+
+    // triggers given `out` function at configured `timeout` after a mouseleave and clears state
+    var delay = function(ev,$el,s,out) {
+        delete $el.data('hoverIntent')[s.id];
+        return out.apply($el[0],[ev]);
+    };
+
+    $.fn.hoverIntent = function(handlerIn,handlerOut,selector) {
+        // instance ID, used as a key to store and retrieve state information on an element
+        var instanceId = INSTANCE_COUNT++;
+
+        // extend the default configuration and parse parameters
+        var cfg = $.extend({}, _cfg);
+        if ( $.isPlainObject(handlerIn) ) {
+            cfg = $.extend(cfg, handlerIn);
+            if ( !$.isFunction(cfg.out) ) {
+                cfg.out = cfg.over;
+            }
+        } else if ( $.isFunction(handlerOut) ) {
+            cfg = $.extend(cfg, { over: handlerIn, out: handlerOut, selector: selector } );
+        } else {
+            cfg = $.extend(cfg, { over: handlerIn, out: handlerIn, selector: handlerOut } );
+        }
+
+        // A private function for handling mouse 'hovering'
+        var handleHover = function(e) {
+            // cloned event to pass to handlers (copy required for event object to be passed in IE)
+            var ev = $.extend({},e);
+
+            // the current target of the mouse event, wrapped in a jQuery object
+            var $el = $(this);
+
+            // read hoverIntent data from element (or initialize if not present)
+            var hoverIntentData = $el.data('hoverIntent');
+            if (!hoverIntentData) { $el.data('hoverIntent', (hoverIntentData = {})); }
+
+            // read per-instance state from element (or initialize if not present)
+            var state = hoverIntentData[instanceId];
+            if (!state) { hoverIntentData[instanceId] = state = { id: instanceId }; }
+
+            // state properties:
+            // id = instance ID, used to clean up data
+            // timeoutId = timeout ID, reused for tracking mouse position and delaying "out" handler
+            // isActive = plugin state, true after `over` is called just until `out` is called
+            // pX, pY = previously-measured pointer coordinates, updated at each polling interval
+            // event = string representing the namespaced event used for mouse tracking
+
+            // clear any existing timeout
+            if (state.timeoutId) { state.timeoutId = clearTimeout(state.timeoutId); }
+
+            // namespaced event used to register and unregister mousemove tracking
+            var mousemove = state.event = 'mousemove.hoverIntent.hoverIntent'+instanceId;
+
+            // handle the event, based on its type
+            if (e.type === 'mouseenter') {
+                // do nothing if already active
+                if (state.isActive) { return; }
+                // set "previous" X and Y position based on initial entry point
+                state.pX = ev.pageX; state.pY = ev.pageY;
+                // update "current" X and Y position based on mousemove
+                $el.off(mousemove,track).on(mousemove,track);
+                // start polling interval (self-calling timeout) to compare mouse coordinates over time
+                state.timeoutId = setTimeout( function(){compare(ev,$el,state,cfg);} , cfg.interval );
+            } else { // "mouseleave"
+                // do nothing if not already active
+                if (!state.isActive) { return; }
+                // unbind expensive mousemove event
+                $el.off(mousemove,track);
+                // if hoverIntent state is true, then call the mouseOut function after the specified delay
+                state.timeoutId = setTimeout( function(){delay(ev,$el,state,cfg.out);} , cfg.timeout );
+            }
+        };
+
+        // listen for mouseenter and mouseleave
+        return this.on({'mouseenter.hoverIntent':handleHover,'mouseleave.hoverIntent':handleHover}, cfg.selector);
+    };
+});
+
+
+/*!
+ * Headhesive.js v1.2.3 
+ */
+ 
+(function(root, factory) {
+  if (typeof define === "function" && define.amd) {
+    define([], function() {
+      return factory();
+    });
+  } else if (typeof exports === "object") {
+    module.exports = factory();
+  } else {
+    root.Headhesive = factory();
+  }
+})(this, function() {
+  "use strict";
+  var _mergeObj = function(to, from) {
+    for (var p in from) {
+      if (from.hasOwnProperty(p)) {
+        to[p] = typeof from[p] === "object" ? _mergeObj(to[p], from[p]) : from[p];
+      }
+    }
+    return to;
+  };
+  var _throttle = function(func, wait) {
+    var _now = Date.now || function() {
+      return new Date().getTime();
+    };
+    var context, args, result;
+    var timeout = null;
+    var previous = 0;
+    var later = function() {
+      previous = _now();
+      timeout = null;
+      result = func.apply(context, args);
+      context = args = null;
+    };
+    return function() {
+      var now = _now();
+      var remaining = wait - (now - previous);
+      context = this;
+      args = arguments;
+      if (remaining <= 0) {
+        clearTimeout(timeout);
+        timeout = null;
+        previous = now;
+        result = func.apply(context, args);
+        context = args = null;
+      } else if (!timeout) {
+        timeout = setTimeout(later, remaining);
+      }
+      return result;
+    };
+  };
+  var _getScrollY = function() {
+    return window.pageYOffset !== undefined ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+  };
+  var _getElemY = function(elem, side) {
+    var pos = 0;
+    var elemHeight = elem.offsetHeight;
+    while (elem) {
+      pos += elem.offsetTop;
+      elem = elem.offsetParent;
+    }
+    if (side === "bottom") {
+      pos = pos + elemHeight;
+    }
+    return pos;
+  };
+  var Headhesive = function(elem, options) {
+    if (!("querySelector" in document && "addEventListener" in window)) {
+      return;
+    }
+    this.visible = false;
+    this.options = {
+      offset: 300,
+      offsetSide: "top",
+      classes: {
+        clone: "headhesive",
+        stick: "headhesive--stick",
+        unstick: "headhesive--unstick"
+      },
+      throttle: 250,
+      onInit: function() {},
+      onStick: function() {},
+      onUnstick: function() {},
+      onDestroy: function() {}
+    };
+    this.elem = typeof elem === "string" ? document.querySelector(elem) : elem;
+    this.options = _mergeObj(this.options, options);
+    this.init();
+  };
+  Headhesive.prototype = {
+    constructor: Headhesive,
+    init: function() {
+      this.clonedElem = this.elem.cloneNode(true);
+      this.clonedElem.className += " " + this.options.classes.clone;
+      document.body.insertBefore(this.clonedElem, document.body.firstChild);
+      if (typeof this.options.offset === "number") {
+        this.scrollOffset = this.options.offset;
+      } else if (typeof this.options.offset === "string") {
+        this._setScrollOffset();
+      } else {
+        throw new Error("Invalid offset: " + this.options.offset);
+      }
+      this._throttleUpdate = _throttle(this.update.bind(this), this.options.throttle);
+      this._throttleScrollOffset = _throttle(this._setScrollOffset.bind(this), this.options.throttle);
+      window.addEventListener("scroll", this._throttleUpdate, false);
+      window.addEventListener("resize", this._throttleScrollOffset, false);
+      this.options.onInit.call(this);
+    },
+    _setScrollOffset: function() {
+      if (typeof this.options.offset === "string") {
+        this.scrollOffset = _getElemY(document.querySelector(this.options.offset), this.options.offsetSide);
+      }
+    },
+    destroy: function() {
+      document.body.removeChild(this.clonedElem);
+      window.removeEventListener("scroll", this._throttleUpdate);
+      window.removeEventListener("resize", this._throttleScrollOffset);
+      this.options.onDestroy.call(this);
+    },
+    stick: function() {
+      if (!this.visible) {
+        this.clonedElem.className = this.clonedElem.className.replace(new RegExp("(^|\\s)*" + this.options.classes.unstick + "(\\s|$)*", "g"), "");
+        this.clonedElem.className += " " + this.options.classes.stick;
+        this.visible = true;
+        this.options.onStick.call(this);
+      }
+    },
+    unstick: function() {
+      if (this.visible) {
+        this.clonedElem.className = this.clonedElem.className.replace(new RegExp("(^|\\s)*" + this.options.classes.stick + "(\\s|$)*", "g"), "");
+        this.clonedElem.className += " " + this.options.classes.unstick;
+        this.visible = false;
+        this.options.onUnstick.call(this);
+      }
+    },
+    update: function() {
+      if (_getScrollY() > this.scrollOffset) {
+        this.stick();
+      } else {
+        this.unstick();
+      }
+    }
+  };
+  return Headhesive;
+});
 /*
  * Owl carousel v2.0.0
  */
