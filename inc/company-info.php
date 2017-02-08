@@ -310,7 +310,7 @@ function schemaInfo(){
       $phone = '';
       $email = '';
       $hours = '';
-      $menu = '';
+      $menu_url = '';
       if ($location_size > 1) {
         $company_type = '"@type": "Organization", ';
         $all_locations = '"@graph" : [';
@@ -321,7 +321,7 @@ function schemaInfo(){
         foreach($locations as $location){
           $type = '"@type" : "' . $location['schema_type'] . '", ';
           $url = $location['url'];
-          $menu = $location['menu_url'];
+          $menu_url = $location['menu_url'];
           $address_line_1 = $location['address_line_1'];
           $unit = $location['unit_number'];
           $city = $location['city'];
@@ -380,7 +380,7 @@ function schemaInfo(){
 
           // Menu URL
             if($menu_url){
-              $menuurlCode = '"menu" : "' . $menu_url . '", ';  
+              $menu_urlurlCode = '"menu" : "' . $menu_url . '", ';  
             }
 
           // Location hours
@@ -434,7 +434,7 @@ function schemaInfo(){
           $unit = $location['unit_number'];
           $city = $location['city'];
           $state = $location['region'];
-          $menu = $location['menu_url'];
+          $menu_url = $location['menu_url'];
           $post_zip = $location['postal_code'];
           $full_address = $address_line_1 . ' ' . $unit . ' ' . $city . ' ' . $state . ' ' . $post_zip;
           $phone = $location['phone'];
@@ -511,7 +511,7 @@ function schemaInfo(){
             }
           // Menu URL
             if($menu_url){
-              $menuurlCode = '"menu" : "' . $menu_url . '", ';  
+              $menu_urlurlCode = '"menu" : "' . $menu_url . '", ';  
             }
           $location_info = $address . $phoneCode . $emailCode . $hoursCode . $menu_url;
           $json_locations = rtrim($location_info, ', ');

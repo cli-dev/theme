@@ -19,7 +19,7 @@
   $item_animation_offset =  (get_sub_field('item_animation_offset', $item_id)) ? ' data-wow-offset="' . get_sub_field('item_animation_offset', $item_id) . '"'  : '';
 
   $animation = ($item_add_animation == 1) ? $item_animation_duration . $item_animation_delay . $item_animation_offset : '';
-  $img_srcset = wp_get_attachment_image_srcset($image[id], 'full');
+  $img_srcset = wp_get_attachment_image_srcset($image['id'], 'full');
 ?>
 <div class="col-item single-image<?php echo $custom_class . $animation_class . $item_animation_effect; ?>"<?php echo $animation;?>>
   <div <?php echo $layout_classes; ?>>

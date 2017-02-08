@@ -275,7 +275,6 @@
 // Post social share
   function displaySocialShare($icon_type, $extra_class) {
     $myoptions = get_option( 'themesettings_');
-    $icon_type = $myoptions['type_of_icon'];
     $facebook= $myoptions['facebook'];
     $twitter = $myoptions['twitter'];
     $google = $myoptions['google'];
@@ -339,7 +338,7 @@
       $pinterestCode = '<div class="social-icon"><a href="http://pinterest.com/pin/create/button/?url=' . get_permalink()  . '"  target="_blank"><i class="cli-pinterest"></i></a></div>';  
     }
 
-    return '<div class="social social-share ' . $icon_type . ' ' . $extra_class . '">' . $facebookCode . $twitterCode . $googleCode . $linkedinCode . $tumblrCode  . $pinterestCode  . '</div>';  
+    return '<div class="social ' . $icon_type . ' ' . $extra_class . '">' . $facebookCode . $twitterCode . $googleCode . $linkedinCode . $tumblrCode  . $pinterestCode  . '</div>';  
   }
 
 // Individual Profiles
