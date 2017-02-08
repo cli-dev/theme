@@ -54,7 +54,7 @@ if( function_exists('get_field') ) {
       $mobile_logo_svg = $myoptions['svg_mobile_logo'];
       $mobile_logo = ($myoptions['svg_mobile_logo']) ? $myoptions['svg_mobile_logo'] : $myoptions['mobile_logo'];
       $mobile_logo_bg = 'background-image: url(' . $mobile_logo . ');';
-      $mobile_logo_max_width = ($myoptions['mobile_logo_maximum_width']) ? 'max-width: ' . $mobile_logo_max_width . 'px;' : '';
+      $mobile_logo_max_width = ($myoptions['mobile_logo_maximum_width']) ? 'max-width: ' . $myoptions['mobile_logo_maximum_width'] . 'px;' : '';
       
       echo '.mobile-logo a{' . $mobile_logo_bg . $mobile_logo_max_width . '}';
 
@@ -172,7 +172,7 @@ if( function_exists('get_field') ) {
 
     // Global Text
 
-      echo 'body, .select2-container--default span[class^="select2-selection"] .select2-selection__rendered, .select2-selection__arrow, input, textarea, label, div.uploader span.filename, div.uploader span.action, .select2-container--default .select2-selection--multiple .select2-selection__choice{' . $default_font_family . $main_font_color . '}';
+      echo 'body, .select2-container--default span[class^="select2-selection"] .select2-selection__rendered, .select2-selection__arrow, input, textarea, label, div.uploader span.filename, div.uploader span.action, .select2-container--default .select2-selection--multiple .select2-selection__choice{' . $default_font_family . $default_font_color . '}';
 
       if ($text_highlight_color) {
         echo '::-moz-selection{background:' . $text_highlight_color . '; color: #FFF;}::selection{background:' . $text_highlight_color . '; color: #FFF;}.select2-container--default .select2-results__option--highlighted[aria-selected]{background-color:' . $text_highlight_color . '; color: #FFF;} input:focus{outline-color:' . $text_highlight_color . '}.select2-container--default .select2-selection--multiple .select2-selection__choice{background-color:' . $text_highlight_color . '; color: #FFF;}';
