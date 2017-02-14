@@ -84,6 +84,43 @@ function team_member() {
 }
 add_action( 'init', 'team_member', 0 );
 
+function team_categories() {
+
+    $labels = array(
+        'name'                       => _x( 'Team Categories', 'Taxonomy General Name', 'cdm_theme' ),
+        'singular_name'              => _x( 'Team Category', 'Taxonomy Singular Name', 'cdm_theme' ),
+        'menu_name'                  => __( 'Team Categories', 'cdm_theme' ),
+        'all_items'                  => __( 'All Team Categories', 'cdm_theme' ),
+        'parent_item'                => __( 'Parent Category', 'cdm_theme' ),
+        'parent_item_colon'          => __( 'Parent Category:', 'cdm_theme' ),
+        'new_item_name'              => __( 'New Team Category', 'cdm_theme' ),
+        'add_new_item'               => __( 'Add New Category', 'cdm_theme' ),
+        'edit_item'                  => __( 'Edit Category', 'cdm_theme' ),
+        'update_item'                => __( 'Update Category', 'cdm_theme' ),
+        'view_item'                  => __( 'View Category', 'cdm_theme' ),
+        'separate_items_with_commas' => __( 'Separate categories with commas', 'cdm_theme' ),
+        'add_or_remove_items'        => __( 'Add or remove categories', 'cdm_theme' ),
+        'choose_from_most_used'      => __( 'Choose from the most used', 'cdm_theme' ),
+        'popular_items'              => __( 'Popular Categories', 'cdm_theme' ),
+        'search_items'               => __( 'Search Categories', 'cdm_theme' ),
+        'not_found'                  => __( 'Not Found', 'cdm_theme' ),
+        'no_terms'                   => __( 'No categories', 'cdm_theme' ),
+        'items_list'                 => __( 'Categories list', 'cdm_theme' ),
+        'items_list_navigation'      => __( 'Categories list navigation', 'cdm_theme' ),
+    );
+    $args = array(
+        'labels'                     => $labels,
+        'hierarchical'               => true,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => false,
+        'show_tagcloud'              => true,
+    );
+    register_taxonomy( 'team_cat', array( 'team_member' ), $args );
+}
+add_action( 'init', 'team_categories', 0 );
+
 function projects() {
 
   $labels = array(

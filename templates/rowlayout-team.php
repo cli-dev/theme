@@ -2,6 +2,18 @@
   $page_for_posts = get_option( 'page_for_posts' );  
   $postid = get_the_ID();
   $item_id = (is_blog()) ? $page_for_posts : $postid;
+  $team_id = (get_sub_field('team_grid_id', $item_id)) ? seoUrl(get_sub_field('team_grid_id', $item_id)) : 'team-grid';
+  $team_category = (get_sub_field('team_category', $item_id)) ? get_sub_field('team_category', $item_id) : '';
+  $team_category_ids = '';
+  if ($team_category) {
+    $team_category_ids = array(
+      array(
+        'taxonomy' => 'team_cat',
+        'field' => 'term_id',
+        'terms' => $team_category,
+      )
+    );
+  }
   $hover_panel_background_color = (get_sub_field('hover_panel_background_color', $item_id)) ? hex2rgb(get_sub_field('hover_panel_background_color', $item_id)) : '';
   $bg_color_opacity = (get_sub_field('bg_color_opacity', $item_id)) ? get_sub_field('bg_color_opacity', $item_id) : '';
   $hover_bg = ($hover_panel_background_color) ? ' style="background-color: rgba(' . $hover_panel_background_color . ',' . $bg_color_opacity . ');"' : '';
@@ -28,12 +40,25 @@ $args1 = array (
   'posts_per_page' => '-1',
   'order' => 'ASC',
   'orderby' => 'menu_order',
+  'tax_query' => $team_category_ids,
 );
 $query1 = new WP_Query( $args1 );
 ?>
+<?php 
+    $args = array( 'hide_empty=0' );
+ 
+$terms = get_terms( 'team_cat', $args );
+if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+    $term_list = '<p class="my_term-archive">';
+    foreach ( $terms as $term ) {
+        $term_list .= $term->term_id . '<br/>';
+    }
+    echo $term_list;
+}
+    ?>
 <?php if ( $query1->have_posts() ) : ?>
 <div class="col-item team-grid<?php echo $animation_class . $item_animation_effect . $custom_class; ?>"<?php echo $animation;?>>
-  <div class="team"<?php echo $gallery_negative_margin; ?>>
+  <div id="<?php echo $team_id; ?>" class="team"<?php echo $gallery_negative_margin; ?>>
     <?php while ( $query1->have_posts() ) : $query1->the_post(); ?>
       <?php
       $thumb_id = get_post_thumbnail_id();
@@ -45,8 +70,8 @@ $query1 = new WP_Query( $args1 );
       if( has_post_thumbnail() ){
         $team_img = ' style="background: url(' . $thumb_url . ') center top no-repeat; background-size: cover;"';
       }
-      $team_img = ($thumb_url) ? ' data-original="' . $thumb_url . '" style="background-position: center top; background-repeat: no-repeat; background-size: cover;"' : '';
-      $team_open_tag = ($bio) ? '<a class="team-member fancybox"' . $team_img . 'href="#' . the_slug() . '">' : '<div class="team-member"' . $team_img . '>';
+      $team_img = ($thumb_url) ? ' lazyload" data-original="' . $thumb_url . '" style="background-position: center top; background-repeat: no-repeat; background-size: cover;"' : '" ';
+      $team_open_tag = ($bio) ? '<a class="team-member lightbox' . $team_img . 'href="#' . the_slug() . '">' : '<div class="team-member' . $team_img . '>';
       $team_close_tag = ($bio) ? '</a>' : '</div>';
       ?>
       <div class="team-member-wrapper"<?php echo $gallery_spacing; ?>>
@@ -87,15 +112,11 @@ $query1 = new WP_Query( $args1 );
 </div>
   <script type="text/javascript">
     jQuery(document).ready(function($) {
-      $(".team-member.fancybox").fancybox({
-        maxWidth: 700,
-        padding: 0,
-        margin: [50, 20, 20, 20]
-      });
       var columns = <?php echo $columns_on_desktop; ?>;
       var maxWidth = 1/columns * 100;
+      var team = $('#<?php echo $team_id; ?>');
       if($(window).width() >= 1000){
-        $('.team-member-wrapper').css('width', maxWidth + '%');
+        team.find('.team-member-wrapper').css('width', maxWidth + '%');
       }
       var teamInfoHeights = $('.team .team-info').map(function() {
         return $(this).height();
@@ -131,6 +152,7 @@ $args2 = array (
   'posts_per_page' => '-1',
   'order' => 'ASC',
   'orderby' => 'title',
+  'tax_query' => $team_category_ids,
 );
 $query2 = new WP_Query( $args2 );
 ?>

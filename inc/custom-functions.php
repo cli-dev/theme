@@ -164,6 +164,54 @@
   add_filter('acf/load_field/name=paragraph_font_family', 'theme_font_choice_labels');
   add_filter('acf/load_field/name=mobile_menu_font_family', 'theme_font_choice_labels');
 
+// Display list of availble team categories
+
+  function team_category_options( $field ) {
+
+    $team_categories = array();
+
+    $args = array( 'hide_empty=0' );
+ 
+    $terms = get_terms( 'team_cat', $args );
+    if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+        foreach ( $terms as $term ) {
+          $id = $term->term_id;
+          $display_name = $term->name;
+
+          $team_categories += [ $id => $display_name ];
+        }
+    }
+    
+    $field['choices'] = $team_categories;
+    return $field;
+
+  }
+  add_filter('acf/load_field/name=team_category', 'team_category_options');
+
+// Display list of availble team categories
+
+  function blog_category_options( $field ) {
+
+    $blog_categories = array();
+
+    $args = array( 'hide_empty=0' );
+ 
+    $terms = get_terms( 'category', $args );
+    if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+        foreach ( $terms as $term ) {
+          $id = $term->term_id;
+          $display_name = $term->name;
+
+          $blog_categories += [ $id => $display_name ];
+        }
+    }
+    
+    $field['choices'] = $blog_categories;
+    return $field;
+
+  }
+  add_filter('acf/load_field/name=blog_category', 'blog_category_options');
+
 // Add Google Font url
 
   $myoptions = get_option( 'themesettings_');
@@ -300,7 +348,7 @@
       ];
     }, 10, 4 );
 
-// Load Theme scripts
+// Load theme scripts
   function add_header_scripts() {
     wp_register_script( 'headerJS', CDM_ROOT . '/js/header-scripts.min.js', array('jquery'),'', false);
     wp_enqueue_script( 'headerJS' );

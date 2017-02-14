@@ -3,7 +3,7 @@ $page_for_posts = get_option( 'page_for_posts' );
 $postid = get_the_ID();
 $item_id = (is_blog()) ? $page_for_posts : $postid;
 $images = get_sub_field('images', $item_id);
-$gallery_id = get_sub_field('gallery_id', $item_id);
+$gallery_id = seoUrl(get_sub_field('gallery_id', $item_id));
 $custom_class = (get_sub_field('custom_class', $item_id)) ? ' ' . get_sub_field('custom_class', $item_id) : '';
 $is_slider = get_sub_field('is_slider', $item_id);
 $columns_on_desktop = get_sub_field('columns_on_desktop', $item_id);
@@ -30,7 +30,7 @@ $gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'c
     <div id="<?php echo $gallery_id; ?>" <?php echo $gallery_classes;?>>
       <?php foreach( $images as $image ): ?>
       <div class="gallery-img-wrap"<?php echo $gallery_item_styles; ?>>
-        <a href="<?php echo $image['url']; ?>" rel="<?php echo $gallery_id; ?>" title="<?php echo $image['title']; ?>" class="gallery-img" data-original="<?php echo $image['sizes']['medium']; ?>"><span class="hover-panel"<?php echo $hover_bg; ?>><i class="img-zoom fa fa-search-plus"<?php echo $hover_icon_color; ?>></i></span></a>
+        <a href="<?php echo $image['url']; ?>" rel="<?php echo $gallery_id; ?>" title="<?php echo $image['title']; ?>" class="gallery-img lightbox" data-original="<?php echo $image['sizes']['medium']; ?>"><span class="hover-panel"<?php echo $hover_bg; ?>><i class="img-zoom fa fa-search-plus"<?php echo $hover_icon_color; ?>></i></span></a>
       </div>
     <?php endforeach; ?>
   </div>
@@ -39,11 +39,6 @@ $gallery_classes = ($is_slider == 1) ? 'class="image-gallery owl-carousel"' : 'c
 <script type="text/javascript">
   jQuery(document).ready(function($) {
     var columns = <?php echo $columns; ?>;
-    $(".gallery-img").fancybox({
-      padding: 0,
-      maxWidth: 700,
-      margin: [50, 20, 20, 20]
-    });
     var myLazyLoad = new LazyLoad({
       container: document.getElementById('<?php echo $gallery_id; ?>'),
       elements_selector: ".gallery-img",

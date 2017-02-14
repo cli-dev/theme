@@ -24,9 +24,9 @@ jQuery(document).ready(function($) {
       elements_selector: ".lazyload"
     });
 
-  // Code for all gallery images
+  // Code for lightbox overlay
   
-    $(".gallery-img").fancybox({
+    $(".lightbox").fancybox({
       padding: 0,
       maxWidth: 700,
       margin: [50, 20, 20, 20]
