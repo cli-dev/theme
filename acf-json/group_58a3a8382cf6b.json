@@ -1,5 +1,5 @@
 {
-    "key": "group_565cc50f35339",
+    "key": "group_58a3a8382cf6b",
     "title": "Page Builder",
     "fields": [
         {
@@ -949,33 +949,7 @@
                                     "display": "block",
                                     "sub_fields": [
                                         {
-                                            "library": "all",
-                                            "min": "",
-                                            "max": "",
-                                            "min_width": "",
-                                            "min_height": "",
-                                            "min_size": "",
-                                            "max_width": "",
-                                            "max_height": "",
-                                            "max_size": "",
-                                            "mime_types": "",
-                                            "insert": "append",
-                                            "key": "field_5786c8c48bdca",
-                                            "label": "Images",
-                                            "name": "images",
-                                            "type": "gallery",
-                                            "instructions": "",
-                                            "required": 1,
-                                            "conditional_logic": "",
-                                            "wrapper": {
-                                                "width": 100,
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "preview_size": "theme_image_preview"
-                                        },
-                                        {
-                                            "default_value": "",
+                                            "default_value": "gallery-1",
                                             "maxlength": "",
                                             "placeholder": "",
                                             "prepend": "",
@@ -988,7 +962,7 @@
                                             "required": 1,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "",
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
                                             }
@@ -1007,26 +981,33 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "70",
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
                                             }
                                         },
                                         {
-                                            "default_value": 0,
-                                            "message": "",
+                                            "multiple": 0,
+                                            "allow_null": 0,
+                                            "choices": {
+                                                "standard": "Standard Grid",
+                                                "masonry": "Masonry Grid",
+                                                "carousel": "Carousel"
+                                            },
+                                            "default_value": [],
                                             "ui": 0,
-                                            "ui_on_text": "",
-                                            "ui_off_text": "",
+                                            "ajax": 0,
+                                            "placeholder": "",
+                                            "return_format": "value",
                                             "key": "field_5786c8908bdbd",
-                                            "label": "Make gallery a slider?",
-                                            "name": "is_slider",
-                                            "type": "true_false",
+                                            "label": "Gallery Grid Type",
+                                            "name": "gallery_type",
+                                            "type": "select",
                                             "instructions": "",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 30,
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
                                             }
@@ -1081,7 +1062,49 @@
                                             }
                                         },
                                         {
-                                            "default_value": 4,
+                                            "default_value": 1,
+                                            "min": "",
+                                            "max": "",
+                                            "step": 1,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "key": "field_58a3a68be6b8b",
+                                            "label": "Columns on Mobile",
+                                            "name": "columns_on_mobile",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": 2,
+                                            "min": "",
+                                            "max": "",
+                                            "step": 1,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "key": "field_58a3a66be6b8a",
+                                            "label": "Columns on Tablet",
+                                            "name": "columns_on_tablet",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": 3,
                                             "min": "",
                                             "max": "",
                                             "step": 1,
@@ -1089,7 +1112,7 @@
                                             "prepend": "",
                                             "append": "",
                                             "key": "field_5786c8908bdc3",
-                                            "label": "Number of Columns on Desktop",
+                                            "label": "Columns on Desktop",
                                             "name": "columns_on_desktop",
                                             "type": "number",
                                             "instructions": "",
@@ -1102,16 +1125,58 @@
                                             }
                                         },
                                         {
-                                            "default_value": 0,
+                                            "default_value": "",
                                             "min": "",
                                             "max": "",
                                             "step": 1,
                                             "placeholder": "",
                                             "prepend": "",
-                                            "append": "",
+                                            "append": "px",
                                             "key": "field_5786c8908bdc4",
-                                            "label": "Grid Spacing",
-                                            "name": "grid_spacing",
+                                            "label": "Gutters on Mobile",
+                                            "name": "gutters_on_mobile",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "min": "",
+                                            "max": "",
+                                            "step": 1,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "px",
+                                            "key": "field_58a3a6f1e6b8c",
+                                            "label": "Gutters on Tablet",
+                                            "name": "gutters_on_tablet",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "min": "",
+                                            "max": "",
+                                            "step": 1,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "px",
+                                            "key": "field_58a3a745e6b8d",
+                                            "label": "Gutters on Desktop",
+                                            "name": "gutters_on_desktop",
                                             "type": "number",
                                             "instructions": "",
                                             "required": 0,
@@ -1136,7 +1201,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 33,
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             }
@@ -1270,12 +1335,10 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         },
                                         {
                                             "default_value": "",
@@ -1301,12 +1364,10 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         },
                                         {
                                             "default_value": "",
@@ -1332,12 +1393,35 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
+                                        },
+                                        {
+                                            "library": "all",
+                                            "min": "",
+                                            "max": "",
+                                            "min_width": "",
+                                            "min_height": "",
+                                            "min_size": "",
+                                            "max_width": "",
+                                            "max_height": "",
+                                            "max_size": "",
+                                            "mime_types": "",
+                                            "insert": "append",
+                                            "key": "field_5786c8c48bdca",
+                                            "label": "Images",
+                                            "name": "images",
+                                            "type": "gallery",
+                                            "instructions": "",
+                                            "required": 1,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "100",
+                                                "class": "",
+                                                "id": ""
+                                            }
                                         }
                                     ],
                                     "min": "",
@@ -2761,6 +2845,25 @@
                                     "display": "block",
                                     "sub_fields": [
                                         {
+                                            "default_value": "team-grid",
+                                            "maxlength": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "key": "field_58a38132fa9ec",
+                                            "label": "Team Grid ID",
+                                            "name": "team_grid_id",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 1,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
                                             "default_value": "",
                                             "maxlength": "",
                                             "placeholder": "",
@@ -2774,12 +2877,62 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 40,
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
+                                            }
+                                        },
+                                        {
+                                            "multiple": 1,
+                                            "allow_null": 0,
+                                            "choices": {
+                                                "59": "Test Team Category 1",
+                                                "60": "Test Team Category 2",
+                                                "61": "Test Team Category 3"
                                             },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            "default_value": [],
+                                            "ui": 1,
+                                            "ajax": 0,
+                                            "placeholder": "",
+                                            "return_format": "value",
+                                            "key": "field_58a37ab368557",
+                                            "label": "Team Category",
+                                            "name": "team_category",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "multiple": 0,
+                                            "allow_null": 0,
+                                            "choices": {
+                                                "standard": "Standard Grid",
+                                                "masonry": "Masonry Grid",
+                                                "carousel": "Carousel"
+                                            },
+                                            "default_value": [],
+                                            "ui": 1,
+                                            "ajax": 0,
+                                            "placeholder": "",
+                                            "return_format": "value",
+                                            "key": "field_58a3a5d0e6b89",
+                                            "label": "Team Grid Type",
+                                            "name": "team_type",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            }
                                         },
                                         {
                                             "default_value": "",
@@ -2791,7 +2944,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 20,
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
                                             }
@@ -2812,17 +2965,15 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 20,
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         },
                                         {
                                             "default_value": 0,
                                             "message": "",
-                                            "ui": 0,
+                                            "ui": 1,
                                             "ui_on_text": "",
                                             "ui_off_text": "",
                                             "key": "field_571505f570842",
@@ -2833,7 +2984,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 20,
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
                                             }
@@ -2848,7 +2999,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 30,
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
                                             }
@@ -2863,7 +3014,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 30,
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
                                             }
@@ -2882,38 +3033,76 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 40,
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
+                                        },
+                                        {
+                                            "default_value": 1,
+                                            "min": 1,
+                                            "max": "",
+                                            "step": 1,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "key": "field_58a3a359e6b85",
+                                            "label": "Columns on Mobile",
+                                            "name": "columns_on_mobile",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": 2,
+                                            "min": 1,
+                                            "max": "",
+                                            "step": 1,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "key": "field_58a3a33ae6b84",
+                                            "label": "Columns on Tablet",
+                                            "name": "columns_on_tablet",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
                                         },
                                         {
                                             "default_value": 3,
-                                            "min": 3,
+                                            "min": 1,
                                             "max": "",
                                             "step": 1,
                                             "placeholder": "",
                                             "prepend": "",
                                             "append": "",
                                             "key": "field_571506a270847",
-                                            "label": "Number of Columns on Desktop",
+                                            "label": "Columns on Desktop",
                                             "name": "columns_on_desktop",
                                             "type": "number",
                                             "instructions": "",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 50,
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         },
                                         {
-                                            "default_value": 20,
+                                            "default_value": "",
                                             "min": 0,
                                             "max": "",
                                             "step": 1,
@@ -2921,19 +3110,59 @@
                                             "prepend": "",
                                             "append": "px",
                                             "key": "field_571506f070848",
-                                            "label": "Column Spacing",
-                                            "name": "column_spacing",
+                                            "label": "Mobile Gutters",
+                                            "name": "gutters_on_mobile",
                                             "type": "number",
                                             "instructions": "",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 50,
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "min": 0,
+                                            "max": "",
+                                            "step": 1,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "px",
+                                            "key": "field_58a3a420e6b86",
+                                            "label": "Tablet Gutters",
+                                            "name": "gutters_on_tablet",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "min": 0,
+                                            "max": "",
+                                            "step": 1,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "px",
+                                            "key": "field_58a3a439e6b87",
+                                            "label": "Desktop Gutters",
+                                            "name": "gutters_on_desktop",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
                                         },
                                         {
                                             "default_value": 0,
@@ -2949,7 +3178,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "",
+                                                "width": "20",
                                                 "class": "",
                                                 "id": ""
                                             }
@@ -3054,12 +3283,10 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "20",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "disabled": 0,
-                                            "readonly": 0
+                                            }
                                         },
                                         {
                                             "default_value": "",
@@ -3085,12 +3312,10 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "20",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         },
                                         {
                                             "default_value": "",
@@ -3116,12 +3341,10 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "20",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         },
                                         {
                                             "default_value": "",
@@ -3147,12 +3370,10 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "20",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         }
                                     ],
                                     "min": "",
@@ -3165,6 +3386,25 @@
                                     "display": "block",
                                     "sub_fields": [
                                         {
+                                            "default_value": "accordion-1",
+                                            "maxlength": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "key": "field_58a3a509e6b88",
+                                            "label": "Accordion ID",
+                                            "name": "accordion_id",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 1,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
                                             "default_value": "default-accordion",
                                             "maxlength": "",
                                             "placeholder": "",
@@ -3175,15 +3415,13 @@
                                             "name": "accordion_class",
                                             "type": "text",
                                             "instructions": "",
-                                            "required": 1,
+                                            "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 33,
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         },
                                         {
                                             "multiple": 0,
@@ -3215,12 +3453,10 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 33,
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "disabled": 0,
-                                            "readonly": 0
+                                            }
                                         },
                                         {
                                             "multiple": 0,
@@ -3253,12 +3489,10 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 33,
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "disabled": 0,
-                                            "readonly": 0
+                                            }
                                         },
                                         {
                                             "default_value": "",
@@ -3621,106 +3855,23 @@
                                     "key": "55e5dcbfb475c",
                                     "name": "blog_feed",
                                     "label": "Blog feed",
-                                    "display": "row",
+                                    "display": "block",
                                     "sub_fields": [
                                         {
-                                            "default_value": 1,
-                                            "min": "",
-                                            "max": "",
-                                            "step": "",
+                                            "default_value": "blog-feed",
+                                            "maxlength": "",
                                             "placeholder": "",
                                             "prepend": "",
                                             "append": "",
-                                            "key": "field_55e5dcceb475d",
-                                            "label": "Number of Posts",
-                                            "name": "blog_posts",
-                                            "type": "number",
+                                            "key": "field_58a3930e9cf1e",
+                                            "label": "Blog ID",
+                                            "name": "blog_id",
+                                            "type": "text",
                                             "instructions": "",
-                                            "required": 0,
+                                            "required": 1,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": 20,
-                                                "class": "field_type-number field_key-field_55e5dcceb475d",
-                                                "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
-                                        },
-                                        {
-                                            "default_value": "",
-                                            "min": "",
-                                            "max": "",
-                                            "step": "",
-                                            "placeholder": "",
-                                            "prepend": "",
-                                            "append": "",
-                                            "key": "field_55fc73db82575",
-                                            "label": "Post Offset",
-                                            "name": "post_offset",
-                                            "type": "number",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": 20,
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
-                                        },
-                                        {
-                                            "multiple": 0,
-                                            "allow_null": 0,
-                                            "choices": {
-                                                "1": "1",
-                                                "2": "2",
-                                                "3": "3",
-                                                "4": "4",
-                                                "5": "5",
-                                                "6": "6",
-                                                "7": "7",
-                                                "8": "8",
-                                                "9": "9"
-                                            },
-                                            "default_value": [],
-                                            "ui": 0,
-                                            "ajax": 0,
-                                            "placeholder": "",
-                                            "return_format": "value",
-                                            "key": "field_561fe7208d243",
-                                            "label": "Post Layout",
-                                            "name": "post_layout",
-                                            "type": "select",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": 20,
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "disabled": 0,
-                                            "readonly": 0
-                                        },
-                                        {
-                                            "taxonomy": "category",
-                                            "field_type": "radio",
-                                            "multiple": 0,
-                                            "allow_null": 1,
-                                            "return_format": "id",
-                                            "add_term": 0,
-                                            "load_terms": 1,
-                                            "save_terms": 1,
-                                            "key": "field_561fe5418d242",
-                                            "label": "Blog Category",
-                                            "name": "blog_category",
-                                            "type": "taxonomy",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": 40,
+                                                "width": "33",
                                                 "class": "",
                                                 "id": ""
                                             }
@@ -3739,17 +3890,259 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "multiple": 0,
+                                            "allow_null": 0,
+                                            "choices": [],
+                                            "default_value": [],
+                                            "ui": 0,
+                                            "ajax": 0,
+                                            "placeholder": "",
+                                            "return_format": "value",
+                                            "key": "field_58a393c79cf22",
+                                            "label": "Blog Grid Type",
+                                            "name": "blog_type",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
                                                 "width": "",
                                                 "class": "",
                                                 "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": 1,
+                                            "min": "",
+                                            "max": "",
+                                            "step": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "key": "field_55e5dcceb475d",
+                                            "label": "Number of Posts",
+                                            "name": "blog_posts",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "field_type-number field_key-field_55e5dcceb475d",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "min": "",
+                                            "max": "",
+                                            "step": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "key": "field_55fc73db82575",
+                                            "label": "Post Offset",
+                                            "name": "post_offset",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "multiple": 0,
+                                            "allow_null": 0,
+                                            "choices": {
+                                                "1": "1",
+                                                "2": "2",
+                                                "3": "3"
                                             },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            "default_value": [],
+                                            "ui": 0,
+                                            "ajax": 0,
+                                            "placeholder": "",
+                                            "return_format": "value",
+                                            "key": "field_561fe7208d243",
+                                            "label": "Post Layout",
+                                            "name": "post_layout",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "multiple": 1,
+                                            "allow_null": 1,
+                                            "choices": {
+                                                "2": "Blog",
+                                                "7": "News &amp; Events",
+                                                "49": "Philanthropy",
+                                                "9": "Press Release",
+                                                "8": "Team Building"
+                                            },
+                                            "default_value": [],
+                                            "ui": 1,
+                                            "ajax": 0,
+                                            "placeholder": "",
+                                            "return_format": "value",
+                                            "key": "field_561fe5418d242",
+                                            "label": "Blog Category",
+                                            "name": "blog_category",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "25",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": 1,
+                                            "min": 1,
+                                            "max": "",
+                                            "step": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "key": "field_58a392dc9cf1d",
+                                            "label": "Columns on Mobile",
+                                            "name": "columns_on_mobile",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": 1,
+                                            "min": 1,
+                                            "max": "",
+                                            "step": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "key": "field_58a392b09cf1c",
+                                            "label": "Columns on Tablet",
+                                            "name": "columns_on_tablet",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": 1,
+                                            "min": 1,
+                                            "max": "",
+                                            "step": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "key": "field_58a3925d9cf1b",
+                                            "label": "Columns on Desktop",
+                                            "name": "columns_on_desktop",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "min": "",
+                                            "max": "",
+                                            "step": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "px",
+                                            "key": "field_58a393369cf1f",
+                                            "label": "Gutters on Mobile",
+                                            "name": "gutters_on_mobile",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "min": "",
+                                            "max": "",
+                                            "step": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "px",
+                                            "key": "field_58a393689cf20",
+                                            "label": "Gutters on Tablet",
+                                            "name": "gutters_on_tablet",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
+                                        },
+                                        {
+                                            "default_value": "",
+                                            "min": "",
+                                            "max": "",
+                                            "step": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "px",
+                                            "key": "field_58a393969cf21",
+                                            "label": "Gutters on Desktop",
+                                            "name": "gutters_on_desktop",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            }
                                         },
                                         {
                                             "default_value": 0,
                                             "message": "",
-                                            "ui": 0,
+                                            "ui": 1,
                                             "ui_on_text": "",
                                             "ui_off_text": "",
                                             "key": "field_565cbd3e6eceb",
@@ -3760,7 +4153,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "",
+                                                "width": "20",
                                                 "class": "",
                                                 "id": ""
                                             }
@@ -3865,12 +4258,10 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "20",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "disabled": 0,
-                                            "readonly": 0
+                                            }
                                         },
                                         {
                                             "default_value": "",
@@ -3896,12 +4287,10 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "20",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         },
                                         {
                                             "default_value": "",
@@ -3927,12 +4316,10 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "20",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         },
                                         {
                                             "default_value": "",
@@ -3958,12 +4345,10 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": 25,
+                                                "width": "20",
                                                 "class": "",
                                                 "id": ""
-                                            },
-                                            "readonly": 0,
-                                            "disabled": 0
+                                            }
                                         }
                                     ],
                                     "min": "",
@@ -10698,14 +11083,19 @@
     "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
-    "instruction_placement": "field",
+    "instruction_placement": "label",
     "hide_on_screen": [
         "the_content",
+        "excerpt",
         "discussion",
         "comments",
-        "revisions"
+        "author",
+        "format",
+        "featured_image",
+        "categories",
+        "tags"
     ],
     "active": 1,
     "description": "",
-    "modified": 1485284029
+    "modified": 1487125398
 }

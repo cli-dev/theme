@@ -10,6 +10,10 @@
   }
 }
 
+img:not([src]) {
+    visibility: hidden;
+}
+
 // Carousel Styles
 
   .owl-carousel{
@@ -150,6 +154,17 @@
     }
     a{
       word-break: break-all;  
+    }
+  }
+
+// Blog feeds
+
+  .blog-feed-wrapper{
+    overflow: hidden;
+    .standard{
+      @include display-flex;
+      @include flex-wrap(wrap);
+      @include align-content(flex-start);
     }
   }
 
@@ -312,38 +327,29 @@
 // Image Gallery
 
   .image-gallery{
-    &.owl-carousel{
-      .gallery-img-wrap{
-        width: 100%;
-      }
-    }
-    &.image-grid{
+    overflow: hidden;
+    .standard{
       @include display-flex;
       @include flex-wrap(wrap);
-    }
-    .gallery-img-wrap{
-      width: 100%;
-      @include breakpoint($mds){
-        width: 50%;
-      }
-      @include breakpoint($mdl){
-        width: 25%;
-      }
+      @include align-items(flex-start);
     }
   }
 
-  .gallery-img{
+  .gallery-img-link{
     display: block;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
     position: relative;
-    &:before{
-      content: '';
-      display: block;
-      width: 100%;
-      padding-bottom: 100%;
+    .standard &,
+    .carousel &{
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+      &:before{
+        content: '';
+        display: block;
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+      }
     }
     span{
       position: absolute;
@@ -367,24 +373,26 @@
         opacity: 1;
       }
     }
+    .gallery-img{
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
   }
 
 // Team Grid
 
   // Grid
-    .team{
-      @include display-flex;
-      @include flex-wrap(wrap);
-    }
-    .team-member-wrapper{
-      @include flex(0 1 auto);
-      width: 50%;
-      @include breakpoint($md){
-        width: 33.333%;
+    .team-grid{
+      overflow: hidden;
+      .standard{
+        @include display-flex;
+        @include flex-wrap(wrap);
+        @include align-items(flex-start);
       }
     }
 
-    .team-member{
+    .team-member-inner{
       display: block;
       position: relative;
       overflow: hidden;
@@ -431,6 +439,7 @@
     }
 
     .team-bio{
+      background-color: #fff;
       padding: 15px;
       @include breakpoint($md){
         padding: 20px

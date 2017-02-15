@@ -217,6 +217,42 @@ if( function_exists('get_field') ) {
 
   // Blog Styles
 
+    // Blog feeds
+      $blog_type = $myoptions['blog_type'];
+      $mobile_cols     = intval($myoptions['columns_on_mobile']);
+      $tablet_cols     = intval($myoptions['columns_on_tablet']);
+      $desktop_cols    = intval($myoptions['columns_on_desktop']);
+      $mobile_gutters  = intval($myoptions['gutters_on_mobile']);
+      $tablet_gutters  = intval($myoptions['gutters_on_tablet']);
+      $desktop_gutters = intval($myoptions['gutters_on_desktop']);
+
+      if ($blog_type === "standard") {
+        echo '.blog-posts.standard{width: calc(100% + ' . $mobile_gutters . 'px);margin-right: -' . $mobile_gutters . 'px;margin-bottom: -' . $mobile_gutters . 'px;}';
+        echo '.blog-posts.standard .post-block{width: calc(' . abs(1/$mobile_cols * 100) . '% - ' . $mobile_gutters . 'px);margin-right: ' . $mobile_gutters . 'px;margin-bottom: ' . $mobile_gutters . 'px;}';
+        echo '@media screen and (min-width: 768px){';
+          echo '.blog-posts.standard{width: calc(100% + ' . $tablet_gutters . 'px);margin-right: -' . $tablet_gutters . 'px;margin-bottom: -' . $tablet_gutters . 'px;}';
+          echo '.blog-posts.standard .post-block{width: calc(' . abs(1/$tablet_cols * 100) . '% - ' . $tablet_gutters . 'px);margin-right: ' . $tablet_gutters . 'px;margin-bottom: ' . $tablet_gutters . 'px;}';
+        echo '}';
+        echo '@media screen and (min-width: 1024px){';
+          echo '.blog-posts.standard{width: calc(100% + ' . $desktop_gutters . 'px);margin-right: -' . $desktop_gutters . 'px;margin-bottom: -' . $desktop_gutters . 'px;}';
+          echo '.blog-posts.standard .post-block{width: calc(' . abs(1/$desktop_cols * 100) . '% - ' . $desktop_gutters . 'px);margin-right: ' . $desktop_gutters . 'px;margin-bottom: ' . $desktop_gutters . 'px;}';
+        echo '}';
+      } elseif ($blog_type === "masonry") {
+        echo '.blog-posts.masonry{width: calc(100% + ' . $mobile_gutters . 'px);margin-right: -' . $mobile_gutters . 'px;margin-bottom: -' . $mobile_gutters . 'px;}';
+        echo '.blog-posts.masonry .post-block{width: calc(' . abs(1/$mobile_cols * 100) . '% - ' . $mobile_gutters . 'px);margin-bottom: ' . $mobile_gutters . 'px;}';
+        echo '.blog-posts.masonry .gutter-sizer{width:' . $mobile_gutters . 'px;}';
+        echo '@media screen and (min-width: 768px){';
+          echo '.blog-posts.masonry{width: calc(100% + ' . $tablet_gutters . 'px);margin-right: -' . $tablet_gutters . 'px;margin-bottom: -' . $tablet_gutters . 'px;}';
+          echo '.blog-posts.masonry .post-block{width: calc(' . abs(1/$tablet_cols * 100) . '% - ' . $tablet_gutters . 'px);margin-bottom: ' . $tablet_gutters . 'px;}';
+          echo '.blog-posts.masonry .gutter-sizer{width:' . $tablet_gutters . 'px;}';
+        echo '}';
+        echo '@media screen and (min-width: 1024px){';
+          echo '.blog-posts.masonry{width: calc(100% + ' . $desktop_gutters . 'px);margin-right: -' . $desktop_gutters . 'px;margin-bottom: -' . $desktop_gutters . 'px;}';
+          echo '.blog-posts.masonry .post-block{width: calc(' . abs(1/$desktop_cols * 100) . '% - ' . $desktop_gutters . 'px);margin-bottom: ' . $desktop_gutters . 'px;}';
+          echo '.blog-posts.masonry .gutter-sizer{width:' . $desktop_gutters . 'px;}';
+        echo '}';
+      }
+
     // Pagination 
 
       $pagination_item_background_color = $myoptions['pagination_item_background_color'];

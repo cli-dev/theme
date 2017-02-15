@@ -3,6 +3,7 @@
   $postid = get_the_ID();
   $item_id = (is_blog()) ? $page_for_posts : $postid;
   $team_id = (get_sub_field('team_grid_id', $item_id)) ? seoUrl(get_sub_field('team_grid_id', $item_id)) : 'team-grid';
+  $team_type = get_sub_field('team_type', $item_id);
   $team_category = (get_sub_field('team_category', $item_id)) ? get_sub_field('team_category', $item_id) : '';
   $team_category_ids = '';
   if ($team_category) {
@@ -18,10 +19,12 @@
   $bg_color_opacity = (get_sub_field('bg_color_opacity', $item_id)) ? get_sub_field('bg_color_opacity', $item_id) : '';
   $hover_bg = ($hover_panel_background_color) ? ' style="background-color: rgba(' . $hover_panel_background_color . ',' . $bg_color_opacity . ');"' : '';
   $custom_class = (get_sub_field('custom_class', $item_id)) ? ' ' . get_sub_field('custom_class', $item_id) : '';
-  $columns_on_desktop = get_sub_field('columns_on_desktop', $item_id);
-  $column_spacing = intval(get_sub_field('column_spacing', $item_id));
-  $gallery_negative_margin = ($column_spacing) ? ' style="margin: -' . ($column_spacing/2) . 'px"' : '';
-  $gallery_spacing = ($column_spacing) ? ' style="padding: ' . ($column_spacing/2) . 'px"' : ''; 
+  $mobile_cols = intval(get_sub_field('columns_on_mobile', $item_id));
+  $tablet_cols = intval(get_sub_field('columns_on_tablet', $item_id));
+  $desktop_cols = intval(get_sub_field('columns_on_desktop', $item_id));
+  $mobile_gutters = intval(get_sub_field('gutters_on_mobile', $item_id));
+  $tablet_gutters = intval(get_sub_field('gutters_on_tablet', $item_id));
+  $desktop_gutters = intval(get_sub_field('gutters_on_desktop', $item_id));
   $team_info_in_hover_panel = get_sub_field('team_info_in_hover_panel', $item_id);
   $team_title_color = (get_sub_field('team_title_color', $item_id)) ? ' style="color:' . get_sub_field('team_title_color', $item_id) . ';"' : '';
   $position_title_color = (get_sub_field('position_title_color', $item_id)) ? ' style="color:' . get_sub_field('position_title_color', $item_id) . ';"' : '';
@@ -44,38 +47,110 @@ $args1 = array (
 );
 $query1 = new WP_Query( $args1 );
 ?>
-<?php 
-    $args = array( 'hide_empty=0' );
- 
-$terms = get_terms( 'team_cat', $args );
-if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-    $term_list = '<p class="my_term-archive">';
-    foreach ( $terms as $term ) {
-        $term_list .= $term->term_id . '<br/>';
-    }
-    echo $term_list;
-}
-    ?>
 <?php if ( $query1->have_posts() ) : ?>
+  <style type="text/css">
+    <?php if ($team_type === "standard") { ?>
+      #<?php echo $team_id; ?>{
+        width: calc(100% + <?php echo $mobile_gutters; ?>px);
+        margin-right: -<?php echo $mobile_gutters; ?>px;
+        margin-bottom: -<?php echo $mobile_gutters; ?>px;
+      }
+
+      #<?php echo $team_id; ?> .team-member{
+        width: calc(<?php echo abs(1/$mobile_cols * 100); ?>% - <?php echo $mobile_gutters; ?>px);
+        margin-bottom: <?php echo $mobile_gutters; ?>px;
+        margin-right: <?php echo $mobile_gutters; ?>px;
+      }
+      @media screen and (min-width: 768px){
+        #<?php echo $team_id; ?>{
+          width: calc(100% + <?php echo $tablet_gutters; ?>px);
+          margin-right: -<?php echo $tablet_gutters; ?>px;
+          margin-bottom: -<?php echo $tablet_gutters; ?>px;
+        }
+        #<?php echo $team_id; ?> .team-member{
+          width: calc(<?php echo abs(1/$tablet_cols * 100); ?>% - <?php echo $tablet_gutters; ?>px);
+          margin-bottom: <?php echo $tablet_gutters; ?>px;
+          margin-right: <?php echo $tablet_gutters; ?>px;
+        }
+      }
+      @media screen and (min-width: 1024px){
+        #<?php echo $team_id; ?>{
+          width: calc(100% + <?php echo $desktop_gutters; ?>px);
+          margin-right: -<?php echo $desktop_gutters; ?>px;
+          margin-bottom: -<?php echo $desktop_gutters; ?>px;
+        }
+        #<?php echo $team_id; ?> .team-member{
+          width: calc(<?php echo abs(1/$desktop_cols * 100); ?>% - <?php echo $desktop_gutters; ?>px);
+          margin-bottom: <?php echo $desktop_gutters; ?>px;
+          margin-right: <?php echo $desktop_gutters; ?>px;
+        }
+      }
+    <?php } elseif ($team_type === "masonry") { ?>
+      #<?php echo $team_id; ?>{
+        width: calc(100% + <?php echo $mobile_gutters; ?>px);
+        margin-right: -<?php echo $mobile_gutters; ?>px;
+        margin-bottom: -<?php echo $mobile_gutters; ?>px;
+      }
+      #<?php echo $team_id; ?> .team-member{
+        width: <?php echo abs(1/$mobile_cols * 100); ?>%;
+        margin-bottom: <?php echo $mobile_gutters; ?>px;
+      }
+      #<?php echo $team_id; ?> .gutter-sizer{
+        width: <?php echo $mobile_gutters; ?>px;
+      }
+      @media screen and (min-width: 768px){
+        #<?php echo $team_id; ?>{
+          width: calc(100% + <?php echo $tablet_gutters; ?>px);
+          margin-right: -<?php echo $tablet_gutters; ?>px;
+          margin-bottom: -<?php echo $tablet_gutters; ?>px;
+        }
+        #<?php echo $team_id; ?> .team-member{
+          width: calc(<?php echo abs(1/$tablet_cols * 100); ?>% - <?php echo $tablet_gutters; ?>px);
+          margin-bottom: <?php echo $tablet_gutters; ?>px;
+        }  
+        #<?php echo $team_id; ?> .gutter-sizer{
+          width: <?php echo $tablet_gutters; ?>px;
+        }
+      }
+      @media screen and (min-width: 1024px){
+        #<?php echo $team_id; ?>{
+          width: calc(100% + <?php echo $desktop_gutters; ?>px);
+          margin-right: -<?php echo $desktop_gutters; ?>px;
+          margin-bottom: -<?php echo $desktop_gutters; ?>px;
+        }
+        #<?php echo $team_id; ?> .team-member{
+          width: calc(<?php echo abs(1/$desktop_cols * 100); ?>% - <?php echo $desktop_gutters; ?>px);
+          margin-bottom: <?php echo $desktop_gutters; ?>px;
+        } 
+        #<?php echo $team_id; ?> .gutter-sizer{
+          width: <?php echo $desktop_gutters; ?>px;
+        } 
+      }
+    <?php } elseif ($team_type === "carousel") { ?>
+      #<?php echo $team_id; ?> .team-member{
+        width: 100%;
+      }
+    <?php } ?>
+  </style>
 <div class="col-item team-grid<?php echo $animation_class . $item_animation_effect . $custom_class; ?>"<?php echo $animation;?>>
-  <div id="<?php echo $team_id; ?>" class="team"<?php echo $gallery_negative_margin; ?>>
+  <div id="<?php echo $team_id; ?>" class="<?php echo $team_type; ?>">
+    <?php if ($team_type === "masonry") { echo '<div class="gutter-sizer"></div>';} ?>
     <?php while ( $query1->have_posts() ) : $query1->the_post(); ?>
       <?php
-      $thumb_id = get_post_thumbnail_id();
-      $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'team-headshot', true);
-      $thumb_url = $thumb_url_array[0];
-      $position = get_field('position');
-      $bio = get_field('bio');
-      $team_img = '';
-      if( has_post_thumbnail() ){
-        $team_img = ' style="background: url(' . $thumb_url . ') center top no-repeat; background-size: cover;"';
-      }
-      $team_img = ($thumb_url) ? ' lazyload" data-original="' . $thumb_url . '" style="background-position: center top; background-repeat: no-repeat; background-size: cover;"' : '" ';
-      $team_open_tag = ($bio) ? '<a class="team-member lightbox' . $team_img . 'href="#' . the_slug() . '">' : '<div class="team-member' . $team_img . '>';
-      $team_close_tag = ($bio) ? '</a>' : '</div>';
+        $thumb_id = get_post_thumbnail_id();
+        $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'team-headshot', true);
+        $thumb_url = $thumb_url_array[0];
+        $position = get_field('position');
+        $bio = get_field('bio');
+        $team_img = '';
+        if( has_post_thumbnail() ){
+          $team_img = ' style="background: url(' . $thumb_url . ') center top no-repeat; background-size: cover;"';
+        }
+        $team_img = ($thumb_url) ? ' lazyload" data-original="' . $thumb_url . '" style="background-position: center top; background-repeat: no-repeat; background-size: cover;"' : '" ';
+        $team_open_tag = ($bio) ? '<a class="team-member-inner lightbox' . $team_img . 'href="#' . the_slug() . '">' : '<div class="team-member-inner' . $team_img . '>';
+        $team_close_tag = ($bio) ? '</a>' : '</div>';
       ?>
-      <div class="team-member-wrapper"<?php echo $gallery_spacing; ?>>
-        <div class="team-wrapper-inner">
+      <div class="team-member">
         <?php echo $team_open_tag; ?>
           <?php if ($team_info_in_hover_panel == 1) { ?>
             <div class="team-hover-panel"<?php echo $hover_bg; ?>>
@@ -104,57 +179,78 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
               <p class="team-position"<?php echo $position_title_color; ?>><?php echo $position; ?></p>
             <?php } ?>
           </div>
-        <?php } ?> 
-        </div>
+          <?php } ?> 
       </div>
     <?php endwhile; ?>
   </div>
 </div>
   <script type="text/javascript">
     jQuery(document).ready(function($) {
-      var columns = <?php echo $columns_on_desktop; ?>;
-      var maxWidth = 1/columns * 100;
-      var team = $('#<?php echo $team_id; ?>');
-      if($(window).width() >= 1000){
-        team.find('.team-member-wrapper').css('width', maxWidth + '%');
-      }
-      var teamInfoHeights = $('.team .team-info').map(function() {
+      <?php if ($team_type === "masonry") { ?>
+        $('#<?php echo $team_id; ?>').imagesLoaded( function() {
+          var $grid = $('#<?php echo $team_id; ?>').isotope({
+            itemSelector: '.team-member',
+            percentPosition: true,
+            masonry: {
+              gutter: '.gutter-sizer'
+            }
+          });
+        });
+      <?php } ?>
+      <?php if ($team_type === "carousel") { ?>
+        var myLazyLoad = new LazyLoad({
+          container: document.getElementById('<?php echo $team_id; ?>'),
+          elements_selector: ".team-member-inner",
+        });
+        $('#<?php echo $team_id; ?>').owlCarousel({
+          items: <?php echo $mobile_cols; ?>,
+          loop: false,
+          margin: <?php echo $mobile_gutters; ?>,
+          slideBy: 'page',
+          nav: true,
+          navText: ['<span class="nav-icon"></span>', '<span class="nav-icon"></span>'],
+          responsive:{
+            768:{
+              items:<?php echo $tablet_cols; ?>,
+              margin: <?php echo $tablet_gutters; ?>,
+            },
+            1024:{
+              items:<?php echo $desktop_cols; ?>,
+              margin: <?php echo $desktop_gutters; ?>,
+            }
+          }
+        });
+      <?php } ?>
+
+      var teamInfoHeights = $('#<?php echo $team_id; ?> .team-info').map(function() {
         return $(this).height();
       }).get();
 
       var minTeamInfoHeight = Math.max.apply(null, teamInfoHeights);
 
-      $('.team .team-info').css('min-height', minTeamInfoHeight);
+      $('#<?php echo $team_id; ?> .team-info').css('min-height', minTeamInfoHeight);
       $(window).resize(function(event) {
-        var teamInfoHeights2 = $('.team .team-info').map(function() {
+        var teamInfoHeights2 = $('#<?php echo $team_id; ?> .team-info').map(function() {
           return $(this).height();
         }).get();
 
         var minTeamInfoHeight2 = Math.max.apply(null, teamInfoHeights2);
 
-        $('.team .team-info').css('min-height', minTeamInfoHeight2);
-        if($(window).width() >= 1000){
-          $('.team-member-wrapper').css('width', maxWidth + '%');
-        } else if($(window).width() >= 600){
-          $('.team-member-wrapper').css('width','33.333%');
-        }
-        else{
-          $('.team-member-wrapper').css('width',  '50%');
-        }
+        $('#<?php echo $team_id; ?> .team-info').css('min-height', minTeamInfoHeight2);
       });
     });
   </script>
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
 <?php 
-$args2 = array (
-  'post_type' => array( 'team_member' ),
-  'posts_per_page' => '-1',
-  'order' => 'ASC',
-  'orderby' => 'title',
-  'tax_query' => $team_category_ids,
-);
-$query2 = new WP_Query( $args2 );
+  $args2 = array (
+    'post_type' => array( 'team_member' ),
+    'posts_per_page' => '-1',
+    'order' => 'ASC',
+    'orderby' => 'title',
+    'tax_query' => $team_category_ids,
+  );
+  $query2 = new WP_Query( $args2 );
 ?>
 <?php if ( $query2->have_posts() ) : ?>
   <div class="team-bios">

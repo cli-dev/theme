@@ -1247,7 +1247,15 @@
             "type": "color_picker",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_560ec99f29270",
+                        "operator": "==",
+                        "value": "Top Menu"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -1292,7 +1300,15 @@
             "type": "color_picker",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_560ec99f29270",
+                        "operator": "==",
+                        "value": "Top Menu"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -1307,7 +1323,15 @@
             "type": "color_picker",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_560ec99f29270",
+                        "operator": "==",
+                        "value": "Top Menu"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "field_type-color_picker field_key-field_55d4c9004b509",
@@ -1322,7 +1346,15 @@
             "type": "color_picker",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_560ec99f29270",
+                        "operator": "==",
+                        "value": "Top Menu"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "field_type-color_picker field_key-field_55d4ccd62c1e6",
@@ -1343,7 +1375,15 @@
             "type": "number",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_560ec99f29270",
+                        "operator": "==",
+                        "value": "Top Menu"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "field_type-number field_key-field_55d4c9204b50a",
@@ -1364,7 +1404,15 @@
             "type": "number",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_560ec99f29270",
+                        "operator": "==",
+                        "value": "Top Menu"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "field_type-number field_key-field_55d4c9204b50a",
@@ -1390,7 +1438,15 @@
             "type": "select",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_560ec99f29270",
+                        "operator": "==",
+                        "value": "Top Menu"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -1654,7 +1710,7 @@
         {
             "default_value": "#000000",
             "key": "field_55e4b1fd06820",
-            "label": "Main Font Color",
+            "label": "Default Font Color",
             "name": "main_font_color",
             "type": "color_picker",
             "instructions": "",
@@ -2076,6 +2132,32 @@
             }
         },
         {
+            "multiple": 0,
+            "allow_null": 0,
+            "choices": {
+                "standard": "Standard Grid",
+                "masonry": "Masonry Grid",
+                "carousel": "Carousel"
+            },
+            "default_value": [],
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "return_format": "value",
+            "key": "field_58a3bbb521143",
+            "label": "Blog Grid Type",
+            "name": "blog_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "default_value": 30,
             "min": 10,
             "max": "",
@@ -2111,6 +2193,151 @@
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_58a3be00d2f88",
+            "label": "Custom Blog Feed Class",
+            "name": "custom_blog_class",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": 1,
+            "min": 1,
+            "max": "",
+            "step": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_58a3bbe121144",
+            "label": "Columns On Mobile",
+            "name": "columns_on_mobile",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": 2,
+            "min": 1,
+            "max": "",
+            "step": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_58a3bc0021145",
+            "label": "Columns On Tablet",
+            "name": "columns_on_tablet",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": 3,
+            "min": 1,
+            "max": "",
+            "step": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_58a3bc0e21146",
+            "label": "Columns On Desktop",
+            "name": "columns_on_desktop",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "px",
+            "key": "field_58a3bc3521147",
+            "label": "Gutters on Mobile",
+            "name": "gutters_on_mobile",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "px",
+            "key": "field_58a3bc5b21148",
+            "label": "Gutters on Tablet",
+            "name": "gutters_on_tablet",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "px",
+            "key": "field_58a3bc6821149",
+            "label": "Gutters on Desktop",
+            "name": "gutters_on_desktop",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
                 "class": "",
                 "id": ""
             }
@@ -2447,6 +2674,34 @@
             }
         },
         {
+            "multiple": 0,
+            "allow_null": 0,
+            "choices": {
+                "icon1": "Icon with no background",
+                "icon2": "Icon with square background",
+                "icon3": "Icon with circle background",
+                "icon4": "Icon with rounded square background",
+                "icon5": "Outline only icon with circle background outline"
+            },
+            "default_value": [],
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "return_format": "value",
+            "key": "field_589b8ddce1f85",
+            "label": "Social Share Icon Type",
+            "name": "social_share_icon_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "placement": "left",
             "endpoint": 0,
             "key": "field_564a234a7b6c1",
@@ -2652,5 +2907,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1486414206
+    "modified": 1487126053
 }

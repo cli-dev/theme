@@ -16330,7 +16330,7 @@ jQuery(document).ready(function($) {
 
   // Lazy load images
 
-    $("img").each(function() {
+    $("img.lazyload").each(function() {
 
       imgClass = $(this).attr('class');
       imgWidth = $(this).attr('width');

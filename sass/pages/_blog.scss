@@ -164,7 +164,7 @@
 
 // Archive Pages
 
-  .blog-feed{
+  .news-page-loop{
     padding: 30px;
     @include breakpoint($md){
       padding: 40px;  
@@ -182,13 +182,19 @@
   }
 
   .blog-feed-inner{
-    @include breakpoint($md){
+    overflow: hidden;
+    .standard.blog-posts{
       @include display-flex;
       @include flex-wrap(wrap);
-      @include align-items(stretch);  
+      @include align-content(flex-start);
+      .post-block{
+        @include display-flex;
+        a{
+          @include flex(1 1 auto);
+        }
+      }
     }
     @include breakpoint($mdl){
-      @include flex(0 1 auto); 
       width: 80%;
       max-width: $grid-width;
     }
@@ -213,12 +219,7 @@
   // Post Layouts
 
     .post-block{
-      @include display-flex;
-      @include breakpoint($md){
-        width: 50%;
-      }
       a{
-        @include flex(1 1 auto);
         @include display-flex;
         @include flex-direction(column);
         position: relative;
